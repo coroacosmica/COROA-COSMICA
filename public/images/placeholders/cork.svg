@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <rect width="200" height="200" fill="#faf6f0"/>
+  <ellipse cx="100" cy="100" rx="70" ry="55" fill="#c49a6f"/>
+  <ellipse cx="100" cy="100" rx="50" ry="38" fill="#a96f48" opacity="0.5"/>
+  <text x="100" y="108" text-anchor="middle" fill="#5f3e2f" font-size="14" font-weight="bold" font-family="sans-serif">CORK</text>
+</svg>

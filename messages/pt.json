@@ -1,0 +1,84 @@
+{
+  "meta": {
+    "title": "Coroa Cósmica | Presentes Corporativos Premium",
+    "description": "Coroa Cósmica Advertising Agency — brindes publicitários premium, conjuntos VIP e produtos em cortiça ecológica para empresas em todo o mundo."
+  },
+  "header": {
+    "announcement": "Entrega mundial · Amostra virtual em 24h · Orçamento sem compromisso",
+    "tagline": "Brindes corporativos e publicidade premium",
+    "cart": "Carrinho",
+    "language": "Idioma"
+  },
+  "home": {
+    "recommended": "Produtos Recomendados",
+    "vipTitle": "Conjuntos VIP em Destaque",
+    "vipSubtitle": "Caixas de presente corporativo premium prontas para a sua marca",
+    "corkTitle": "Cortiça & Eco",
+    "corkSubtitle": "Cortiça portuguesa sustentável e merchandising ecológico",
+    "ctaTitle": "Pronto para personalizar a sua próxima campanha?",
+    "ctaSubtitle": "Peça um orçamento gratuito ou amostra virtual com o seu logótipo em 24 horas.",
+    "ctaButton": "Pedir Orçamento",
+    "viewAll": "Ver tudo"
+  },
+  "nav": {
+    "brands": "Loja",
+    "quote": "Pedir Orçamento"
+  },
+  "hero": {
+    "badge": "Coroa Cósmica · Mundial",
+    "title": "Presentes corporativos que impressionam",
+    "subtitle": "Conjuntos VIP, produtos em cortiça autêntica e brindes ecológicos personalizados — com mockup digital em 24 horas.",
+    "stats": {
+      "delivery": "Entrega mundial"
+    }
+  },
+  "catalogue": {
+    "title": "Catálogo Coroa Cósmica",
+    "addToCart": "Adicionar ao carrinho",
+    "quickView": "Ver rápido",
+    "sortBy": "Ordenar por",
+    "sortNewest": "Mais recentes",
+    "sortPriceLow": "Preço: menor primeiro",
+    "sortPriceHigh": "Preço: maior primeiro",
+    "sortPopular": "Populares",
+    "gridView": "Grelha",
+    "listView": "Lista",
+    "sidebar": "Filtros"
+  },
+  "product": {
+    "addToCart": "Adicionar ao carrinho",
+    "buyNow": "Comprar agora",
+    "seeWithLogo": "Ver com o seu logótipo",
+    "uploadLogo": "Carregar o seu logótipo",
+    "requestSample": "Pedir amostra com o meu logótipo",
+    "rotateHint": "Arraste para rodar · Deslize para ampliar",
+    "logoOverlayHint": "Arraste o logótipo para posicionar · Use o controlo para redimensionar"
+  },
+  "cart": {
+    "title": "O seu carrinho",
+    "empty": "O carrinho está vazio",
+    "continueShopping": "Continuar a comprar",
+    "total": "Total",
+    "remove": "Remover",
+    "checkout": "Finalizar",
+    "whatsapp": "Enviar por WhatsApp",
+    "email": "Enviar por e-mail",
+    "selectWhatsApp": "Escolha o número WhatsApp"
+  },
+  "checkout": {
+    "greeting": "Olá Coroa Cósmica! 🌟",
+    "orderIntro": "Gostaria de encomendar:",
+    "total": "Total: {total}",
+    "confirm": "Por favor confirmem disponibilidade. Obrigado!",
+    "emailSubject": "Pedido — Coroa Cósmica"
+  },
+  "contact": {
+    "subtitle": "Contacte as nossas equipas no Egipto e em Portugal — respondemos em 24 horas úteis."
+  },
+  "footer": {
+    "tagline": "Coroa Cósmica — brindes corporativos e produtos publicitários premium em todo o mundo."
+  },
+  "whatsapp": {
+    "message": "Olá! Gostaria de um orçamento para brindes corporativos da Coroa Cósmica."
+  }
+}

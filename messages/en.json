@@ -1,0 +1,195 @@
+{
+  "meta": {
+    "title": "Coroa Cósmica | Premium Corporate Gifts & Advertising",
+    "description": "Coroa Cósmica Advertising Agency — premium promotional products, VIP gift sets and eco cork merchandise for businesses worldwide."
+  },
+  "header": {
+    "announcement": "Worldwide delivery · Virtual sample in 24h · Free quote",
+    "tagline": "Premium corporate gifts & branding",
+    "searchPlaceholder": "Search products...",
+    "search": "Search",
+    "favorites": "Favorites",
+    "account": "Contact",
+    "cart": "Cart",
+    "language": "Language"
+  },
+  "home": {
+    "recommended": "Recommended Products",
+    "vipTitle": "Featured VIP Sets",
+    "vipSubtitle": "Premium corporate gift boxes ready for your brand",
+    "corkTitle": "Cork & Eco",
+    "corkSubtitle": "Sustainable Portuguese cork and eco-friendly merchandise",
+    "ctaTitle": "Ready to brand your next campaign?",
+    "ctaSubtitle": "Get a free quote or virtual sample with your logo in 24 hours.",
+    "ctaButton": "Get a Quote",
+    "viewAll": "View all"
+  },
+  "nav": {
+    "home": "Home",
+    "brands": "Shop",
+    "catalogue": "Catalogue",
+    "vip": "VIP Sets",
+    "cork": "Cork & Eco",
+    "virtualSample": "Virtual Sample",
+    "contact": "Contact",
+    "quote": "Request Quote"
+  },
+  "hero": {
+    "badge": "Coroa Cósmica · Worldwide",
+    "title": "Corporate gifts that impress",
+    "subtitle": "VIP sets, authentic cork products and eco-friendly branded gifts — with digital mockup in 24 hours.",
+    "ctaCatalogue": "Browse Catalogue",
+    "ctaSample": "Free Virtual Sample",
+    "stats": {
+      "products": "1000+ products",
+      "sets": "VIP Sets",
+      "delivery": "Worldwide delivery",
+      "sample": "Sample in 24h"
+    }
+  },
+  "features": {
+    "title": "Why Choose Us",
+    "cork": {
+      "title": "Portuguese Cork",
+      "desc": "Premium products in authentic cork — a sustainable iconic material."
+    },
+    "vip": {
+      "title": "VIP Sets",
+      "desc": "Corporate gift boxes with power banks, pens, notebooks and premium accessories."
+    },
+    "sample": {
+      "title": "24h Virtual Sample",
+      "desc": "Upload your logo and receive a digital product mockup before placing your order."
+    },
+    "eco": {
+      "title": "Eco-friendly",
+      "desc": "Sustainable materials valued by companies for corporate social responsibility."
+    }
+  },
+  "categories": {
+    "title": "Explore our catalogue",
+    "vip-sets": "VIP Sets",
+    "cork-eco": "Cork & Eco",
+    "notebooks-premium": "Premium Notebooks",
+    "tech-gifts": "Technology",
+    "business-gifts": "Business Gifts",
+    "corporate-sets": "Corporate Sets",
+    "promotional": "Promotional",
+    "pens-writing": "Pens",
+    "accessories": "Accessories",
+    "notebooks-usb": "USB Notebooks",
+    "pens-writing-alt": "Writing",
+    "seasonal": "Seasonal",
+    "general": "General"
+  },
+  "catalogue": {
+    "title": "Coroa Cósmica Catalogue",
+    "search": "Search by name, code or product type...",
+    "filter": "Category",
+    "all": "All",
+    "setsOnly": "Sets only",
+    "productsFound": "{count} products found",
+    "viewDetails": "View details",
+    "requestQuote": "Request quote",
+    "includes": "Set includes",
+    "code": "Code",
+    "noResults": "No products found.",
+    "itemsInSet": "items in set",
+    "addToCart": "Add to cart",
+    "quickView": "Quick view",
+    "sortBy": "Sort by",
+    "sortNewest": "Newest",
+    "sortPriceLow": "Price: low to high",
+    "sortPriceHigh": "Price: high to low",
+    "sortPopular": "Popular",
+    "gridView": "Grid",
+    "listView": "List",
+    "priceRange": "Price",
+    "sidebar": "Filters"
+  },
+  "product": {
+    "back": "Back to catalogue",
+    "customize": "Customize with your logo",
+    "minOrder": "Minimum quantity on request",
+    "features": "Features",
+    "related": "Related products",
+    "addToCart": "Add to cart",
+    "buyNow": "Buy now",
+    "price": "Price",
+    "seeWithLogo": "See with your logo",
+    "uploadLogo": "Upload your logo",
+    "requestSample": "Request Sample with My Logo",
+    "rotateHint": "Drag to rotate · Scroll to zoom",
+    "logoOverlayHint": "Drag logo to position · Use handles to resize"
+  },
+  "cart": {
+    "title": "Your cart",
+    "empty": "Your cart is empty",
+    "continueShopping": "Continue shopping",
+    "total": "Total",
+    "remove": "Remove",
+    "checkout": "Checkout",
+    "whatsapp": "Send via WhatsApp",
+    "email": "Send via Email",
+    "selectWhatsApp": "Choose WhatsApp number",
+    "quantity": "Qty"
+  },
+  "checkout": {
+    "greeting": "Hello Coroa Cósmica! 🌟",
+    "orderIntro": "I would like to order:",
+    "total": "Total: {total}",
+    "confirm": "Please confirm availability. Thank you!",
+    "emailSubject": "Order request — Coroa Cósmica",
+    "sampleIntro": "I would like to request a sample with my logo:",
+    "product": "Product",
+    "sampleNote": "I have attached/uploaded my logo. Please confirm availability. Thank you!"
+  },
+  "virtualSample": {
+    "title": "Virtual Sample",
+    "subtitle": "Upload your logo and see how it looks on the product — response within 24 hours.",
+    "upload": "Upload logo",
+    "dragDrop": "Drag file or click to select",
+    "formats": "PNG, JPG or SVG (max 5 MB)",
+    "selectProduct": "Select product",
+    "company": "Company",
+    "email": "Email",
+    "phone": "Phone",
+    "notes": "Additional notes",
+    "submit": "Request virtual sample",
+    "preview": "Preview",
+    "previewHint": "Preview below is indicative. Our team will send the professional mockup within 24h.",
+    "success": "Request sent successfully! We will contact you shortly.",
+    "whatsapp": "Or contact us via WhatsApp"
+  },
+  "contact": {
+    "title": "Contact & Quotes",
+    "subtitle": "Reach our teams in Egypt and Portugal — we respond within 24 business hours.",
+    "form": {
+      "name": "Name",
+      "company": "Company",
+      "email": "Email",
+      "phone": "Phone",
+      "product": "Product code (optional)",
+      "quantity": "Estimated quantity",
+      "message": "Message",
+      "submit": "Send request"
+    },
+    "info": {
+      "title": "Information",
+      "hours": "Mon–Fri: 9am–6pm",
+      "response": "Response within 24 business hours",
+      "egypt": "Egypt",
+      "portugal": "Portugal"
+    },
+    "success": "Message sent! We will reply shortly."
+  },
+  "footer": {
+    "tagline": "Coroa Cósmica — premium corporate gifts and advertising products worldwide.",
+    "rights": "All rights reserved.",
+    "privacy": "Privacy",
+    "terms": "Terms"
+  },
+  "whatsapp": {
+    "message": "Hello! I would like a quote for corporate gifts from Coroa Cósmica."
+  }
+}

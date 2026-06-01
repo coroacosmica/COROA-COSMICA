@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  [dir="rtl"] body {
+    font-family: var(--font-arabic), var(--font-sans), system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-white text-neutral-800;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 bg-olive-600 px-6 py-3 text-sm font-semibold uppercase tracking-wide text-white transition hover:bg-accent-orange focus:outline-none focus:ring-2 focus:ring-accent-orange focus:ring-offset-2;
+  }
+
+  .btn-secondary {
+    @apply inline-flex min-h-[44px] items-center justify-center gap-2 border-2 border-olive-600 bg-white px-6 py-3 text-sm font-semibold uppercase tracking-wide text-olive-700 transition hover:border-accent-orange hover:text-accent-orange focus:outline-none focus:ring-2 focus:ring-olive-400 focus:ring-offset-2;
+  }
+
+  .card {
+    @apply border border-olive-200 bg-white transition hover:shadow-md;
+  }
+
+  .product-card {
+    @apply border border-olive-200 bg-white transition hover:border-olive-400 hover:shadow-lg;
+  }
+
+  .section-title {
+    @apply font-display text-2xl font-normal uppercase tracking-[0.15em] text-olive-900 md:text-3xl;
+  }
+
+  .input-field {
+    @apply w-full min-h-[44px] border border-olive-200 bg-white px-4 py-2.5 text-sm text-neutral-900 placeholder:text-neutral-400 focus:border-olive-500 focus:outline-none focus:ring-1 focus:ring-olive-500;
+  }
+
+  .shop-nav-link {
+    @apply text-xs font-semibold uppercase tracking-[0.12em] text-white/90 transition hover:text-accent-orange;
+  }
+
+  .shop-nav-link-active {
+    @apply text-accent-orange;
+  }
+
+  .image-zoom {
+    @apply transition duration-300 ease-out group-hover:scale-110;
+  }
+}
