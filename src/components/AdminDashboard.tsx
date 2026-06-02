@@ -48,6 +48,7 @@ export default function AdminDashboard({
   const [editing, setEditing] = useState<EditingProduct | null>(null);
   const [adding, setAdding] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
 
@@ -176,6 +177,35 @@ export default function AdminDashboard({
       .eq("id", product.id);
     if (!error) {
       setProducts(products.map((p) => (p.id === product.id ? { ...p, featured: newVal } : p)));
+    }
+  };
+
+  // ─── Image Upload ─────────────────────────────────────────
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file || !editing) return;
+
+    setUploading(true);
+    try {
+      const formData = new FormData();
+      formData.append("file", file);
+
+      const res = await fetch("/api/admin/upload", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await res.json();
+      if (res.ok && data.url) {
+        setEditing({ ...editing, image: data.url });
+        showSuccess("Image uploaded! ✅");
+      } else {
+        alert("Upload failed: " + (data.error || "Unknown error"));
+      }
+    } catch (err) {
+      alert("Upload failed. Please try again.");
+    } finally {
+      setUploading(false);
     }
   };
 
@@ -473,16 +503,67 @@ export default function AdminDashboard({
                 </select>
               </div>
 
-              {/* Image URL */}
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-neutral-600">Image URL</label>
-                <input
-                  type="text"
-                  value={editing.image}
-                  onChange={(e) => setEditing({ ...editing, image: e.target.value })}
-                  className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
-                  placeholder="/images/products/my-product.jpg"
-                />
+              {/* Image Upload */}
+              <div className="md:col-span-2">
+                <label className="mb-1 block text-xs font-semibold text-neutral-600">Product Image</label>
+                <div className="flex flex-col gap-3">
+                  {/* Upload Button */}
+                  <div className="flex items-center gap-3">
+                    <label
+                      className={`cursor-pointer rounded border-2 border-dashed px-4 py-3 text-center text-sm transition-colors ${
+                        uploading
+                          ? "border-yellow-300 bg-yellow-50 text-yellow-700"
+                          : "border-olive-300 bg-olive-50 text-olive-700 hover:border-olive-500 hover:bg-olive-100"
+                      }`}
+                    >
+                      {uploading ? "⏳ Uploading..." : "📁 Choose Image File"}
+                      <input
+                        type="file"
+                        accept="image/jpeg,image/png,image/webp,image/avif,image/gif"
+                        onChange={handleImageUpload}
+                        disabled={uploading}
+                        className="hidden"
+                      />
+                    </label>
+                    <span className="text-xs text-neutral-400">Max 5MB — JPG, PNG, WebP, GIF</span>
+                  </div>
+
+                  {/* Preview */}
+                  {editing.image && (
+                    <div className="flex items-center gap-3">
+                      <img
+                        src={editing.image}
+                        alt="Preview"
+                        className="h-20 w-20 rounded-lg border border-neutral-200 object-cover"
+                        onError={(e) => {
+                          (e.target as HTMLImageElement).style.display = "none";
+                        }}
+                      />
+                      <div className="flex-1">
+                        <p className="truncate text-xs text-neutral-500">{editing.image}</p>
+                        <button
+                          type="button"
+                          onClick={() => setEditing({ ...editing, image: "" })}
+                          className="mt-1 text-xs text-red-500 hover:text-red-700"
+                        >
+                          ✕ Remove Image
+                        </button>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Or enter URL manually */}
+                  <div>
+                    <p className="mb-1 text-xs text-neutral-400">Or paste an image URL:</p>
+                    <input
+                      type="text"
+                      value={editing.image}
+                      onChange={(e) => setEditing({ ...editing, image: e.target.value })}
+                      className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
+                      placeholder="https://example.com/image.jpg"
+                    />
+                  </div>
+                </div>
               </div>
 
               {/* Description */}
