@@ -22,10 +22,10 @@ export default async function ProductPage({
   const t = await getTranslations("product");
   const tc = await getTranslations("catalogue");
 
-  const product = getProductByCode(decodeURIComponent(code));
+  const product = await getProductByCode(decodeURIComponent(code));
   if (!product) notFound();
 
-  const related = getRelatedProducts(product);
+  const related = await getRelatedProducts(product);
   const displayName = getProductName(product, locale as Locale);
   const loc = locale as Locale;
 

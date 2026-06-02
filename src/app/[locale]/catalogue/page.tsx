@@ -11,7 +11,7 @@ export default async function CataloguePage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("catalogue");
-  const products = getAllProducts();
+  const products = await getAllProducts();
 
   return (
     <div className="mx-auto max-w-shop bg-white px-4 py-12 md:px-6">

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useRef, useCallback, useMemo } from "react";
+import { useState, useRef, useCallback, useMemo, useEffect } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import Image from "next/image";
@@ -26,13 +26,19 @@ export default function VirtualSampleForm() {
   const [loading, setLoading] = useState(false);
   const fileRef = useRef<HTMLInputElement>(null);
 
-  const products = useMemo(
-    () =>
-      getAllProducts()
-        .filter((p) => p.type === "set" || p.tags?.includes("featured") || p.image)
-        .slice(0, 150),
-    []
-  );
+  const [products, setProducts] = useState<any[]>([]);
+
+  useEffect(() => {
+    let mounted = true;
+    getAllProducts().then((all) => {
+      if (mounted) {
+        setProducts(
+          all.filter((p) => p.type === "set" || p.tags?.includes("featured") || p.image).slice(0, 150)
+        );
+      }
+    });
+    return () => { mounted = false; };
+  }, []);
 
   const selectedProduct = products.find((p) => p.code === productCode);
   const previewImage = selectedProduct

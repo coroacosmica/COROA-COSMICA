@@ -1,5 +1,7 @@
+import { supabase } from "@/lib/supabase";
 import rawProducts from "@/data/products.json";
 import { normalizeProductCode } from "@/lib/utils";
+
 export interface ProductNames {
   pt: string;
   en: string;
@@ -20,8 +22,6 @@ export interface Product {
   tags?: string[];
 }
 
-const products = rawProducts as Product[];
-
 const CATEGORY_ORDER = [
   "vip-sets",
   "cork-eco",
@@ -37,25 +37,49 @@ const CATEGORY_ORDER = [
   "general",
 ];
 
-function enrich(p: Product): Product {
+function enrich(p: any): Product {
   const code = normalizeProductCode(p.code).toLowerCase();
-  const normalized: Product = { ...p, code: normalizeProductCode(p.code) };
-  const tags: string[] = [];
-  if (p.type === "set") tags.push("set");
-  if (code.includes("vip") || code.includes("premium") || p.category === "vip-sets")
+  const normalized: Product = { 
+    ...p, 
+    code: normalizeProductCode(p.code),
+    categoryName: p.category_name || p.categoryName || "",
+  };
+  const tags: string[] = [...(p.tags || [])];
+  if (p.type === "set" && !tags.includes("set")) tags.push("set");
+  if ((code.includes("vip") || code.includes("premium") || p.category === "vip-sets") && !tags.includes("vip"))
     tags.push("vip", "featured");
-  if (code.includes("cork") || p.category === "cork-eco") tags.push("cork", "eco", "featured");
-  if (normalized.includes.length > 0) tags.push("bundle");
+  if ((code.includes("cork") || p.category === "cork-eco") && !tags.includes("cork")) 
+    tags.push("cork", "eco", "featured");
+  if (normalized.includes?.length > 0 && !tags.includes("bundle")) 
+    tags.push("bundle");
+  
   return { ...normalized, tags };
 }
 
-const enriched = products.map(enrich);
+// Fallback logic
+let cachedProducts: Product[] | null = null;
 
-export function getAllProducts(): Product[] {
-  return enriched;
+export async function getAllProducts(): Promise<Product[]> {
+  try {
+    const { data, error } = await supabase.from("products").select("*");
+    if (error) throw error;
+    if (data && data.length > 0) {
+      cachedProducts = data.map(enrich);
+      return cachedProducts;
+    }
+  } catch (err) {
+    console.error("Supabase products fetch error, falling back to local JSON", err);
+  }
+  
+  // Fallback to local JSON if Supabase fails
+  if (!cachedProducts) {
+    cachedProducts = (rawProducts as any[]).map(enrich);
+  }
+  return cachedProducts;
 }
 
-export function getProductByCode(code: string): Product | undefined {
+export async function getProductByCode(code: string): Promise<Product | undefined> {
+  const all = await getAllProducts();
   let raw = code;
   try {
     raw = decodeURIComponent(code);
@@ -65,26 +89,29 @@ export function getProductByCode(code: string): Product | undefined {
   try {
     raw = decodeURIComponent(raw);
   } catch {
-    /* once decoded */
+    //
   }
   const norm = normalizeProductCode(raw).toLowerCase();
-  return enriched.find((p) => p.code.toLowerCase() === norm);
+  return all.find((p) => p.code.toLowerCase() === norm);
 }
 
-export function getFeaturedProducts(limit = 12): Product[] {
-  return enriched
+export async function getFeaturedProducts(limit = 12): Promise<Product[]> {
+  const all = await getAllProducts();
+  return all
     .filter((p) => p.tags?.includes("featured") || p.type === "set")
     .slice(0, limit);
 }
 
-export function getVipSets(): Product[] {
-  return enriched.filter(
+export async function getVipSets(): Promise<Product[]> {
+  const all = await getAllProducts();
+  return all.filter(
     (p) => p.category === "vip-sets" || p.tags?.includes("vip")
   );
 }
 
-export function getCorkProducts(): Product[] {
-  return enriched.filter(
+export async function getCorkProducts(): Promise<Product[]> {
+  const all = await getAllProducts();
+  return all.filter(
     (p) =>
       p.category === "cork-eco" ||
       p.code.toLowerCase().includes("cork") ||
@@ -92,29 +119,31 @@ export function getCorkProducts(): Product[] {
   );
 }
 
-export function getCategories(): string[] {
-  const cats = new Set(enriched.map((p) => p.category));
+export async function getCategories(): Promise<string[]> {
+  const all = await getAllProducts();
+  const cats = new Set(all.map((p) => p.category));
   return CATEGORY_ORDER.filter((c) => cats.has(c)).concat(
     [...cats].filter((c) => !CATEGORY_ORDER.includes(c))
   );
 }
 
-export function searchProducts(opts: {
+export async function searchProducts(opts: {
   query?: string;
   category?: string;
   setsOnly?: boolean;
   page?: number;
   pageSize?: number;
-}): { items: Product[]; total: number } {
+}): Promise<{ items: Product[]; total: number }> {
+  const all = await getAllProducts();
   const { query = "", category, setsOnly, page = 1, pageSize = 24 } = opts;
   const q = query.toLowerCase().trim();
 
-  let filtered = enriched;
+  let filtered = all;
   if (category && category !== "all") {
     filtered = filtered.filter((p) => p.category === category);
   }
   if (setsOnly) {
-    filtered = filtered.filter((p) => p.type === "set" || p.includes.length > 0);
+    filtered = filtered.filter((p) => p.type === "set" || p.includes?.length > 0);
   }
   if (q) {
     filtered = filtered.filter((p) => {
@@ -123,7 +152,7 @@ export function searchProducts(opts: {
         p.code.toLowerCase().includes(q) ||
         p.description.toLowerCase().includes(q) ||
         names.toLowerCase().includes(q) ||
-        p.includes.some((i) => i.toLowerCase().includes(q))
+        p.includes?.some((i) => i.toLowerCase().includes(q))
       );
     });
   }
@@ -136,8 +165,9 @@ export function searchProducts(opts: {
   };
 }
 
-export function getRelatedProducts(product: Product, limit = 4): Product[] {
-  return enriched
+export async function getRelatedProducts(product: Product, limit = 4): Promise<Product[]> {
+  const all = await getAllProducts();
+  return all
     .filter(
       (p) =>
         p.code !== product.code &&
@@ -147,3 +177,4 @@ export function getRelatedProducts(product: Product, limit = 4): Product[] {
 }
 
 export const CATEGORY_IDS = CATEGORY_ORDER;
+

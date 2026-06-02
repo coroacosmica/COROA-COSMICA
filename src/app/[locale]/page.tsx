@@ -25,10 +25,12 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("home");
 
-  const featured = getFeaturedProducts(12);
+  const [featured, vip, cork] = await Promise.all([
+    getFeaturedProducts(12),
+    getVipSets(),
+    getCorkProducts(),
+  ]);
   const slides = buildHeroSlides(featured, locale as Locale);
-  const vip = getVipSets();
-  const cork = getCorkProducts();
 
   return (
     <>
