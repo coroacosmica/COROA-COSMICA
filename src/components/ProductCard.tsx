@@ -49,7 +49,7 @@ export default function ProductCard({
             </Link>
             <p className="mt-1 text-xs uppercase tracking-wider text-olive-600">{categoryLabel}</p>
             <p className="mt-2 text-lg font-semibold text-olive-700">
-              {formatPrice(BASE_PRICE, locale)}
+              {formatPrice(product.price ?? 0, locale)}
             </p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -84,7 +84,7 @@ export default function ProductCard({
         <Link href={`/product/${slugifyCode(product.code)}${returnParam}`}>
           <h3 className="line-clamp-2 text-sm font-medium text-neutral-900">{displayName}</h3>
         </Link>
-        <p className="mt-1 text-lg font-semibold text-olive-700">{formatPrice(BASE_PRICE, locale)}</p>
+        <p className="mt-1 text-lg font-semibold text-olive-700">{formatPrice(product.price ?? 0, locale)}</p>
         <div className={clsx("mt-3 flex flex-col gap-2")}>
           <AddToCartButton product={product} variant="compact" />
           <Link

@@ -1,3 +1,4 @@
+export const dynamic = 'force-dynamic';
 import { supabase } from "@/lib/supabase";
 import AdminDashboard from "@/components/AdminDashboard";
 import { getTranslations } from "next-intl/server";

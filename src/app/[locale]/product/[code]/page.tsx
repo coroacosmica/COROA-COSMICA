@@ -1,5 +1,6 @@
 import { setRequestLocale } from "next-intl/server";
 import { getTranslations } from "next-intl/server";
+export const dynamic = 'force-dynamic';
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import ProductCard from "@/components/ProductCard";
@@ -21,6 +22,7 @@ export default async function ProductPage({
   setRequestLocale(locale);
   const t = await getTranslations("product");
   const tc = await getTranslations("catalogue");
+  const tCat = await getTranslations("categories");
 
   const product = await getProductByCode(decodeURIComponent(code));
   if (!product) notFound();
@@ -49,7 +51,7 @@ export default async function ProductPage({
 
         <div>
           <p className="text-xs font-semibold uppercase tracking-wider text-olive-600">
-            {tc(product.category as "vip-sets")}
+            {tCat((product.category || "general") as any)}
           </p>
           <h1 className="mt-2 font-display text-3xl font-light text-olive-950 md:text-4xl">
             {displayName}
@@ -58,7 +60,7 @@ export default async function ProductPage({
             {tc("code")}: {product.code}
           </p>
           <p className="mt-4 text-2xl font-semibold text-olive-700">
-            {formatPrice(BASE_PRICE, loc)}
+            {formatPrice(product.price ?? 0, loc)}
           </p>
           {product.description && product.description !== displayName && (
             <p className="mt-4 text-neutral-700">{product.description}</p>

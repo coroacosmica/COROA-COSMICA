@@ -75,7 +75,7 @@ export default function CartDrawer() {
                     <p className="truncate text-sm font-medium text-neutral-900">{item.name}</p>
                     <p className="text-xs text-neutral-500">{item.code}</p>
                     <p className="mt-1 text-sm font-semibold text-olive-700">
-                      {formatPrice(item.quantity * BASE_PRICE, locale)}
+                      {formatPrice(item.quantity * (item.price ?? 0), locale)}
                     </p>
                     <div className="mt-2 flex items-center gap-2">
                       <button

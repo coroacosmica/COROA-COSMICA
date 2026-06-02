@@ -20,6 +20,7 @@ export interface Product {
   image?: string | null;
   featured?: boolean;
   tags?: string[];
+  price?: number;
 }
 
 const CATEGORY_ORDER = [
@@ -56,26 +57,19 @@ function enrich(p: any): Product {
   return { ...normalized, tags };
 }
 
-// Fallback logic
-let cachedProducts: Product[] | null = null;
-
 export async function getAllProducts(): Promise<Product[]> {
   try {
     const { data, error } = await supabase.from("products").select("*");
     if (error) throw error;
     if (data && data.length > 0) {
-      cachedProducts = data.map(enrich);
-      return cachedProducts;
+      return data.map(enrich);
     }
   } catch (err) {
     console.error("Supabase products fetch error, falling back to local JSON", err);
   }
   
   // Fallback to local JSON if Supabase fails
-  if (!cachedProducts) {
-    cachedProducts = (rawProducts as any[]).map(enrich);
-  }
-  return cachedProducts;
+  return (rawProducts as any[]).map(enrich);
 }
 
 export async function getProductByCode(code: string): Promise<Product | undefined> {

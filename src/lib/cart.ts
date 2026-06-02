@@ -3,6 +3,7 @@ export interface CartItem {
   name: string;
   image: string;
   quantity: number;
+  price: number;
 }
 
 export const CART_STORAGE_KEY = "coroacosmica-cart";

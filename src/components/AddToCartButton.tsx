@@ -3,7 +3,7 @@
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/context/CartContext";
 import type { Product } from "@/lib/products";
-import { getProductName, getProductImage } from "@/lib/product-display";
+// removed unused imports
 import type { Locale } from "@/i18n/routing";
 import { clsx } from "clsx";
 
@@ -25,8 +25,9 @@ export default function AddToCartButton({
     e.stopPropagation();
     addItem({
       code: product.code,
-      name: getProductName(product, locale),
-      image: getProductImage(product),
+      name: product.names?.[locale as keyof typeof product.names] || product.description,
+      image: product.image || "/images/placeholder.jpg",
+      price: product.price ?? 0,
     });
   }
 

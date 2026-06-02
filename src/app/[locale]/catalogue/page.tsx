@@ -3,6 +3,8 @@ import { Suspense } from "react";
 import CatalogueClient from "@/components/CatalogueClient";
 import { getAllProducts } from "@/lib/products";
 
+export const dynamic = 'force-dynamic';
+
 export default async function CataloguePage({
   params,
 }: {

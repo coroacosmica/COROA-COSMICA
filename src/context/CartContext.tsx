@@ -42,7 +42,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   }, [items, hydrated]);
 
   const count = useMemo(() => items.reduce((s, i) => s + i.quantity, 0), [items]);
-  const total = useMemo(() => count * BASE_PRICE, [count]);
+  const total = useMemo(() => items.reduce((s, i) => s + ((i.price ?? 0) * i.quantity), 0), [items]);
 
   const addItem = useCallback((item: Omit<CartItem, "quantity">, qty = 1) => {
     setItems((prev) => {

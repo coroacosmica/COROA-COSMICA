@@ -16,6 +16,8 @@ import { buildHeroSlides } from "@/lib/hero-slides";
 import type { Locale } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
+export const dynamic = 'force-dynamic';
+
 export default async function HomePage({
   params,
 }: {

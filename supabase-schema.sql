@@ -42,3 +42,11 @@ CREATE POLICY "Products can be updated by anyone." ON products FOR UPDATE USING 
 
 -- Allow anyone to submit a quote request (but they can't read others' requests)
 CREATE POLICY "Anyone can insert quote requests." ON quote_requests FOR INSERT WITH CHECK (true);
+-- Allow reading quote requests (for admin)
+CREATE POLICY "Quote requests are viewable." ON quote_requests FOR SELECT USING (true);
+-- Allow updating quote requests (for admin status changes)
+CREATE POLICY "Quote requests can be updated." ON quote_requests FOR UPDATE USING (true);
+-- Allow deleting quote requests (for admin)
+CREATE POLICY "Quote requests can be deleted." ON quote_requests FOR DELETE USING (true);
+-- Allow deleting products (for admin)
+CREATE POLICY "Products can be deleted." ON products FOR DELETE USING (true);

@@ -17,6 +17,7 @@ export default function ProductActions({ product }: { product: Product }) {
       code: product.code,
       name: getProductName(product, locale),
       image: getProductImage(product),
+      price: product.price ?? 0,
     });
     openCart();
   }
