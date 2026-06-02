@@ -191,26 +191,37 @@ export default function AdminDashboard({
 
     setUploading(true);
     try {
-      const formData = new FormData();
-      formData.append("file", file);
+      const ext = file.name.split(".").pop() || "jpg";
+      const fileName = `product-${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${ext}`;
 
-      const res = await fetch("/api/admin/upload", {
-        method: "POST",
-        body: formData,
-      });
+      const { error: uploadError } = await supabase.storage
+        .from("product-images")
+        .upload(fileName, file, {
+          cacheControl: "3600",
+          upsert: false,
+        });
 
-      const data = await res.json();
-      if (res.ok && data.url) {
-        setEditing({ ...editing, image: data.url });
+      if (uploadError) throw uploadError;
+
+      const { data: urlData } = supabase.storage
+        .from("product-images")
+        .getPublicUrl(fileName);
+
+      if (urlData?.publicUrl) {
+        setEditing({ ...editing, image: urlData.publicUrl });
         showSuccess("Image uploaded! ✅");
-      } else {
-        alert("Upload failed: " + (data.error || "Unknown error"));
       }
-    } catch (err) {
-      alert("Upload failed. Please try again.");
+    } catch (err: any) {
+      console.error(err);
+      alert("Upload failed: " + (err.message || "Unknown error"));
     } finally {
       setUploading(false);
     }
+  };
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut();
+    window.location.reload();
   };
 
   const showSuccess = (msg: string) => {
@@ -250,6 +261,16 @@ export default function AdminDashboard({
           {successMsg}
         </div>
       )}
+
+      {/* Header Actions */}
+      <div className="mb-4 flex justify-end">
+        <button
+          onClick={handleLogout}
+          className="rounded border border-red-200 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
+        >
+          🚪 Sign Out
+        </button>
+      </div>
 
       {/* Stats */}
       <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4">

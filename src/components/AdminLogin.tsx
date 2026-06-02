@@ -1,38 +1,28 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { supabase } from "@/lib/supabase";
 
 export default function AdminLogin() {
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError("");
 
-    try {
-      const res = await fetch("/api/admin/login", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ password }),
-      });
+    const { error } = await supabase.auth.signInWithPassword({
+      email,
+      password,
+    });
 
-      if (res.ok) {
-        // Refresh the page so the layout reads the new cookie
-        router.refresh();
-      } else {
-        const data = await res.json();
-        setError(data.error || "Login failed");
-      }
-    } catch {
-      setError("Network error");
-    } finally {
-      setLoading(false);
+    if (error) {
+      setError(error.message);
     }
+    setLoading(false);
   };
 
   return (
@@ -44,23 +34,41 @@ export default function AdminLogin() {
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="mb-1 block text-sm font-medium text-neutral-700">
+              Email Address
+            </label>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="w-full rounded border border-neutral-300 px-3 py-2 text-sm focus:border-olive-500 focus:outline-none"
+              placeholder="admin@coroa.com"
+              required
+            />
+          </div>
+          <div>
+            <label className="mb-1 block text-sm font-medium text-neutral-700">
               Password
             </label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="input-field"
+              className="w-full rounded border border-neutral-300 px-3 py-2 text-sm focus:border-olive-500 focus:outline-none"
+              placeholder="••••••••"
               required
             />
           </div>
-          {error && <p className="text-sm text-red-500">{error}</p>}
+          {error && (
+            <div className="rounded bg-red-50 p-3 text-sm text-red-600">
+              {error}
+            </div>
+          )}
           <button
             type="submit"
-            className="btn-primary w-full"
+            className="btn-primary w-full py-2.5"
             disabled={loading}
           >
-            {loading ? "..." : "Login"}
+            {loading ? "Signing in..." : "Sign In"}
           </button>
         </form>
       </div>

@@ -1,16 +1,38 @@
-import { cookies } from "next/headers";
+"use client";
+
+import { useEffect, useState } from "react";
+import { supabase } from "@/lib/supabase";
 import AdminLogin from "@/components/AdminLogin";
 import AdminNavbar from "@/components/AdminNavbar";
 
-export default async function AdminLayout({
+export default function AdminLayout({
   children,
 }: {
   children: React.ReactNode;
 }) {
-  const cookieStore = await cookies();
-  const isAuthenticated = cookieStore.has("admin_session");
+  const [session, setSession] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
 
-  if (!isAuthenticated) {
+  useEffect(() => {
+    supabase.auth.getSession().then(({ data: { session } }) => {
+      setSession(session);
+      setLoading(false);
+    });
+
+    const {
+      data: { subscription },
+    } = supabase.auth.onAuthStateChange((_event, session) => {
+      setSession(session);
+    });
+
+    return () => subscription.unsubscribe();
+  }, []);
+
+  if (loading) {
+    return <div className="flex min-h-screen items-center justify-center">Loading...</div>;
+  }
+
+  if (!session) {
     return <AdminLogin />;
   }
 
