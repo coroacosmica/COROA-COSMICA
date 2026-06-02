@@ -21,6 +21,7 @@ export interface Product {
   featured?: boolean;
   tags?: string[];
   price?: number;
+  prices?: Record<string, number>;
 }
 
 const CATEGORY_ORDER = [

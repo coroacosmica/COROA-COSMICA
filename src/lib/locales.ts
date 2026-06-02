@@ -1,6 +1,6 @@
 import type { Locale } from "@/i18n/routing";
 
-export type CurrencyCode = "EUR" | "USD" | "EGP" | "BRL" | "PLN" | "RON";
+export type CurrencyCode = "EUR" | "USD" | "EGP" | "SAR" | "BRL" | "PLN" | "RON";
 
 export interface LocaleMeta {
   flag: string;
@@ -96,9 +96,17 @@ export const LOCALE_META: Record<Locale, LocaleMeta> = {
     flag: "🇸🇦",
     label: "Arabic",
     nativeName: "العربية",
-    currency: "EGP",
+    currency: "SAR",
     dir: "rtl",
     browserCodes: ["ar"],
+  },
+  "ar-sa": {
+    flag: "🇸🇦",
+    label: "Arabic (Saudi)",
+    nativeName: "العربية (السعودية)",
+    currency: "SAR",
+    dir: "rtl",
+    browserCodes: ["ar-sa"],
   },
   "ar-eg": {
     flag: "🇪🇬",

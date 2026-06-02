@@ -18,6 +18,7 @@ interface EditingProduct {
   catalogue: string;
   is_active?: boolean;
   price: number;
+  prices: { USD: number; EUR: number; EGP: number; SAR: number };
 }
 
 const CATEGORIES = [
@@ -86,6 +87,7 @@ export default function AdminDashboard({
       catalogue: product.catalogue || "",
       is_active: product.is_active !== false,
       price: product.price ?? 0,
+      prices: product.prices || { USD: product.price ?? 0, EUR: 0, EGP: 0, SAR: 0 },
     });
     setAdding(false);
   };
@@ -106,6 +108,7 @@ export default function AdminDashboard({
       catalogue: "",
       is_active: true,
       price: 0,
+      prices: { USD: 0, EUR: 0, EGP: 0, SAR: 0 },
     });
     setAdding(true);
   };
@@ -126,7 +129,8 @@ export default function AdminDashboard({
       includes: editing.includes.filter((i) => i.trim() !== ""),
       tags: editing.tags.filter((t) => t.trim() !== ""),
       catalogue: editing.catalogue,
-      price: editing.price,
+      price: editing.prices.USD || editing.price,
+      prices: editing.prices,
     };
 
     if (adding) {
@@ -476,18 +480,51 @@ export default function AdminDashboard({
                 </select>
               </div>
 
-              {/* Price */}
-              <div>
-                <label className="mb-1 block text-xs font-semibold text-neutral-600">Price</label>
-                <input
-                  type="number"
-                  min="0"
-                  step="0.01"
-                  value={editing.price}
-                  onChange={(e) => setEditing({ ...editing, price: parseFloat(e.target.value) || 0 })}
-                  className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
-                  placeholder="e.g. 19.99"
-                />
+              {/* Multi-Currency Prices */}
+              <div className="md:col-span-2">
+                <label className="mb-2 block text-xs font-semibold text-neutral-600">💰 Prices (per currency)</label>
+                <div className="grid grid-cols-2 gap-3 rounded-lg border border-olive-200 bg-olive-50/50 p-3 md:grid-cols-4">
+                  <div>
+                    <label className="mb-1 block text-[10px] font-bold uppercase text-neutral-500">🇺🇸 USD ($)</label>
+                    <input
+                      type="number" min="0" step="0.01"
+                      value={editing.prices.USD}
+                      onChange={(e) => setEditing({ ...editing, prices: { ...editing.prices, USD: parseFloat(e.target.value) || 0 } })}
+                      className="w-full rounded border border-neutral-300 px-2 py-1.5 text-sm"
+                      placeholder="0.00"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-[10px] font-bold uppercase text-neutral-500">🇪🇺 EUR (€)</label>
+                    <input
+                      type="number" min="0" step="0.01"
+                      value={editing.prices.EUR}
+                      onChange={(e) => setEditing({ ...editing, prices: { ...editing.prices, EUR: parseFloat(e.target.value) || 0 } })}
+                      className="w-full rounded border border-neutral-300 px-2 py-1.5 text-sm"
+                      placeholder="0.00"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-[10px] font-bold uppercase text-neutral-500">🇪🇬 EGP (ج.م)</label>
+                    <input
+                      type="number" min="0" step="0.01"
+                      value={editing.prices.EGP}
+                      onChange={(e) => setEditing({ ...editing, prices: { ...editing.prices, EGP: parseFloat(e.target.value) || 0 } })}
+                      className="w-full rounded border border-neutral-300 px-2 py-1.5 text-sm"
+                      placeholder="0.00"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-[10px] font-bold uppercase text-neutral-500">🇸🇦 SAR (ر.س)</label>
+                    <input
+                      type="number" min="0" step="0.01"
+                      value={editing.prices.SAR}
+                      onChange={(e) => setEditing({ ...editing, prices: { ...editing.prices, SAR: parseFloat(e.target.value) || 0 } })}
+                      className="w-full rounded border border-neutral-300 px-2 py-1.5 text-sm"
+                      placeholder="0.00"
+                    />
+                  </div>
+                </div>
               </div>
 
               {/* Type */}

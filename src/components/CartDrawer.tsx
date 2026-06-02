@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/context/CartContext";
-import { formatPrice, BASE_PRICE } from "@/lib/currency";
+import { formatPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 import { buildCartMessage, whatsappLink, mailtoLink } from "@/lib/checkout";
 import { WHATSAPP_NUMBERS } from "@/lib/brand";

@@ -10,7 +10,7 @@ import ProductLogoViewer from "@/components/ProductLogoViewer";
 import ProductActions from "@/components/ProductActions";
 import { getProductByCode, getRelatedProducts } from "@/lib/products";
 import { getProductName } from "@/lib/product-display";
-import { formatPrice, BASE_PRICE } from "@/lib/currency";
+import { formatProductPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 
 export default async function ProductPage({
@@ -60,7 +60,7 @@ export default async function ProductPage({
             {tc("code")}: {product.code}
           </p>
           <p className="mt-4 text-2xl font-semibold text-olive-700">
-            {formatPrice(product.price ?? 0, loc)}
+            {formatProductPrice(product, loc)}
           </p>
           {product.description && product.description !== displayName && (
             <p className="mt-4 text-neutral-700">{product.description}</p>
