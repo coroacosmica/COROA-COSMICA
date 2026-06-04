@@ -25,6 +25,23 @@ export default function Header() {
     { href: "/contact", label: t("contact") },
   ];
 
+  if (pathname.startsWith("/admin")) {
+    return (
+      <header className="sticky top-0 z-50">
+        <div className="bg-olive-600">
+          <div className="mx-auto flex max-w-shop items-center justify-between px-4 py-3 md:px-6 md:py-3">
+            <Link href="/" className="flex shrink-0 items-center">
+              <BrandLogo height={52} priority />
+            </Link>
+            <div className="flex items-center gap-2 md:gap-4">
+              <LanguageSwitcher />
+            </div>
+          </div>
+        </div>
+      </header>
+    );
+  }
+
   return (
     <header className="sticky top-0 z-50">
       <div className="bg-olive-600 py-1.5 text-center text-[11px] font-medium tracking-wide text-white/90 md:text-xs">
@@ -43,23 +60,27 @@ export default function Header() {
 
             <div className="ms-auto flex items-center gap-2 md:gap-4">
             <LanguageSwitcher />
-            <AuthButton />
-            <button
-              type="button"
-              onClick={toggleCart}
-              className="relative flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-white transition hover:text-accent-orange"
-              aria-label={th("cart")}
-            >
-              <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
-              </svg>
-              {count > 0 && (
-                <span className="absolute -end-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-orange px-1 text-[10px] font-bold text-olive-950">
-                  {count > 99 ? "99+" : count}
-                </span>
-              )}
-              <span className="hidden text-[10px] font-medium uppercase lg:block">{th("cart")}</span>
-            </button>
+            {!pathname.startsWith("/admin") && (
+              <>
+                <AuthButton />
+                <button
+                  type="button"
+                  onClick={toggleCart}
+                  className="relative flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-white transition hover:text-accent-orange"
+                  aria-label={th("cart")}
+                >
+                  <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  {count > 0 && (
+                    <span className="absolute -end-0.5 -top-0.5 flex h-5 min-w-5 items-center justify-center rounded-full bg-accent-orange px-1 text-[10px] font-bold text-olive-950">
+                      {count > 99 ? "99+" : count}
+                    </span>
+                  )}
+                  <span className="hidden text-[10px] font-medium uppercase lg:block">{th("cart")}</span>
+                </button>
+              </>
+            )}
             <button
               type="button"
               className="flex min-h-[44px] min-w-[44px] items-center justify-center rounded p-2 text-white lg:hidden"

@@ -3,6 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import Image from "next/image";
 import { useLocale } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 import { useCart } from "@/context/CartContext";
 import { generateMockup } from "@/lib/logoMockup";
 
@@ -42,6 +43,7 @@ export default function ChatBot() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const pathname = usePathname();
 
   // Auto-scroll to bottom
   useEffect(() => {
@@ -279,6 +281,8 @@ export default function ChatBot() {
       </div>
     );
   };
+
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <>

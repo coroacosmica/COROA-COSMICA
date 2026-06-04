@@ -1,10 +1,14 @@
 "use client";
 
 import { useTranslations } from "next-intl";
+import { usePathname } from "@/i18n/navigation";
 import { whatsappUrl } from "@/lib/utils";
 
 export default function WhatsAppButton() {
   const t = useTranslations("whatsapp");
+  const pathname = usePathname();
+
+  if (pathname.startsWith("/admin")) return null;
 
   return (
     <a
