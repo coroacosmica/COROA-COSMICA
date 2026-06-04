@@ -9,6 +9,7 @@ import { isRtlLocale } from "@/lib/locales";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+import ChatBot from "@/components/ChatBot";
 import CartDrawer from "@/components/CartDrawer";
 import LocaleDetector from "@/components/LocaleDetector";
 import MobileCartBar from "@/components/MobileCartBar";
@@ -31,6 +32,7 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: "meta" });
 
   return {
+    metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://coroacosmica.vercel.app"),
     title: t("title"),
     description: t("description"),
     icons: { icon: LOGO_PATH, apple: LOGO_PATH },
@@ -71,6 +73,7 @@ export default async function LocaleLayout({
             <CartDrawer />
             <MobileCartBar />
             <WhatsAppButton />
+            <ChatBot />
           </CartProvider>
         </NextIntlClientProvider>
       </body>

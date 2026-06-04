@@ -8,6 +8,7 @@ import BrandLogo from "./BrandLogo";
 import HeaderSearch from "./HeaderSearch";
 import StripeBar from "./StripeBar";
 import { useCart } from "@/context/CartContext";
+import AuthButton from "./AuthButton";
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -40,8 +41,9 @@ export default function Header() {
             <HeaderSearch variant="dark" />
           </div>
 
-          <div className="ms-auto flex items-center gap-2 md:gap-4">
+            <div className="ms-auto flex items-center gap-2 md:gap-4">
             <LanguageSwitcher />
+            <AuthButton />
             <button
               type="button"
               onClick={toggleCart}

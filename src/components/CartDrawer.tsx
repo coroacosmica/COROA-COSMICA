@@ -15,6 +15,8 @@ export default function CartDrawer() {
   const locale = useLocale() as Locale;
   const { items, isOpen, closeCart, removeItem, updateQuantity, total, count } = useCart();
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   if (!isOpen) return null;
 
@@ -110,16 +112,72 @@ export default function CartDrawer() {
           )}
         </div>
 
-        {items.length > 0 && (
+        {items.length > 0 && !isSubmitted && (
           <div className="border-t border-olive-200 bg-neutral-50 p-4">
             <div className="mb-4 flex justify-between text-lg font-semibold">
               <span>{t("total")}</span>
               <span className="text-olive-700">{formatPrice(total, locale)}</span>
             </div>
 
-            <p className="mb-2 text-xs font-semibold uppercase tracking-wide text-neutral-500">
-              {t("checkout")}
+            <button
+              type="button"
+              disabled={isSubmitting}
+              onClick={async () => {
+                setIsSubmitting(true);
+                try {
+                  const { createClient } = await import("@/lib/supabase/client");
+                  const supabase = createClient();
+                  const { data: { user } } = await supabase.auth.getUser();
+
+                  if (!user) {
+                    await supabase.auth.signInWithOAuth({
+                      provider: "google",
+                      options: {
+                        redirectTo: `${window.location.origin}/api/auth/callback?next=/`,
+                      },
+                    });
+                    return;
+                  }
+
+                  const res = await fetch("/api/quote", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                      items,
+                      locale,
+                      customer: { name: user.user_metadata?.full_name, email: user.email },
+                    }),
+                  });
+
+                  if (res.ok) {
+                    setIsSubmitted(true);
+                  } else {
+                    alert("Failed to submit order. Please try again.");
+                  }
+                } catch (e) {
+                  console.error(e);
+                  alert("Network error. Please try again.");
+                } finally {
+                  setIsSubmitting(false);
+                }
+              }}
+              className="btn-primary w-full min-h-[44px]"
+            >
+              {isSubmitting ? "Submitting..." : "Submit Order"}
+            </button>
+            <p className="mt-2 text-center text-[10px] text-neutral-500">
+              You will be asked to login with Google if you haven&apos;t already.
             </p>
+          </div>
+        )}
+
+        {isSubmitted && (
+          <div className="border-t border-olive-200 bg-green-50 p-4">
+            <div className="mb-4 text-center">
+              <span className="text-2xl">✅</span>
+              <h3 className="mt-2 text-sm font-bold text-green-800">Order Saved to Dashboard!</h3>
+              <p className="mt-1 text-xs text-green-700">How would you like to send this request to our team?</p>
+            </div>
 
             {showWhatsAppPicker ? (
               <div className="mb-3 space-y-2">
@@ -131,6 +189,7 @@ export default function CartDrawer() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex min-h-[44px] items-center gap-2 rounded bg-[#25D366] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
+                    onClick={closeCart}
                   >
                     📱 {w.label}: {w.number}
                   </a>
@@ -140,24 +199,25 @@ export default function CartDrawer() {
                   className="text-xs text-neutral-500 underline"
                   onClick={() => setShowWhatsAppPicker(false)}
                 >
-                  ←
+                  ← Back
                 </button>
               </div>
             ) : (
               <button
                 type="button"
                 onClick={() => setShowWhatsAppPicker(true)}
-                className="btn-primary mb-2 w-full min-h-[44px] bg-[#25D366] hover:bg-[#20bd5a]"
+                className="btn-primary mb-2 w-full min-h-[44px] bg-[#25D366] hover:bg-[#20bd5a] text-white"
               >
-                📱 {t("whatsapp")}
+                📱 Send via WhatsApp
               </button>
             )}
 
             <a
               href={mailtoLink(tc("emailSubject"), message)}
+              onClick={closeCart}
               className="btn-secondary flex min-h-[44px] w-full items-center justify-center border-olive-600 text-olive-800"
             >
-              📧 {t("email")}
+              📧 Send via Email
             </a>
           </div>
         )}

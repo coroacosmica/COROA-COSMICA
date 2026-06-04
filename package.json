@@ -2,6 +2,9 @@
   "name": "coroacosmica",
   "version": "1.0.0",
   "private": true,
+  "engines": {
+    "node": "22.x"
+  },
   "scripts": {
     "dev": "next dev -H 0.0.0.0",
     "build": "next build",
@@ -11,6 +14,7 @@
     "extract": "python scripts/extract_catalogue.py && python scripts/extract_images_names.py && python scripts/link_all_images.py && python scripts/extract_missing_images.py && python scripts/link_all_images.py && python scripts/assign_category_fallback_images.py"
   },
   "dependencies": {
+    "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.107.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.4.2",

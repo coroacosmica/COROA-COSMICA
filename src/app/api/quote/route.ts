@@ -1,21 +1,24 @@
 import { NextRequest, NextResponse } from "next/server";
-import { supabase } from "@/lib/supabase";
+import { createClient } from "@/lib/supabase/server";
 import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
+    const supabase = await createClient();
+    const { data: { user } } = await supabase.auth.getUser();
     
     // 1. Save to Supabase (Primary)
     const { error } = await supabase.from("quote_requests").insert([{
-      customer_name: body.customer?.name,
-      customer_email: body.customer?.email,
+      customer_name: body.customer?.name || user?.user_metadata?.full_name,
+      customer_email: body.customer?.email || user?.email,
       customer_phone: body.customer?.phone,
       customer_company: body.customer?.company,
       items: body.items,
       message: body.message,
       locale: body.locale || "pt",
+      user_id: user?.id,
     }]);
 
     if (error) {

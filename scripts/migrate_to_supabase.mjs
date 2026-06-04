@@ -34,7 +34,7 @@ async function migrate() {
 
   // Supabase has a limit on how many rows you can insert at once. We'll batch them.
   const BATCH_SIZE = 100;
-  
+
   for (let i = 0; i < products.length; i += BATCH_SIZE) {
     const batch = products.slice(i, i + BATCH_SIZE).map((p) => ({
       code: p.code,
