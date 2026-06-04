@@ -46,6 +46,10 @@ export default function AuthButton() {
     return (
       <div className="relative group">
         <button
+          onClick={(e) => {
+            e.currentTarget.nextElementSibling?.classList.toggle('hidden');
+            e.currentTarget.nextElementSibling?.classList.toggle('flex');
+          }}
           className="flex min-h-[44px] min-w-[44px] items-center justify-center text-white transition hover:text-accent-orange overflow-hidden rounded-full border border-transparent hover:border-white/20 p-1"
           title={user.email}
         >
@@ -59,7 +63,7 @@ export default function AuthButton() {
         </button>
         
         {/* Dropdown menu */}
-        <div className="absolute right-0 top-full mt-2 hidden w-48 flex-col rounded-md bg-white p-1 text-sm shadow-lg ring-1 ring-black ring-opacity-5 group-hover:flex z-50">
+        <div className="absolute right-0 top-full mt-2 hidden w-48 flex-col rounded-md bg-white p-1 text-sm shadow-lg ring-1 ring-black ring-opacity-5 lg:group-hover:flex z-50">
           <Link href="/dashboard" className="rounded px-4 py-2 text-olive-900 hover:bg-olive-50">
             Dashboard
           </Link>
@@ -73,8 +77,9 @@ export default function AuthButton() {
 
   return (
     <button
+      type="button"
       onClick={handleSignIn}
-      className="flex min-h-[44px] flex-col items-center justify-center text-white transition hover:text-accent-orange"
+      className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-white transition hover:text-accent-orange active:scale-95"
       aria-label="Login with Google"
     >
       <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
