@@ -8,8 +8,6 @@ import { Link } from "@/i18n/navigation";
 export default function AuthButton() {
   const [user, setUser] = useState<User | null>(null);
   const [loading, setLoading] = useState(true);
-  const [dropdownOpen, setDropdownOpen] = useState(false);
-  const wrapperRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let mounted = true;
@@ -46,32 +44,14 @@ export default function AuthButton() {
     };
   }, []);
 
-  // Close dropdown when clicking outside
-  useEffect(() => {
-    function handleClickOutside(event: MouseEvent) {
-      if (wrapperRef.current && !wrapperRef.current.contains(event.target as Node)) {
-        setDropdownOpen(false);
-      }
-    }
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   const handleSignIn = async () => {
     const supabase = createClient();
     await supabase.auth.signInWithOAuth({
       provider: "google",
       options: {
-        redirectTo: `${window.location.origin}/api/auth/callback`,
+        redirectTo: `${window.location.origin}/api/auth/callback?next=/?openCart=true`,
       },
     });
-  };
-
-  const handleSignOut = async () => {
-    const supabase = createClient();
-    await supabase.auth.signOut();
-    setUser(null);
-    setDropdownOpen(false);
   };
 
   // Person icon SVG — used in ALL states
@@ -93,36 +73,14 @@ export default function AuthButton() {
   // Logged in state
   if (user) {
     return (
-      <div className="relative" ref={wrapperRef}>
-        <button
-          type="button"
-          onClick={() => setDropdownOpen(!dropdownOpen)}
-          className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-white transition hover:text-accent-orange active:scale-95"
-          title={user.email || "Profile"}
-        >
-          {personIcon}
-          <span className="hidden text-[10px] font-medium uppercase lg:block">Profile</span>
-        </button>
-
-        {dropdownOpen && (
-          <div className="absolute right-0 top-full mt-2 w-48 rounded-md bg-white p-1 text-sm shadow-lg ring-1 ring-black/5 z-[9999]">
-            <Link
-              href="/dashboard"
-              className="block rounded px-4 py-2 text-olive-900 hover:bg-olive-50"
-              onClick={() => setDropdownOpen(false)}
-            >
-              Dashboard
-            </Link>
-            <button
-              type="button"
-              onClick={handleSignOut}
-              className="w-full rounded px-4 py-2 text-left text-red-600 hover:bg-red-50"
-            >
-              Sign out
-            </button>
-          </div>
-        )}
-      </div>
+      <Link
+        href="/dashboard"
+        className="flex min-h-[44px] min-w-[44px] flex-col items-center justify-center text-white transition hover:text-accent-orange active:scale-95"
+        title="Go to Dashboard"
+      >
+        {personIcon}
+        <span className="hidden text-[10px] font-medium uppercase lg:block">Profile</span>
+      </Link>
     );
   }
 

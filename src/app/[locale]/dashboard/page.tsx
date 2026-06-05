@@ -1,6 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
 import { formatPrice } from "@/lib/currency";
+import SignOutButton from "@/components/SignOutButton";
 
 export const metadata = {
   title: "Dashboard | My Orders",
@@ -27,7 +28,10 @@ export default async function DashboardPage({ params }: { params: Promise<{ loca
 
   return (
     <div className="mx-auto max-w-shop px-4 py-12 md:px-6">
-      <h1 className="mb-8 text-3xl font-bold text-olive-900">My Orders</h1>
+      <div className="mb-8 flex items-center justify-between">
+        <h1 className="text-3xl font-bold text-olive-900">My Orders</h1>
+        <SignOutButton />
+      </div>
       
       {!orders || orders.length === 0 ? (
         <div className="rounded-lg border border-olive-100 bg-white p-8 text-center text-neutral-500 shadow-sm">

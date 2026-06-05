@@ -7,16 +7,26 @@ import { formatPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 import { buildCartMessage, whatsappLink, mailtoLink } from "@/lib/checkout";
 import { WHATSAPP_NUMBERS } from "@/lib/brand";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function CartDrawer() {
   const t = useTranslations("cart");
   const tc = useTranslations("checkout");
   const locale = useLocale() as Locale;
-  const { items, isOpen, closeCart, removeItem, updateQuantity, total, count } = useCart();
+  const { items, isOpen, closeCart, openCart, removeItem, updateQuantity, total, count } = useCart();
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && window.location.search.includes("openCart=true")) {
+      openCart();
+      // Remove the parameter from the URL cleanly
+      const url = new URL(window.location.href);
+      url.searchParams.delete("openCart");
+      window.history.replaceState({}, "", url.toString() || "/");
+    }
+  }, [openCart]);
 
   if (!isOpen) return null;
 
@@ -133,7 +143,7 @@ export default function CartDrawer() {
                     await supabase.auth.signInWithOAuth({
                       provider: "google",
                       options: {
-                        redirectTo: `${window.location.origin}/api/auth/callback?next=/`,
+                        redirectTo: `${window.location.origin}/api/auth/callback?next=/?openCart=true`,
                       },
                     });
                     return;
@@ -145,7 +155,7 @@ export default function CartDrawer() {
                     body: JSON.stringify({
                       items,
                       locale,
-                      customer: { name: user.user_metadata?.full_name, email: user.email },
+                      customer: { name: user.user_metadata?.full_name || user.user_metadata?.name || user.email, email: user.email },
                     }),
                   });
 
