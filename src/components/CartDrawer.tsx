@@ -41,6 +41,18 @@ export default function CartDrawer() {
     }
   };
 
+  // Reset states when the drawer closes
+  useEffect(() => {
+    if (!isOpen) {
+      const timer = setTimeout(() => {
+        setIsSubmitted(false);
+        setShowCheckoutForm(false);
+        setIsSubmitting(false);
+      }, 300);
+      return () => clearTimeout(timer);
+    }
+  }, [isOpen]);
+
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.search.includes("openCart=true")) {
       openCart();
@@ -312,7 +324,11 @@ export default function CartDrawer() {
             </p>
             <button
               type="button"
-              onClick={closeCart}
+              onClick={() => {
+                setIsSubmitted(false);
+                setShowCheckoutForm(false);
+                closeCart();
+              }}
               className="btn-primary mt-8 w-full"
             >
               Continue Shopping
