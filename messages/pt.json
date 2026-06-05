@@ -6,6 +6,10 @@
   "header": {
     "announcement": "Entrega mundial · Amostra virtual em 24h · Orçamento sem compromisso",
     "tagline": "Brindes corporativos e publicidade premium",
+    "searchPlaceholder": "Pesquisar produtos...",
+    "search": "Pesquisar",
+    "favorites": "Favoritos",
+    "account": "Contacto",
     "cart": "Carrinho",
     "language": "Idioma"
   },
@@ -21,19 +25,76 @@
     "viewAll": "Ver tudo"
   },
   "nav": {
+    "home": "Início",
     "brands": "Loja",
+    "catalogue": "Catálogo",
+    "vip": "Conjuntos VIP",
+    "cork": "Cortiça & Eco",
+    "virtualSample": "Amostra Virtual",
+    "contact": "Contacto",
     "quote": "Pedir Orçamento"
   },
   "hero": {
     "badge": "Coroa Cósmica · Mundial",
     "title": "Presentes corporativos que impressionam",
     "subtitle": "Conjuntos VIP, produtos em cortiça autêntica e brindes ecológicos personalizados — com mockup digital em 24 horas.",
+    "ctaCatalogue": "Explorar Catálogo",
+    "ctaSample": "Amostra Virtual Grátis",
     "stats": {
-      "delivery": "Entrega mundial"
+      "products": "1000+ produtos",
+      "sets": "Conjuntos VIP",
+      "delivery": "Entrega mundial",
+      "sample": "Amostra em 24h"
     }
+  },
+  "features": {
+    "title": "Porquê Escolher-nos",
+    "cork": {
+      "title": "Cortiça Portuguesa",
+      "desc": "Produtos premium em cortiça autêntica — um material icónico sustentável."
+    },
+    "vip": {
+      "title": "Conjuntos VIP",
+      "desc": "Caixas de presentes com power banks, canetas, cadernos e acessórios premium."
+    },
+    "sample": {
+      "title": "Amostra Virtual em 24h",
+      "desc": "Carregue o seu logótipo e receba um mockup digital do produto antes de encomendar."
+    },
+    "eco": {
+      "title": "Ecológico",
+      "desc": "Materiais sustentáveis valorizados pelas empresas pela sua responsabilidade social."
+    }
+  },
+  "categories": {
+    "title": "Explore o nosso catálogo",
+    "vip-sets": "Conjuntos VIP",
+    "cork-eco": "Cortiça & Eco",
+    "notebooks-premium": "Cadernos Premium",
+    "tech-gifts": "Tecnologia",
+    "business-gifts": "Brindes Executivos",
+    "corporate-sets": "Conjuntos Corporativos",
+    "promotional": "Promocional",
+    "pens-writing": "Canetas",
+    "accessories": "Acessórios",
+    "notebooks-usb": "Cadernos USB",
+    "pens-writing-alt": "Escrita",
+    "seasonal": "Sazonal",
+    "general": "Geral"
   },
   "catalogue": {
     "title": "Catálogo Coroa Cósmica",
+    "search": "Pesquisar por nome, código ou tipo de produto...",
+    "filter": "Categoria",
+    "all": "Tudo",
+    "setsOnly": "Apenas conjuntos",
+    "productsFound": "{count} produtos encontrados",
+    "viewDetails": "Ver detalhes",
+    "requestQuote": "Pedir orçamento",
+    "includes": "O conjunto inclui",
+    "code": "Código",
+    "noResults": "Nenhum produto encontrado.",
+    "itemsInSet": "itens no conjunto",
     "addToCart": "Adicionar ao carrinho",
     "quickView": "Ver rápido",
     "sortBy": "Ordenar por",
@@ -43,11 +104,18 @@
     "sortPopular": "Populares",
     "gridView": "Grelha",
     "listView": "Lista",
+    "priceRange": "Preço",
     "sidebar": "Filtros"
   },
   "product": {
+    "back": "Voltar ao catálogo",
+    "customize": "Personalizar com o seu logótipo",
+    "minOrder": "Quantidade mínima sob consulta",
+    "features": "Características",
+    "related": "Produtos relacionados",
     "addToCart": "Adicionar ao carrinho",
     "buyNow": "Comprar agora",
+    "price": "Preço",
     "seeWithLogo": "Ver com o seu logótipo",
     "uploadLogo": "Carregar o seu logótipo",
     "requestSample": "Pedir amostra com o meu logótipo",
@@ -63,7 +131,8 @@
     "checkout": "Finalizar",
     "whatsapp": "Enviar por WhatsApp",
     "email": "Enviar por e-mail",
-    "selectWhatsApp": "Escolha o número WhatsApp"
+    "selectWhatsApp": "Escolha o número WhatsApp",
+    "quantity": "Qtd"
   },
   "checkout": {
     "greeting": "Olá Coroa Cósmica! 🌟",
@@ -71,6 +140,9 @@
     "total": "Total: {total}",
     "confirm": "Por favor confirmem disponibilidade. Obrigado!",
     "emailSubject": "Pedido — Coroa Cósmica",
+    "sampleIntro": "Gostaria de pedir uma amostra com o meu logótipo:",
+    "product": "Produto",
+    "sampleNote": "Anexei/carreguei o meu logótipo. Por favor confirmem disponibilidade. Obrigado!",
     "proceedToCheckout": "Avançar para o Checkout",
     "formName": "Nome Completo *",
     "formPhone": "Número de Telefone *",
@@ -94,11 +166,50 @@
     "errorNetwork": "Erro de rede. Por favor, tente novamente.",
     "errorFileLarge": "Ficheiro muito grande. Máximo 2MB."
   },
+  "virtualSample": {
+    "title": "Amostra Virtual",
+    "subtitle": "Carregue o seu logótipo e veja como fica no produto — resposta em 24 horas.",
+    "upload": "Carregar logótipo",
+    "dragDrop": "Arraste o ficheiro ou clique para selecionar",
+    "formats": "PNG, JPG ou SVG (máximo 5 MB)",
+    "selectProduct": "Selecione o produto",
+    "company": "Empresa",
+    "email": "E-mail",
+    "phone": "Telefone",
+    "notes": "Notas adicionais",
+    "submit": "Pedir amostra virtual",
+    "preview": "Pré-visualização",
+    "previewHint": "A pré-visualização abaixo é indicativa. A nossa equipa enviará o mockup profissional em 24h.",
+    "success": "Pedido enviado com sucesso! Entraremos em contacto em breve.",
+    "whatsapp": "Ou contacte-nos por WhatsApp"
+  },
   "contact": {
-    "subtitle": "Contacte as nossas equipas no Egipto e em Portugal — respondemos em 24 horas úteis."
+    "title": "Contactos & Orçamentos",
+    "subtitle": "Contacte as nossas equipas no Egipto e em Portugal — respondemos em 24 horas úteis.",
+    "form": {
+      "name": "Nome",
+      "company": "Empresa",
+      "email": "E-mail",
+      "phone": "Telefone",
+      "product": "Código do produto (opcional)",
+      "quantity": "Quantidade estimada",
+      "message": "Mensagem",
+      "submit": "Enviar pedido"
+    },
+    "info": {
+      "title": "Informação",
+      "hours": "Segunda a Sexta: 9:00 - 18:00",
+      "response": "Resposta em 24 horas úteis",
+      "egypt": "Egipto",
+      "portugal": "Portugal"
+    },
+    "success": "Mensagem enviada! Responderemos em breve."
   },
   "footer": {
-    "tagline": "Coroa Cósmica — brindes corporativos e produtos publicitários premium em todo o mundo."
+    "tagline": "Coroa Cósmica — brindes corporativos e produtos publicitários premium em todo o mundo.",
+    "rights": "Todos os direitos reservados.",
+    "privacy": "Privacidade",
+    "terms": "Termos"
   },
   "whatsapp": {
     "message": "Olá! Gostaria de um orçamento para brindes corporativos da Coroa Cósmica."
