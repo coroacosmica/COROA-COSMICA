@@ -4,8 +4,6 @@ import { writeFile, mkdir } from "fs/promises";
 import path from "path";
 import { Resend } from "resend";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
@@ -58,6 +56,7 @@ export async function POST(request: NextRequest) {
     // 3. Send Confirmation Email
     if (process.env.RESEND_API_KEY && body.customer?.email) {
       try {
+        const resend = new Resend(process.env.RESEND_API_KEY);
         await resend.emails.send({
           from: "Coroa Cosmica <onboarding@resend.dev>", // We use onboarding since domain might not be verified yet
           to: [body.customer.email],
