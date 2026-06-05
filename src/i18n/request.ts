@@ -36,14 +36,20 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   const en = (await import("../../messages/en.json")).default as Record<string, unknown>;
   let localeMessages: Record<string, unknown> = {};
+  
+  let fileToLoad = locale;
+  if (locale === "ar-eg") fileToLoad = "ar";
+  if (locale === "pt-br") fileToLoad = "pt";
+  if (locale === "en-us") fileToLoad = "en";
+
   try {
-    localeMessages = (await import(`../../messages/${locale}.json`)).default;
+    localeMessages = (await import(`../../messages/${fileToLoad}.json`)).default;
   } catch {
     /* English only */
   }
 
   const messages =
-    locale === "en" ? en : deepMerge(en, localeMessages);
+    fileToLoad === "en" ? en : deepMerge(en, localeMessages);
 
   return { locale, messages };
 });
