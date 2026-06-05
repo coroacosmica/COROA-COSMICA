@@ -13,7 +13,7 @@ export default function CartDrawer() {
   const t = useTranslations("cart");
   const tc = useTranslations("checkout");
   const locale = useLocale() as Locale;
-  const { items, isOpen, closeCart, openCart, removeItem, updateQuantity, total, count } = useCart();
+  const { items, isOpen, closeCart, openCart, removeItem, updateQuantity, total, count, clearCart } = useCart();
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -186,6 +186,7 @@ export default function CartDrawer() {
 
                     if (res.ok) {
                       setIsSubmitted(true);
+                      clearCart(); // Empty the cart now that it's submitted
                     } else {
                       alert("Failed to submit order. Please try again.");
                     }

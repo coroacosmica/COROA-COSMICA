@@ -8,7 +8,6 @@ import BrandLogo from "./BrandLogo";
 import HeaderSearch from "./HeaderSearch";
 import StripeBar from "./StripeBar";
 import { useCart } from "@/context/CartContext";
-import AuthButton from "./AuthButton";
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -62,7 +61,6 @@ export default function Header() {
             <LanguageSwitcher />
             {!pathname.startsWith("/admin") && (
               <>
-                <AuthButton />
                 <button
                   type="button"
                   onClick={toggleCart}
