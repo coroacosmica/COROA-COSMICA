@@ -170,7 +170,7 @@ export default function CartDrawer() {
                 onClick={() => setShowCheckoutForm(true)}
                 className="btn-primary w-full min-h-[44px]"
               >
-                Proceed to Checkout
+                {tc("proceedToCheckout")}
               </button>
             ) : (
               <form
@@ -200,11 +200,11 @@ export default function CartDrawer() {
                       setIsSubmitted(true);
                       clearCart(); // Empty the cart now that it's submitted
                     } else {
-                      alert("Failed to submit order. Please try again.");
+                      alert(tc("errorFailed"));
                     }
                   } catch (err) {
                     console.error(err);
-                    alert("Network error. Please try again.");
+                    alert(tc("errorNetwork"));
                   } finally {
                     setIsSubmitting(false);
                   }
@@ -213,7 +213,7 @@ export default function CartDrawer() {
               >
                 <input
                   type="text"
-                  placeholder="Full Name *"
+                  placeholder={tc("formName")}
                   required
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
@@ -221,7 +221,7 @@ export default function CartDrawer() {
                 />
                 <input
                   type="tel"
-                  placeholder="Phone Number *"
+                  placeholder={tc("formPhone")}
                   required
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
@@ -229,7 +229,7 @@ export default function CartDrawer() {
                 />
                 <input
                   type="email"
-                  placeholder="Email Address *"
+                  placeholder={tc("formEmail")}
                   required
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
@@ -237,7 +237,7 @@ export default function CartDrawer() {
                 />
                 <input
                   type="text"
-                  placeholder="Location / Address *"
+                  placeholder={tc("formLocation")}
                   required
                   value={formData.location}
                   onChange={(e) => setFormData({ ...formData, location: e.target.value })}
@@ -245,24 +245,24 @@ export default function CartDrawer() {
                 />
                 <input
                   type="text"
-                  placeholder="Company Name (Optional)"
+                  placeholder={tc("formCompany")}
                   value={formData.company}
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="input-field w-full rounded border px-3 py-2 text-sm"
                 />
                 <div>
-                  <label className="mb-1 block text-xs text-neutral-600">Upload Logo (Optional)</label>
+                  <label className="mb-1 block text-xs text-neutral-600">{tc("uploadLogo")}</label>
                   <input
                     type="file"
                     accept="image/*"
                     onChange={handleFileChange}
                     className="w-full text-xs"
                   />
-                  {logoBase64 && <p className="mt-1 text-xs text-green-600">Logo attached ✓</p>}
+                  {logoBase64 && <p className="mt-1 text-xs text-green-600">{tc("logoAttached")}</p>}
                 </div>
                 
                 <div className="rounded bg-white p-3 border border-olive-100">
-                  <p className="mb-2 text-xs font-semibold text-olive-900">Preferred Contact Method *</p>
+                  <p className="mb-2 text-xs font-semibold text-olive-900">{tc("contactMethod")}</p>
                   <div className="flex gap-4 text-sm">
                     <label className="flex items-center gap-2">
                       <input
@@ -272,7 +272,7 @@ export default function CartDrawer() {
                         checked={formData.contactMethod === "whatsapp"}
                         onChange={(e) => setFormData({ ...formData, contactMethod: e.target.value })}
                       />
-                      WhatsApp
+                      {tc("whatsapp")}
                     </label>
                     <label className="flex items-center gap-2">
                       <input
@@ -282,13 +282,13 @@ export default function CartDrawer() {
                         checked={formData.contactMethod === "email"}
                         onChange={(e) => setFormData({ ...formData, contactMethod: e.target.value })}
                       />
-                      Email
+                      {tc("email")}
                     </label>
                   </div>
                 </div>
 
                 <div className="rounded bg-orange-50 p-3 text-xs text-orange-800 border border-orange-100">
-                  <strong>Note:</strong> Shipping fees will be communicated when confirming the order, as it depends on your location.
+                  {tc("shippingNote")}
                 </div>
 
                 <div className="flex gap-2">
@@ -297,14 +297,14 @@ export default function CartDrawer() {
                     onClick={() => setShowCheckoutForm(false)}
                     className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
                   >
-                    Back
+                    {tc("back")}
                   </button>
                   <button
                     type="submit"
                     disabled={isSubmitting}
                     className="btn-primary flex-1 min-h-[44px]"
                   >
-                    {isSubmitting ? "Submitting..." : "Submit Order"}
+                    {isSubmitting ? tc("submitting") : tc("submitOrder")}
                   </button>
                 </div>
               </form>
@@ -315,12 +315,12 @@ export default function CartDrawer() {
         {isSubmitted && (
           <div className="border-t border-olive-200 bg-green-50 p-8 text-center flex-1 flex flex-col items-center justify-center">
             <span className="text-5xl mb-4">✅</span>
-            <h3 className="text-lg font-bold text-green-800">Order Submitted Successfully!</h3>
+            <h3 className="text-lg font-bold text-green-800">{tc("successTitle")}</h3>
             <p className="mt-2 text-sm text-green-700">
-              Thank you, <strong>{formData.name}</strong>. We have received your request.
+              {tc("successMsg1", { name: formData.name })}
             </p>
             <p className="mt-2 text-sm text-green-700">
-              Our team will review your order and contact you shortly via <strong>{formData.contactMethod === "whatsapp" ? "WhatsApp" : "Email"}</strong> to confirm availability and shipping fees.
+              {tc("successMsg2", { method: formData.contactMethod === "whatsapp" ? tc("whatsapp") : tc("email") })}
             </p>
             <button
               type="button"
@@ -331,7 +331,7 @@ export default function CartDrawer() {
               }}
               className="btn-primary mt-8 w-full"
             >
-              Continue Shopping
+              {tc("continueShopping")}
             </button>
           </div>
         )}
