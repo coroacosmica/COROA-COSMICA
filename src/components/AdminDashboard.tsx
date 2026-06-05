@@ -329,7 +329,7 @@ export default function AdminDashboard({
                       {statusBadge(quote.status)}
                     </div>
                     <p className="mt-1 text-sm text-neutral-600">
-                      📧 {quote.customer_email || "—"} &nbsp;|&nbsp; 📱 {quote.customer_phone || "—"} &nbsp;|&nbsp; 🏢 {quote.customer_company || "—"}
+                      📧 {quote.customer_email || "—"} &nbsp;|&nbsp; 📱 {quote.customer_phone || "—"} &nbsp;|&nbsp; 📍 {quote.customer_company || "—"}
                     </p>
                     <p className="mt-1 text-xs text-neutral-400">
                       🕐 {new Date(quote.created_at).toLocaleString()} &nbsp;|&nbsp; 🌐 {quote.locale}
@@ -365,14 +365,24 @@ export default function AdminDashboard({
                   <div className="mt-3">
                     <h4 className="mb-1 text-xs font-semibold text-neutral-500">CART ITEMS</h4>
                     <div className="flex flex-wrap gap-2">
-                      {quote.items.map((item: any, i: number) => (
-                        <span
-                          key={i}
-                          className="rounded-full bg-olive-100 px-3 py-1 text-xs font-medium text-olive-800"
-                        >
-                          {item.name || item.code} × {item.quantity}
-                        </span>
-                      ))}
+                      {quote.items.map((item: any, i: number) => {
+                        if (item.code === "LOGO" && item.logoData) {
+                          return (
+                            <div key={i} className="w-full mt-2">
+                              <p className="text-xs text-neutral-500 mb-1">Attached Logo:</p>
+                              <img src={item.logoData} alt="Logo" className="max-h-24 max-w-xs object-contain border border-neutral-200 rounded p-1 bg-white" />
+                            </div>
+                          );
+                        }
+                        return (
+                          <span
+                            key={i}
+                            className="rounded-full bg-olive-100 px-3 py-1 text-xs font-medium text-olive-800"
+                          >
+                            {item.name || item.code} × {item.quantity}
+                          </span>
+                        );
+                      })}
                     </div>
                   </div>
                 )}

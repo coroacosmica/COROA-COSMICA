@@ -14,6 +14,7 @@
     "extract": "python scripts/extract_catalogue.py && python scripts/extract_images_names.py && python scripts/link_all_images.py && python scripts/extract_missing_images.py && python scripts/link_all_images.py && python scripts/assign_category_fallback_images.py"
   },
   "dependencies": {
+    "@react-email/components": "^1.0.12",
     "@supabase/ssr": "^0.10.3",
     "@supabase/supabase-js": "^2.107.0",
     "clsx": "^2.1.1",
@@ -22,6 +23,7 @@
     "next-intl": "^4.1.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "resend": "^6.12.4",
     "ws": "^8.21.0"
   },
   "devDependencies": {

@@ -17,6 +17,29 @@ export default function CartDrawer() {
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    location: "",
+    company: "",
+    contactMethod: "whatsapp",
+  });
+  const [logoBase64, setLogoBase64] = useState<string | null>(null);
+
+  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 2 * 1024 * 1024) {
+        alert("File too large. Max 2MB.");
+        return;
+      }
+      const reader = new FileReader();
+      reader.onload = (ev) => setLogoBase64(ev.target?.result as string);
+      reader.readAsDataURL(file);
+    }
+  };
 
   useEffect(() => {
     if (typeof window !== "undefined" && window.location.search.includes("openCart=true")) {
@@ -129,106 +152,170 @@ export default function CartDrawer() {
               <span className="text-olive-700">{formatPrice(total, locale)}</span>
             </div>
 
-            <button
-              type="button"
-              disabled={isSubmitting}
-              onClick={async () => {
-                setIsSubmitting(true);
-                try {
-                  const { createClient } = await import("@/lib/supabase/client");
-                  const supabase = createClient();
-                  const { data: { user } } = await supabase.auth.getUser();
-
-                  if (!user) {
-                    await supabase.auth.signInWithOAuth({
-                      provider: "google",
-                      options: {
-                        redirectTo: `${window.location.origin}/api/auth/callback?next=/?openCart=true`,
-                      },
+            {!showCheckoutForm ? (
+              <button
+                type="button"
+                onClick={() => setShowCheckoutForm(true)}
+                className="btn-primary w-full min-h-[44px]"
+              >
+                Proceed to Checkout
+              </button>
+            ) : (
+              <form
+                onSubmit={async (e) => {
+                  e.preventDefault();
+                  setIsSubmitting(true);
+                  try {
+                    const res = await fetch("/api/quote", {
+                      method: "POST",
+                      headers: { "Content-Type": "application/json" },
+                      body: JSON.stringify({
+                        items,
+                        locale,
+                        customer: {
+                          name: formData.name,
+                          email: formData.email,
+                          phone: formData.phone,
+                          company: formData.company,
+                          location: formData.location,
+                        },
+                        contactMethod: formData.contactMethod,
+                        logoBase64,
+                      }),
                     });
-                    return;
-                  }
 
-                  const res = await fetch("/api/quote", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({
-                      items,
-                      locale,
-                      customer: { name: user.user_metadata?.full_name || user.user_metadata?.name || user.email, email: user.email },
-                    }),
-                  });
-
-                  if (res.ok) {
-                    setIsSubmitted(true);
-                  } else {
-                    alert("Failed to submit order. Please try again.");
+                    if (res.ok) {
+                      setIsSubmitted(true);
+                    } else {
+                      alert("Failed to submit order. Please try again.");
+                    }
+                  } catch (err) {
+                    console.error(err);
+                    alert("Network error. Please try again.");
+                  } finally {
+                    setIsSubmitting(false);
                   }
-                } catch (e) {
-                  console.error(e);
-                  alert("Network error. Please try again.");
-                } finally {
-                  setIsSubmitting(false);
-                }
-              }}
-              className="btn-primary w-full min-h-[44px]"
-            >
-              {isSubmitting ? "Submitting..." : "Submit Order"}
-            </button>
-            <p className="mt-2 text-center text-[10px] text-neutral-500">
-              You will be asked to login with Google if you haven&apos;t already.
-            </p>
+                }}
+                className="space-y-4"
+              >
+                <input
+                  type="text"
+                  placeholder="Full Name *"
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm"
+                />
+                <input
+                  type="tel"
+                  placeholder="Phone Number *"
+                  required
+                  value={formData.phone}
+                  onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm"
+                />
+                <input
+                  type="email"
+                  placeholder="Email Address *"
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm"
+                />
+                <input
+                  type="text"
+                  placeholder="Location / Address *"
+                  required
+                  value={formData.location}
+                  onChange={(e) => setFormData({ ...formData, location: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm"
+                />
+                <input
+                  type="text"
+                  placeholder="Company Name (Optional)"
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm"
+                />
+                <div>
+                  <label className="mb-1 block text-xs text-neutral-600">Upload Logo (Optional)</label>
+                  <input
+                    type="file"
+                    accept="image/*"
+                    onChange={handleFileChange}
+                    className="w-full text-xs"
+                  />
+                  {logoBase64 && <p className="mt-1 text-xs text-green-600">Logo attached ✓</p>}
+                </div>
+                
+                <div className="rounded bg-white p-3 border border-olive-100">
+                  <p className="mb-2 text-xs font-semibold text-olive-900">Preferred Contact Method *</p>
+                  <div className="flex gap-4 text-sm">
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        value="whatsapp"
+                        checked={formData.contactMethod === "whatsapp"}
+                        onChange={(e) => setFormData({ ...formData, contactMethod: e.target.value })}
+                      />
+                      WhatsApp
+                    </label>
+                    <label className="flex items-center gap-2">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        value="email"
+                        checked={formData.contactMethod === "email"}
+                        onChange={(e) => setFormData({ ...formData, contactMethod: e.target.value })}
+                      />
+                      Email
+                    </label>
+                  </div>
+                </div>
+
+                <div className="rounded bg-orange-50 p-3 text-xs text-orange-800 border border-orange-100">
+                  <strong>Note:</strong> Shipping fees will be communicated when confirming the order, as it depends on your location.
+                </div>
+
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setShowCheckoutForm(false)}
+                    className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
+                  >
+                    Back
+                  </button>
+                  <button
+                    type="submit"
+                    disabled={isSubmitting}
+                    className="btn-primary flex-1 min-h-[44px]"
+                  >
+                    {isSubmitting ? "Submitting..." : "Submit Order"}
+                  </button>
+                </div>
+              </form>
+            )}
           </div>
         )}
 
         {isSubmitted && (
-          <div className="border-t border-olive-200 bg-green-50 p-4">
-            <div className="mb-4 text-center">
-              <span className="text-2xl">✅</span>
-              <h3 className="mt-2 text-sm font-bold text-green-800">Order Saved to Dashboard!</h3>
-              <p className="mt-1 text-xs text-green-700">How would you like to send this request to our team?</p>
-            </div>
-
-            {showWhatsAppPicker ? (
-              <div className="mb-3 space-y-2">
-                <p className="text-xs text-neutral-600">{t("selectWhatsApp")}</p>
-                {WHATSAPP_NUMBERS.map((w) => (
-                  <a
-                    key={w.number}
-                    href={whatsappLink(w.number, message)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex min-h-[44px] items-center gap-2 rounded bg-[#25D366] px-4 py-2 text-sm font-medium text-white hover:opacity-90"
-                    onClick={closeCart}
-                  >
-                    📱 {w.label}: {w.number}
-                  </a>
-                ))}
-                <button
-                  type="button"
-                  className="text-xs text-neutral-500 underline"
-                  onClick={() => setShowWhatsAppPicker(false)}
-                >
-                  ← Back
-                </button>
-              </div>
-            ) : (
-              <button
-                type="button"
-                onClick={() => setShowWhatsAppPicker(true)}
-                className="btn-primary mb-2 w-full min-h-[44px] bg-[#25D366] hover:bg-[#20bd5a] text-white"
-              >
-                📱 Send via WhatsApp
-              </button>
-            )}
-
-            <a
-              href={mailtoLink(tc("emailSubject"), message)}
+          <div className="border-t border-olive-200 bg-green-50 p-8 text-center flex-1 flex flex-col items-center justify-center">
+            <span className="text-5xl mb-4">✅</span>
+            <h3 className="text-lg font-bold text-green-800">Order Submitted Successfully!</h3>
+            <p className="mt-2 text-sm text-green-700">
+              Thank you, <strong>{formData.name}</strong>. We have received your request.
+            </p>
+            <p className="mt-2 text-sm text-green-700">
+              Our team will review your order and contact you shortly via <strong>{formData.contactMethod === "whatsapp" ? "WhatsApp" : "Email"}</strong> to confirm availability and shipping fees.
+            </p>
+            <button
+              type="button"
               onClick={closeCart}
-              className="btn-secondary flex min-h-[44px] w-full items-center justify-center border-olive-600 text-olive-800"
+              className="btn-primary mt-8 w-full"
             >
-              📧 Send via Email
-            </a>
+              Continue Shopping
+            </button>
           </div>
         )}
       </aside>
