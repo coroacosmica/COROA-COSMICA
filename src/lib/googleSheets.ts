@@ -9,8 +9,17 @@ export const SHEET_IDS: Record<Region, string> = {
   saudi: process.env.SHEET_ID_SAUDI || "191hZdeaYXDGVeqMq6vy0CGzg9_6HMr7bWfmpDsRLhgs",
 };
 
-const TAB_NAME = "Sheet20";
 const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+
+// Helper to get the first sheet name dynamically
+async function getTabName(sheets: any, spreadsheetId: string) {
+  try {
+    const res = await sheets.spreadsheets.get({ spreadsheetId });
+    return res.data.sheets?.[0]?.properties?.title || "Sheet20";
+  } catch (e) {
+    return "Sheet20";
+  }
+}
 
 // Helper to check if mock mode is active
 export const isMockMode = () => !process.env.GOOGLE_SERVICE_ACCOUNT_JSON;
@@ -42,9 +51,10 @@ export async function getOrders(region: Region) {
   const spreadsheetId = SHEET_IDS[region];
 
   try {
+    const tabName = await getTabName(sheets, spreadsheetId);
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: `${TAB_NAME}!A2:M`, // Assuming row 1 is headers
+      range: `${tabName}!A2:M`, // Assuming row 1 is headers
     });
     const rows = response.data.values || [];
     return rows.map((row, index) => ({
@@ -104,9 +114,10 @@ export async function addOrder(region: Region, orderData: any) {
   ];
 
   try {
+    const tabName = await getTabName(sheets, spreadsheetId);
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${TAB_NAME}!A:M`,
+      range: `${tabName}!A:M`,
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [values] },
     });
@@ -132,9 +143,10 @@ export async function updateCell(region: Region, rowIndex: number, colLetter: st
   const spreadsheetId = SHEET_IDS[region];
 
   try {
+    const tabName = await getTabName(sheets, spreadsheetId);
     await sheets.spreadsheets.values.update({
       spreadsheetId,
-      range: `${TAB_NAME}!${colLetter}${rowIndex}`,
+      range: `${tabName}!${colLetter}${rowIndex}`,
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [[value]] },
     });
@@ -155,11 +167,12 @@ export async function deleteOrder(region: Region, rowIndex: number) {
   const spreadsheetId = SHEET_IDS[region];
 
   try {
+    const tabName = await getTabName(sheets, spreadsheetId);
     // Note: To delete a row properly via Sheets API, we need the sheetId (not spreadsheetId) and batchUpdate.
     // For simplicity, we just clear the row so it doesn't break formulas.
     await sheets.spreadsheets.values.clear({
       spreadsheetId,
-      range: `${TAB_NAME}!A${rowIndex}:M${rowIndex}`,
+      range: `${tabName}!A${rowIndex}:M${rowIndex}`,
     });
     return true;
   } catch (error) {
