@@ -1,7 +1,7 @@
 export const BRAND_NAME = "Coroa Cósmica Advertising Agency";
 export const BRAND_SHORT = "Coroa Cósmica";
 export const LOGO_PATH = "/images/coroacosmica-logo.png";
-export const CONTACT_EMAIL = "coroacosmica101@gmail.com";
+export const CONTACT_EMAIL = "coroa.cosmica@gmail.com";
 export const BRAND_BG = "#6B7355";
 
 export const WHATSAPP_NUMBERS = [
