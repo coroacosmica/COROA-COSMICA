@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import MultiRegionTracker from "./MultiRegionTracker";
 
 interface EditingProduct {
   id: number;
@@ -310,6 +311,14 @@ export default function AdminDashboard({
         >
           📦 Products ({products.length})
         </button>
+        <button
+          onClick={() => setActiveTab("tracker" as any)}
+          className={`pb-2 text-lg font-medium ${
+            activeTab === "tracker" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
+          }`}
+        >
+          📊 Order Tracking
+        </button>
       </div>
 
       {/* ═══════════ QUOTES TAB ═══════════ */}
@@ -470,6 +479,9 @@ export default function AdminDashboard({
           </div>
         </div>
       )}
+
+      {/* ═══════════ TRACKER TAB ═══════════ */}
+      {activeTab === "tracker" && <MultiRegionTracker />}
 
       {/* ═══════════ EDIT / ADD MODAL ═══════════ */}
       {editing && (

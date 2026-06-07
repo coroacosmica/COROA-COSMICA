@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useTranslations, useLocale } from "next-intl";
 import type { Product } from "@/lib/products";
 import { getProductName } from "@/lib/product-display";
-import { formatPrice } from "@/lib/currency";
+import { useCurrency } from "@/context/CurrencyContext";
 import { useCart } from "@/context/CartContext";
 import type { Locale } from "@/i18n/routing";
 import Image from "next/image";
@@ -20,6 +20,7 @@ export default function BoxBuilder({
   const t = useTranslations("product");
   const locale = useLocale() as Locale;
   const { addItem, openCart } = useCart();
+  const currencyState = useCurrency();
   
   // State: selected quantities per product code
   const [selections, setSelections] = useState<Record<string, number>>({});
@@ -126,7 +127,7 @@ export default function BoxBuilder({
                     {ipName}
                   </span>
                   <span className="text-xs font-semibold text-olive-700">
-                    +{formatPrice(ip.price ?? 0, locale)}
+                    +{currencyState.formatPrice(ip.price ?? 0)}
                   </span>
                 </div>
               </div>
@@ -158,7 +159,7 @@ export default function BoxBuilder({
       <div className="mt-6 pt-6 border-t border-olive-200 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <p className="text-sm text-neutral-500">Total Price</p>
-          <p className="text-2xl font-bold text-olive-800">{formatPrice(totalPrice, locale)}</p>
+          <p className="text-2xl font-bold text-olive-800">{currencyState.formatPrice(totalPrice)}</p>
         </div>
         <button 
           onClick={handleAddToCart}

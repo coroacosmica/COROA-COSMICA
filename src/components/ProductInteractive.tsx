@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useState } from "react";
 import type { Product } from "@/lib/products";
 import { getProductName } from "@/lib/product-display";
-import { formatProductPrice } from "@/lib/currency";
+import { useCurrency } from "@/context/CurrencyContext";
 import type { Locale } from "@/i18n/routing";
 import ProductImage from "./ProductImage";
 import ProductActions from "./ProductActions";
@@ -23,6 +23,7 @@ export default function ProductInteractive({
   const tCat = useTranslations("categories");
   const locale = useLocale() as Locale;
   const displayName = getProductName(product, locale);
+  const { formatProductPrice } = useCurrency();
 
   const [selectedColor, setSelectedColor] = useState<string | undefined>(
     product.variants?.[0]?.color
@@ -55,7 +56,7 @@ export default function ProductInteractive({
           {tc("code")}: {product.code}
         </p>
         <p className="mt-4 text-2xl font-semibold text-olive-700">
-          {formatProductPrice(product, locale)}
+          {formatProductPrice(product)}
         </p>
         {product.description && product.description !== displayName && (
           <p className="mt-4 text-neutral-700">{product.description}</p>

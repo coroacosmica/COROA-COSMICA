@@ -12,6 +12,7 @@ import AddToCartButton from "./AddToCartButton";
 import { clsx } from "clsx";
 import { useState } from "react";
 import QuickViewModal from "./QuickViewModal";
+import { useCurrency } from "@/context/CurrencyContext";
 
 export default function ProductCard({
   product,
@@ -25,6 +26,7 @@ export default function ProductCard({
   const tc = useTranslations("categories");
   const tcat = useTranslations("catalogue");
   const locale = useLocale() as Locale;
+  const { formatProductPrice } = useCurrency();
   const categoryLabel = tc(product.category as "vip-sets");
   const displayName = getProductName(product, locale);
   const returnParam = catalogueReturnTo
@@ -53,7 +55,7 @@ export default function ProductCard({
             </Link>
             <p className="mt-1 text-xs uppercase tracking-wider text-olive-600">{categoryLabel}</p>
             <p className="mt-2 text-lg font-semibold text-olive-700">
-              {formatProductPrice(product, locale)}
+              {formatProductPrice(product)}
             </p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -89,7 +91,7 @@ export default function ProductCard({
           <Link href={`/product/${slugifyCode(product.code)}${returnParam}`}>
             <h3 className="line-clamp-2 text-sm font-medium text-neutral-900">{displayName}</h3>
           </Link>
-          <p className="mt-1 text-lg font-semibold text-olive-700">{formatProductPrice(product, locale)}</p>
+          <p className="mt-1 text-lg font-semibold text-olive-700">{formatProductPrice(product)}</p>
           <div className={clsx("mt-3 flex flex-col gap-2")}>
             <AddToCartButton product={product} variant="compact" />
             <button

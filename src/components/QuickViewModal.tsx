@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import { useState, useEffect } from "react";
 import type { Product } from "@/lib/products";
 import { getProductName } from "@/lib/product-display";
-import { formatProductPrice } from "@/lib/currency";
+import { useCurrency } from "@/context/CurrencyContext";
 import type { Locale } from "@/i18n/routing";
 import ProductImage from "./ProductImage";
 import AddToCartButton from "./AddToCartButton";
@@ -20,6 +20,7 @@ export default function QuickViewModal({ product, isOpen, onClose }: QuickViewMo
   const t = useTranslations("catalogue");
   const tc = useTranslations("categories");
   const locale = useLocale() as Locale;
+  const { formatProductPrice } = useCurrency();
   
   const [selectedColor, setSelectedColor] = useState<string | undefined>(
     product.variants?.[0]?.color
@@ -80,7 +81,7 @@ export default function QuickViewModal({ product, isOpen, onClose }: QuickViewMo
               {displayName}
             </h2>
             <p className="mt-4 text-2xl font-semibold text-olive-700">
-              {formatProductPrice(product, locale)}
+              {formatProductPrice(product)}
             </p>
             
             <div className="mt-4 text-sm text-neutral-600 line-clamp-3">

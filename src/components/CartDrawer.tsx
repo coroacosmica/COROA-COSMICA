@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { formatPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 import { buildCartMessage, whatsappLink, mailtoLink } from "@/lib/checkout";
@@ -15,6 +16,7 @@ export default function CartDrawer() {
   const tc = useTranslations("checkout");
   const locale = useLocale() as Locale;
   const { items, isOpen, closeCart, openCart, removeItem, updateQuantity, total, count, clearCart } = useCart();
+  const currencyState = useCurrency();
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState<"cart" | "branding" | "checkout" | "success">("cart");
@@ -136,7 +138,7 @@ export default function CartDrawer() {
                     <p className="truncate text-sm font-medium text-neutral-900">{item.name}</p>
                     <p className="text-xs text-neutral-500">{item.code}</p>
                     <p className="mt-1 text-sm font-semibold text-olive-700">
-                      {formatPrice(item.quantity * (item.price ?? 0), locale)}
+                      {currencyState.formatPrice(item.quantity * (item.price ?? 0))}
                     </p>
                     <div className="mt-2 flex items-center gap-2">
                       <button
@@ -175,7 +177,7 @@ export default function CartDrawer() {
           <div className="border-t border-olive-200 bg-neutral-50 p-4">
             <div className="mb-4 flex justify-between text-lg font-semibold">
               <span>{t("total")}</span>
-              <span className="text-olive-700">{formatPrice(total, locale)}</span>
+              <span className="text-olive-700">{currencyState.formatPrice(total)}</span>
             </div>
 
             {step === "cart" && (
@@ -310,6 +312,11 @@ export default function CartDrawer() {
                       body: JSON.stringify({
                         items: processedItems,
                         locale,
+                        currencyInfo: {
+                          currency: currencyState.currency,
+                          region: currencyState.region,
+                          totalAmount: currencyState.convertPrice(total),
+                        },
                         customer: {
                           name: formData.name,
                           email: formData.email,

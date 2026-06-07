@@ -1,7 +1,7 @@
 import { createClient } from "@/lib/supabase/server";
 import { redirect } from "next/navigation";
-import { formatPrice } from "@/lib/currency";
 import SignOutButton from "@/components/SignOutButton";
+import PriceDisplay from "@/components/PriceDisplay";
 
 export const metadata = {
   title: "Dashboard | My Orders",
@@ -75,7 +75,7 @@ export default async function DashboardPage({ params }: { params: Promise<{ loca
                         <div>
                           <div className="flex justify-between text-base font-medium text-olive-900">
                             <h3>{item.name}</h3>
-                            <p className="ml-4">{formatPrice(item.price * item.quantity, locale)}</p>
+                            <p className="ml-4"><PriceDisplay amount={item.price * item.quantity} /></p>
                           </div>
                           <p className="mt-1 text-sm text-neutral-500">{item.code}</p>
                         </div>

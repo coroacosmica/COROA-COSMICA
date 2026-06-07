@@ -14,6 +14,7 @@ import CartDrawer from "@/components/CartDrawer";
 import LocaleDetector from "@/components/LocaleDetector";
 import MobileCartBar from "@/components/MobileCartBar";
 import { CartProvider } from "@/context/CartContext";
+import { CurrencyProvider } from "@/context/CurrencyContext";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -65,16 +66,18 @@ export default async function LocaleLayout({
         className={`${inter.variable} ${cairo.variable} min-h-screen bg-white font-sans antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <CartProvider>
-            <LocaleDetector />
-            <Header />
-            <main className="min-h-[50vh]">{children}</main>
-            <Footer />
-            <CartDrawer />
-            <MobileCartBar />
-            <WhatsAppButton />
-            <ChatBot />
-          </CartProvider>
+          <CurrencyProvider>
+            <CartProvider>
+              <LocaleDetector />
+              <Header />
+              <main className="min-h-[50vh]">{children}</main>
+              <Footer />
+              <CartDrawer />
+              <MobileCartBar />
+              <WhatsAppButton />
+              <ChatBot />
+            </CartProvider>
+          </CurrencyProvider>
         </NextIntlClientProvider>
       </body>
     </html>

@@ -49,6 +49,22 @@ export async function POST(request: NextRequest) {
       console.error("Supabase insert error:", error);
     }
 
+    // 1.5 Auto-Sync to Google Sheets Admin Tracker
+    if (body.currencyInfo?.region) {
+      try {
+        const { addOrder } = await import("@/lib/googleSheets");
+        await addOrder(body.currencyInfo.region, {
+          orderNumber: `ORD-${Date.now().toString().slice(-6)}`,
+          poNumber: body.customer?.company ? `PO-${body.customer.company.substring(0, 3).toUpperCase()}` : "",
+          expectedDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split("T")[0], // 14 days from now
+          amount: body.currencyInfo.totalAmount,
+          currency: body.currencyInfo.currency,
+        });
+      } catch (sheetsError) {
+        console.error("Failed to auto-sync to Google Sheets:", sheetsError);
+      }
+    }
+
     // 2. Save to file system as backup (for local development fallback)
     try {
       const dataDir =

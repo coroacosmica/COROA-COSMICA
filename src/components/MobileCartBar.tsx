@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl";
 import { useLocale } from "next-intl";
 import { usePathname } from "@/i18n/navigation";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import { formatPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 
@@ -12,6 +13,7 @@ export default function MobileCartBar() {
   const locale = useLocale() as Locale;
   const pathname = usePathname();
   const { count, total, openCart } = useCart();
+  const currencyState = useCurrency();
 
   if (pathname.startsWith("/admin") || count === 0) return null;
 
@@ -22,7 +24,7 @@ export default function MobileCartBar() {
         onClick={openCart}
         className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded bg-olive-600 px-4 text-sm font-semibold text-white"
       >
-        {t("title")} ({count}) — {formatPrice(total, locale)}
+        {t("title")} ({count}) — {currencyState.formatPrice(total)}
       </button>
     </div>
   );
