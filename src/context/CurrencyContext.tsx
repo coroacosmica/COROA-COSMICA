@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
+import { useLocale } from "next-intl";
 
 export type CurrencyCode = "USD" | "EGP" | "EUR" | "SAR" | "AED";
 export type RegionCode = "usa" | "egypt" | "europe" | "saudi";
@@ -39,6 +40,7 @@ const EU_COUNTRIES = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR
 const GULF_COUNTRIES = ["QA", "KW", "BH", "OM"];
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
+  const locale = useLocale();
   const [state, setState] = useState<{ currency: CurrencyCode; symbol: string; region: RegionCode; isLoading: boolean }>({
     currency: "USD",
     symbol: "$",
@@ -112,22 +114,32 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     return Number((amountInUSD * rate).toFixed(2));
   };
 
+  // Get dynamic symbol based on language and currency
+  const getDynamicSymbol = (curr: CurrencyCode) => {
+    if (curr === "EGP") return locale === "ar" ? "ج.م" : "EGP";
+    if (curr === "SAR") return locale === "ar" ? "ر.س" : "SAR";
+    if (curr === "AED") return locale === "ar" ? "د.إ" : "AED";
+    return state.symbol; // Default to the originally detected symbol for USD/EUR
+  };
+
   const formatPrice = (amountInUSD: number) => {
     const converted = convertPrice(amountInUSD);
+    const sym = getDynamicSymbol(state.currency);
     // Format based on currency
     if (state.currency === "EGP" || state.currency === "SAR" || state.currency === "AED") {
-      return `${converted.toLocaleString("en-US")} ${state.symbol}`;
+      return `${converted.toLocaleString("en-US")} ${sym}`;
     }
-    return `${state.symbol}${converted.toLocaleString("en-US")}`;
+    return `${sym}${converted.toLocaleString("en-US")}`;
   };
 
   const formatProductPrice = (product: { price?: number; prices?: Record<string, number> }) => {
+    const sym = getDynamicSymbol(state.currency);
     if (product.prices && typeof product.prices[state.currency] === "number" && product.prices[state.currency] > 0) {
       const explicitPrice = product.prices[state.currency];
       if (state.currency === "EGP" || state.currency === "SAR" || state.currency === "AED") {
-        return `${explicitPrice.toLocaleString("en-US")} ${state.symbol}`;
+        return `${explicitPrice.toLocaleString("en-US")} ${sym}`;
       }
-      return `${state.symbol}${explicitPrice.toLocaleString("en-US")}`;
+      return `${sym}${explicitPrice.toLocaleString("en-US")}`;
     }
     return formatPrice(product.price ?? 0);
   };
