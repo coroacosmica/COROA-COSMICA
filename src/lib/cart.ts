@@ -6,6 +6,10 @@ export interface CartItem {
   price: number;
   color?: string;
   bundleItems?: { code: string; name: string; quantity: number }[];
+  customDesign?: {
+    pngDataUrl: string;
+    stateJson: string;
+  };
 }
 
 export const CART_STORAGE_KEY = "coroacosmica-cart";

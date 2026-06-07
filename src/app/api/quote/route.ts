@@ -74,13 +74,17 @@ export async function POST(request: NextRequest) {
         await resend.emails.send({
           from: "Coroa Cosmica <onboarding@resend.dev>", // We use onboarding since domain might not be verified yet
           to: [body.customer.email],
+          bcc: ["coroa.cosmica@gmail.com"],
           subject: "Order Confirmation - Coroa Cosmica",
           html: `
             <h2>Thank you for your order, ${body.customer.name}!</h2>
             <p>We have received your request and will contact you shortly via <strong>${body.contactMethod === "whatsapp" ? "WhatsApp" : "Email"}</strong> to confirm availability and shipping fees to ${body.customer.location}.</p>
             <h3>Order Summary:</h3>
             <ul>
-              ${body.items?.map((item: any) => `<li>${item.quantity}x ${item.name || item.code}</li>`).join('')}
+              ${body.items?.map((item: any) => `<li>
+                ${item.quantity}x ${item.name || item.code}
+                ${item.customDesign?.pngDataUrl ? `<br><a href="${item.customDesign.pngDataUrl}" target="_blank">View Custom Design</a>` : ''}
+              </li>`).join('')}
             </ul>
             ${body.branding ? `
             <h3>Branding Details:</h3>

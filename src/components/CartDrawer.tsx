@@ -115,14 +115,22 @@ export default function CartDrawer() {
                   className="flex gap-3 border border-olive-100 bg-white p-3"
                 >
                   <div className="relative h-20 w-20 shrink-0 bg-neutral-50">
-                    <Image
-                      src={item.image}
-                      alt={item.name}
-                      fill
-                      className="object-contain p-1"
-                      sizes="80px"
-                      quality={95}
-                    />
+                    {item.customDesign ? (
+                      <img
+                        src={item.customDesign.pngDataUrl}
+                        alt={item.name}
+                        className="object-contain p-1 h-full w-full"
+                      />
+                    ) : (
+                      <Image
+                        src={item.image}
+                        alt={item.name}
+                        fill
+                        className="object-contain p-1"
+                        sizes="80px"
+                        quality={95}
+                      />
+                    )}
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate text-sm font-medium text-neutral-900">{item.name}</p>
@@ -220,7 +228,7 @@ export default function CartDrawer() {
                   <span className="text-sm text-neutral-700">
                     I want a virtual sample before production
                     <br />
-                    <span className="text-xs text-neutral-500">We'll send you a mockup within 24h before proceeding</span>
+                    <span className="text-xs text-neutral-500">We&apos;ll send you a mockup within 24h before proceeding</span>
                   </span>
                 </label>
 
@@ -269,11 +277,38 @@ export default function CartDrawer() {
                       }
                     }
 
+                    const supabaseClient = createClient();
+                    const processedItems = await Promise.all(items.map(async (item) => {
+                      if (item.customDesign?.pngDataUrl.startsWith("data:image")) {
+                        try {
+                          const res = await fetch(item.customDesign.pngDataUrl);
+                          const blob = await res.blob();
+                          const fileName = `design-${Date.now()}-${Math.random().toString(36).substring(7)}.png`;
+                          const { data, error } = await supabaseClient.storage.from('branding').upload(fileName, blob);
+                          if (error || !data) {
+                            throw new Error("Supabase upload failed");
+                          }
+                          const { data: publicUrlData } = supabaseClient.storage.from('branding').getPublicUrl(data.path);
+                          // Strip out stateJson to save payload size for the Vercel API
+                          return { 
+                            ...item, 
+                            customDesign: { 
+                              pngDataUrl: publicUrlData.publicUrl 
+                            } 
+                          };
+                        } catch (e) {
+                          console.error("Failed to upload custom design", e);
+                          throw new Error("Failed to process custom design images. Please check your connection or contact support.");
+                        }
+                      }
+                      return item;
+                    }));
+
                     const res = await fetch("/api/quote", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
                       body: JSON.stringify({
-                        items,
+                        items: processedItems,
                         locale,
                         customer: {
                           name: formData.name,
