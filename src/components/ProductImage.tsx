@@ -8,6 +8,7 @@ type Props = {
   priority?: boolean;
   sizes?: string;
   loading?: "lazy" | "eager";
+  overrideImage?: string;
 };
 
 export default function ProductImage({
@@ -16,9 +17,10 @@ export default function ProductImage({
   priority = false,
   sizes = "(max-width: 768px) 50vw, 25vw",
   loading,
+  overrideImage,
 }: Props) {
-  const src = getProductImage(product);
-  const isPlaceholder = !product.image;
+  const src = overrideImage || getProductImage(product);
+  const isPlaceholder = !overrideImage && !product.image;
 
   return (
     <Image

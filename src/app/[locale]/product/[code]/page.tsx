@@ -5,12 +5,10 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import ProductCard from "@/components/ProductCard";
 import ProductBackLink from "@/components/ProductBackLink";
-import ProductImage from "@/components/ProductImage";
 import ProductLogoViewer from "@/components/ProductLogoViewer";
-import ProductActions from "@/components/ProductActions";
-import { getProductByCode, getRelatedProducts } from "@/lib/products";
+import ProductInteractive from "@/components/ProductInteractive";
+import { getProductByCode, getRelatedProducts, getAllProducts } from "@/lib/products";
 import { getProductName } from "@/lib/product-display";
-import { formatProductPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 
 export default async function ProductPage({
@@ -28,6 +26,9 @@ export default async function ProductPage({
   if (!product) notFound();
 
   const related = await getRelatedProducts(product);
+  const allProducts = await getAllProducts();
+  const individualProducts = allProducts.filter(p => p.type !== 'set' && (!p.includes || p.includes.length === 0));
+
   const displayName = getProductName(product, locale as Locale);
   const loc = locale as Locale;
 
@@ -37,52 +38,10 @@ export default async function ProductPage({
         <ProductBackLink />
       </Suspense>
 
-      <div className="mt-8 grid gap-10 lg:grid-cols-2">
-        <div className="space-y-4">
-          <div className="group relative aspect-square min-h-[320px] overflow-hidden border border-olive-200 bg-neutral-50 lg:min-h-[480px]">
-            <ProductImage
-              product={product}
-              priority
-              className="image-zoom object-contain p-4 md:p-8"
-              sizes="(max-width: 1024px) 100vw, 800px"
-            />
-          </div>
-        </div>
-
-        <div>
-          <p className="text-xs font-semibold uppercase tracking-wider text-olive-600">
-            {tCat((product.category || "general") as any)}
-          </p>
-          <h1 className="mt-2 font-display text-3xl font-light text-olive-950 md:text-4xl">
-            {displayName}
-          </h1>
-          <p className="mt-2 text-sm text-neutral-500">
-            {tc("code")}: {product.code}
-          </p>
-          <p className="mt-4 text-2xl font-semibold text-olive-700">
-            {formatProductPrice(product, loc)}
-          </p>
-          {product.description && product.description !== displayName && (
-            <p className="mt-4 text-neutral-700">{product.description}</p>
-          )}
-          <p className="mt-2 text-sm text-neutral-500">{t("minOrder")}</p>
-
-          {product.includes.length > 0 && (
-            <div className="mt-6 card border-olive-200 p-5">
-              <h2 className="font-semibold text-olive-900">{tc("includes")}:</h2>
-              <ul className="mt-3 space-y-1.5">
-                {product.includes.map((item) => (
-                  <li key={item} className="flex items-center gap-2 text-sm text-neutral-700">
-                    <span className="text-accent-green">✓</span> {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          )}
-
-          <ProductActions product={product} />
-        </div>
-      </div>
+      <ProductInteractive 
+        product={product} 
+        individualProducts={individualProducts} 
+      />
 
       <ProductLogoViewer product={product} productName={displayName} />
 

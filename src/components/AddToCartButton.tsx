@@ -11,10 +11,12 @@ export default function AddToCartButton({
   product,
   className,
   variant = "primary",
+  color,
 }: {
   product: Product;
   className?: string;
   variant?: "primary" | "secondary" | "compact";
+  color?: string;
 }) {
   const t = useTranslations("catalogue");
   const locale = useLocale() as Locale;
@@ -28,6 +30,7 @@ export default function AddToCartButton({
       name: product.names?.[locale as keyof typeof product.names] || product.description,
       image: product.image || "/images/placeholder.jpg",
       price: product.price ?? 0,
+      color,
     });
   }
 

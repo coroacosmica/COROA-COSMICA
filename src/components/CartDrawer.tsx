@@ -8,6 +8,7 @@ import type { Locale } from "@/i18n/routing";
 import { buildCartMessage, whatsappLink, mailtoLink } from "@/lib/checkout";
 import { WHATSAPP_NUMBERS } from "@/lib/brand";
 import { useState, useEffect } from "react";
+import { createClient } from "@/lib/supabase/client";
 
 export default function CartDrawer() {
   const t = useTranslations("cart");
@@ -16,8 +17,7 @@ export default function CartDrawer() {
   const { items, isOpen, closeCart, openCart, removeItem, updateQuantity, total, count, clearCart } = useCart();
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [showCheckoutForm, setShowCheckoutForm] = useState(false);
+  const [step, setStep] = useState<"cart" | "branding" | "checkout" | "success">("cart");
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -26,15 +26,22 @@ export default function CartDrawer() {
     company: "",
     contactMethod: "whatsapp",
   });
+  const [brandingData, setBrandingData] = useState({
+    notes: "",
+    color: "",
+    requestSample: false,
+  });
+  const [brandingFile, setBrandingFile] = useState<File | null>(null);
   const [logoBase64, setLogoBase64] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
-      if (file.size > 2 * 1024 * 1024) {
-        alert("File too large. Max 2MB.");
+      if (file.size > 10 * 1024 * 1024) {
+        alert("File too large. Max 10MB.");
         return;
       }
+      setBrandingFile(file);
       const reader = new FileReader();
       reader.onload = (ev) => setLogoBase64(ev.target?.result as string);
       reader.readAsDataURL(file);
@@ -45,8 +52,7 @@ export default function CartDrawer() {
   useEffect(() => {
     if (!isOpen) {
       const timer = setTimeout(() => {
-        setIsSubmitted(false);
-        setShowCheckoutForm(false);
+        setStep("cart");
         setIsSubmitting(false);
       }, 300);
       return () => clearTimeout(timer);
@@ -157,27 +163,112 @@ export default function CartDrawer() {
           )}
         </div>
 
-        {items.length > 0 && !isSubmitted && (
+        {items.length > 0 && step !== "success" && (
           <div className="border-t border-olive-200 bg-neutral-50 p-4">
             <div className="mb-4 flex justify-between text-lg font-semibold">
               <span>{t("total")}</span>
               <span className="text-olive-700">{formatPrice(total, locale)}</span>
             </div>
 
-            {!showCheckoutForm ? (
+            {step === "cart" && (
               <button
                 type="button"
-                onClick={() => setShowCheckoutForm(true)}
+                onClick={() => setStep("branding")}
                 className="btn-primary w-full min-h-[44px]"
               >
-                {tc("proceedToCheckout")}
+                Proceed to Branding
               </button>
-            ) : (
+            )}
+
+            {step === "branding" && (
+              <div className="space-y-4">
+                <h3 className="font-semibold text-neutral-900">Add Your Logo / Design (Optional)</h3>
+                
+                <div>
+                  <label className="mb-1 block text-xs text-neutral-600">Upload Logo</label>
+                  <input
+                    type="file"
+                    accept="image/*,.pdf,.eps,.ai"
+                    onChange={handleFileChange}
+                    className="w-full text-xs"
+                  />
+                  {brandingFile && <p className="mt-1 text-xs text-green-600">File attached: {brandingFile.name}</p>}
+                </div>
+                
+                <textarea
+                  placeholder="Branding notes / placement instructions (e.g. 'Logo on front cover, white version')"
+                  value={brandingData.notes}
+                  onChange={(e) => setBrandingData({ ...brandingData, notes: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm min-h-[80px]"
+                />
+                
+                <input
+                  type="text"
+                  placeholder="Color preference (e.g. 'Brand color: #1A2E5C')"
+                  value={brandingData.color}
+                  onChange={(e) => setBrandingData({ ...brandingData, color: e.target.value })}
+                  className="input-field w-full rounded border px-3 py-2 text-sm"
+                />
+                
+                <label className="flex items-start gap-2 mt-2">
+                  <input
+                    type="checkbox"
+                    checked={brandingData.requestSample}
+                    onChange={(e) => setBrandingData({ ...brandingData, requestSample: e.target.checked })}
+                    className="mt-1"
+                  />
+                  <span className="text-sm text-neutral-700">
+                    I want a virtual sample before production
+                    <br />
+                    <span className="text-xs text-neutral-500">We'll send you a mockup within 24h before proceeding</span>
+                  </span>
+                </label>
+
+                <div className="flex gap-2 pt-4">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      setStep("checkout");
+                    }}
+                    className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
+                  >
+                    Skip, use standard
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setStep("checkout")}
+                    className="btn-primary flex-1 min-h-[44px]"
+                  >
+                    Continue to Checkout
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {step === "checkout" && (
               <form
                 onSubmit={async (e) => {
                   e.preventDefault();
                   setIsSubmitting(true);
                   try {
+                    let fileUrl = "";
+                    if (brandingFile) {
+                      const supabase = createClient();
+                      const fileExt = brandingFile.name.split('.').pop();
+                      const fileName = `${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+                      const { data, error } = await supabase.storage
+                        .from('branding')
+                        .upload(fileName, brandingFile);
+                      
+                      if (error) {
+                        console.error('Error uploading file:', error);
+                        fileUrl = logoBase64 || "";
+                      } else if (data) {
+                        const { data: publicUrlData } = supabase.storage.from('branding').getPublicUrl(data.path);
+                        fileUrl = publicUrlData.publicUrl;
+                      }
+                    }
+
                     const res = await fetch("/api/quote", {
                       method: "POST",
                       headers: { "Content-Type": "application/json" },
@@ -192,13 +283,18 @@ export default function CartDrawer() {
                           location: formData.location,
                         },
                         contactMethod: formData.contactMethod,
-                        logoBase64,
+                        branding: {
+                          fileUrl: fileUrl || logoBase64,
+                          notes: brandingData.notes,
+                          color: brandingData.color,
+                          requestSample: brandingData.requestSample,
+                        }
                       }),
                     });
 
                     if (res.ok) {
-                      setIsSubmitted(true);
-                      clearCart(); // Empty the cart now that it's submitted
+                      setStep("success");
+                      clearCart(); 
                     } else {
                       alert(tc("errorFailed"));
                     }
@@ -250,17 +346,6 @@ export default function CartDrawer() {
                   onChange={(e) => setFormData({ ...formData, company: e.target.value })}
                   className="input-field w-full rounded border px-3 py-2 text-sm"
                 />
-                <div>
-                  <label className="mb-1 block text-xs text-neutral-600">{tc("uploadLogo")}</label>
-                  <input
-                    type="file"
-                    accept="image/*"
-                    onChange={handleFileChange}
-                    className="w-full text-xs"
-                  />
-                  {logoBase64 && <p className="mt-1 text-xs text-green-600">{tc("logoAttached")}</p>}
-                </div>
-                
                 <div className="rounded bg-white p-3 border border-olive-100">
                   <p className="mb-2 text-xs font-semibold text-olive-900">{tc("contactMethod")}</p>
                   <div className="flex gap-4 text-sm">
@@ -294,7 +379,7 @@ export default function CartDrawer() {
                 <div className="flex gap-2">
                   <button
                     type="button"
-                    onClick={() => setShowCheckoutForm(false)}
+                    onClick={() => setStep("branding")}
                     className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
                   >
                     {tc("back")}
@@ -312,7 +397,7 @@ export default function CartDrawer() {
           </div>
         )}
 
-        {isSubmitted && (
+        {step === "success" && (
           <div className="border-t border-olive-200 bg-green-50 p-8 text-center flex-1 flex flex-col items-center justify-center">
             <span className="text-5xl mb-4">✅</span>
             <h3 className="text-lg font-bold text-green-800">{tc("successTitle")}</h3>
@@ -325,8 +410,7 @@ export default function CartDrawer() {
             <button
               type="button"
               onClick={() => {
-                setIsSubmitted(false);
-                setShowCheckoutForm(false);
+                setStep("cart");
                 closeCart();
               }}
               className="btn-primary mt-8 w-full"

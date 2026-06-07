@@ -12,12 +12,26 @@ export async function POST(request: NextRequest) {
     
     const customerCompanyCombined = `Location: ${body.customer?.location || "N/A"} | Company: ${body.customer?.company || "N/A"}`;
     const contactMethodStr = body.contactMethod ? `\n\nPreferred Contact Method: ${body.contactMethod}` : "";
-    const finalMessage = (body.message || "") + contactMethodStr;
-
     let itemsPayload = body.items || [];
-    if (body.logoBase64) {
-      itemsPayload = [...itemsPayload, { name: "Uploaded Logo", code: "LOGO", quantity: 1, logoData: body.logoBase64 }];
+    if (body.branding?.fileUrl || body.logoBase64) {
+      itemsPayload = [...itemsPayload, { 
+        name: "Uploaded Logo", 
+        code: "LOGO", 
+        quantity: 1, 
+        logoData: body.branding?.fileUrl || body.logoBase64 
+      }];
     }
+
+    let brandingMessage = "";
+    if (body.branding) {
+      brandingMessage += "\n\n--- Branding Info ---";
+      if (body.branding.notes) brandingMessage += `\nNotes: ${body.branding.notes}`;
+      if (body.branding.color) brandingMessage += `\nColor: ${body.branding.color}`;
+      if (body.branding.requestSample) brandingMessage += `\nRequested Virtual Sample: Yes`;
+      if (body.branding.fileUrl) brandingMessage += `\nFile: ${body.branding.fileUrl}`;
+    }
+
+    const finalMessage = (body.message || "") + contactMethodStr + brandingMessage;
 
     // 1. Save to Supabase (Primary)
     const { error } = await supabase.from("quote_requests").insert([{
@@ -68,6 +82,15 @@ export async function POST(request: NextRequest) {
             <ul>
               ${body.items?.map((item: any) => `<li>${item.quantity}x ${item.name || item.code}</li>`).join('')}
             </ul>
+            ${body.branding ? `
+            <h3>Branding Details:</h3>
+            <ul>
+              ${body.branding.notes ? `<li><strong>Notes:</strong> ${body.branding.notes}</li>` : ''}
+              ${body.branding.color ? `<li><strong>Color:</strong> ${body.branding.color}</li>` : ''}
+              ${body.branding.requestSample ? `<li><strong>Requested Virtual Sample:</strong> Yes</li>` : ''}
+              ${body.branding.fileUrl ? `<li><strong>File attached:</strong> <a href="${body.branding.fileUrl}">View Logo</a></li>` : ''}
+            </ul>
+            ` : ''}
           `
         });
       } catch (emailErr) {

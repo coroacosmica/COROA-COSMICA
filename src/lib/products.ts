@@ -22,6 +22,7 @@ export interface Product {
   tags?: string[];
   price?: number;
   prices?: Record<string, number>;
+  variants?: { color: string; hex: string; image: string }[];
 }
 
 const CATEGORY_ORDER = [

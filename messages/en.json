@@ -120,7 +120,10 @@
     "uploadLogo": "Upload your logo",
     "requestSample": "Request Sample with My Logo",
     "rotateHint": "Drag to rotate · Scroll to zoom",
-    "logoOverlayHint": "Drag logo to position · Use handles to resize"
+    "logoOverlayHint": "Drag logo to position · Use handles to resize",
+    "color": "Color",
+    "selectColor": "Select a color",
+    "availableOnRequest": "Available on request"
   },
   "cart": {
     "title": "Your cart",

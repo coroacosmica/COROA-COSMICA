@@ -7,7 +7,7 @@ import { useCart } from "@/context/CartContext";
 import type { Locale } from "@/i18n/routing";
 import AddToCartButton from "./AddToCartButton";
 
-export default function ProductActions({ product }: { product: Product }) {
+export default function ProductActions({ product, color }: { product: Product; color?: string }) {
   const t = useTranslations("product");
   const locale = useLocale() as Locale;
   const { addItem, openCart } = useCart();
@@ -18,13 +18,14 @@ export default function ProductActions({ product }: { product: Product }) {
       name: getProductName(product, locale),
       image: getProductImage(product),
       price: product.price ?? 0,
+      color,
     });
     openCart();
   }
 
   return (
     <div className="mt-8 flex flex-wrap gap-3">
-      <AddToCartButton product={product} />
+      <AddToCartButton product={product} color={color} />
       <button type="button" onClick={buyNow} className="btn-secondary min-h-[44px]">
         {t("buyNow")}
       </button>
