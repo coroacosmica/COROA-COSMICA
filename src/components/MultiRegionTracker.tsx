@@ -205,12 +205,29 @@ export default function MultiRegionTracker() {
           <span className="text-sm text-neutral-500">Revenue in {REGIONS.find((r) => r.id === activeRegion)?.currency}: </span>
           <span className="text-lg font-bold text-olive-800">{regionTotalRev.toLocaleString()}</span>
         </div>
-        <button
-          onClick={() => setIsAdding(true)}
-          className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
-        >
-          + Add New Order
-        </button>
+        <div className="flex gap-3">
+          <a
+            href={`https://docs.google.com/spreadsheets/d/${
+              {
+                egypt: "1V2amBTe3m5GttKiBSnlybd4aopRLk-yUwjU-06xcfsI",
+                europe: "1HFEmIZ5hOAkiHOJ-6vlrMIjrX3Od2lvTXm0XmI4GSL0",
+                usa: "1mY7UyEXZHwYW7oCyxkty_Zdv4iQ2dxkYRE-nMjVFff4",
+                saudi: "191hZdeaYXDGVeqMq6vy0CGzg9_6HMr7bWfmpDsRLhgs",
+              }[activeRegion]
+            }/edit`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
+          >
+            📊 Open Google Sheet
+          </a>
+          <button
+            onClick={() => setIsAdding(true)}
+            className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
+          >
+            + Add New Order
+          </button>
+        </div>
       </div>
 
       {/* Table */}
