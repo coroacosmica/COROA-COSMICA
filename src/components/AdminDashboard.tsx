@@ -44,7 +44,8 @@ export default function AdminDashboard({
   initialQuotes: any[];
   initialProducts: any[];
 }) {
-  const [activeTab, setActiveTab] = useState<"quotes" | "products">("quotes");
+  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker">("quotes");
+  const [activeQuoteRegion, setActiveQuoteRegion] = useState<"all" | "egypt" | "europe" | "usa" | "saudi" | "other">("all");
   const [quotes, setQuotes] = useState(initialQuotes);
   const [products, setProducts] = useState(initialProducts);
   const [editing, setEditing] = useState<EditingProduct | null>(null);
@@ -254,6 +255,20 @@ export default function AdminDashboard({
     );
   };
 
+  // ─── Filtered Quotes by Region ────────────────────────────
+  const getQuoteRegion = (quote: any) => {
+    const text = (quote.customer_company || "").toLowerCase();
+    if (text.includes("region: egypt") || text.includes("egypt") || text.includes("مصر") || text.includes("cairo")) return "egypt";
+    if (text.includes("region: saudi") || text.includes("saudi") || text.includes("ksa") || text.includes("السعودية") || text.includes("riyadh")) return "saudi";
+    if (text.includes("region: europe") || text.includes("europe") || text.includes("uk ") || text.includes("france") || text.includes("germany") || text.includes("أوروبا")) return "europe";
+    if (text.includes("region: usa") || text.includes("usa") || text.includes("america") || text.includes("us ") || text.includes("أمريكا")) return "usa";
+    return "other";
+  };
+
+  const filteredQuotes = activeQuoteRegion === "all" 
+    ? quotes 
+    : quotes.filter(q => getQuoteRegion(q) === activeQuoteRegion);
+
   return (
     <div>
       {/* Success Toast */}
@@ -324,10 +339,34 @@ export default function AdminDashboard({
       {/* ═══════════ QUOTES TAB ═══════════ */}
       {activeTab === "quotes" && (
         <div className="space-y-4">
-          {quotes.length === 0 ? (
-            <p className="text-neutral-500">No requests yet.</p>
+          {/* Quote Region Tabs */}
+          <div className="flex gap-2 overflow-x-auto border-b border-neutral-200 pb-2 mb-4">
+            {[
+              { id: "all", label: "All Regions", flag: "🌍" },
+              { id: "egypt", label: "Egypt", flag: "🇪🇬" },
+              { id: "europe", label: "Europe", flag: "🇪🇺" },
+              { id: "usa", label: "USA", flag: "🇺🇸" },
+              { id: "saudi", label: "Saudi Arabia", flag: "🇸🇦" },
+              { id: "other", label: "Other", flag: "❓" },
+            ].map((r) => (
+              <button
+                key={r.id}
+                onClick={() => setActiveQuoteRegion(r.id as any)}
+                className={`whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors ${
+                  activeQuoteRegion === r.id
+                    ? "border-b-2 border-olive-600 text-olive-900"
+                    : "text-neutral-500 hover:text-neutral-700"
+                }`}
+              >
+                {r.flag} {r.label} ({r.id === "all" ? quotes.length : quotes.filter(q => getQuoteRegion(q) === r.id).length})
+              </button>
+            ))}
+          </div>
+
+          {filteredQuotes.length === 0 ? (
+            <p className="text-neutral-500 p-4 text-center bg-white rounded-lg border border-neutral-100">No requests found in this region.</p>
           ) : (
-            quotes.map((quote) => (
+            filteredQuotes.map((quote) => (
               <div key={quote.id} className="rounded-lg bg-white p-6 shadow-sm">
                 <div className="mb-4 flex flex-wrap items-start justify-between gap-4">
                   <div>

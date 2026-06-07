@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
     const supabase = await createClient();
     const { data: { user } } = await supabase.auth.getUser();
     
-    const customerCompanyCombined = `Location: ${body.customer?.location || "N/A"} | Company: ${body.customer?.company || "N/A"}`;
+    const customerCompanyCombined = `Location: ${body.customer?.location || "N/A"} | Company: ${body.customer?.company || "N/A"} | Region: ${body.currencyInfo?.region || "unknown"}`;
     const contactMethodStr = body.contactMethod ? `\n\nPreferred Contact Method: ${body.contactMethod}` : "";
     let itemsPayload = body.items || [];
     if (body.branding?.fileUrl || body.logoBase64) {
