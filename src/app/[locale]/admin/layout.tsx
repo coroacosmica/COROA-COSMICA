@@ -39,7 +39,7 @@ export default function AdminLayout({
   return (
     <div className="min-h-screen bg-neutral-100">
       <AdminNavbar />
-      <main className="mx-auto max-w-7xl p-4 md:p-8">{children}</main>
+      <main className="mx-auto w-full max-w-[1800px] p-4 md:p-8">{children}</main>
     </div>
   );
 }

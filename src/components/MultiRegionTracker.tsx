@@ -135,32 +135,119 @@ export default function MultiRegionTracker() {
     );
   }, [orders, searchQuery]);
 
+  const totalRevenue = useMemo(() => {
+    return filteredOrders.reduce((acc, order) => acc + (parseFloat(order.amount) || 0), 0);
+  }, [filteredOrders]);
+
+  const currentCurrency = REGIONS.find(r => r.id === activeRegion)?.currency || "";
+
+  const exportToCSV = () => {
+    if (filteredOrders.length === 0) return;
+    
+    const headers = [
+      "Order Number", "Connect", "Review", "Confirm", "Design", "Material", "Manufacture", "Handover", "Invoice",
+      "PO Number", "Expected Date", "Total Amount", "Currency", "Customer Name", "Phone", "Email", "Location / Company", "Contact Method", "Items & Prices", "Branding & Notes"
+    ];
+
+    const csvContent = [
+      headers.join(","),
+      ...filteredOrders.map(o => [
+        `"${o.orderNumber || ""}"`,
+        `"${o.stepConnect || ""}"`,
+        `"${o.stepReview || ""}"`,
+        `"${o.stepConfirm || ""}"`,
+        `"${o.stepDesign || ""}"`,
+        `"${o.stepMaterial || ""}"`,
+        `"${o.stepManufacture || ""}"`,
+        `"${o.stepHandover || ""}"`,
+        `"${o.stepInvoice || ""}"`,
+        `"${o.poNumber || ""}"`,
+        `"${o.expectedDate || ""}"`,
+        `"${o.amount || ""}"`,
+        `"${o.currency || ""}"`,
+        `"${(o.customerName || "").replace(/"/g, '""')}"`,
+        `"${o.phone || ""}"`,
+        `"${o.email || ""}"`,
+        `"${(o.locationAndCompany || "").replace(/"/g, '""')}"`,
+        `"${o.contactMethod || ""}"`,
+        `"${(o.itemsString || "").replace(/"/g, '""')}"`,
+        `"${(o.brandingMessage || "").replace(/"/g, '""')}"`
+      ].join(","))
+    ].join("\n");
+
+    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.setAttribute("download", `Order_Tracking_${activeRegion}_${new Date().toISOString().split('T')[0]}.csv`);
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const renderBrandingMessage = (msg: string) => {
+    if (!msg) return null;
+    const fileIndex = msg.indexOf("File: data:image/");
+    if (fileIndex !== -1) {
+      const textPart = msg.substring(0, fileIndex);
+      const filePart = msg.substring(fileIndex + 6); // Skip "File: "
+      return (
+        <div>
+          <span className="whitespace-pre-wrap">{textPart}</span>
+          <div className="mt-2">
+            <a href={filePart} download="Attached_Logo" className="inline-flex items-center gap-1 rounded bg-olive-100 px-3 py-1.5 text-xs font-medium text-olive-800 hover:bg-olive-200 shadow-sm transition-colors">
+              ⬇️ Download Design
+            </a>
+          </div>
+        </div>
+      );
+    }
+    return <span className="whitespace-pre-wrap">{msg}</span>;
+  };
+
   return (
     <div className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-neutral-200">
-      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
-        <div className="flex gap-2 border-b border-neutral-200">
+      {/* Top Controls: Region Tabs + Search/Export */}
+      <div className="mb-4 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+        <div className="flex flex-wrap gap-2 border-b border-neutral-200 pb-2 lg:border-none lg:pb-0">
           {REGIONS.map((reg) => (
             <button
               key={reg.id}
               onClick={() => setActiveRegion(reg.id)}
               className={`px-4 py-2 text-sm font-medium transition-colors ${
                 activeRegion === reg.id
-                  ? "border-b-2 border-olive-600 text-olive-800"
-                  : "text-neutral-500 hover:text-neutral-700"
+                  ? "border-b-2 border-olive-600 text-olive-800 lg:border-b-0 lg:rounded lg:bg-olive-50 lg:text-olive-900"
+                  : "text-neutral-500 hover:text-neutral-700 lg:hover:bg-neutral-50"
               }`}
             >
               {reg.flag} {reg.label} ({allOrders[reg.id]?.length || 0})
             </button>
           ))}
         </div>
-        <div className="flex items-center gap-4">
+        
+        <div className="flex flex-wrap items-center gap-4">
+          <div className="flex flex-col text-right pr-4 border-r border-neutral-200">
+            <span className="text-xs text-neutral-500">Total Revenue ({currentCurrency})</span>
+            <span className="text-lg font-bold text-olive-800">
+              {totalRevenue.toLocaleString(undefined, { minimumFractionDigits: 2 })}
+            </span>
+          </div>
+
           <input
             type="text"
             placeholder="Search Order No. or Name..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
-            className="rounded border border-neutral-300 px-3 py-1.5 text-sm outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+            className="w-full lg:w-64 rounded border border-neutral-300 px-3 py-1.5 text-sm outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
           />
+          
+          <button 
+            onClick={exportToCSV}
+            className="rounded bg-neutral-800 px-4 py-1.5 text-sm font-medium text-white hover:bg-neutral-900 transition-colors shadow-sm whitespace-nowrap"
+          >
+            📥 Export Excel
+          </button>
+
           <div className="text-xs text-neutral-500">
             {loading ? "Syncing..." : lastSynced ? `Synced: ${lastSynced.toLocaleTimeString()}` : ""}
           </div>
@@ -221,9 +308,9 @@ export default function MultiRegionTracker() {
                             value={val}
                             onChange={(e) => handleCellChange(order.id, step.key as keyof OrderData, e.target.value)}
                             className={`w-full appearance-none rounded border px-2 py-1 text-xs outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 ${
-                              val === "Done" ? "bg-green-50 border-green-200 text-green-700" :
-                              val === "Working" ? "bg-yellow-50 border-yellow-200 text-yellow-700" :
-                              val === "Issue" ? "bg-red-50 border-red-200 text-red-700" :
+                              val === "Done" ? "bg-green-50 border-green-200 text-green-700 font-medium" :
+                              val === "Working" ? "bg-yellow-50 border-yellow-200 text-yellow-700 font-medium" :
+                              val === "Issue" ? "bg-red-50 border-red-200 text-red-700 font-medium" :
                               "bg-transparent border-transparent hover:border-neutral-300"
                             } ${isSyncing ? "opacity-50" : ""}`}
                           >
@@ -265,7 +352,9 @@ export default function MultiRegionTracker() {
                   <td className="px-3 py-2 whitespace-nowrap">{order.locationAndCompany}</td>
                   <td className="px-3 py-2 whitespace-nowrap capitalize">{order.contactMethod}</td>
                   <td className="px-3 py-2 min-w-[300px] text-[11px] leading-relaxed">{order.itemsString}</td>
-                  <td className="px-3 py-2 min-w-[200px] text-[11px] whitespace-pre-wrap">{order.brandingMessage}</td>
+                  <td className="px-3 py-2 min-w-[200px] text-[11px]">
+                    {renderBrandingMessage(order.brandingMessage)}
+                  </td>
                 </tr>
               ))
             )}
