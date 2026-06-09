@@ -279,7 +279,51 @@ export default function AdminDashboard({
       )}
 
       {/* Header Actions */}
-      <div className="mb-4 flex justify-end">
+      <div className="mb-4 flex flex-wrap gap-4 justify-end">
+        <button
+          onClick={async () => {
+            if (!('serviceWorker' in navigator) || !('PushManager' in window)) {
+              alert("Push notifications are not supported in your browser. (iPhone requires iOS 16.4+ and 'Add to Home Screen')");
+              return;
+            }
+            try {
+              const registration = await navigator.serviceWorker.ready;
+              // Public key generated earlier
+              const VAPID_PUBLIC_KEY = "BPMJPeYz5kYYyiizEW1m37vq0Lio1vdpgU4VsYxexA-u9BOJJVKhqsDS2lIThulat4bwstsK4j8ypvdIychkXRg";
+              
+              // Helper to convert base64 to Uint8Array
+              const urlBase64ToUint8Array = (base64String: string) => {
+                const padding = '='.repeat((4 - base64String.length % 4) % 4);
+                const base64 = (base64String + padding).replace(/\-/g, '+').replace(/_/g, '/');
+                const rawData = window.atob(base64);
+                return new Uint8Array([...rawData].map(char => char.charCodeAt(0)));
+              };
+
+              const subscription = await registration.pushManager.subscribe({
+                userVisibleOnly: true,
+                applicationServerKey: urlBase64ToUint8Array(VAPID_PUBLIC_KEY)
+              });
+
+              const res = await fetch("/api/admin/push", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(subscription)
+              });
+
+              if (res.ok) {
+                showSuccess("Notifications Enabled! 🔔");
+              } else {
+                throw new Error("Failed to save subscription");
+              }
+            } catch (err: any) {
+              console.error(err);
+              alert("Failed to enable notifications: " + err.message);
+            }
+          }}
+          className="rounded bg-blue-600 px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 transition-colors shadow-sm"
+        >
+          🔔 Enable Push Notifications
+        </button>
         <button
           onClick={handleLogout}
           className="rounded border border-red-200 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"

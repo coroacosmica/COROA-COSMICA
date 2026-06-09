@@ -105,7 +105,7 @@ export async function POST(request: NextRequest) {
       // ignore fs errors on vercel
     }
 
-    // 3. Send Confirmation Email
+    // 3. Send Confirmation Email & Push Notification
     if (process.env.RESEND_API_KEY && body.customer?.email) {
       try {
         const resend = new Resend(process.env.RESEND_API_KEY);
@@ -138,6 +138,49 @@ export async function POST(request: NextRequest) {
       } catch (emailErr) {
         console.error("Failed to send email:", emailErr);
       }
+    }
+
+    // 4. Send Web Push Notifications to all Admin Devices
+    try {
+      const webpush = require("web-push");
+      if (process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY && process.env.VAPID_PRIVATE_KEY) {
+        webpush.setVapidDetails(
+          "mailto:coroa.cosmica@gmail.com",
+          process.env.NEXT_PUBLIC_VAPID_PUBLIC_KEY,
+          process.env.VAPID_PRIVATE_KEY
+        );
+
+        const { data: subscriptions } = await supabase.from("push_subscriptions").select("*");
+        if (subscriptions && subscriptions.length > 0) {
+          const payload = JSON.stringify({
+            title: "🚨 New Quote Request!",
+            body: `${body.customer?.name} just placed an order for ${body.currencyInfo?.totalAmount} ${body.currencyInfo?.currency}`,
+          });
+
+          await Promise.all(
+            subscriptions.map(async (sub) => {
+              try {
+                await webpush.sendNotification({
+                  endpoint: sub.endpoint,
+                  keys: {
+                    p256dh: sub.p256dh,
+                    auth: sub.auth
+                  }
+                }, payload);
+              } catch (pushErr: any) {
+                // If subscription is invalid/expired, remove it
+                if (pushErr.statusCode === 410 || pushErr.statusCode === 404) {
+                  await supabase.from("push_subscriptions").delete().eq("id", sub.id);
+                } else {
+                  console.error("Push send error:", pushErr);
+                }
+              }
+            })
+          );
+        }
+      }
+    } catch (pushErr) {
+      console.error("Failed to send push notification:", pushErr);
     }
 
     return NextResponse.json({ ok: true });

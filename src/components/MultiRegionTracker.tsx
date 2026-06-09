@@ -271,7 +271,8 @@ export default function MultiRegionTracker() {
         </div>
       )}
 
-      <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-white shadow-sm">
+      {/* Desktop Table View */}
+      <div className="hidden lg:block overflow-x-auto rounded-lg border border-neutral-200 bg-white shadow-sm">
         <table className="min-w-max w-full text-left text-xs text-neutral-600">
           <thead className="bg-olive-800 text-white sticky top-0 z-10">
             <tr>
@@ -384,6 +385,105 @@ export default function MultiRegionTracker() {
             )}
           </tbody>
         </table>
+      </div>
+
+      {/* Mobile Card View */}
+      <div className="flex flex-col gap-4 lg:hidden">
+        {filteredOrders.length === 0 ? (
+          <div className="p-8 text-center text-sm text-neutral-400 border border-neutral-200 rounded-lg">
+            {searchQuery ? "No orders match your search." : "No orders found in this region."}
+          </div>
+        ) : (
+          filteredOrders.map((order) => (
+            <div key={order.id} className="border border-neutral-200 rounded-lg bg-white p-4 shadow-sm flex flex-col gap-4">
+              {/* Card Header */}
+              <div className="flex justify-between items-start border-b border-neutral-100 pb-3">
+                <div>
+                  <h4 className="font-bold text-olive-900 text-base">{order.orderNumber}</h4>
+                  <p className="text-xs text-neutral-600 font-medium mt-1">{order.customerName}</p>
+                </div>
+                <div className="text-right">
+                  <p className="font-bold text-olive-800 text-sm">{order.amount} <span className="text-xs text-neutral-500">{order.currency}</span></p>
+                  <p className="text-xs text-neutral-500 mt-1">{order.expectedDate || "No date set"}</p>
+                </div>
+              </div>
+
+              {/* Tracking Progress Grid */}
+              <div className="bg-neutral-50 rounded-lg p-3">
+                <h5 className="text-[10px] font-bold text-neutral-500 mb-2 uppercase tracking-wider">Tracking Progress</h5>
+                <div className="grid grid-cols-2 gap-x-2 gap-y-3">
+                  {STEPS.map((step) => {
+                    const isSyncing = syncingCell?.id === order.id && syncingCell?.field === step.key;
+                    const val = (order as any)[step.key] || "";
+                    
+                    return (
+                      <div key={step.key} className={`flex items-center justify-between gap-1 text-[10px] ${isSyncing ? "opacity-50" : ""}`}>
+                        <span className="font-medium text-neutral-600">{step.label}</span>
+                        <div className="flex gap-1 bg-white rounded-full p-0.5 shadow-sm border border-neutral-200">
+                          <button 
+                            onClick={() => handleCellChange(order.id, step.key as keyof OrderData, "Done")}
+                            className={`h-5 w-5 flex items-center justify-center rounded-full transition-colors ${val === "Done" ? "bg-green-500 text-white" : "text-neutral-400"}`}
+                          >
+                            ✔
+                          </button>
+                          <button 
+                            onClick={() => handleCellChange(order.id, step.key as keyof OrderData, "Working")}
+                            className={`h-5 w-5 flex items-center justify-center rounded-full transition-colors ${val === "Working" ? "bg-yellow-500 text-white" : "text-neutral-400"}`}
+                          >
+                            ⏳
+                          </button>
+                        </div>
+                      </div>
+                    );
+                  })}
+                </div>
+              </div>
+
+              {/* Items */}
+              <div>
+                <h5 className="text-[10px] font-bold text-neutral-500 mb-2 uppercase tracking-wider">Items</h5>
+                <div className="flex flex-col gap-1 pl-2 border-l-2 border-olive-200 text-xs">
+                  {order.itemsString ? order.itemsString.split(" | ").map((itemStr, idx) => (
+                    <div key={idx} className="font-medium text-neutral-700">
+                      {itemStr}
+                    </div>
+                  )) : <div className="text-neutral-400 italic">No items</div>}
+                </div>
+              </div>
+
+              {/* Customer Details & Inputs */}
+              <div className="grid grid-cols-2 gap-3 text-[10px] pt-3 border-t border-neutral-100">
+                <div className="flex flex-col gap-1">
+                  <p className="text-neutral-600">📱 {order.phone}</p>
+                  <p className="text-neutral-600 truncate" title={order.email}>📧 {order.email}</p>
+                  <p className="text-neutral-600">📍 {order.locationAndCompany}</p>
+                </div>
+                <div className="flex flex-col gap-2">
+                  <input
+                    type="text"
+                    value={order.poNumber}
+                    onChange={(e) => handleCellChange(order.id, "poNumber", e.target.value)}
+                    placeholder="PO Number"
+                    className="w-full rounded border border-neutral-200 bg-white px-2 py-1 focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+                  />
+                  <input
+                    type="date"
+                    value={order.expectedDate}
+                    onChange={(e) => handleCellChange(order.id, "expectedDate", e.target.value)}
+                    className="w-full rounded border border-neutral-200 bg-white px-2 py-1 focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+                  />
+                </div>
+              </div>
+
+              {/* Branding */}
+              {order.brandingMessage && (
+                <div className="pt-2">
+                  {renderBrandingMessage(order.brandingMessage)}
+                </div>
+              )}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
