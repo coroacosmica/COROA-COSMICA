@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import MultiRegionTracker from "./MultiRegionTracker";
 
@@ -54,6 +54,11 @@ export default function AdminDashboard({
   const [uploading, setUploading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+
+  useEffect(() => {
+    // Since server-side fetching is removed for security, fetch data immediately on mount
+    refreshData();
+  }, []);
 
   // ─── Quote Actions ─────────────────────────────────────────
   const deleteQuote = async (id: number) => {
