@@ -412,15 +412,15 @@ export default function AdminDashboard({
                 )}
 
                 {quote.items && quote.items.length > 0 && (
-                  <div className="mt-3">
-                    <h4 className="mb-1 text-xs font-semibold text-neutral-500">CART ITEMS</h4>
-                    <div className="flex flex-wrap gap-2">
+                  <div className="mt-4">
+                    <h4 className="mb-2 text-xs font-semibold text-neutral-500">CART ITEMS</h4>
+                    <ul className="flex flex-col gap-3 border-l-2 border-olive-200 pl-3">
                       {quote.items.map((item: any, i: number) => {
                         if (item.code === "LOGO" && item.logoData) {
                           return (
-                            <div key={i} className="w-full mt-2">
-                              <p className="mb-1 text-xs text-neutral-500">Attached Logo:</p>
-                              <div className="flex items-end gap-4">
+                            <li key={i} className="w-full">
+                              <p className="mb-1 text-sm font-medium text-neutral-800">1× Attached Logo</p>
+                              <div className="flex items-end gap-4 mt-2">
                                 <img
                                   src={item.logoData}
                                   alt="Logo"
@@ -434,13 +434,13 @@ export default function AdminDashboard({
                                   ⬇️ Download Logo
                                 </a>
                               </div>
-                            </div>
+                            </li>
                           );
                         }
                         return (
-                          <div key={i} className="flex flex-col gap-2">
-                            <span className="w-fit rounded-full bg-olive-100 px-3 py-1 text-xs font-medium text-olive-800">
-                              {item.name || item.code} × {item.quantity}
+                          <li key={i} className="flex flex-col gap-1">
+                            <span className="text-sm font-medium text-neutral-800">
+                              <span className="text-olive-700 font-bold">{item.quantity}×</span> {item.name || item.code}
                             </span>
                             {item.customDesign?.pngDataUrl && (
                               <div className="mt-1 w-full pl-2">
@@ -461,10 +461,10 @@ export default function AdminDashboard({
                                 </div>
                               </div>
                             )}
-                          </div>
+                          </li>
                         );
                       })}
-                    </div>
+                    </ul>
                   </div>
                 )}
               </div>

@@ -269,18 +269,12 @@ export default function MultiRegionTracker() {
           <thead className="bg-olive-800 text-white sticky top-0 z-10">
             <tr>
               <th className="px-3 py-2 font-semibold">Order Number</th>
-              {STEPS.map((s) => (
-                <th key={s.key} className="px-3 py-2 font-semibold">{s.label}</th>
-              ))}
+              <th className="px-3 py-2 font-semibold min-w-[150px]">Tracking Progress</th>
               <th className="px-3 py-2 font-semibold">PO Number</th>
               <th className="px-3 py-2 font-semibold">Expected Date</th>
               <th className="px-3 py-2 font-semibold text-right">Total Amount</th>
               <th className="px-3 py-2 font-semibold text-center">Cur</th>
-              <th className="px-3 py-2 font-semibold">Customer Name</th>
-              <th className="px-3 py-2 font-semibold">Phone</th>
-              <th className="px-3 py-2 font-semibold">Email</th>
-              <th className="px-3 py-2 font-semibold">Location / Company</th>
-              <th className="px-3 py-2 font-semibold">Contact Method</th>
+              <th className="px-3 py-2 font-semibold">Customer Details</th>
               <th className="px-3 py-2 font-semibold">Items & Prices</th>
               <th className="px-3 py-2 font-semibold">Branding & Notes</th>
             </tr>
@@ -288,43 +282,54 @@ export default function MultiRegionTracker() {
           <tbody className="divide-y divide-neutral-200">
             {filteredOrders.length === 0 ? (
               <tr>
-                <td colSpan={21} className="p-8 text-center text-sm text-neutral-400">
+                <td colSpan={9} className="p-8 text-center text-sm text-neutral-400">
                   {searchQuery ? "No orders match your search." : "No orders found in this region."}
                 </td>
               </tr>
             ) : (
               filteredOrders.map((order) => (
-                <tr key={order.id} className="hover:bg-neutral-50 transition-colors">
-                  <td className="px-3 py-2 font-medium whitespace-nowrap">{order.orderNumber}</td>
+                <tr key={order.id} className="hover:bg-neutral-50 transition-colors align-top">
+                  <td className="px-3 py-4 font-bold text-olive-900 whitespace-nowrap">{order.orderNumber}</td>
                   
-                  {STEPS.map((step) => {
-                    const isSyncing = syncingCell?.id === order.id && syncingCell?.field === step.key;
-                    const val = (order as any)[step.key] || "";
-                    
-                    return (
-                      <td key={step.key} className="px-1 py-1 min-w-[100px]">
-                        <div className="relative flex items-center">
-                          <select
-                            value={val}
-                            onChange={(e) => handleCellChange(order.id, step.key as keyof OrderData, e.target.value)}
-                            className={`w-full appearance-none rounded border px-2 py-1 text-xs outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 ${
-                              val === "Done" ? "bg-green-50 border-green-200 text-green-700 font-medium" :
-                              val === "Working" ? "bg-yellow-50 border-yellow-200 text-yellow-700 font-medium" :
-                              val === "Issue" ? "bg-red-50 border-red-200 text-red-700 font-medium" :
-                              "bg-transparent border-transparent hover:border-neutral-300"
-                            } ${isSyncing ? "opacity-50" : ""}`}
-                          >
-                            <option value="">-</option>
-                            <option value="Done">Done</option>
-                            <option value="Working">Working</option>
-                            <option value="Issue">Issue</option>
-                          </select>
-                        </div>
-                      </td>
-                    );
-                  })}
+                  <td className="px-3 py-3">
+                    <div className="flex flex-col gap-2 border-l-2 border-neutral-100 pl-2">
+                      {STEPS.map((step) => {
+                        const isSyncing = syncingCell?.id === order.id && syncingCell?.field === step.key;
+                        const val = (order as any)[step.key] || "";
+                        
+                        return (
+                          <div key={step.key} className={`flex items-center justify-between gap-2 text-[11px] ${isSyncing ? "opacity-50" : ""}`}>
+                            <span className="font-medium text-neutral-600 w-16">{step.label}</span>
+                            <div className="flex gap-1 bg-neutral-100 rounded-full p-0.5 shadow-inner">
+                              <button 
+                                onClick={() => handleCellChange(order.id, step.key as keyof OrderData, "Done")}
+                                className={`h-5 w-5 flex items-center justify-center rounded-full transition-colors ${val === "Done" ? "bg-green-500 text-white shadow-sm" : "text-neutral-400 hover:text-green-600 hover:bg-green-50"}`}
+                                title="Done"
+                              >
+                                ✔
+                              </button>
+                              <button 
+                                onClick={() => handleCellChange(order.id, step.key as keyof OrderData, "Working")}
+                                className={`h-5 w-5 flex items-center justify-center rounded-full transition-colors ${val === "Working" ? "bg-yellow-500 text-white shadow-sm" : "text-neutral-400 hover:text-yellow-600 hover:bg-yellow-50"}`}
+                                title="Working"
+                              >
+                                ⏳
+                              </button>
+                              <button 
+                                onClick={() => handleCellChange(order.id, step.key as keyof OrderData, "")}
+                                className={`h-5 w-5 flex items-center justify-center rounded-full transition-colors ${!val || val === "" ? "bg-white text-neutral-800 shadow-sm" : "text-neutral-400 hover:text-neutral-700 hover:bg-white"}`}
+                                title="Pending"
+                              >
+                                -
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                    </div>
+                  </td>
 
-                  <td className="px-1 py-1 min-w-[120px]">
+                  <td className="px-2 py-4 min-w-[120px]">
                     <input
                       type="text"
                       value={order.poNumber}
@@ -334,25 +339,37 @@ export default function MultiRegionTracker() {
                     />
                   </td>
                   
-                  <td className="px-1 py-1 min-w-[130px]">
+                  <td className="px-2 py-4 min-w-[130px]">
                     <input
                       type="date"
                       value={order.expectedDate}
                       onChange={(e) => handleCellChange(order.id, "expectedDate", e.target.value)}
-                      className="w-full rounded border border-transparent bg-transparent px-2 py-1 hover:border-neutral-300 focus:border-olive-500 focus:bg-white focus:ring-1 focus:ring-olive-500"
+                      className="w-full rounded border border-transparent bg-transparent px-2 py-1 hover:border-neutral-300 focus:border-olive-500 focus:bg-white focus:ring-1 focus:ring-olive-500 text-[11px]"
                     />
                   </td>
                   
-                  <td className="px-3 py-2 text-right font-medium whitespace-nowrap">{order.amount}</td>
-                  <td className="px-3 py-2 text-center text-neutral-500">{order.currency}</td>
+                  <td className="px-3 py-4 text-right font-bold text-olive-800 whitespace-nowrap">{order.amount}</td>
+                  <td className="px-3 py-4 text-center text-neutral-500">{order.currency}</td>
                   
-                  <td className="px-3 py-2 whitespace-nowrap">{order.customerName}</td>
-                  <td className="px-3 py-2 whitespace-nowrap">{order.phone}</td>
-                  <td className="px-3 py-2 whitespace-nowrap text-blue-600">{order.email}</td>
-                  <td className="px-3 py-2 whitespace-nowrap">{order.locationAndCompany}</td>
-                  <td className="px-3 py-2 whitespace-nowrap capitalize">{order.contactMethod}</td>
-                  <td className="px-3 py-2 min-w-[300px] text-[11px] leading-relaxed">{order.itemsString}</td>
-                  <td className="px-3 py-2 min-w-[200px] text-[11px]">
+                  <td className="px-3 py-4 text-[11px] leading-relaxed">
+                    <p className="font-semibold text-neutral-800 mb-1">{order.customerName}</p>
+                    <p className="text-neutral-600">📱 {order.phone}</p>
+                    <p className="text-blue-600">📧 {order.email}</p>
+                    <p className="text-neutral-600">📍 {order.locationAndCompany}</p>
+                    <p className="text-neutral-500 mt-1 italic">Contact via: <span className="capitalize">{order.contactMethod}</span></p>
+                  </td>
+
+                  <td className="px-3 py-4 min-w-[300px] text-[11px]">
+                    <div className="flex flex-col gap-2 border-l-2 border-olive-200 pl-3">
+                      {order.itemsString ? order.itemsString.split(" | ").map((itemStr, idx) => (
+                        <div key={idx} className="font-medium text-neutral-700">
+                          {itemStr}
+                        </div>
+                      )) : null}
+                    </div>
+                  </td>
+
+                  <td className="px-3 py-4 min-w-[250px] text-[11px]">
                     {renderBrandingMessage(order.brandingMessage)}
                   </td>
                 </tr>
