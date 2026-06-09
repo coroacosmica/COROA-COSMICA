@@ -4,20 +4,21 @@ export type Region = "egypt" | "europe" | "usa" | "saudi";
 
 export const SHEET_IDS: Record<Region, string> = {
   egypt: process.env.SHEET_ID_EGYPT || "1V2amBTe3m5GttKiBSnlybd4aopRLk-yUwjU-06xcfsI",
-  europe: process.env.SHEET_ID_EUROPE || "1HFEmIZ5hOAkiHOJ-6vlrMIjrX3Od2lvTXm0XmI4GSL0",
-  usa: process.env.SHEET_ID_USA || "1mY7UyEXZHwYW7oCyxkty_Zdv4iQ2dxkYRE-nMjVFff4",
-  saudi: process.env.SHEET_ID_SAUDI || "191hZdeaYXDGVeqMq6vy0CGzg9_6HMr7bWfmpDsRLhgs",
+  europe: process.env.SHEET_ID_EUROPE || "",
+  usa: process.env.SHEET_ID_USA || "",
+  saudi: process.env.SHEET_ID_SAUDI || "",
 };
 
 const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
 
 // Helper to get the first sheet name dynamically
 async function getTabName(sheets: any, spreadsheetId: string) {
+  if (!spreadsheetId) return null;
   try {
     const res = await sheets.spreadsheets.get({ spreadsheetId });
-    return res.data.sheets?.[0]?.properties?.title || "Sheet20";
+    return res.data.sheets?.[0]?.properties?.title || null;
   } catch (e) {
-    return "Sheet20";
+    return null;
   }
 }
 
@@ -46,12 +47,16 @@ export async function getOrders(region: Region) {
   if (isMockMode()) {
     return mockDatabase[region] || [];
   }
+  const spreadsheetId = SHEET_IDS[region];
+  if (!spreadsheetId) return [];
+
   const auth = getAuth();
   const sheets = google.sheets({ version: "v4", auth: auth as any });
-  const spreadsheetId = SHEET_IDS[region];
 
   try {
     const tabName = await getTabName(sheets, spreadsheetId);
+    if (!tabName) return [];
+
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
       range: `${tabName}!A2:N`, // Assuming row 1 is headers
@@ -107,9 +112,11 @@ export async function addOrder(region: Region, orderData: any) {
     });
     return true;
   }
+  const spreadsheetId = SHEET_IDS[region];
+  if (!spreadsheetId) return true;
+
   const auth = getAuth();
   const sheets = google.sheets({ version: "v4", auth: auth as any });
-  const spreadsheetId = SHEET_IDS[region];
 
   const values = [
     orderData.orderNumber || "",
@@ -153,9 +160,11 @@ export async function updateCell(region: Region, rowIndex: number, colLetter: st
     }
     return true;
   }
+  const spreadsheetId = SHEET_IDS[region];
+  if (!spreadsheetId) return true;
+
   const auth = getAuth();
   const sheets = google.sheets({ version: "v4", auth: auth as any });
-  const spreadsheetId = SHEET_IDS[region];
 
   try {
     const tabName = await getTabName(sheets, spreadsheetId);
