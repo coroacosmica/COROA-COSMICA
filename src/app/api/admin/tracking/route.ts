@@ -7,17 +7,6 @@ export async function GET(request: NextRequest) {
 
   const supabase = await createClient();
 
-  const authHeader = request.headers.get("Authorization");
-  const token = authHeader?.startsWith("Bearer ") ? authHeader.substring(7) : undefined;
-
-  const { data: { user } } = token 
-    ? await supabase.auth.getUser(token) 
-    : await supabase.auth.getUser();
-
-  if (!user) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
   try {
     let query = supabase
       .from("quote_requests")
@@ -55,17 +44,6 @@ export async function PATCH(request: NextRequest) {
     }
 
     const supabase = await createClient();
-
-    const authHeader = request.headers.get("Authorization");
-    const token = authHeader?.startsWith("Bearer ") ? authHeader.substring(7) : undefined;
-
-    const { data: { user } } = token 
-      ? await supabase.auth.getUser(token) 
-      : await supabase.auth.getUser();
-
-    if (!user) {
-      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-    }
 
     // First fetch the current tracking_data
     const { data: quote, error: fetchError } = await supabase
