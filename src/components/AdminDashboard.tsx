@@ -226,6 +226,25 @@ export default function AdminDashboard({
     window.location.reload();
   };
 
+  const [isRefreshing, setIsRefreshing] = useState(false);
+
+  const refreshData = async () => {
+    setIsRefreshing(true);
+    try {
+      const [{ data: newQuotes }, { data: newProducts }] = await Promise.all([
+        supabase.from("quote_requests").select("*").order("created_at", { ascending: false }),
+        supabase.from("products").select("*").order("created_at", { ascending: false })
+      ]);
+      if (newQuotes) setQuotes(newQuotes);
+      if (newProducts) setProducts(newProducts);
+      showSuccess("Data refreshed! 🔄");
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setIsRefreshing(false);
+    }
+  };
+
   const showSuccess = (msg: string) => {
     setSuccessMsg(msg);
     setTimeout(() => setSuccessMsg(""), 3000);
@@ -280,6 +299,13 @@ export default function AdminDashboard({
 
       {/* Header Actions */}
       <div className="mb-4 flex flex-wrap gap-4 justify-end">
+        <button
+          onClick={refreshData}
+          disabled={isRefreshing}
+          className="flex items-center gap-2 rounded bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-200 transition-colors shadow-sm disabled:opacity-50"
+        >
+          {isRefreshing ? "⏳ Refreshing..." : "🔄 Refresh Data"}
+        </button>
         <button
           onClick={handleLogout}
           className="rounded border border-red-200 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
