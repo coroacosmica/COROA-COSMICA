@@ -149,6 +149,12 @@ export default function MultiRegionTracker() {
       "PO Number", "Expected Date", "Total Amount", "Currency", "Customer Name", "Phone", "Email", "Location / Company", "Contact Method", "Items & Prices", "Branding & Notes"
     ];
 
+    const cleanForCSV = (str: string) => {
+      if (!str) return "";
+      let cleaned = str.replace(/data:image\/[^;]+;base64,[A-Za-z0-9+/=]+/g, "[Attached Image]");
+      return cleaned.replace(/"/g, '""');
+    };
+
     const csvContent = [
       headers.join(","),
       ...filteredOrders.map(o => [
@@ -165,17 +171,18 @@ export default function MultiRegionTracker() {
         `"${o.expectedDate || ""}"`,
         `"${o.amount || ""}"`,
         `"${o.currency || ""}"`,
-        `"${(o.customerName || "").replace(/"/g, '""')}"`,
+        `"${cleanForCSV(o.customerName)}"`,
         `"${o.phone || ""}"`,
         `"${o.email || ""}"`,
-        `"${(o.locationAndCompany || "").replace(/"/g, '""')}"`,
+        `"${cleanForCSV(o.locationAndCompany)}"`,
         `"${o.contactMethod || ""}"`,
-        `"${(o.itemsString || "").replace(/"/g, '""')}"`,
-        `"${(o.brandingMessage || "").replace(/"/g, '""')}"`
+        `"${cleanForCSV(o.itemsString)}"`,
+        `"${cleanForCSV(o.brandingMessage)}"`
       ].join(","))
     ].join("\n");
 
-    const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8;" });
+    // Add UTF-8 BOM (\uFEFF) so Excel reads special characters and Arabic properly
+    const blob = new Blob(["\uFEFF" + csvContent], { type: "text/csv;charset=utf-8;" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
