@@ -9,7 +9,7 @@ export const SHEET_IDS: Record<Region, string> = {
   saudi: process.env.SHEET_ID_SAUDI || "191hZdeaYXDGVeqMq6vy0CGzg9_6HMr7bWfmpDsRLhgs",
 };
 
-const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M"];
+const COLUMNS = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N"];
 
 // Helper to get the first sheet name dynamically
 async function getTabName(sheets: any, spreadsheetId: string) {
@@ -54,7 +54,7 @@ export async function getOrders(region: Region) {
     const tabName = await getTabName(sheets, spreadsheetId);
     const response = await sheets.spreadsheets.values.get({
       spreadsheetId,
-      range: `${tabName}!A2:M`, // Assuming row 1 is headers
+      range: `${tabName}!A2:N`, // Assuming row 1 is headers
     });
     const rows = response.data.values || [];
     return rows.map((row, index) => ({
@@ -72,6 +72,7 @@ export async function getOrders(region: Region) {
       expectedDate: row[10] || "",
       amount: row[11] || "0",
       currency: row[12] || "",
+      customerName: row[13] || "",
     }));
   } catch (error) {
     console.error(`Error reading from Google Sheets (${region}):`, error);
@@ -96,6 +97,13 @@ export async function addOrder(region: Region, orderData: any) {
       expectedDate: orderData.expectedDate || "",
       amount: orderData.amount || "0",
       currency: orderData.currency || "USD",
+      customerName: orderData.customerName || "",
+      phone: orderData.phone || "",
+      email: orderData.email || "",
+      locationAndCompany: orderData.locationAndCompany || "",
+      contactMethod: orderData.contactMethod || "",
+      itemsString: orderData.itemsString || "",
+      brandingMessage: orderData.brandingMessage || "",
     });
     return true;
   }
@@ -111,13 +119,20 @@ export async function addOrder(region: Region, orderData: any) {
     orderData.expectedDate || "",
     orderData.amount || "",
     orderData.currency || "",
+    orderData.customerName || "",
+    orderData.phone || "",
+    orderData.email || "",
+    orderData.locationAndCompany || "",
+    orderData.contactMethod || "",
+    orderData.itemsString || "",
+    orderData.brandingMessage || "",
   ];
 
   try {
     const tabName = await getTabName(sheets, spreadsheetId);
     await sheets.spreadsheets.values.append({
       spreadsheetId,
-      range: `${tabName}!A:M`,
+      range: `${tabName}!A:N`,
       valueInputOption: "USER_ENTERED",
       requestBody: { values: [values] },
     });
@@ -133,7 +148,7 @@ export async function updateCell(region: Region, rowIndex: number, colLetter: st
     const order = mockDatabase[region].find((o) => o.rowIndex === rowIndex);
     if (order) {
       const colIndex = COLUMNS.indexOf(colLetter);
-      const keys = ["orderNumber", "connect", "review", "confirm", "poNumber", "design", "purchaseMaterial", "manufacture", "handover", "finalInvoice", "expectedDate", "amount", "currency"];
+      const keys = ["orderNumber", "connect", "review", "confirm", "poNumber", "design", "purchaseMaterial", "manufacture", "handover", "finalInvoice", "expectedDate", "amount", "currency", "customerName"];
       order[keys[colIndex]] = value;
     }
     return true;
@@ -172,11 +187,22 @@ export async function deleteOrder(region: Region, rowIndex: number) {
     // For simplicity, we just clear the row so it doesn't break formulas.
     await sheets.spreadsheets.values.clear({
       spreadsheetId,
-      range: `${tabName}!A${rowIndex}:M${rowIndex}`,
+      range: `${tabName}!A${rowIndex}:N${rowIndex}`,
     });
     return true;
   } catch (error) {
     console.error(`Error deleting order from Google Sheets (${region}):`, error);
     return false;
   }
+}
+
+export async function getAllOrders() {
+  const regions: Region[] = ["egypt", "europe", "usa", "saudi"];
+  const results = await Promise.all(
+    regions.map(async (region) => {
+      const orders = await getOrders(region);
+      return orders.map((order) => ({ ...order, region }));
+    })
+  );
+  return results.flat();
 }

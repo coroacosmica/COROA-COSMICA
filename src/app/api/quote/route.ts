@@ -53,12 +53,20 @@ export async function POST(request: NextRequest) {
     if (body.currencyInfo?.region) {
       try {
         const { addOrder } = await import("@/lib/googleSheets");
+        const itemsString = itemsPayload.map((item: any) => `${item.quantity}x ${item.name || item.code}`).join(", ");
         await addOrder(body.currencyInfo.region, {
           orderNumber: `ORD-${Date.now().toString().slice(-6)}`,
           poNumber: body.customer?.company ? `PO-${body.customer.company.substring(0, 3).toUpperCase()}` : "",
           expectedDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split("T")[0], // 14 days from now
           amount: body.currencyInfo.totalAmount,
           currency: body.currencyInfo.currency,
+          customerName: body.customer?.name || "",
+          phone: body.customer?.phone || "",
+          email: body.customer?.email || "",
+          locationAndCompany: customerCompanyCombined,
+          contactMethod: body.contactMethod || "",
+          itemsString: itemsString,
+          brandingMessage: brandingMessage.trim(),
         });
       } catch (sheetsError) {
         console.error("Failed to auto-sync to Google Sheets:", sheetsError);

@@ -1,14 +1,58 @@
-import { NextResponse } from "next/server";
-import { getOrders, Region } from "@/lib/googleSheets";
+import { NextRequest, NextResponse } from "next/server";
+import { getOrders, getAllOrders, updateCell, Region } from "@/lib/googleSheets";
 
-export async function GET(request: Request) {
+// Define the steps and their corresponding columns
+const STEP_COLUMNS: Record<string, string> = {
+  connect: "B",
+  review: "C",
+  confirm: "D",
+  design: "F",
+  purchaseMaterial: "G",
+  manufacture: "H",
+  handover: "I",
+  finalInvoice: "J",
+};
+
+export async function GET(request: NextRequest) {
   const { searchParams } = new URL(request.url);
-  const region = searchParams.get("region") as Region;
+  const region = searchParams.get("region") as Region | null;
 
-  if (!region) {
-    return NextResponse.json({ error: "Missing region" }, { status: 400 });
+  try {
+    if (region) {
+      const orders = await getOrders(region);
+      return NextResponse.json({ orders });
+    } else {
+      const orders = await getAllOrders();
+      return NextResponse.json({ orders });
+    }
+  } catch (error) {
+    console.error("Failed to fetch orders:", error);
+    return NextResponse.json({ error: "Failed to fetch orders" }, { status: 500 });
   }
+}
 
-  const orders = await getOrders(region);
-  return NextResponse.json({ orders });
+export async function PATCH(request: NextRequest) {
+  try {
+    const body = await request.json();
+    const { region, rowIndex, step, value } = body;
+
+    if (!region || !rowIndex || !step || value === undefined) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
+    const colLetter = STEP_COLUMNS[step];
+    if (!colLetter) {
+      return NextResponse.json({ error: "Invalid step name" }, { status: 400 });
+    }
+
+    const success = await updateCell(region as Region, rowIndex, colLetter, value);
+    if (!success) {
+      return NextResponse.json({ error: "Failed to update cell" }, { status: 500 });
+    }
+
+    return NextResponse.json({ success: true });
+  } catch (error) {
+    console.error("Failed to patch order:", error);
+    return NextResponse.json({ error: "Internal server error" }, { status: 500 });
+  }
 }
