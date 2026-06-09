@@ -74,9 +74,9 @@ export async function getOrders(region: Region) {
       currency: row[12] || "",
       customerName: row[13] || "",
     }));
-  } catch (error) {
+  } catch (error: any) {
     console.error(`Error reading from Google Sheets (${region}):`, error);
-    return [];
+    throw new Error(`Google Sheets API Error: ${error.message || String(error)}`);
   }
 }
 

@@ -53,20 +53,27 @@ export default function MultiRegionTracker() {
   const [isAdding, setIsAdding] = useState(false);
   const [newOrder, setNewOrder] = useState<Partial<OrderData>>({});
 
+  const [errorMsg, setErrorMsg] = useState<string | null>(null);
+
   const fetchOrders = async () => {
     setLoading(true);
+    setErrorMsg(null);
     try {
       const results: Record<Region, OrderData[]> = { egypt: [], europe: [], usa: [], saudi: [] };
       for (const reg of REGIONS) {
         const res = await fetch(`/api/admin/sheets?region=${reg.id}`);
         const data = await res.json();
+        if (data.error) {
+          throw new Error(data.error);
+        }
         results[reg.id] = data.orders || [];
       }
       setAllOrders(results);
       setOrders(results[activeRegion]);
       setLastSynced(new Date());
-    } catch (e) {
+    } catch (e: any) {
       console.error("Failed to fetch orders", e);
+      setErrorMsg(e.message || "Failed to connect to Google Sheets");
     } finally {
       setLoading(false);
     }
@@ -183,21 +190,39 @@ export default function MultiRegionTracker() {
       </div>
 
       {/* Tabs */}
-      <div className="flex gap-2 overflow-x-auto border-b border-neutral-200 pb-2">
-        {REGIONS.map((r) => (
-          <button
-            key={r.id}
-            onClick={() => setActiveRegion(r.id)}
-            className={`whitespace-nowrap px-4 py-2 text-sm font-medium transition-colors ${
-              activeRegion === r.id
-                ? "border-b-2 border-olive-600 text-olive-900"
-                : "text-neutral-500 hover:text-neutral-700"
-            }`}
-          >
-            {r.flag} {r.label} ({allOrders[r.id].length})
-          </button>
-        ))}
+      <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
+        <div className="flex gap-2 border-b border-neutral-200">
+          {REGIONS.map((reg) => (
+            <button
+              key={reg.id}
+              onClick={() => {
+                setActiveRegion(reg.id);
+                setOrders(allOrders[reg.id]);
+              }}
+              className={`px-4 py-2 text-sm font-medium transition-colors ${
+                activeRegion === reg.id
+                  ? "border-b-2 border-olive-600 text-olive-800"
+                  : "text-neutral-500 hover:text-neutral-700"
+              }`}
+            >
+              {reg.flag} {reg.label} ({allOrders[reg.id]?.length || 0})
+            </button>
+          ))}
+        </div>
+        <div className="text-xs text-neutral-500">
+          {loading ? "Syncing..." : lastSynced ? `Synced: ${lastSynced.toLocaleTimeString()}` : ""}
+        </div>
       </div>
+
+      {errorMsg && (
+        <div className="mb-4 rounded bg-red-50 p-4 border border-red-200">
+          <h3 className="text-sm font-bold text-red-800">Connection Error</h3>
+          <p className="text-sm text-red-700 mt-1 whitespace-pre-wrap">{errorMsg}</p>
+          <button onClick={fetchOrders} className="mt-2 text-xs bg-red-100 px-3 py-1 rounded text-red-800 hover:bg-red-200">
+            Try Again
+          </button>
+        </div>
+      )}
 
       {/* Region Toolbar */}
       <div className="flex items-center justify-between bg-neutral-50 p-3 rounded-lg border border-neutral-200">
