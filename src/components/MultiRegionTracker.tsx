@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useMemo } from "react";
+import { supabase } from "@/lib/supabase";
 
 type Region = "egypt" | "europe" | "usa" | "saudi";
 
@@ -67,7 +68,14 @@ export default function MultiRegionTracker() {
     setErrorMsg(null);
     try {
       const results: Record<Region, OrderData[]> = { egypt: [], europe: [], usa: [], saudi: [] };
-      const res = await fetch(`/api/admin/tracking`);
+      
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      const res = await fetch(`/api/admin/tracking`, {
+        headers: {
+          Authorization: `Bearer ${session?.access_token || ""}`
+        }
+      });
       const data = await res.json();
       
       if (data.error) throw new Error(data.error);
@@ -109,9 +117,14 @@ export default function MultiRegionTracker() {
     setSyncingCell({ id, field });
 
     try {
+      const { data: { session } } = await supabase.auth.getSession();
+      
       const res = await fetch("/api/admin/tracking", {
         method: "PATCH",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${session?.access_token || ""}`
+        },
         body: JSON.stringify({ id, field, value }),
       });
       const data = await res.json();
