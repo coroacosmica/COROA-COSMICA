@@ -33,6 +33,43 @@ export async function POST(request: NextRequest) {
 
     const finalMessage = (body.message || "") + contactMethodStr + brandingMessage;
 
+    // 1.5 Prepare Tracking Data for Native Supabase Excel Grid
+    let trackingData = {};
+    if (body.currencyInfo?.region) {
+      const unitPricesString = itemsPayload.map((item: any) => {
+        if (item.code === "LOGO") return "1x Attached Logo";
+        const unitPrice = item.price || 0;
+        const subtotal = unitPrice * (item.quantity || 1);
+        const curr = body.currencyInfo?.currency || "USD";
+        return `${item.quantity}x ${item.name || item.code} (@ ${unitPrice} ${curr} = ${subtotal.toFixed(2)} ${curr})`;
+      }).join(" | ");
+
+      trackingData = {
+        orderNumber: `ORD-${Date.now().toString().slice(-6)}`,
+        poNumber: body.customer?.company ? `PO-${body.customer.company.substring(0, 3).toUpperCase()}` : "",
+        expectedDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split("T")[0],
+        amount: body.currencyInfo.totalAmount,
+        currency: body.currencyInfo.currency,
+        customerName: body.customer?.name || "",
+        phone: body.customer?.phone || "",
+        email: body.customer?.email || "",
+        locationAndCompany: customerCompanyCombined,
+        contactMethod: body.contactMethod || "",
+        itemsString: unitPricesString,
+        brandingMessage: brandingMessage.trim(),
+        region: body.currencyInfo.region,
+        // Steps initialized to empty
+        stepConnect: "",
+        stepReview: "",
+        stepConfirm: "",
+        stepDesign: "",
+        stepMaterial: "",
+        stepManufacture: "",
+        stepHandover: "",
+        stepInvoice: "",
+      };
+    }
+
     // 1. Save to Supabase (Primary)
     const { error } = await supabase.from("quote_requests").insert([{
       customer_name: body.customer?.name || user?.user_metadata?.full_name,
@@ -43,40 +80,11 @@ export async function POST(request: NextRequest) {
       message: finalMessage,
       locale: body.locale || "en",
       user_id: user?.id,
+      tracking_data: trackingData,
     }]);
 
     if (error) {
       console.error("Supabase insert error:", error);
-    }
-
-    // 1.5 Auto-Sync to Google Sheets Admin Tracker
-    if (body.currencyInfo?.region) {
-      try {
-        const { addOrder } = await import("@/lib/googleSheets");
-        const itemsString = itemsPayload.map((item: any) => {
-          if (item.code === "LOGO") return "1x Attached Logo";
-          const unitPrice = item.price || 0;
-          const subtotal = unitPrice * (item.quantity || 1);
-          const curr = body.currencyInfo?.currency || "USD";
-          return `${item.quantity}x ${item.name || item.code} (@ ${unitPrice} ${curr} = ${subtotal.toFixed(2)} ${curr})`;
-        }).join(" | ");
-        await addOrder(body.currencyInfo.region, {
-          orderNumber: `ORD-${Date.now().toString().slice(-6)}`,
-          poNumber: body.customer?.company ? `PO-${body.customer.company.substring(0, 3).toUpperCase()}` : "",
-          expectedDate: new Date(Date.now() + 14 * 24 * 60 * 60 * 1000).toISOString().split("T")[0], // 14 days from now
-          amount: body.currencyInfo.totalAmount,
-          currency: body.currencyInfo.currency,
-          customerName: body.customer?.name || "",
-          phone: body.customer?.phone || "",
-          email: body.customer?.email || "",
-          locationAndCompany: customerCompanyCombined,
-          contactMethod: body.contactMethod || "",
-          itemsString: itemsString,
-          brandingMessage: brandingMessage.trim(),
-        });
-      } catch (sheetsError) {
-        console.error("Failed to auto-sync to Google Sheets:", sheetsError);
-      }
     }
 
     // 2. Save to file system as backup (for local development fallback)

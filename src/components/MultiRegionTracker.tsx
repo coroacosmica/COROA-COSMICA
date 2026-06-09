@@ -1,23 +1,32 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Region } from "@/lib/googleSheets";
+import { useState, useEffect, useMemo } from "react";
+
+type Region = "egypt" | "europe" | "usa" | "saudi";
 
 interface OrderData {
-  rowIndex: number;
+  id: number;
   orderNumber: string;
-  connect: string;
-  review: string;
-  confirm: string;
   poNumber: string;
-  design: string;
-  purchaseMaterial: string;
-  manufacture: string;
-  handover: string;
-  finalInvoice: string;
   expectedDate: string;
   amount: string;
   currency: string;
+  customerName: string;
+  phone: string;
+  email: string;
+  locationAndCompany: string;
+  contactMethod: string;
+  itemsString: string;
+  brandingMessage: string;
+  region: Region;
+  stepConnect: string;
+  stepReview: string;
+  stepConfirm: string;
+  stepDesign: string;
+  stepMaterial: string;
+  stepManufacture: string;
+  stepHandover: string;
+  stepInvoice: string;
 }
 
 const REGIONS: { id: Region; label: string; flag: string; currency: string }[] = [
@@ -28,14 +37,14 @@ const REGIONS: { id: Region; label: string; flag: string; currency: string }[] =
 ];
 
 const STEPS = [
-  { key: "connect", label: "Connect", colLetter: "B" },
-  { key: "review", label: "Review", colLetter: "C" },
-  { key: "confirm", label: "Confirm", colLetter: "D" },
-  { key: "design", label: "Design", colLetter: "F" },
-  { key: "purchaseMaterial", label: "Material", colLetter: "G" },
-  { key: "manufacture", label: "Manufacture", colLetter: "H" },
-  { key: "handover", label: "Handover", colLetter: "I" },
-  { key: "finalInvoice", label: "Invoice", colLetter: "J" },
+  { key: "stepConnect", label: "Connect" },
+  { key: "stepReview", label: "Review" },
+  { key: "stepConfirm", label: "Confirm" },
+  { key: "stepDesign", label: "Design" },
+  { key: "stepMaterial", label: "Material" },
+  { key: "stepManufacture", label: "Manufacture" },
+  { key: "stepHandover", label: "Handover" },
+  { key: "stepInvoice", label: "Invoice" },
 ];
 
 export default function MultiRegionTracker() {
@@ -48,32 +57,34 @@ export default function MultiRegionTracker() {
     saudi: [],
   });
   const [loading, setLoading] = useState(true);
-  const [syncingCell, setSyncingCell] = useState<string | null>(null);
+  const [syncingCell, setSyncingCell] = useState<{ id: number; field: string } | null>(null);
   const [lastSynced, setLastSynced] = useState<Date | null>(null);
-  const [isAdding, setIsAdding] = useState(false);
-  const [newOrder, setNewOrder] = useState<Partial<OrderData>>({});
-
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const fetchOrders = async () => {
     setLoading(true);
     setErrorMsg(null);
     try {
       const results: Record<Region, OrderData[]> = { egypt: [], europe: [], usa: [], saudi: [] };
-      for (const reg of REGIONS) {
-        const res = await fetch(`/api/admin/sheets?region=${reg.id}`);
-        const data = await res.json();
-        if (data.error) {
-          throw new Error(data.error);
+      const res = await fetch(`/api/admin/tracking`);
+      const data = await res.json();
+      
+      if (data.error) throw new Error(data.error);
+
+      // Group by region
+      (data.orders || []).forEach((order: OrderData) => {
+        if (order.region && results[order.region]) {
+          results[order.region].push(order);
         }
-        results[reg.id] = data.orders || [];
-      }
+      });
+
       setAllOrders(results);
       setOrders(results[activeRegion]);
       setLastSynced(new Date());
     } catch (e: any) {
-      console.error("Failed to fetch orders", e);
-      setErrorMsg(e.message || "Failed to connect to Google Sheets");
+      console.error("Failed to fetch tracking orders", e);
+      setErrorMsg(e.message || "Failed to load order tracking data");
     } finally {
       setLoading(false);
     }
@@ -81,124 +92,57 @@ export default function MultiRegionTracker() {
 
   useEffect(() => {
     fetchOrders();
-    const interval = setInterval(fetchOrders, 60000); // refresh every 60s
+    const interval = setInterval(fetchOrders, 30000); // refresh every 30s
     return () => clearInterval(interval);
   }, []);
 
   useEffect(() => {
-    setOrders(allOrders[activeRegion] || []);
+    setOrders(allOrders[activeRegion]);
   }, [activeRegion, allOrders]);
 
-  const toggleStep = async (order: OrderData, stepKey: string, colLetter: string) => {
-    const currentVal = (order as any)[stepKey];
-    const newVal = currentVal === "Done" ? "" : "Done";
-    const cellId = `${order.rowIndex}-${stepKey}`;
+  const handleCellChange = async (id: number, field: keyof OrderData, value: string) => {
+    // Optimistic UI update
+    const previousOrders = [...orders];
+    setOrders((prev) =>
+      prev.map((o) => (o.id === id ? { ...o, [field]: value } : o))
+    );
+    setSyncingCell({ id, field });
 
-    // Optimistic UI
-    setOrders(orders.map((o) => (o.rowIndex === order.rowIndex ? { ...o, [stepKey]: newVal } : o)));
-    setAllOrders((prev) => ({
-      ...prev,
-      [activeRegion]: prev[activeRegion].map((o) => (o.rowIndex === order.rowIndex ? { ...o, [stepKey]: newVal } : o)),
-    }));
-
-    setSyncingCell(cellId);
     try {
-      await fetch("/api/admin/sheets/update", {
-        method: "POST",
-        body: JSON.stringify({
-          region: activeRegion,
-          rowIndex: order.rowIndex,
-          colLetter,
-          value: newVal,
-        }),
+      const res = await fetch("/api/admin/tracking", {
+        method: "PATCH",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ id, field, value }),
       });
+      const data = await res.json();
+      if (!data.success) throw new Error(data.error);
     } catch (e) {
-      console.error("Update failed", e);
-      // Revert on failure
-      setOrders(orders.map((o) => (o.rowIndex === order.rowIndex ? { ...o, [stepKey]: currentVal } : o)));
+      console.error("Failed to sync cell", e);
+      // Revert on error
+      setOrders(previousOrders);
+      alert("Failed to save changes. Please try again.");
     } finally {
       setSyncingCell(null);
     }
   };
 
-  const handleAddSubmit = async () => {
-    try {
-      await fetch("/api/admin/sheets/new", {
-        method: "POST",
-        body: JSON.stringify({
-          region: activeRegion,
-          order: {
-            ...newOrder,
-            currency: REGIONS.find((r) => r.id === activeRegion)?.currency,
-          },
-        }),
-      });
-      setIsAdding(false);
-      setNewOrder({});
-      fetchOrders();
-    } catch (e) {
-      console.error("Failed to add order", e);
-    }
-  };
-
-  const handleDelete = async (rowIndex: number) => {
-    if (!confirm("Are you sure you want to delete this order row from the Google Sheet?")) return;
-    try {
-      await fetch("/api/admin/sheets/delete", {
-        method: "DELETE",
-        body: JSON.stringify({ region: activeRegion, rowIndex }),
-      });
-      fetchOrders();
-    } catch (e) {
-      console.error("Failed to delete", e);
-    }
-  };
-
-  // Stats
-  const totalOrders = Object.values(allOrders).flat().length;
-  const inProgress = Object.values(allOrders).flat().filter(
-    (o) => STEPS.some((s) => (o as any)[s.key] !== "Done")
-  ).length;
-  const completed = totalOrders - inProgress;
-  const regionTotalRev = orders.reduce((acc, o) => acc + (parseFloat(o.amount) || 0), 0);
+  const filteredOrders = useMemo(() => {
+    if (!searchQuery) return orders;
+    return orders.filter((o) => 
+      o.orderNumber?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      o.poNumber?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      o.customerName?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [orders, searchQuery]);
 
   return (
-    <div className="space-y-6">
-      {/* Top Stats */}
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-4">
-        <div className="rounded-lg bg-white p-4 shadow-sm border border-neutral-100">
-          <p className="text-2xl font-bold text-olive-900">{totalOrders}</p>
-          <p className="text-xs font-semibold uppercase text-neutral-500">Total Orders</p>
-        </div>
-        <div className="rounded-lg bg-white p-4 shadow-sm border border-neutral-100">
-          <p className="text-2xl font-bold text-blue-600">{inProgress}</p>
-          <p className="text-xs font-semibold uppercase text-neutral-500">In Progress</p>
-        </div>
-        <div className="rounded-lg bg-white p-4 shadow-sm border border-neutral-100">
-          <p className="text-2xl font-bold text-green-600">{completed}</p>
-          <p className="text-xs font-semibold uppercase text-neutral-500">Completed</p>
-        </div>
-        <div className="rounded-lg bg-white p-4 shadow-sm border border-neutral-100 flex flex-col justify-center">
-          <p className="text-xs text-neutral-400">Last synced</p>
-          <p className="text-sm font-medium text-neutral-700">
-            {lastSynced ? lastSynced.toLocaleTimeString() : "..."}
-          </p>
-          <button onClick={fetchOrders} className="mt-1 text-xs text-olive-600 hover:underline text-left">
-            Refresh Now
-          </button>
-        </div>
-      </div>
-
-      {/* Tabs */}
+    <div className="rounded-lg bg-white p-6 shadow-sm ring-1 ring-neutral-200">
       <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
         <div className="flex gap-2 border-b border-neutral-200">
           {REGIONS.map((reg) => (
             <button
               key={reg.id}
-              onClick={() => {
-                setActiveRegion(reg.id);
-                setOrders(allOrders[reg.id]);
-              }}
+              onClick={() => setActiveRegion(reg.id)}
               className={`px-4 py-2 text-sm font-medium transition-colors ${
                 activeRegion === reg.id
                   ? "border-b-2 border-olive-600 text-olive-800"
@@ -209,8 +153,17 @@ export default function MultiRegionTracker() {
             </button>
           ))}
         </div>
-        <div className="text-xs text-neutral-500">
-          {loading ? "Syncing..." : lastSynced ? `Synced: ${lastSynced.toLocaleTimeString()}` : ""}
+        <div className="flex items-center gap-4">
+          <input
+            type="text"
+            placeholder="Search Order No. or Name..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="rounded border border-neutral-300 px-3 py-1.5 text-sm outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500"
+          />
+          <div className="text-xs text-neutral-500">
+            {loading ? "Syncing..." : lastSynced ? `Synced: ${lastSynced.toLocaleTimeString()}` : ""}
+          </div>
         </div>
       </div>
 
@@ -224,159 +177,101 @@ export default function MultiRegionTracker() {
         </div>
       )}
 
-      {/* Region Toolbar */}
-      <div className="flex items-center justify-between bg-neutral-50 p-3 rounded-lg border border-neutral-200">
-        <div>
-          <span className="text-sm text-neutral-500">Revenue in {REGIONS.find((r) => r.id === activeRegion)?.currency}: </span>
-          <span className="text-lg font-bold text-olive-800">{regionTotalRev.toLocaleString()}</span>
-        </div>
-        <div className="flex gap-3">
-          <a
-            href={`https://docs.google.com/spreadsheets/d/${
-              {
-                egypt: "1V2amBTe3m5GttKiBSnlybd4aopRLk-yUwjU-06xcfsI",
-                europe: "1HFEmIZ5hOAkiHOJ-6vlrMIjrX3Od2lvTXm0XmI4GSL0",
-                usa: "1mY7UyEXZHwYW7oCyxkty_Zdv4iQ2dxkYRE-nMjVFff4",
-                saudi: "191hZdeaYXDGVeqMq6vy0CGzg9_6HMr7bWfmpDsRLhgs",
-              }[activeRegion]
-            }/edit`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 hover:bg-neutral-50"
-          >
-            📊 Open Google Sheet
-          </a>
-          <button
-            onClick={() => setIsAdding(true)}
-            className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
-          >
-            + Add New Order
-          </button>
-        </div>
-      </div>
-
-      {/* Table */}
-      <div className="overflow-x-auto rounded-lg bg-white shadow-sm border border-neutral-200">
-        {loading ? (
-          <div className="p-8 text-center text-neutral-500">Loading sheets data...</div>
-        ) : orders.length === 0 ? (
-          <div className="p-8 text-center text-neutral-500">No orders found in this region sheet.</div>
-        ) : (
-          <table className="w-full text-left text-xs whitespace-nowrap">
-            <thead className="bg-neutral-100 text-neutral-700 uppercase border-b border-neutral-200">
+      <div className="overflow-x-auto rounded-lg border border-neutral-200 bg-white shadow-sm">
+        <table className="min-w-max w-full text-left text-xs text-neutral-600">
+          <thead className="bg-olive-800 text-white sticky top-0 z-10">
+            <tr>
+              <th className="px-3 py-2 font-semibold">Order Number</th>
+              {STEPS.map((s) => (
+                <th key={s.key} className="px-3 py-2 font-semibold">{s.label}</th>
+              ))}
+              <th className="px-3 py-2 font-semibold">PO Number</th>
+              <th className="px-3 py-2 font-semibold">Expected Date</th>
+              <th className="px-3 py-2 font-semibold text-right">Total Amount</th>
+              <th className="px-3 py-2 font-semibold text-center">Cur</th>
+              <th className="px-3 py-2 font-semibold">Customer Name</th>
+              <th className="px-3 py-2 font-semibold">Phone</th>
+              <th className="px-3 py-2 font-semibold">Email</th>
+              <th className="px-3 py-2 font-semibold">Location / Company</th>
+              <th className="px-3 py-2 font-semibold">Contact Method</th>
+              <th className="px-3 py-2 font-semibold">Items & Prices</th>
+              <th className="px-3 py-2 font-semibold">Branding & Notes</th>
+            </tr>
+          </thead>
+          <tbody className="divide-y divide-neutral-200">
+            {filteredOrders.length === 0 ? (
               <tr>
-                <th className="px-3 py-3">Order No.</th>
-                <th className="px-3 py-3">PO No.</th>
-                {STEPS.map((s) => (
-                  <th key={s.key} className="px-3 py-3 text-center">{s.label}</th>
-                ))}
-                <th className="px-3 py-3">Progress</th>
-                <th className="px-3 py-3">Due Date</th>
-                <th className="px-3 py-3">Amount</th>
-                <th className="px-3 py-3">Actions</th>
+                <td colSpan={21} className="p-8 text-center text-sm text-neutral-400">
+                  {searchQuery ? "No orders match your search." : "No orders found in this region."}
+                </td>
               </tr>
-            </thead>
-            <tbody className="divide-y divide-neutral-100">
-              {orders.map((o) => {
-                const doneCount = STEPS.filter((s) => (o as any)[s.key] === "Done").length;
-                return (
-                  <tr key={o.rowIndex} className="hover:bg-neutral-50">
-                    <td className="px-3 py-3 font-semibold">{o.orderNumber || "—"}</td>
-                    <td className="px-3 py-3 text-neutral-500">{o.poNumber || "—"}</td>
-                    {STEPS.map((s) => {
-                      const isDone = (o as any)[s.key] === "Done";
-                      const isSyncing = syncingCell === `${o.rowIndex}-${s.key}`;
-                      return (
-                        <td key={s.key} className="px-3 py-3 text-center">
-                          <button
-                            onClick={() => toggleStep(o, s.key, s.colLetter)}
-                            disabled={isSyncing}
-                            className={`flex h-6 w-6 items-center justify-center rounded-full transition-colors mx-auto ${
-                              isSyncing ? "opacity-50 cursor-wait" : ""
-                            } ${isDone ? "bg-green-100 text-green-700" : "bg-neutral-100 text-neutral-300 hover:bg-neutral-200"}`}
+            ) : (
+              filteredOrders.map((order) => (
+                <tr key={order.id} className="hover:bg-neutral-50 transition-colors">
+                  <td className="px-3 py-2 font-medium whitespace-nowrap">{order.orderNumber}</td>
+                  
+                  {STEPS.map((step) => {
+                    const isSyncing = syncingCell?.id === order.id && syncingCell?.field === step.key;
+                    const val = (order as any)[step.key] || "";
+                    
+                    return (
+                      <td key={step.key} className="px-1 py-1 min-w-[100px]">
+                        <div className="relative flex items-center">
+                          <select
+                            value={val}
+                            onChange={(e) => handleCellChange(order.id, step.key as keyof OrderData, e.target.value)}
+                            className={`w-full appearance-none rounded border px-2 py-1 text-xs outline-none focus:border-olive-500 focus:ring-1 focus:ring-olive-500 ${
+                              val === "Done" ? "bg-green-50 border-green-200 text-green-700" :
+                              val === "Working" ? "bg-yellow-50 border-yellow-200 text-yellow-700" :
+                              val === "Issue" ? "bg-red-50 border-red-200 text-red-700" :
+                              "bg-transparent border-transparent hover:border-neutral-300"
+                            } ${isSyncing ? "opacity-50" : ""}`}
                           >
-                            {isDone ? "✓" : "○"}
-                          </button>
-                        </td>
-                      );
-                    })}
-                    <td className="px-3 py-3">
-                      <div className="flex items-center gap-2">
-                        <span className="w-6 text-right text-neutral-600">{doneCount}/{STEPS.length}</span>
-                        <div className="h-2 w-16 bg-neutral-200 rounded-full overflow-hidden">
-                          <div
-                            className="h-full bg-olive-500 transition-all"
-                            style={{ width: `${(doneCount / STEPS.length) * 100}%` }}
-                          />
+                            <option value="">-</option>
+                            <option value="Done">Done</option>
+                            <option value="Working">Working</option>
+                            <option value="Issue">Issue</option>
+                          </select>
                         </div>
-                      </div>
-                    </td>
-                    <td className="px-3 py-3">{o.expectedDate || "—"}</td>
-                    <td className="px-3 py-3 font-medium">
-                      {o.amount} {o.currency}
-                    </td>
-                    <td className="px-3 py-3">
-                      <button onClick={() => handleDelete(o.rowIndex)} className="text-red-500 hover:text-red-700">🗑️</button>
-                    </td>
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
-        )}
-      </div>
+                      </td>
+                    );
+                  })}
 
-      {/* Add Modal */}
-      {isAdding && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
-          <div className="w-full max-w-md rounded-xl bg-white p-6 shadow-2xl">
-            <h2 className="mb-4 text-xl font-bold">Add Order ({REGIONS.find((r) => r.id === activeRegion)?.label})</h2>
-            <div className="space-y-3">
-              <div>
-                <label className="text-xs font-semibold">Order Number</label>
-                <input
-                  type="text"
-                  className="w-full rounded border px-3 py-2 text-sm"
-                  onChange={(e) => setNewOrder({ ...newOrder, orderNumber: e.target.value })}
-                />
-              </div>
-              <div>
-                <label className="text-xs font-semibold">PO Number</label>
-                <input
-                  type="text"
-                  className="w-full rounded border px-3 py-2 text-sm"
-                  onChange={(e) => setNewOrder({ ...newOrder, poNumber: e.target.value })}
-                />
-              </div>
-              <div>
-                <label className="text-xs font-semibold">Amount</label>
-                <div className="flex gap-2">
-                  <input
-                    type="number"
-                    className="w-full rounded border px-3 py-2 text-sm"
-                    onChange={(e) => setNewOrder({ ...newOrder, amount: e.target.value })}
-                  />
-                  <span className="flex items-center bg-neutral-100 px-3 rounded text-sm font-semibold text-neutral-600">
-                    {REGIONS.find((r) => r.id === activeRegion)?.currency}
-                  </span>
-                </div>
-              </div>
-              <div>
-                <label className="text-xs font-semibold">Expected Date</label>
-                <input
-                  type="date"
-                  className="w-full rounded border px-3 py-2 text-sm"
-                  onChange={(e) => setNewOrder({ ...newOrder, expectedDate: e.target.value })}
-                />
-              </div>
-            </div>
-            <div className="mt-6 flex justify-end gap-3">
-              <button onClick={() => setIsAdding(false)} className="px-4 py-2 text-sm">Cancel</button>
-              <button onClick={handleAddSubmit} className="rounded bg-olive-600 px-4 py-2 text-sm text-white">Save to Sheet</button>
-            </div>
-          </div>
-        </div>
-      )}
+                  <td className="px-1 py-1 min-w-[120px]">
+                    <input
+                      type="text"
+                      value={order.poNumber}
+                      onChange={(e) => handleCellChange(order.id, "poNumber", e.target.value)}
+                      placeholder="PO-"
+                      className="w-full rounded border border-transparent bg-transparent px-2 py-1 hover:border-neutral-300 focus:border-olive-500 focus:bg-white focus:ring-1 focus:ring-olive-500"
+                    />
+                  </td>
+                  
+                  <td className="px-1 py-1 min-w-[130px]">
+                    <input
+                      type="date"
+                      value={order.expectedDate}
+                      onChange={(e) => handleCellChange(order.id, "expectedDate", e.target.value)}
+                      className="w-full rounded border border-transparent bg-transparent px-2 py-1 hover:border-neutral-300 focus:border-olive-500 focus:bg-white focus:ring-1 focus:ring-olive-500"
+                    />
+                  </td>
+                  
+                  <td className="px-3 py-2 text-right font-medium whitespace-nowrap">{order.amount}</td>
+                  <td className="px-3 py-2 text-center text-neutral-500">{order.currency}</td>
+                  
+                  <td className="px-3 py-2 whitespace-nowrap">{order.customerName}</td>
+                  <td className="px-3 py-2 whitespace-nowrap">{order.phone}</td>
+                  <td className="px-3 py-2 whitespace-nowrap text-blue-600">{order.email}</td>
+                  <td className="px-3 py-2 whitespace-nowrap">{order.locationAndCompany}</td>
+                  <td className="px-3 py-2 whitespace-nowrap capitalize">{order.contactMethod}</td>
+                  <td className="px-3 py-2 min-w-[300px] text-[11px] leading-relaxed">{order.itemsString}</td>
+                  <td className="px-3 py-2 min-w-[200px] text-[11px] whitespace-pre-wrap">{order.brandingMessage}</td>
+                </tr>
+              ))
+            )}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }
