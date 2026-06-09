@@ -42,23 +42,26 @@ export default function DesignStudio({ product }: { product: Product }) {
     });
     
     // Load Product Image as non-editable background
-    fabric.Image.fromURL(product.image, (img) => {
-      // Scale to fit 500x500
-      const scale = Math.min(500 / (img.width || 500), 500 / (img.height || 500));
-      img.set({
-        originX: "center",
-        originY: "center",
-        left: 250,
-        top: 250,
-        scaleX: scale,
-        scaleY: scale,
-        selectable: false,
-        evented: false,
+    const bgImage = product.image || "";
+    if (bgImage) {
+      fabric.Image.fromURL(bgImage, (img) => {
+        // Scale to fit 500x500
+        const scale = Math.min(500 / (img.width || 500), 500 / (img.height || 500));
+        img.set({
+          originX: "center",
+          originY: "center",
+          left: 250,
+          top: 250,
+          scaleX: scale,
+          scaleY: scale,
+          selectable: false,
+          evented: false,
+        });
+        initCanvas.add(img);
+        img.sendToBack();
+        triggerReRender();
       });
-      initCanvas.add(img);
-      img.sendToBack();
-      triggerReRender();
-    });
+    }
 
     initCanvas.on("selection:created", (e) => { setActiveObject(e.selected?.[0] || null); triggerReRender(); });
     initCanvas.on("selection:updated", (e) => { setActiveObject(e.selected?.[0] || null); triggerReRender(); });
@@ -91,8 +94,8 @@ export default function DesignStudio({ product }: { product: Product }) {
     
     const customItem = {
       code: `${product.code}-custom-${Date.now()}`,
-      name: `${product.name || product.code} (Custom Design)`,
-      image: product.image,
+      name: `${product.names?.en || product.code} (Custom Design)`,
+      image: product.image || "",
       quantity: 1,
       price: product.price || 0,
       customDesign: {
@@ -101,7 +104,7 @@ export default function DesignStudio({ product }: { product: Product }) {
       }
     };
     
-    addItem(customItem, 1);
+    addItem(customItem as any, 1);
     router.push("/catalogue?openCart=true");
   };
 
@@ -111,7 +114,7 @@ export default function DesignStudio({ product }: { product: Product }) {
         {/* Header Mobile */}
         <div className="md:hidden flex items-center justify-between bg-white p-4 shadow-sm z-10">
           <button onClick={() => router.back()} className="text-sm font-semibold">← Back</button>
-          <span className="font-semibold text-sm truncate max-w-[150px]">{product.name || product.code}</span>
+          <span className="font-semibold text-sm truncate max-w-[150px]">{product.names?.en || product.code}</span>
           <button onClick={saveDesignAndAddToCart} className="btn-primary text-xs py-1 px-3">Save</button>
         </div>
 

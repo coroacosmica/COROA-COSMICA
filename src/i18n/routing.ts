@@ -13,6 +13,7 @@ export const routing = defineRouting({
     "en",
     "en-us",
     "ar",
+    "ar-sa",
     "ar-eg",
     "pt-br",
   ],
