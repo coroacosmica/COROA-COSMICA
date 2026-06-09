@@ -438,12 +438,30 @@ export default function AdminDashboard({
                           );
                         }
                         return (
-                          <span
-                            key={i}
-                            className="rounded-full bg-olive-100 px-3 py-1 text-xs font-medium text-olive-800"
-                          >
-                            {item.name || item.code} × {item.quantity}
-                          </span>
+                          <div key={i} className="flex flex-col gap-2">
+                            <span className="w-fit rounded-full bg-olive-100 px-3 py-1 text-xs font-medium text-olive-800">
+                              {item.name || item.code} × {item.quantity}
+                            </span>
+                            {item.customDesign?.pngDataUrl && (
+                              <div className="mt-1 w-full pl-2">
+                                <p className="mb-1 text-xs text-neutral-500">Custom Design (From Editor):</p>
+                                <div className="flex items-end gap-4">
+                                  <img
+                                    src={item.customDesign.pngDataUrl}
+                                    alt="Custom Design"
+                                    className="max-h-32 max-w-xs rounded border border-neutral-200 bg-white p-1 object-contain shadow-sm"
+                                  />
+                                  <a
+                                    href={item.customDesign.pngDataUrl}
+                                    download={`design-${quote.id}-${item.code}.png`}
+                                    className="rounded bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 transition-colors hover:bg-blue-100"
+                                  >
+                                    ⬇️ Download Design
+                                  </a>
+                                </div>
+                              </div>
+                            )}
+                          </div>
                         );
                       })}
                     </div>
