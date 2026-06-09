@@ -53,7 +53,13 @@ export async function POST(request: NextRequest) {
     if (body.currencyInfo?.region) {
       try {
         const { addOrder } = await import("@/lib/googleSheets");
-        const itemsString = itemsPayload.map((item: any) => `${item.quantity}x ${item.name || item.code}`).join(", ");
+        const itemsString = itemsPayload.map((item: any) => {
+          if (item.code === "LOGO") return "1x Attached Logo";
+          const unitPrice = item.price || 0;
+          const subtotal = unitPrice * (item.quantity || 1);
+          const curr = body.currencyInfo?.currency || "USD";
+          return `${item.quantity}x ${item.name || item.code} (@ ${unitPrice} ${curr} = ${subtotal.toFixed(2)} ${curr})`;
+        }).join(" | ");
         await addOrder(body.currencyInfo.region, {
           orderNumber: `ORD-${Date.now().toString().slice(-6)}`,
           poNumber: body.customer?.company ? `PO-${body.customer.company.substring(0, 3).toUpperCase()}` : "",
