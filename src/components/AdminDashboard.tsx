@@ -405,7 +405,9 @@ export default function AdminDashboard({
                 {quote.message && (
                   <div className="rounded bg-neutral-50 p-4">
                     <h4 className="mb-1 text-xs font-semibold text-neutral-500">MESSAGE</h4>
-                    <p className="text-sm text-neutral-800">{quote.message}</p>
+                    <p className="whitespace-pre-wrap text-sm text-neutral-800">
+                      {quote.message.replace(/File: data:[^\s]+/g, "File: [See attached logo below]")}
+                    </p>
                   </div>
                 )}
 
@@ -417,8 +419,21 @@ export default function AdminDashboard({
                         if (item.code === "LOGO" && item.logoData) {
                           return (
                             <div key={i} className="w-full mt-2">
-                              <p className="text-xs text-neutral-500 mb-1">Attached Logo:</p>
-                              <img src={item.logoData} alt="Logo" className="max-h-24 max-w-xs object-contain border border-neutral-200 rounded p-1 bg-white" />
+                              <p className="mb-1 text-xs text-neutral-500">Attached Logo:</p>
+                              <div className="flex items-end gap-4">
+                                <img
+                                  src={item.logoData}
+                                  alt="Logo"
+                                  className="max-h-24 max-w-xs rounded border border-neutral-200 bg-white p-1 object-contain"
+                                />
+                                <a
+                                  href={item.logoData}
+                                  download={`logo-${quote.id}.png`}
+                                  className="rounded bg-olive-100 px-3 py-1.5 text-xs font-semibold text-olive-800 transition-colors hover:bg-olive-200"
+                                >
+                                  ⬇️ Download Logo
+                                </a>
+                              </div>
                             </div>
                           );
                         }
