@@ -28,9 +28,16 @@ export default function AdminLogin() {
   return (
     <div className="flex min-h-screen items-center justify-center bg-neutral-100 p-4">
       <div className="card w-full max-w-md bg-white p-8 shadow-xl">
-        <h1 className="mb-6 text-center text-2xl font-bold text-olive-900">
-          Admin Login
-        </h1>
+        <div className="flex flex-col items-center justify-center mb-6">
+          <img 
+            src="/images/cropped-logo.png" 
+            alt="Coroa Cosmica" 
+            className="h-16 w-auto object-contain mb-4"
+          />
+          <h1 className="text-center text-2xl font-bold text-olive-900">
+            Admin Login
+          </h1>
+        </div>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="mb-1 block text-sm font-medium text-neutral-700">

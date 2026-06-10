@@ -1,8 +1,8 @@
 export const BRAND_NAME = "Coroa Cósmica Advertising Agency";
 export const BRAND_SHORT = "Coroa Cósmica";
-export const LOGO_PATH = "/images/coroacosmica-logo.png";
+export const LOGO_PATH = "/images/combined-logo-transparent.png";
 export const CONTACT_EMAIL = "coroa.cosmica@gmail.com";
-export const BRAND_BG = "#6B7355";
+export const BRAND_BG = "#6d735a";
 
 export const WHATSAPP_NUMBERS = [
   { label: "Egypt", number: "+201227644162" },
@@ -13,7 +13,7 @@ export const WHATSAPP_NUMBERS = [
 export const WHATSAPP_FLOAT = "+351937438070";
 
 export const BRAND_COLORS = {
-  primary: "#6B7355",
+  primary: "#6d735a",
   accentGreen: "#5AAF3F",
   accentTeal: "#2A9D8F",
   accentBlue: "#3AABDC",
