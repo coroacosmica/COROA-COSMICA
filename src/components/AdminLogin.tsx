@@ -29,7 +29,7 @@ export default function AdminLogin() {
     <div className="flex min-h-screen items-center justify-center bg-neutral-100 p-4">
       <div className="card w-full max-w-md bg-white p-8 shadow-xl">
         <div className="flex flex-col items-center justify-center mb-6">
-          <div className="flex items-center gap-4 bg-[#231F20] p-4 rounded-lg mb-6 w-full justify-center">
+          <div className="flex items-center gap-4 bg-olive-600 p-4 rounded-lg mb-6 w-full justify-center">
             <img 
               src="/images/coroacosmica-logo.png" 
               alt="Coroa Cosmica" 

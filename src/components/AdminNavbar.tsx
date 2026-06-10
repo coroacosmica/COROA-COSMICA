@@ -12,7 +12,7 @@ export default function AdminNavbar() {
   };
 
   return (
-    <nav className="bg-[#231F20] px-4 py-4 shadow-sm md:px-8">
+    <nav className="bg-olive-600 px-4 py-4 shadow-sm md:px-8">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex items-center gap-6">
           <Link href="/admin" className="flex items-center gap-4">
