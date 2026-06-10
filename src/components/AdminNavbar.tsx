@@ -17,7 +17,7 @@ export default function AdminNavbar() {
         <div className="flex items-center gap-6">
           <Link href="/admin" className="flex items-center gap-2">
             <img 
-              src="/images/cropped-logo.png" 
+              src="/images/combined-logo-transparent.png" 
               alt="Coroa Cosmica Admin" 
               className="h-10 w-auto object-contain"
             />

@@ -30,7 +30,7 @@ export default function AdminLogin() {
       <div className="card w-full max-w-md bg-white p-8 shadow-xl">
         <div className="flex flex-col items-center justify-center mb-6">
           <img 
-            src="/images/cropped-logo.png" 
+            src="/images/combined-logo-transparent.png" 
             alt="Coroa Cosmica" 
             className="h-16 w-auto object-contain mb-4"
           />

@@ -43,30 +43,10 @@ const CATEGORY_ORDER = [
 function enrich(p: any): Product {
   const code = normalizeProductCode(p.code).toLowerCase();
   
-  // Handle new gallery and clean images
-  const originalImage = p.image;
-  let mainImage = originalImage;
-  let gallery: string[] = p.gallery || [];
-  
-  if (originalImage && typeof originalImage === 'string' && !originalImage.includes('-clean')) {
-    const ext = originalImage.substring(originalImage.lastIndexOf('.'));
-    const base = originalImage.substring(0, originalImage.lastIndexOf('.'));
-    mainImage = `${base}-clean.png`;
-    if (!gallery.includes(originalImage)) {
-      gallery.push(originalImage);
-    }
-  } else if (originalImage && typeof originalImage === 'string') {
-    if (!gallery.includes(originalImage)) {
-      gallery.push(originalImage);
-    }
-  }
-
   const normalized: Product = { 
     ...p, 
     code: normalizeProductCode(p.code),
     categoryName: p.category_name || p.categoryName || "",
-    image: mainImage,
-    gallery: gallery
   };
   const tags: string[] = [...(p.tags || [])];
   if (p.type === "set" && !tags.includes("set")) tags.push("set");
