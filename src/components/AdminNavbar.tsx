@@ -12,29 +12,33 @@ export default function AdminNavbar() {
   };
 
   return (
-    <nav className="bg-white px-4 py-4 shadow-sm md:px-8">
+    <nav className="bg-[#231F20] px-4 py-4 shadow-sm md:px-8">
       <div className="mx-auto flex max-w-7xl items-center justify-between">
         <div className="flex items-center gap-6">
-          <Link href="/admin" className="flex items-center gap-2">
+          <Link href="/admin" className="flex items-center gap-4">
             <img 
-              src="/images/combined-logo-transparent.png" 
-              alt="Coroa Cosmica Admin" 
+              src="/images/coroacosmica-logo.png" 
+              alt="Coroa Cosmica" 
               className="h-10 w-auto object-contain"
             />
-            <span className="text-xl font-bold text-olive-900 hidden sm:inline-block">Admin Panel</span>
+            <img 
+              src="/images/gfm-logo.png" 
+              alt="GFM Advertising" 
+              className="h-10 w-auto object-contain"
+            />
           </Link>
           <div className="hidden space-x-4 md:block">
-            <Link href="/admin" className="text-neutral-600 hover:text-olive-700">
+            <Link href="/admin" className="text-neutral-300 hover:text-white">
               Dashboard
             </Link>
-            <Link href="/" className="text-neutral-600 hover:text-olive-700" target="_blank">
+            <Link href="/" className="text-neutral-300 hover:text-white" target="_blank">
               View Site ↗
             </Link>
           </div>
         </div>
         <button
           onClick={handleLogout}
-          className="text-sm font-medium text-red-600 hover:text-red-800"
+          className="text-sm font-medium text-red-500 hover:text-red-400"
         >
           Logout
         </button>

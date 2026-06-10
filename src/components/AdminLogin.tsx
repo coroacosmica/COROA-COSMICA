@@ -29,11 +29,18 @@ export default function AdminLogin() {
     <div className="flex min-h-screen items-center justify-center bg-neutral-100 p-4">
       <div className="card w-full max-w-md bg-white p-8 shadow-xl">
         <div className="flex flex-col items-center justify-center mb-6">
-          <img 
-            src="/images/combined-logo-transparent.png" 
-            alt="Coroa Cosmica" 
-            className="h-16 w-auto object-contain mb-4"
-          />
+          <div className="flex items-center gap-4 bg-[#231F20] p-4 rounded-lg mb-6 w-full justify-center">
+            <img 
+              src="/images/coroacosmica-logo.png" 
+              alt="Coroa Cosmica" 
+              className="h-12 w-auto object-contain"
+            />
+            <img 
+              src="/images/gfm-logo.png" 
+              alt="GFM Advertising" 
+              className="h-12 w-auto object-contain"
+            />
+          </div>
           <h1 className="text-center text-2xl font-bold text-olive-900">
             Admin Login
           </h1>
