@@ -73,7 +73,7 @@ export default function AdminDashboard({
 
   // ─── Product Actions ───────────────────────────────────────
   const openEditModal = (product: any) => {
-    setEditing({
+    const initialState = {
       id: product.id,
       code: product.code || "",
       description: product.description || "",
@@ -97,7 +97,7 @@ export default function AdminDashboard({
   };
 
   const openAddModal = () => {
-    setEditing({
+    const initialState = {
       id: 0,
       code: "",
       description: "",
