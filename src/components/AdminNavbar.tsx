@@ -2,8 +2,10 @@
 
 import { useRouter } from "next/navigation";
 import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 
 export default function AdminNavbar() {
+  const t = useTranslations("admin.navbar");
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -29,10 +31,10 @@ export default function AdminNavbar() {
           </Link>
           <div className="hidden space-x-4 md:block">
             <Link href="/admin" className="text-neutral-300 hover:text-white">
-              Dashboard
+              {t("dashboard")}
             </Link>
             <Link href="/" className="text-neutral-300 hover:text-white" target="_blank">
-              View Site ↗
+              {t("viewSite")}
             </Link>
           </div>
         </div>
@@ -40,7 +42,7 @@ export default function AdminNavbar() {
           onClick={handleLogout}
           className="text-sm font-medium text-red-500 hover:text-red-400"
         >
-          Logout
+          {t("logout")}
         </button>
       </div>
     </nav>

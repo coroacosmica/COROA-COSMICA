@@ -2,8 +2,10 @@
 
 import { useState } from "react";
 import { supabase } from "@/lib/supabase";
+import { useTranslations } from "next-intl";
 
 export default function AdminLogin() {
+  const t = useTranslations("admin.login");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -42,13 +44,13 @@ export default function AdminLogin() {
             />
           </div>
           <h1 className="text-center text-2xl font-bold text-olive-900">
-            Admin Login
+            {t("title")}
           </h1>
         </div>
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="mb-1 block text-sm font-medium text-neutral-700">
-              Email Address
+              {t("email")}
             </label>
             <input
               type="email"
@@ -61,7 +63,7 @@ export default function AdminLogin() {
           </div>
           <div>
             <label className="mb-1 block text-sm font-medium text-neutral-700">
-              Password
+              {t("password")}
             </label>
             <input
               type="password"
@@ -82,7 +84,7 @@ export default function AdminLogin() {
             className="btn-primary w-full py-2.5"
             disabled={loading}
           >
-            {loading ? "Signing in..." : "Sign In"}
+            {loading ? t("signingIn") : t("signIn")}
           </button>
         </form>
       </div>

@@ -10,6 +10,7 @@ import ProductImage from "./ProductImage";
 import ProductActions from "./ProductActions";
 import ColorSelector from "./ColorSelector";
 import BoxBuilder from "./BoxBuilder";
+import { useCategories } from "@/context/CategoryContext";
 
 export default function ProductInteractive({ 
   product, 
@@ -20,16 +21,26 @@ export default function ProductInteractive({
 }) {
   const t = useTranslations("product");
   const tc = useTranslations("catalogue");
-  const tCat = useTranslations("categories");
   const locale = useLocale() as Locale;
   const displayName = getProductName(product, locale);
   const { formatProductPrice } = useCurrency();
+  const categories = useCategories();
+  
+  const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
 
   const [selectedColor, setSelectedColor] = useState<string | undefined>(
     product.variants?.[0]?.color
   );
-  
   const selectedVariant = product.variants?.find((v) => v.color === selectedColor);
+  
+  // Combine all possible images for the gallery
+  const galleryImages = product.images?.length 
+    ? product.images 
+    : (product.image ? [product.image] : []);
+    
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState<string | undefined>(
+    galleryImages[0]
+  );
 
   return (
     <div className="mt-8 grid gap-10 lg:grid-cols-2">
@@ -37,17 +48,34 @@ export default function ProductInteractive({
         <div className="group relative aspect-square min-h-[320px] overflow-hidden border border-olive-200 bg-neutral-50 lg:min-h-[480px]">
           <ProductImage
             product={product}
-            overrideImage={selectedVariant?.image}
+            overrideImage={selectedVariant?.image || selectedGalleryImage}
             priority
             className="image-zoom object-contain p-4 md:p-8"
             sizes="(max-width: 1024px) 100vw, 800px"
           />
         </div>
+        
+        {/* Thumbnails Gallery */}
+        {galleryImages.length > 1 && (
+          <div className="flex gap-2 overflow-x-auto pb-2">
+            {galleryImages.map((img, idx) => (
+              <button
+                key={idx}
+                onClick={() => setSelectedGalleryImage(img)}
+                className={`relative h-20 w-20 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+                  selectedGalleryImage === img ? "border-olive-600" : "border-transparent hover:border-olive-300"
+                }`}
+              >
+                <img src={img} alt={`Thumbnail ${idx + 1}`} className="h-full w-full object-cover" />
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div>
         <p className="text-xs font-semibold uppercase tracking-wider text-olive-600">
-          {tCat((product.category || "general") as any)}
+          {categoryLabel}
         </p>
         <h1 className="mt-2 font-display text-3xl font-light text-olive-950 md:text-4xl">
           {displayName}

@@ -9,6 +9,7 @@ import type { Locale } from "@/i18n/routing";
 import ProductImage from "./ProductImage";
 import AddToCartButton from "./AddToCartButton";
 import ColorSelector from "./ColorSelector";
+import { useCategories } from "@/context/CategoryContext";
 
 interface QuickViewModalProps {
   product: Product;
@@ -18,16 +19,26 @@ interface QuickViewModalProps {
 
 export default function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps) {
   const t = useTranslations("catalogue");
-  const tc = useTranslations("categories");
   const locale = useLocale() as Locale;
   const { formatProductPrice } = useCurrency();
+  const categories = useCategories();
   
+  const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
+
   const [selectedColor, setSelectedColor] = useState<string | undefined>(
     product.variants?.[0]?.color
   );
   
   const selectedVariant = product.variants?.find((v) => v.color === selectedColor);
   const displayName = getProductName(product, locale);
+
+  const galleryImages = product.images?.length 
+    ? product.images 
+    : (product.image ? [product.image] : []);
+    
+  const [selectedGalleryImage, setSelectedGalleryImage] = useState<string | undefined>(
+    galleryImages[0]
+  );
 
   useEffect(() => {
     if (isOpen) {
@@ -64,18 +75,36 @@ export default function QuickViewModal({ product, isOpen, onClose }: QuickViewMo
         </button>
 
         <div className="grid gap-8 lg:grid-cols-2 p-6 md:p-10">
-          <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-neutral-50">
-            <ProductImage
-              product={product}
-              overrideImage={selectedVariant?.image}
-              className="object-contain p-6"
-              sizes="(max-width: 1024px) 100vw, 50vw"
-            />
+          <div className="flex flex-col gap-4">
+            <div className="relative aspect-square w-full overflow-hidden rounded-lg bg-neutral-50">
+              <ProductImage
+                product={product}
+                overrideImage={selectedVariant?.image || selectedGalleryImage}
+                className="object-contain p-6"
+                sizes="(max-width: 1024px) 100vw, 50vw"
+              />
+            </div>
+            {/* Thumbnails Gallery */}
+            {galleryImages.length > 1 && (
+              <div className="flex gap-2 overflow-x-auto pb-2 px-1">
+                {galleryImages.map((img, idx) => (
+                  <button
+                    key={idx}
+                    onClick={() => setSelectedGalleryImage(img)}
+                    className={`relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-lg border-2 transition-colors ${
+                      selectedGalleryImage === img ? "border-olive-600" : "border-transparent hover:border-olive-300"
+                    }`}
+                  >
+                    <img src={img} alt={`Thumbnail ${idx + 1}`} className="h-full w-full object-cover" />
+                  </button>
+                ))}
+              </div>
+            )}
           </div>
 
           <div className="flex flex-col justify-center">
             <p className="text-sm font-semibold uppercase tracking-wider text-olive-600">
-              {tc((product.category || "general") as any)}
+              {categoryLabel}
             </p>
             <h2 className="mt-2 text-2xl font-display md:text-3xl font-medium text-neutral-900">
               {displayName}

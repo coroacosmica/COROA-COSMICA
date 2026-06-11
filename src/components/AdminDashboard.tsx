@@ -3,6 +3,9 @@
 import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import MultiRegionTracker from "./MultiRegionTracker";
+import CategoriesManager from "./CategoriesManager";
+import { useTranslations } from "next-intl";
+import type { Category } from "@/lib/products";
 
 interface EditingProduct {
   id: number;
@@ -12,6 +15,7 @@ interface EditingProduct {
   category: string;
   category_name: string;
   image: string;
+  images: string[];
   featured: boolean;
   names: { pt: string; en: string; ar: string } | null;
   includes: string[];
@@ -22,20 +26,7 @@ interface EditingProduct {
   prices: { USD: number; EUR: number; EGP: number; SAR: number };
 }
 
-const CATEGORIES = [
-  "vip-sets",
-  "cork-eco",
-  "notebooks-premium",
-  "notebooks-usb",
-  "tech-gifts",
-  "business-gifts",
-  "corporate-sets",
-  "promotional",
-  "pens-writing",
-  "accessories",
-  "seasonal",
-  "general",
-];
+
 
 export default function AdminDashboard({
   initialQuotes,
@@ -44,11 +35,14 @@ export default function AdminDashboard({
   initialQuotes: any[];
   initialProducts: any[];
 }) {
-  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker">("quotes");
+  const t = useTranslations("admin");
+  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker" | "categories">("quotes");
   const [activeQuoteRegion, setActiveQuoteRegion] = useState<"all" | "egypt" | "europe" | "usa" | "saudi" | "other">("all");
   const [quotes, setQuotes] = useState(initialQuotes);
   const [products, setProducts] = useState(initialProducts);
+  const [categories, setCategories] = useState<Category[]>([]);
   const [editing, setEditing] = useState<EditingProduct | null>(null);
+  const [originalEditing, setOriginalEditing] = useState<EditingProduct | null>(null);
   const [adding, setAdding] = useState(false);
   const [saving, setSaving] = useState(false);
   const [uploading, setUploading] = useState(false);
@@ -87,6 +81,7 @@ export default function AdminDashboard({
       category: product.category || "general",
       category_name: product.category_name || "",
       image: product.image || "",
+      images: product.images || (product.image ? [product.image] : []),
       featured: product.featured || false,
       names: product.names || { pt: "", en: "", ar: "" },
       includes: product.includes || [],
@@ -95,7 +90,9 @@ export default function AdminDashboard({
       is_active: product.is_active !== false,
       price: product.price ?? 0,
       prices: product.prices || { USD: product.price ?? 0, EUR: 0, EGP: 0, SAR: 0 },
-    });
+    };
+    setEditing(initialState);
+    setOriginalEditing(initialState);
     setAdding(false);
   };
 
@@ -108,6 +105,7 @@ export default function AdminDashboard({
       category: "general",
       category_name: "",
       image: "",
+      images: [],
       featured: false,
       names: { pt: "", en: "", ar: "" },
       includes: [],
@@ -116,7 +114,9 @@ export default function AdminDashboard({
       is_active: true,
       price: 0,
       prices: { USD: 0, EUR: 0, EGP: 0, SAR: 0 },
-    });
+    };
+    setEditing(initialState);
+    setOriginalEditing(initialState);
     setAdding(true);
   };
 
@@ -130,7 +130,8 @@ export default function AdminDashboard({
       type: editing.type,
       category: editing.category,
       category_name: editing.category_name,
-      image: editing.image.trim() || null,
+      image: editing.images?.[0] || editing.image.trim() || null,
+      images: editing.images || [],
       featured: editing.featured,
       names: editing.names,
       includes: editing.includes.filter((i) => i.trim() !== ""),
@@ -193,37 +194,52 @@ export default function AdminDashboard({
 
   // ─── Image Upload ─────────────────────────────────────────
   const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file || !editing) return;
+    const files = Array.from(e.target.files || []);
+    if (!files.length || !editing) return;
 
     setUploading(true);
+    const newImages = [...(editing.images || [])];
+
     try {
-      const ext = file.name.split(".").pop() || "jpg";
-      const fileName = `product-${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${ext}`;
+      for (const file of files) {
+        const ext = file.name.split(".").pop() || "jpg";
+        const fileName = `product-${Date.now()}-${Math.random().toString(36).substring(2, 8)}.${ext}`;
 
-      const { error: uploadError } = await supabase.storage
-        .from("product-images")
-        .upload(fileName, file, {
-          cacheControl: "3600",
-          upsert: false,
-        });
+        const { error: uploadError } = await supabase.storage
+          .from("product-images")
+          .upload(fileName, file, {
+            cacheControl: "3600",
+            upsert: false,
+          });
 
-      if (uploadError) throw uploadError;
+        if (uploadError) throw uploadError;
 
-      const { data: urlData } = supabase.storage
-        .from("product-images")
-        .getPublicUrl(fileName);
+        const { data: urlData } = supabase.storage
+          .from("product-images")
+          .getPublicUrl(fileName);
 
-      if (urlData?.publicUrl) {
-        setEditing({ ...editing, image: urlData.publicUrl });
-        showSuccess("Image uploaded! ✅");
+        if (urlData?.publicUrl) {
+          newImages.push(urlData.publicUrl);
+        }
       }
+
+      setEditing({ ...editing, images: newImages, image: newImages[0] || "" });
+      showSuccess("Images uploaded! ✅");
     } catch (err: any) {
       console.error(err);
       alert("Upload failed: " + (err.message || "Unknown error"));
     } finally {
       setUploading(false);
+      // clear the input so the same files can be selected again
+      e.target.value = '';
     }
+  };
+
+  const removeImage = (index: number) => {
+    if (!editing) return;
+    const newImages = [...(editing.images || [])];
+    newImages.splice(index, 1);
+    setEditing({ ...editing, images: newImages, image: newImages[0] || "" });
   };
 
   const handleLogout = async () => {
@@ -236,12 +252,14 @@ export default function AdminDashboard({
   const refreshData = async () => {
     setIsRefreshing(true);
     try {
-      const [{ data: newQuotes }, { data: newProducts }] = await Promise.all([
+      const [{ data: newQuotes }, { data: newProducts }, { data: newCategories }] = await Promise.all([
         supabase.from("quote_requests").select("*").order("created_at", { ascending: false }),
-        supabase.from("products").select("*").order("created_at", { ascending: false })
+        supabase.from("products").select("*").order("created_at", { ascending: false }),
+        supabase.from("categories").select("*").order("order_index", { ascending: true })
       ]);
       if (newQuotes) setQuotes(newQuotes);
       if (newProducts) setProducts(newProducts);
+      if (newCategories) setCategories(newCategories);
       showSuccess("Data refreshed! 🔄");
     } catch (err) {
       console.error(err);
@@ -309,13 +327,13 @@ export default function AdminDashboard({
           disabled={isRefreshing}
           className="flex items-center gap-2 rounded bg-neutral-100 px-4 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-200 transition-colors shadow-sm disabled:opacity-50"
         >
-          {isRefreshing ? "⏳ Refreshing..." : "🔄 Refresh Data"}
+          {isRefreshing ? `⏳ ${t("actions.refreshing")}` : `🔄 ${t("actions.refreshData")}`}
         </button>
         <button
           onClick={handleLogout}
           className="rounded border border-red-200 px-4 py-2 text-sm font-medium text-red-600 hover:bg-red-50 transition-colors"
         >
-          🚪 Sign Out
+          🚪 {t("actions.signOut")}
         </button>
       </div>
 
@@ -323,19 +341,19 @@ export default function AdminDashboard({
       <div className="mb-6 grid grid-cols-2 gap-4 md:grid-cols-4">
         <div className="rounded-lg bg-white p-4 shadow-sm">
           <p className="text-2xl font-bold text-olive-900">{products.length}</p>
-          <p className="text-sm text-neutral-500">Total Products</p>
+          <p className="text-sm text-neutral-500">{t("stats.totalProducts")}</p>
         </div>
         <div className="rounded-lg bg-white p-4 shadow-sm">
           <p className="text-2xl font-bold text-blue-700">{quotes.filter((q) => q.status === "new").length}</p>
-          <p className="text-sm text-neutral-500">New Requests</p>
+          <p className="text-sm text-neutral-500">{t("stats.newRequests")}</p>
         </div>
         <div className="rounded-lg bg-white p-4 shadow-sm">
           <p className="text-2xl font-bold text-yellow-700">{quotes.filter((q) => q.status === "contacted").length}</p>
-          <p className="text-sm text-neutral-500">Contacted</p>
+          <p className="text-sm text-neutral-500">{t("stats.contacted")}</p>
         </div>
         <div className="rounded-lg bg-white p-4 shadow-sm">
           <p className="text-2xl font-bold text-green-700">{quotes.filter((q) => q.status === "completed").length}</p>
-          <p className="text-sm text-neutral-500">Completed</p>
+          <p className="text-sm text-neutral-500">{t("stats.completed")}</p>
         </div>
       </div>
 
@@ -347,7 +365,7 @@ export default function AdminDashboard({
             activeTab === "quotes" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
           }`}
         >
-          📋 Quote Requests ({quotes.length})
+          📋 {t("tabs.quoteRequests")} ({quotes.length})
         </button>
         <button
           onClick={() => setActiveTab("products")}
@@ -355,7 +373,7 @@ export default function AdminDashboard({
             activeTab === "products" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
           }`}
         >
-          📦 Products ({products.length})
+          📦 {t("tabs.products")} ({products.length})
         </button>
         <button
           onClick={() => setActiveTab("tracker" as any)}
@@ -363,7 +381,15 @@ export default function AdminDashboard({
             activeTab === "tracker" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
           }`}
         >
-          📊 Order Tracking
+          📊 {t("tabs.orderTracking")}
+        </button>
+        <button
+          onClick={() => setActiveTab("categories")}
+          className={`pb-2 text-lg font-medium ${
+            activeTab === "categories" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
+          }`}
+        >
+          📂 Categories ({categories.length})
         </button>
       </div>
 
@@ -373,12 +399,12 @@ export default function AdminDashboard({
           {/* Quote Region Tabs */}
           <div className="flex gap-2 overflow-x-auto border-b border-neutral-200 pb-2 mb-4">
             {[
-              { id: "all", label: "All Regions", flag: "🌍" },
-              { id: "egypt", label: "Egypt", flag: "🇪🇬" },
-              { id: "europe", label: "Europe", flag: "🇪🇺" },
-              { id: "usa", label: "USA", flag: "🇺🇸" },
-              { id: "saudi", label: "Saudi Arabia", flag: "🇸🇦" },
-              { id: "other", label: "Other", flag: "❓" },
+              { id: "all", label: t("regions.allRegions"), flag: "🌍" },
+              { id: "egypt", label: t("regions.egypt"), flag: "🇪🇬" },
+              { id: "europe", label: t("regions.europe"), flag: "🇪🇺" },
+              { id: "usa", label: t("regions.usa"), flag: "🇺🇸" },
+              { id: "saudi", label: t("regions.saudiArabia"), flag: "🇸🇦" },
+              { id: "other", label: t("regions.other"), flag: "❓" },
             ].map((r) => (
               <button
                 key={r.id}
@@ -395,7 +421,7 @@ export default function AdminDashboard({
           </div>
 
           {filteredQuotes.length === 0 ? (
-            <p className="text-neutral-500 p-4 text-center bg-white rounded-lg border border-neutral-100">No requests found in this region.</p>
+            <p className="text-neutral-500 p-4 text-center bg-white rounded-lg border border-neutral-100">{t("quotes.noRequests")}</p>
           ) : (
             filteredQuotes.map((quote) => (
               <div key={quote.id} className="rounded-lg bg-white p-6 shadow-sm">
@@ -435,7 +461,7 @@ export default function AdminDashboard({
 
                 {quote.message && (
                   <div className="rounded bg-neutral-50 p-4">
-                    <h4 className="mb-1 text-xs font-semibold text-neutral-500">MESSAGE</h4>
+                    <h4 className="mb-1 text-xs font-semibold text-neutral-500">{t("quotes.message")}</h4>
                     <p className="whitespace-pre-wrap text-sm text-neutral-800">
                       {quote.message.replace(/File: data:[^\s]+/g, "File: [See attached logo below]")}
                     </p>
@@ -444,13 +470,13 @@ export default function AdminDashboard({
 
                 {quote.items && quote.items.length > 0 && (
                   <div className="mt-4">
-                    <h4 className="mb-2 text-xs font-semibold text-neutral-500">CART ITEMS</h4>
+                    <h4 className="mb-2 text-xs font-semibold text-neutral-500">{t("quotes.cartItems")}</h4>
                     <ul className="flex flex-col gap-3 border-l-2 border-olive-200 pl-3">
                       {quote.items.map((item: any, i: number) => {
                         if (item.code === "LOGO" && item.logoData) {
                           return (
                             <li key={i} className="w-full">
-                              <p className="mb-1 text-sm font-medium text-neutral-800">1× Attached Logo</p>
+                              <p className="mb-1 text-sm font-medium text-neutral-800">1× {t("quotes.attachedLogo")}</p>
                               <div className="flex items-end gap-4 mt-2">
                                 <img
                                   src={item.logoData}
@@ -462,7 +488,7 @@ export default function AdminDashboard({
                                   download={`logo-${quote.id}.png`}
                                   className="rounded bg-olive-100 px-3 py-1.5 text-xs font-semibold text-olive-800 transition-colors hover:bg-olive-200"
                                 >
-                                  ⬇️ Download Logo
+                                  ⬇️ {t("quotes.downloadLogo")}
                                 </a>
                               </div>
                             </li>
@@ -475,7 +501,7 @@ export default function AdminDashboard({
                             </span>
                             {item.customDesign?.pngDataUrl && (
                               <div className="mt-1 w-full pl-2">
-                                <p className="mb-1 text-xs text-neutral-500">Custom Design (From Editor):</p>
+                                <p className="mb-1 text-xs text-neutral-500">{t("quotes.customDesign")}:</p>
                                 <div className="flex items-end gap-4">
                                   <img
                                     src={item.customDesign.pngDataUrl}
@@ -487,7 +513,7 @@ export default function AdminDashboard({
                                     download={`design-${quote.id}-${item.code}.png`}
                                     className="rounded bg-blue-50 px-3 py-1.5 text-xs font-semibold text-blue-700 transition-colors hover:bg-blue-100"
                                   >
-                                    ⬇️ Download Design
+                                    ⬇️ {t("quotes.downloadDesign")}
                                   </a>
                                 </div>
                               </div>
@@ -510,7 +536,7 @@ export default function AdminDashboard({
           <div className="mb-4 flex flex-wrap items-center gap-4">
             <input
               type="search"
-              placeholder="Search products..."
+              placeholder={t("products.searchPlaceholder")}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className="flex-1 rounded border border-neutral-300 px-4 py-2 text-sm"
@@ -519,7 +545,7 @@ export default function AdminDashboard({
               onClick={openAddModal}
               className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
             >
-              + Add Product
+              {t("products.addProduct")}
             </button>
           </div>
 
@@ -527,13 +553,13 @@ export default function AdminDashboard({
             <table className="w-full text-left text-sm text-neutral-600">
               <thead className="bg-neutral-50 text-xs uppercase text-neutral-700">
                 <tr>
-                  <th className="px-4 py-3">Code</th>
-                  <th className="px-4 py-3">Name (EN)</th>
-                  <th className="px-4 py-3">Category</th>
-                  <th className="px-4 py-3">Type</th>
-                  <th className="px-4 py-3">Price</th>
-                  <th className="px-4 py-3 text-center">Featured</th>
-                  <th className="px-4 py-3 text-center">Actions</th>
+                  <th className="px-4 py-3">{t("products.code")}</th>
+                  <th className="px-4 py-3">{t("products.nameEn")}</th>
+                  <th className="px-4 py-3">{t("products.category")}</th>
+                  <th className="px-4 py-3">{t("products.type")}</th>
+                  <th className="px-4 py-3">{t("products.price")}</th>
+                  <th className="px-4 py-3 text-center">{t("products.featured")}</th>
+                  <th className="px-4 py-3 text-center">{t("products.actions")}</th>
                 </tr>
               </thead>
               <tbody>
@@ -554,7 +580,7 @@ export default function AdminDashboard({
                       <button
                         onClick={() => toggleFeatured(product)}
                         className="text-lg"
-                        title={product.featured ? "Remove from featured" : "Mark as featured"}
+                        title={product.featured ? t("products.removeFeatured") : t("products.markFeatured")}
                       >
                         {product.featured ? "⭐" : "☆"}
                       </button>
@@ -565,7 +591,7 @@ export default function AdminDashboard({
                           onClick={() => openEditModal(product)}
                           className="rounded bg-olive-100 px-3 py-1 text-xs font-semibold text-olive-700 hover:bg-olive-200"
                         >
-                          ✏️ Edit
+                          ✏️ {t("products.edit")}
                         </button>
                         <button
                           onClick={() => deleteProduct(product.id)}
@@ -581,6 +607,11 @@ export default function AdminDashboard({
             </table>
           </div>
         </div>
+      )}
+
+      {/* ═══════════ CATEGORIES TAB ═══════════ */}
+      {activeTab === "categories" && (
+        <CategoriesManager categories={categories} refreshData={refreshData} />
       )}
 
       {/* ═══════════ TRACKER TAB ═══════════ */}
@@ -620,8 +651,8 @@ export default function AdminDashboard({
                   onChange={(e) => setEditing({ ...editing, category: e.target.value })}
                   className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
                 >
-                  {CATEGORIES.map((cat) => (
-                    <option key={cat} value={cat}>{cat}</option>
+                  {categories.map((cat) => (
+                    <option key={cat.slug} value={cat.slug}>{cat.name_en}</option>
                   ))}
                 </select>
               </div>
@@ -688,7 +719,7 @@ export default function AdminDashboard({
 
               {/* Image Upload */}
               <div className="md:col-span-2">
-                <label className="mb-1 block text-xs font-semibold text-neutral-600">Product Image</label>
+                <label className="mb-1 block text-xs font-semibold text-neutral-600">Product Images</label>
                 <div className="flex flex-col gap-3">
                   {/* Upload Button */}
                   <div className="flex items-center gap-3">
@@ -699,52 +730,70 @@ export default function AdminDashboard({
                           : "border-olive-300 bg-olive-50 text-olive-700 hover:border-olive-500 hover:bg-olive-100"
                       }`}
                     >
-                      {uploading ? "⏳ Uploading..." : "📁 Choose Image File"}
+                      {uploading ? "⏳ Uploading..." : "📁 Choose Image File(s)"}
                       <input
                         type="file"
                         accept="image/jpeg,image/png,image/webp,image/avif,image/gif"
+                        multiple
                         onChange={handleImageUpload}
                         disabled={uploading}
                         className="hidden"
                       />
                     </label>
-                    <span className="text-xs text-neutral-400">Max 5MB — JPG, PNG, WebP, GIF</span>
+                    <span className="text-xs text-neutral-400">Max 5MB per file — JPG, PNG, WebP, GIF</span>
                   </div>
 
-                  {/* Preview */}
-                  {editing.image && (
-                    <div className="flex items-center gap-3">
-                      <img
-                        src={editing.image}
-                        alt="Preview"
-                        className="h-20 w-20 rounded-lg border border-neutral-200 object-cover"
-                        onError={(e) => {
-                          (e.target as HTMLImageElement).style.display = "none";
-                        }}
-                      />
-                      <div className="flex-1">
-                        <p className="truncate text-xs text-neutral-500">{editing.image}</p>
-                        <button
-                          type="button"
-                          onClick={() => setEditing({ ...editing, image: "" })}
-                          className="mt-1 text-xs text-red-500 hover:text-red-700"
-                        >
-                          ✕ Remove Image
-                        </button>
-                      </div>
+                  {/* Previews */}
+                  {editing.images && editing.images.length > 0 && (
+                    <div className="flex flex-wrap gap-3">
+                      {editing.images.map((imgUrl, idx) => (
+                        <div key={idx} className="relative group rounded-lg border border-neutral-200 p-1">
+                          <img
+                            src={imgUrl}
+                            alt="Preview"
+                            className="h-20 w-20 rounded object-cover"
+                            onError={(e) => {
+                              (e.target as HTMLImageElement).style.display = "none";
+                            }}
+                          />
+                          <button
+                            type="button"
+                            onClick={() => removeImage(idx)}
+                            className="absolute -top-2 -right-2 flex h-6 w-6 items-center justify-center rounded-full bg-red-500 text-white shadow hover:bg-red-600 opacity-0 group-hover:opacity-100 transition-opacity"
+                            title="Remove Image"
+                          >
+                            ✕
+                          </button>
+                        </div>
+                      ))}
                     </div>
                   )}
 
                   {/* Or enter URL manually */}
                   <div>
-                    <p className="mb-1 text-xs text-neutral-400">Or paste an image URL:</p>
-                    <input
-                      type="text"
-                      value={editing.image}
-                      onChange={(e) => setEditing({ ...editing, image: e.target.value })}
-                      className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
-                      placeholder="https://example.com/image.jpg"
-                    />
+                    <p className="mb-1 text-xs text-neutral-400">Or paste an image URL to add:</p>
+                    <div className="flex gap-2">
+                      <input
+                        type="text"
+                        id="manualImageInput"
+                        className="flex-1 rounded border border-neutral-300 px-3 py-2 text-sm"
+                        placeholder="https://example.com/image.jpg"
+                      />
+                      <button
+                        type="button"
+                        onClick={() => {
+                          const input = document.getElementById("manualImageInput") as HTMLInputElement;
+                          if (input && input.value) {
+                            const newImages = [...(editing.images || []), input.value];
+                            setEditing({ ...editing, images: newImages, image: newImages[0] });
+                            input.value = "";
+                          }
+                        }}
+                        className="rounded bg-neutral-200 px-4 py-2 text-sm font-semibold hover:bg-neutral-300"
+                      >
+                        Add
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -853,6 +902,14 @@ export default function AdminDashboard({
 
             {/* Action Buttons */}
             <div className="mt-6 flex justify-end gap-3">
+              {!adding && originalEditing && (
+                <button
+                  onClick={() => setEditing(JSON.parse(JSON.stringify(originalEditing)))}
+                  className="rounded border border-yellow-400 bg-yellow-50 px-5 py-2 text-sm font-medium text-yellow-800 hover:bg-yellow-100 mr-auto"
+                >
+                  ↩️ Undo Changes
+                </button>
+              )}
               <button
                 onClick={() => setEditing(null)}
                 className="rounded border border-neutral-300 px-5 py-2 text-sm font-medium text-neutral-700 hover:bg-neutral-50"

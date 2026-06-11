@@ -5,8 +5,7 @@ import { useTranslations } from "next-intl";
 import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import ProductCard from "./ProductCard";
-import type { Product } from "@/lib/products";
-import { CATEGORY_IDS } from "@/lib/products";
+import type { Product, Category } from "@/lib/products";
 import { clsx } from "clsx";
 
 type SortKey = "newest" | "price-low" | "price-high" | "popular";
@@ -30,12 +29,13 @@ function buildCatalogueQuery(opts: {
   return s ? `?${s}` : "";
 }
 
-export default function CatalogueClient({ allProducts }: { allProducts: Product[] }) {
+export default function CatalogueClient({ allProducts, categories }: { allProducts: Product[], categories: Category[] }) {
   const t = useTranslations("catalogue");
-  const tc = useTranslations("categories");
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const router = useRouter();
+  
+  const locale = pathname.startsWith("/pt") ? "pt" : pathname.startsWith("/ar") ? "ar" : "en";
 
   const [query, setQuery] = useState(searchParams.get("q") || "");
   const [category, setCategory] = useState(searchParams.get("category") || "all");
@@ -154,9 +154,9 @@ export default function CatalogueClient({ allProducts }: { allProducts: Product[
               className="input-field"
             >
               <option value="all">{t("all")}</option>
-              {CATEGORY_IDS.map((cat) => (
-                <option key={cat} value={cat}>
-                  {tc(cat as "vip-sets")}
+              {categories.map((cat) => (
+                <option key={cat.slug} value={cat.slug}>
+                  {locale === "pt" ? cat.name_pt : locale === "ar" ? cat.name_ar : cat.name_en}
                 </option>
               ))}
             </select>

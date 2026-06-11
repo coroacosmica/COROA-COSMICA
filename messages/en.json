@@ -135,7 +135,9 @@
     "whatsapp": "Send via WhatsApp",
     "email": "Send via Email",
     "selectWhatsApp": "Choose WhatsApp number",
-    "quantity": "Qty"
+    "quantity": "Qty",
+    "proceedToBranding": "Proceed to Branding",
+    "buyWithoutBranding": "Buy Without Branding"
   },
   "checkout": {
     "greeting": "Hello Coroa Cósmica! 🌟",
@@ -167,7 +169,16 @@
     "continueShopping": "Continue Shopping",
     "errorFailed": "Failed to submit order. Please try again.",
     "errorNetwork": "Network error. Please try again.",
-    "errorFileLarge": "File too large. Max 2MB."
+    "errorFileLarge": "File too large. Max 2MB.",
+    "addBrandingOptional": "Add Your Logo / Design (Optional)",
+    "uploadLogoLabel": "Upload Logo",
+    "fileAttached": "File attached:",
+    "brandingNotes": "Branding notes / placement instructions (e.g. 'Logo on front cover, white version')",
+    "colorPreference": "Color preference (e.g. 'Brand color: #1A2E5C')",
+    "requestSample": "I want a virtual sample before production",
+    "sampleNoteInfo": "We'll send you a mockup within 24h before proceeding",
+    "skipUseStandard": "Skip, use standard",
+    "continueToCheckout": "Continue to Checkout"
   },
   "virtualSample": {
     "title": "Virtual Sample",
@@ -216,5 +227,99 @@
   },
   "whatsapp": {
     "message": "Hello! I would like a quote for corporate gifts from Coroa Cósmica."
+  },
+  "admin": {
+    "login": {
+      "title": "Admin Login",
+      "email": "Email Address",
+      "password": "Password",
+      "signIn": "Sign In",
+      "signingIn": "Signing in..."
+    },
+    "navbar": {
+      "dashboard": "Dashboard",
+      "viewSite": "View Site ↗",
+      "logout": "Logout"
+    },
+    "stats": {
+      "totalProducts": "Total Products",
+      "newRequests": "New Requests",
+      "contacted": "Contacted",
+      "completed": "Completed"
+    },
+    "tabs": {
+      "quoteRequests": "Quote Requests",
+      "products": "Products",
+      "orderTracking": "Order Tracking"
+    },
+    "regions": {
+      "allRegions": "All Regions",
+      "egypt": "Egypt",
+      "europe": "Europe",
+      "usa": "USA",
+      "saudiArabia": "Saudi Arabia",
+      "other": "Other"
+    },
+    "quotes": {
+      "noRequests": "No requests found in this region.",
+      "message": "MESSAGE",
+      "cartItems": "CART ITEMS",
+      "attachedLogo": "Attached Logo",
+      "downloadLogo": "Download Logo",
+      "customDesign": "Custom Design",
+      "downloadDesign": "Download Design"
+    },
+    "products": {
+      "searchPlaceholder": "Search products...",
+      "addProduct": "+ Add Product",
+      "code": "Code",
+      "nameEn": "Name (EN)",
+      "category": "Category",
+      "type": "Type",
+      "price": "Price",
+      "featured": "Featured",
+      "actions": "Actions",
+      "edit": "Edit",
+      "markFeatured": "Mark as featured",
+      "removeFeatured": "Remove from featured"
+    },
+    "actions": {
+      "refreshData": "Refresh Data",
+      "refreshing": "Refreshing...",
+      "signOut": "Sign Out"
+    }
+  },
+  "gfm": {
+    "menuTitle": "GFM Printing & Signage",
+    "indoor": "Indoor Printing",
+    "businessCards": "Business Cards",
+    "flyers": "Flyers",
+    "brochures": "Brochures",
+    "books": "Books",
+    "boxesBags": "Boxes & Bags",
+    "invitationCards": "Invitation Cards",
+    "certificates": "Certificates",
+    "events": "Events & Conferences",
+    "rollupBanners": "Roll-Up Banners",
+    "popupStands": "Pop-Up Stands",
+    "conferenceStands": "Conference Stands",
+    "featherFlags": "Feather Flags",
+    "eventFlags": "Event Flags",
+    "idCards": "ID Cards & Badges",
+    "outdoor": "Outdoor Printing",
+    "outdoorSignage": "Outdoor Signage",
+    "buildingFacades": "Building Facades",
+    "shopFronts": "Shop Front Signs",
+    "billboards": "Billboards",
+    "outdoorBanners": "Outdoor Banners",
+    "vehicleBranding": "Vehicle Branding",
+    "wayfinding": "Wayfinding Signs",
+    "office": "Geographic & Office Solutions",
+    "officeSigns": "Office Signs",
+    "directionalSigns": "Directional Signs",
+    "namePlates": "Name Plates",
+    "rubberStamps": "Rubber Stamps",
+    "companyStamps": "Company Stamps",
+    "customSeals": "Custom Seals"
   }
 }

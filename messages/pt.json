@@ -135,7 +135,9 @@
     "whatsapp": "Enviar por WhatsApp",
     "email": "Enviar por e-mail",
     "selectWhatsApp": "Escolha o número WhatsApp",
-    "quantity": "Qtd"
+    "quantity": "Qtd",
+    "proceedToBranding": "Prosseguir para Branding",
+    "buyWithoutBranding": "Comprar sem Branding"
   },
   "checkout": {
     "greeting": "Olá Coroa Cósmica! 🌟",
@@ -167,7 +169,16 @@
     "continueShopping": "Continuar a Comprar",
     "errorFailed": "Falha ao submeter a encomenda. Por favor, tente novamente.",
     "errorNetwork": "Erro de rede. Por favor, tente novamente.",
-    "errorFileLarge": "Ficheiro muito grande. Máximo 2MB."
+    "errorFileLarge": "Ficheiro muito grande. Máximo 2MB.",
+    "addBrandingOptional": "Adicionar Logotipo / Design (Opcional)",
+    "uploadLogoLabel": "Fazer upload do logotipo",
+    "fileAttached": "Arquivo anexado:",
+    "brandingNotes": "Notas de branding / instruções de posicionamento (ex: 'Logotipo na capa, versão branca')",
+    "colorPreference": "Preferência de cor (ex: 'Cor da marca: #1A2E5C')",
+    "requestSample": "Quero uma amostra virtual antes da produção",
+    "sampleNoteInfo": "Enviaremos uma maquete em 24h antes de prosseguir",
+    "skipUseStandard": "Pular, usar padrão",
+    "continueToCheckout": "Continuar para Checkout"
   },
   "virtualSample": {
     "title": "Amostra Virtual",
@@ -216,5 +227,99 @@
   },
   "whatsapp": {
     "message": "Olá! Gostaria de um orçamento para brindes corporativos da Coroa Cósmica."
+  },
+  "admin": {
+    "login": {
+      "title": "Login de Administrador",
+      "email": "Endereço de E-mail",
+      "password": "Palavra-passe",
+      "signIn": "Entrar",
+      "signingIn": "A entrar..."
+    },
+    "navbar": {
+      "dashboard": "Dashboard",
+      "viewSite": "Ver Site ↗",
+      "logout": "Sair"
+    },
+    "stats": {
+      "totalProducts": "Total de Produtos",
+      "newRequests": "Novos Pedidos",
+      "contacted": "Contactado",
+      "completed": "Concluído"
+    },
+    "tabs": {
+      "quoteRequests": "Pedidos de Orçamento",
+      "products": "Produtos",
+      "orderTracking": "Acompanhamento de Encomendas"
+    },
+    "regions": {
+      "allRegions": "Todas as Regiões",
+      "egypt": "Egito",
+      "europe": "Europa",
+      "usa": "EUA",
+      "saudiArabia": "Arábia Saudita",
+      "other": "Outro"
+    },
+    "quotes": {
+      "noRequests": "Nenhum pedido encontrado nesta região.",
+      "message": "MENSAGEM",
+      "cartItems": "ITENS DO CARRINHO",
+      "attachedLogo": "Logótipo Anexado",
+      "downloadLogo": "Descarregar Logótipo",
+      "customDesign": "Design Personalizado",
+      "downloadDesign": "Descarregar Design"
+    },
+    "products": {
+      "searchPlaceholder": "Pesquisar produtos...",
+      "addProduct": "+ Adicionar Produto",
+      "code": "Código",
+      "nameEn": "Nome (EN)",
+      "category": "Categoria",
+      "type": "Tipo",
+      "price": "Preço",
+      "featured": "Em Destaque",
+      "actions": "Ações",
+      "edit": "Editar",
+      "markFeatured": "Marcar como destaque",
+      "removeFeatured": "Remover de destaque"
+    },
+    "actions": {
+      "refreshData": "Atualizar Dados",
+      "refreshing": "A atualizar...",
+      "signOut": "Sair"
+    }
+  },
+  "gfm": {
+    "menuTitle": "GFM Impressão e Sinalização",
+    "indoor": "Impressão Interior",
+    "businessCards": "Cartões de Visita",
+    "flyers": "Panfletos",
+    "brochures": "Brochuras",
+    "books": "Livros",
+    "boxesBags": "Caixas e Sacos",
+    "invitationCards": "Cartões de Convite",
+    "certificates": "Certificados",
+    "events": "Eventos e Conferências",
+    "rollupBanners": "Banners Roll-Up",
+    "popupStands": "Stands Pop-Up",
+    "conferenceStands": "Stands de Conferência",
+    "featherFlags": "Bandeiras Pena",
+    "eventFlags": "Bandeiras de Eventos",
+    "idCards": "Crachás e Cartões",
+    "outdoor": "Impressão Exterior",
+    "outdoorSignage": "Sinalização Exterior",
+    "buildingFacades": "Fachadas de Edifícios",
+    "shopFronts": "Placas de Lojas",
+    "billboards": "Outdoors",
+    "outdoorBanners": "Banners Exteriores",
+    "vehicleBranding": "Decoração de Veículos",
+    "wayfinding": "Placas de Sinalização",
+    "office": "Soluções Geográficas",
+    "officeSigns": "Placas de Escritório",
+    "directionalSigns": "Sinalização Direcional",
+    "namePlates": "Placas de Identificação",
+    "rubberStamps": "Carimbos de Borracha",
+    "companyStamps": "Carimbos de Empresa",
+    "customSeals": "Selos Personalizados"
   }
 }

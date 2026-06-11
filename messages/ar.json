@@ -135,7 +135,9 @@
     "whatsapp": "إرسال عبر واتساب",
     "email": "إرسال عبر البريد",
     "selectWhatsApp": "اختر رقم الواتساب",
-    "quantity": "الكمية"
+    "quantity": "الكمية",
+    "proceedToBranding": "إضافة شعار (Branding)",
+    "buyWithoutBranding": "شراء بدون شعار"
   },
   "checkout": {
     "greeting": "مرحباً كوروا كوزميكا! 🌟",
@@ -167,7 +169,16 @@
     "continueShopping": "متابعة التسوق",
     "errorFailed": "فشل في إرسال الطلب. يرجى المحاولة مرة أخرى.",
     "errorNetwork": "خطأ في الشبكة. يرجى المحاولة مرة أخرى.",
-    "errorFileLarge": "حجم الملف كبير جداً. الحد الأقصى ٢ ميجابايت."
+    "errorFileLarge": "حجم الملف كبير جداً. الحد الأقصى ٢ ميجابايت.",
+    "addBrandingOptional": "أضف شعارك / تصميمك (اختياري)",
+    "uploadLogoLabel": "ارفع الشعار",
+    "fileAttached": "الملف المرفق:",
+    "brandingNotes": "ملاحظات الشعار / تعليمات الموضع (مثال: الشعار على الغلاف الأمامي باللون الأبيض)",
+    "colorPreference": "اللون المفضل (مثال: لون العلامة التجارية: #1A2E5C)",
+    "requestSample": "أريد عينة افتراضية قبل الإنتاج",
+    "sampleNoteInfo": "سنرسل لك نموذجاً خلال ٢٤ ساعة قبل البدء",
+    "skipUseStandard": "تخطي، استخدم المعياري",
+    "continueToCheckout": "إتمام الطلب"
   },
   "virtualSample": {
     "title": "عينة افتراضية",
@@ -216,5 +227,99 @@
   },
   "whatsapp": {
     "message": "مرحباً! أود عرض سعر لهدايا الشركات من كوروا كوزميكا."
+  },
+  "admin": {
+    "login": {
+      "title": "تسجيل دخول الإدارة",
+      "email": "البريد الإلكتروني",
+      "password": "كلمة المرور",
+      "signIn": "تسجيل الدخول",
+      "signingIn": "جاري تسجيل الدخول..."
+    },
+    "navbar": {
+      "dashboard": "لوحة التحكم",
+      "viewSite": "عرض الموقع ↗",
+      "logout": "تسجيل الخروج"
+    },
+    "stats": {
+      "totalProducts": "إجمالي المنتجات",
+      "newRequests": "الطلبات الجديدة",
+      "contacted": "تم التواصل",
+      "completed": "مكتمل"
+    },
+    "tabs": {
+      "quoteRequests": "طلبات عروض الأسعار",
+      "products": "المنتجات",
+      "orderTracking": "تتبع الطلبات"
+    },
+    "regions": {
+      "allRegions": "جميع المناطق",
+      "egypt": "مصر",
+      "europe": "أوروبا",
+      "usa": "أمريكا",
+      "saudiArabia": "السعودية",
+      "other": "أخرى"
+    },
+    "quotes": {
+      "noRequests": "لا توجد طلبات في هذه المنطقة.",
+      "message": "الرسالة",
+      "cartItems": "عناصر السلة",
+      "attachedLogo": "الشعار المرفق",
+      "downloadLogo": "تحميل الشعار",
+      "customDesign": "تصميم مخصص",
+      "downloadDesign": "تحميل التصميم"
+    },
+    "products": {
+      "searchPlaceholder": "ابحث عن المنتجات...",
+      "addProduct": "+ إضافة منتج",
+      "code": "الكود",
+      "nameEn": "الاسم (EN)",
+      "category": "التصنيف",
+      "type": "النوع",
+      "price": "السعر",
+      "featured": "مميز",
+      "actions": "إجراءات",
+      "edit": "تعديل",
+      "markFeatured": "تعيين كمميز",
+      "removeFeatured": "إزالة من المميز"
+    },
+    "actions": {
+      "refreshData": "تحديث البيانات",
+      "refreshing": "جاري التحديث...",
+      "signOut": "تسجيل الخروج"
+    }
+  },
+  "gfm": {
+    "menuTitle": "GFM للطباعة واللافتات",
+    "indoor": "طباعة داخلية",
+    "businessCards": "كروت شخصية",
+    "flyers": "فلايرز",
+    "brochures": "بروشورات",
+    "books": "كتب",
+    "boxesBags": "علب وأكياس",
+    "invitationCards": "كروت دعوة",
+    "certificates": "شهادات",
+    "events": "فعاليات ومؤتمرات",
+    "rollupBanners": "رول أب",
+    "popupStands": "بوب أب ستاند",
+    "conferenceStands": "ستاندات مؤتمرات",
+    "featherFlags": "أعلام ريشة",
+    "eventFlags": "أعلام فعاليات",
+    "idCards": "بطاقات تعريف",
+    "outdoor": "طباعة خارجية",
+    "outdoorSignage": "لافتات خارجية",
+    "buildingFacades": "واجهات مباني",
+    "shopFronts": "لافتات محلات",
+    "billboards": "لوحات إعلانية",
+    "outdoorBanners": "بانرات خارجية",
+    "vehicleBranding": "تجليد سيارات",
+    "wayfinding": "لوحات إرشادية",
+    "office": "حلول جغرافية ومكتبية",
+    "officeSigns": "لافتات مكتبية",
+    "directionalSigns": "لوحات توجيهية",
+    "namePlates": "لوحات أسماء",
+    "rubberStamps": "أختام مطاطية",
+    "companyStamps": "أختام شركات",
+    "customSeals": "أختام مخصصة"
   }
 }

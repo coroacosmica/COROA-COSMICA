@@ -13,6 +13,7 @@ import { clsx } from "clsx";
 import { useState } from "react";
 import QuickViewModal from "./QuickViewModal";
 import { useCurrency } from "@/context/CurrencyContext";
+import { useCategories } from "@/context/CategoryContext";
 
 export default function ProductCard({
   product,
@@ -23,11 +24,13 @@ export default function ProductCard({
   catalogueReturnTo?: string;
   listView?: boolean;
 }) {
-  const tc = useTranslations("categories");
   const tcat = useTranslations("catalogue");
   const locale = useLocale() as Locale;
   const { formatProductPrice } = useCurrency();
-  const categoryLabel = tc(product.category as "vip-sets");
+  const categories = useCategories();
+  
+  const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
+  
   const displayName = getProductName(product, locale);
   const returnParam = catalogueReturnTo
     ? `?returnTo=${encodeURIComponent(catalogueReturnTo)}`

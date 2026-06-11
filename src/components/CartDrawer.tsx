@@ -181,32 +181,41 @@ export default function CartDrawer() {
             </div>
 
             {step === "cart" && (
-              <button
-                type="button"
-                onClick={() => setStep("branding")}
-                className="btn-primary w-full min-h-[44px]"
-              >
-                Proceed to Branding
-              </button>
+              <div className="flex flex-col gap-2">
+                <button
+                  type="button"
+                  onClick={() => setStep("branding")}
+                  className="btn-primary w-full min-h-[44px]"
+                >
+                  {t("proceedToBranding")}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => setStep("checkout")}
+                  className="rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 min-h-[44px] hover:bg-neutral-50 transition-colors"
+                >
+                  {t("buyWithoutBranding")}
+                </button>
+              </div>
             )}
 
             {step === "branding" && (
               <div className="space-y-4">
-                <h3 className="font-semibold text-neutral-900">Add Your Logo / Design (Optional)</h3>
+                <h3 className="font-semibold text-neutral-900">{tc("addBrandingOptional")}</h3>
                 
                 <div>
-                  <label className="mb-1 block text-xs text-neutral-600">Upload Logo</label>
+                  <label className="mb-1 block text-xs text-neutral-600">{tc("uploadLogoLabel")}</label>
                   <input
                     type="file"
                     accept="image/*,.pdf,.eps,.ai"
                     onChange={handleFileChange}
                     className="w-full text-xs"
                   />
-                  {brandingFile && <p className="mt-1 text-xs text-green-600">File attached: {brandingFile.name}</p>}
+                  {brandingFile && <p className="mt-1 text-xs text-green-600">{tc("fileAttached")} {brandingFile.name}</p>}
                 </div>
                 
                 <textarea
-                  placeholder="Branding notes / placement instructions (e.g. 'Logo on front cover, white version')"
+                  placeholder={tc("brandingNotes")}
                   value={brandingData.notes}
                   onChange={(e) => setBrandingData({ ...brandingData, notes: e.target.value })}
                   className="input-field w-full rounded border px-3 py-2 text-sm min-h-[80px]"
@@ -214,7 +223,7 @@ export default function CartDrawer() {
                 
                 <input
                   type="text"
-                  placeholder="Color preference (e.g. 'Brand color: #1A2E5C')"
+                  placeholder={tc("colorPreference")}
                   value={brandingData.color}
                   onChange={(e) => setBrandingData({ ...brandingData, color: e.target.value })}
                   className="input-field w-full rounded border px-3 py-2 text-sm"
@@ -228,9 +237,9 @@ export default function CartDrawer() {
                     className="mt-1"
                   />
                   <span className="text-sm text-neutral-700">
-                    I want a virtual sample before production
+                    {tc("requestSample")}
                     <br />
-                    <span className="text-xs text-neutral-500">We&apos;ll send you a mockup within 24h before proceeding</span>
+                    <span className="text-xs text-neutral-500">{tc("sampleNoteInfo")}</span>
                   </span>
                 </label>
 
@@ -242,14 +251,14 @@ export default function CartDrawer() {
                     }}
                     className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
                   >
-                    Skip, use standard
+                    {tc("skipUseStandard")}
                   </button>
                   <button
                     type="button"
                     onClick={() => setStep("checkout")}
                     className="btn-primary flex-1 min-h-[44px]"
                   >
-                    Continue to Checkout
+                    {tc("continueToCheckout")}
                   </button>
                 </div>
               </div>

@@ -8,6 +8,8 @@ import BrandLogo from "./BrandLogo";
 import HeaderSearch from "./HeaderSearch";
 import StripeBar from "./StripeBar";
 import { useCart } from "@/context/CartContext";
+import GFMMenu from "./GFMMenu";
+import MobileGFMMenu from "./MobileGFMMenu";
 
 export default function Header() {
   const t = useTranslations("nav");
@@ -116,6 +118,9 @@ export default function Header() {
             );
           })}
           <li>
+            <GFMMenu />
+          </li>
+          <li>
             <Link href="/contact" className="shop-nav-link font-bold text-accent-orange">
               {t("quote")}
             </Link>
@@ -138,6 +143,7 @@ export default function Header() {
               {l.label}
             </Link>
           ))}
+          <MobileGFMMenu onClose={() => setOpen(false)} />
         </nav>
       )}
     </header>

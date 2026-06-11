@@ -1,23 +1,25 @@
 import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import ProductCard from "./ProductCard";
-import type { Product } from "@/lib/products";
-export function CategoryQuickLinks() {
+import type { Product, Category } from "@/lib/products";
+import { useLocale } from "next-intl";
+
+export function CategoryQuickLinks({ categories }: { categories: Category[] }) {
   const t = useTranslations("categories");
-  const quick = ["vip-sets", "cork-eco", "tech-gifts", "business-gifts", "notebooks-premium", "promotional"] as const;
+  const locale = useLocale();
 
   return (
     <section className="border-b border-olive-100 bg-white py-6">
       <div className="mx-auto max-w-shop px-4 md:px-6">
         <h2 className="sr-only">{t("title")}</h2>
         <div className="flex gap-3 overflow-x-auto pb-2 scrollbar-thin">
-          {quick.map((cat) => (
+          {categories.slice(0, 6).map((cat) => (
             <Link
-              key={cat}
-              href={`/catalogue?category=${cat}`}
+              key={cat.slug}
+              href={`/catalogue?category=${cat.slug}`}
               className="shrink-0 min-h-[44px] rounded-full border border-olive-300 bg-olive-50 px-5 py-2.5 text-sm font-semibold text-olive-800 transition hover:border-olive-600 hover:bg-olive-600 hover:text-white"
             >
-              {t(cat)}
+              {locale === "pt" ? cat.name_pt : locale === "ar" ? cat.name_ar : cat.name_en}
             </Link>
           ))}
           <Link

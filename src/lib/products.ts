@@ -18,11 +18,21 @@ export interface Product {
   categoryName: string;
   names?: ProductNames;
   image?: string | null;
+  images?: string[];
   featured?: boolean;
   tags?: string[];
   price?: number;
   prices?: Record<string, number>;
   variants?: { color: string; hex: string; image: string }[];
+}
+
+export interface Category {
+  id: number;
+  slug: string;
+  name_en: string;
+  name_ar: string;
+  name_pt: string;
+  order_index: number;
 }
 
 const CATEGORY_ORDER = [
@@ -47,6 +57,7 @@ function enrich(p: any): Product {
     ...p, 
     code: normalizeProductCode(p.code),
     categoryName: p.category_name || p.categoryName || "",
+    images: p.images || (p.image ? [p.image] : []),
   };
   const tags: string[] = [...(p.tags || [])];
   if (p.type === "set" && !tags.includes("set")) tags.push("set");
@@ -122,6 +133,28 @@ export async function getCategories(): Promise<string[]> {
   return CATEGORY_ORDER.filter((c) => cats.has(c)).concat(
     [...cats].filter((c) => !CATEGORY_ORDER.includes(c))
   );
+}
+
+export async function getAllCategories(): Promise<Category[]> {
+  try {
+    const { data, error } = await supabase.from("categories").select("*").order("order_index", { ascending: true });
+    if (error) throw error;
+    if (data && data.length > 0) {
+      return data as Category[];
+    }
+  } catch (err) {
+    console.error("Supabase categories fetch error", err);
+  }
+  
+  // Return fallback based on hardcoded CATEGORY_ORDER if db is empty/error
+  return CATEGORY_ORDER.map((slug, i) => ({
+    id: i,
+    slug,
+    name_en: slug,
+    name_ar: slug,
+    name_pt: slug,
+    order_index: i
+  }));
 }
 
 export async function searchProducts(opts: {

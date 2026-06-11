@@ -11,6 +11,7 @@ import {
   getFeaturedProducts,
   getVipSets,
   getCorkProducts,
+  getAllCategories,
 } from "@/lib/products";
 import { buildHeroSlides } from "@/lib/hero-slides";
 import type { Locale } from "@/i18n/routing";
@@ -27,17 +28,18 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("home");
 
-  const [featured, vip, cork] = await Promise.all([
+  const [featured, vip, cork, categories] = await Promise.all([
     getFeaturedProducts(12),
     getVipSets(),
     getCorkProducts(),
+    getAllCategories(),
   ]);
   const slides = buildHeroSlides(featured, locale as Locale);
 
   return (
     <>
       <HeroSlider slides={slides} />
-      <CategoryQuickLinks />
+      <CategoryQuickLinks categories={categories} />
       <FeaturedProducts products={featured} />
       <ProductStrip
         title={t("vipTitle")}
