@@ -129,7 +129,7 @@ export default function Header() {
       </nav>
 
       {open && (
-        <nav className="border-b border-olive-700/30 bg-olive-600 px-4 py-4 lg:hidden">
+        <nav className="border-b border-olive-700/30 bg-olive-600 px-4 py-4 lg:hidden max-h-[calc(100vh-110px)] overflow-y-auto">
           <div className="mb-4 md:hidden">
             <HeaderSearch variant="dark" />
           </div>
