@@ -48,6 +48,11 @@ export default function AdminDashboard({
   const [uploading, setUploading] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [successMsg, setSuccessMsg] = useState("");
+  
+  // Product Filters & Pagination
+  const [productCategoryFilter, setProductCategoryFilter] = useState("all");
+  const [productsPage, setProductsPage] = useState(1);
+  const productsPerPage = 20;
 
   useEffect(() => {
     // Since server-side fetching is removed for security, fetch data immediately on mount
@@ -274,14 +279,21 @@ export default function AdminDashboard({
   };
 
   // ─── Filtered Products ────────────────────────────────────
-  const filteredProducts = searchQuery.trim()
-    ? products.filter(
-        (p) =>
-          p.code?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          p.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          p.category?.toLowerCase().includes(searchQuery.toLowerCase())
-      )
-    : products;
+  const filteredProducts = products.filter((p) => {
+    const matchesSearch = searchQuery.trim() === "" || (
+      p.code?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.description?.toLowerCase().includes(searchQuery.toLowerCase()) ||
+      p.category?.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+    const matchesCategory = productCategoryFilter === "all" || p.category === productCategoryFilter;
+    return matchesSearch && matchesCategory;
+  });
+
+  const totalPages = Math.ceil(filteredProducts.length / productsPerPage);
+  const paginatedProducts = filteredProducts.slice(
+    (productsPage - 1) * productsPerPage,
+    productsPage * productsPerPage
+  );
 
   // ─── Status Badge ─────────────────────────────────────────
   const statusBadge = (status: string) => {
@@ -538,9 +550,19 @@ export default function AdminDashboard({
               type="search"
               placeholder={t("products.searchPlaceholder")}
               value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
+              onChange={(e) => { setSearchQuery(e.target.value); setProductsPage(1); }}
               className="flex-1 rounded border border-neutral-300 px-4 py-2 text-sm"
             />
+            <select
+              value={productCategoryFilter}
+              onChange={(e) => { setProductCategoryFilter(e.target.value); setProductsPage(1); }}
+              className="rounded border border-neutral-300 px-4 py-2 text-sm"
+            >
+              <option value="all">All Categories</option>
+              {categories.map((c) => (
+                <option key={c.slug} value={c.slug}>{c.name_en} ({c.slug})</option>
+              ))}
+            </select>
             <button
               onClick={openAddModal}
               className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
@@ -563,7 +585,7 @@ export default function AdminDashboard({
                 </tr>
               </thead>
               <tbody>
-                {filteredProducts.map((product) => (
+                {paginatedProducts.map((product) => (
                   <tr key={product.id} className="border-b hover:bg-neutral-50">
                     <td className="px-4 py-3 font-medium text-neutral-900">{product.code}</td>
                     <td className="max-w-[200px] truncate px-4 py-3">
@@ -606,6 +628,30 @@ export default function AdminDashboard({
               </tbody>
             </table>
           </div>
+
+          {totalPages > 1 && (
+            <div className="mt-4 flex items-center justify-between px-2 text-sm text-neutral-600">
+              <div>
+                Showing {(productsPage - 1) * productsPerPage + 1} to {Math.min(productsPage * productsPerPage, filteredProducts.length)} of {filteredProducts.length} entries
+              </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => setProductsPage(Math.max(1, productsPage - 1))}
+                  disabled={productsPage === 1}
+                  className="rounded border border-neutral-300 px-3 py-1 disabled:opacity-50 hover:bg-neutral-50"
+                >
+                  Previous
+                </button>
+                <button
+                  onClick={() => setProductsPage(Math.min(totalPages, productsPage + 1))}
+                  disabled={productsPage === totalPages}
+                  className="rounded border border-neutral-300 px-3 py-1 disabled:opacity-50 hover:bg-neutral-50"
+                >
+                  Next
+                </button>
+              </div>
+            </div>
+          )}
         </div>
       )}
 

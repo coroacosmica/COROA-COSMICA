@@ -14,6 +14,7 @@ export default function CategoriesManager({
   const [editing, setEditing] = useState<Partial<Category> | null>(null);
   const [adding, setAdding] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const openAddModal = () => {
     setEditing({
@@ -95,12 +96,21 @@ export default function CategoriesManager({
     <div>
       <div className="mb-4 flex flex-wrap items-center justify-between gap-4">
         <h3 className="text-lg font-medium text-neutral-700">Manage Categories</h3>
-        <button
-          onClick={openAddModal}
-          className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
-        >
-          + Add Category
-        </button>
+        <div className="flex flex-wrap items-center gap-4 flex-1 max-w-md ml-auto">
+          <input
+            type="search"
+            placeholder="Search categories..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            className="flex-1 rounded border border-neutral-300 px-4 py-2 text-sm"
+          />
+          <button
+            onClick={openAddModal}
+            className="rounded bg-olive-600 px-4 py-2 text-sm font-semibold text-white hover:bg-olive-700"
+          >
+            + Add Category
+          </button>
+        </div>
       </div>
 
       <div className="overflow-x-auto rounded-lg bg-white shadow-sm">
@@ -123,7 +133,13 @@ export default function CategoriesManager({
                 </td>
               </tr>
             ) : (
-              categories.map((cat) => (
+              categories
+                .filter(c => 
+                  searchQuery.trim() === "" || 
+                  c.slug?.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                  c.name_en?.toLowerCase().includes(searchQuery.toLowerCase())
+                )
+                .map((cat) => (
                 <tr key={cat.id} className="border-b hover:bg-neutral-50">
                   <td className="px-4 py-3 font-medium text-neutral-900">{cat.order_index}</td>
                   <td className="px-4 py-3 text-olive-700 font-semibold">{cat.slug}</td>
