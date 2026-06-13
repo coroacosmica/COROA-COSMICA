@@ -38,6 +38,7 @@ export default function AdminDashboard({
   const t = useTranslations("admin");
   const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker" | "categories">("quotes");
   const [activeQuoteRegion, setActiveQuoteRegion] = useState<"all" | "egypt" | "europe" | "usa" | "saudi" | "other">("all");
+  const [quoteTypeFilter, setQuoteTypeFilter] = useState<"all" | "standard" | "gfm">("all");
   const [quotes, setQuotes] = useState(initialQuotes);
   const [products, setProducts] = useState(initialProducts);
   const [categories, setCategories] = useState<Category[]>([]);
@@ -319,9 +320,20 @@ export default function AdminDashboard({
     return "other";
   };
 
-  const filteredQuotes = activeQuoteRegion === "all" 
-    ? quotes 
-    : quotes.filter(q => getQuoteRegion(q) === activeQuoteRegion);
+  const isGfmQuote = (quote: any) => {
+    if (!quote.items || !Array.isArray(quote.items)) return false;
+    return quote.items.some((item: any) => 
+      item.code?.startsWith('GFM-') || item.category?.startsWith('gfm-')
+    );
+  };
+
+  const filteredQuotes = quotes.filter(q => {
+    const regionMatch = activeQuoteRegion === "all" || getQuoteRegion(q) === activeQuoteRegion;
+    const typeMatch = quoteTypeFilter === "all" || 
+      (quoteTypeFilter === "gfm" && isGfmQuote(q)) || 
+      (quoteTypeFilter === "standard" && !isGfmQuote(q));
+    return regionMatch && typeMatch;
+  });
 
   return (
     <div>
@@ -408,6 +420,34 @@ export default function AdminDashboard({
       {/* ═══════════ QUOTES TAB ═══════════ */}
       {activeTab === "quotes" && (
         <div className="space-y-4">
+          {/* Quote Type Tabs */}
+          <div className="flex gap-2 mb-2">
+            <button
+              onClick={() => setQuoteTypeFilter("all")}
+              className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+                quoteTypeFilter === "all" ? "bg-olive-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+              }`}
+            >
+              All Orders ({quotes.length})
+            </button>
+            <button
+              onClick={() => setQuoteTypeFilter("standard")}
+              className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+                quoteTypeFilter === "standard" ? "bg-olive-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+              }`}
+            >
+              Standard Orders ({quotes.filter(q => !isGfmQuote(q)).length})
+            </button>
+            <button
+              onClick={() => setQuoteTypeFilter("gfm")}
+              className={`rounded-full px-4 py-1.5 text-sm font-semibold transition-colors ${
+                quoteTypeFilter === "gfm" ? "bg-olive-600 text-white" : "bg-neutral-100 text-neutral-600 hover:bg-neutral-200"
+              }`}
+            >
+              GFM & Custom Branding ({quotes.filter(q => isGfmQuote(q)).length})
+            </button>
+          </div>
+
           {/* Quote Region Tabs */}
           <div className="flex gap-2 overflow-x-auto border-b border-neutral-200 pb-2 mb-4">
             {[
