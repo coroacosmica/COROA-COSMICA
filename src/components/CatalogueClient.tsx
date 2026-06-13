@@ -253,7 +253,7 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
               "mt-8",
               listView
                 ? "flex flex-col gap-4"
-                : "grid grid-cols-2 gap-4 md:grid-cols-3 md:gap-6 xl:grid-cols-4"
+                : "grid grid-cols-1 gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-8"
             )}
           >
             {items.map((p) => (

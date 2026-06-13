@@ -83,7 +83,7 @@ export default function ProductCard({
             <ProductImage
               product={product}
               className="image-zoom object-cover object-center p-2"
-              sizes="(max-width: 640px) 50vw, 25vw"
+              sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
             />
             <span className="absolute bottom-2 start-2 rounded bg-white/95 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-olive-700">
               {categoryLabel}
