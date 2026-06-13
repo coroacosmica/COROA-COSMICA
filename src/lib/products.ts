@@ -6,6 +6,8 @@ export interface ProductNames {
   pt: string;
   en: string;
   ar: string;
+  fr?: string;
+  pt_br?: string;
 }
 
 export interface Product {
@@ -48,7 +50,62 @@ const CATEGORY_ORDER = [
   "accessories",
   "seasonal",
   "general",
+  // GFM - Indoor Printing
+  "gfm-indoor-printing",
+  "gfm-business-cards",
+  "gfm-flyers",
+  "gfm-brochures",
+  "gfm-books",
+  "gfm-boxes-bags",
+  "gfm-invitation-cards",
+  "gfm-certificates",
+  // GFM - Events & Conferences
+  "gfm-events-conferences",
+  "gfm-rollup-banners",
+  "gfm-popup-stands",
+  "gfm-conference-stands",
+  "gfm-feather-flags",
+  "gfm-event-flags",
+  "gfm-id-cards",
+  // GFM - Outdoor Printing
+  "gfm-outdoor-printing",
+  "gfm-outdoor-signage",
+  "gfm-building-facades",
+  "gfm-shop-fronts",
+  "gfm-billboards",
+  "gfm-outdoor-banners",
+  "gfm-vehicle-branding",
+  "gfm-wayfinding",
+  // GFM - Geographic & Office Solutions
+  "gfm-geographic-office",
+  "gfm-office-signs",
+  "gfm-directional-signs",
+  "gfm-name-plates",
+  "gfm-rubber-stamps",
+  "gfm-company-stamps",
+  "gfm-custom-seals",
 ];
+
+// Parent category → child categories mapping for GFM sections
+export const GFM_PARENT_CATEGORIES: Record<string, string[]> = {
+  "gfm-indoor-printing": [
+    "gfm-business-cards", "gfm-flyers", "gfm-brochures", "gfm-books",
+    "gfm-boxes-bags", "gfm-invitation-cards", "gfm-certificates",
+  ],
+  "gfm-events-conferences": [
+    "gfm-rollup-banners", "gfm-popup-stands", "gfm-conference-stands",
+    "gfm-feather-flags", "gfm-event-flags", "gfm-id-cards",
+  ],
+  "gfm-outdoor-printing": [
+    "gfm-outdoor-signage", "gfm-building-facades", "gfm-shop-fronts",
+    "gfm-billboards", "gfm-outdoor-banners", "gfm-vehicle-branding", "gfm-wayfinding",
+  ],
+  "gfm-geographic-office": [
+    "gfm-office-signs", "gfm-directional-signs", "gfm-name-plates",
+    "gfm-rubber-stamps", "gfm-company-stamps", "gfm-custom-seals",
+  ],
+};
+
 
 function enrich(p: any): Product {
   const code = normalizeProductCode(p.code).toLowerCase();
@@ -74,17 +131,26 @@ function enrich(p: any): Product {
 export async function getAllProducts(): Promise<Product[]> {
   try {
     const { data, error } = await supabase.from("products").select("*");
+    console.log("[getAllProducts] Supabase response:", { count: data?.length, error: error?.message });
     if (error) throw error;
     if (data && data.length > 0) {
-      return data.map(enrich);
+      // Merge Supabase products with local JSON (local JSON includes GFM products)
+      const supabaseCodes = new Set(data.map((p: any) => p.code?.toLowerCase()));
+      const localOnly = (rawProducts as any[]).filter(
+        (p) => !supabaseCodes.has(p.code?.toLowerCase())
+      );
+      console.log("[getAllProducts] Supabase:", data.length, "Local-only:", localOnly.length);
+      return [...data.map(enrich), ...localOnly.map(enrich)];
     }
   } catch (err) {
     console.error("Supabase products fetch error, falling back to local JSON", err);
   }
   
-  // Fallback to local JSON if Supabase fails
+  // Fallback to local JSON if Supabase fails or is empty
+  console.log("[getAllProducts] Using local JSON fallback, count:", (rawProducts as any[]).length);
   return (rawProducts as any[]).map(enrich);
 }
+
 
 export async function getProductByCode(code: string): Promise<Product | undefined> {
   const all = await getAllProducts();

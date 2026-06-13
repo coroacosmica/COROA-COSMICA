@@ -10,14 +10,16 @@ const PLACEHOLDERS: Record<string, string> = {
   default: "/images/placeholders/gift.svg",
 };
 
-function nameLocaleKey(locale: Locale): keyof NonNullable<Product["names"]> {
-  if (locale === "ar" || locale === "ar-eg") return "ar";
-  if (locale === "pt" || locale === "pt-br") return "pt";
+function nameLocaleKey(locale: Locale): string {
+  if (locale === "ar" || locale === "ar-eg" || locale === "ar-sa") return "ar";
+  if (locale === "pt-br") return "pt_br";
+  if (locale === "pt") return "pt";
+  if (locale === "fr") return "fr";
   return "en";
 }
 
 export function getProductName(product: Product, locale: Locale): string {
-  const names = product.names;
+  const names = product.names as Record<string, string>;
   const key = nameLocaleKey(locale);
   if (names?.[key]) return names[key];
   if (names?.en) return names.en;

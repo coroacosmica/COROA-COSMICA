@@ -13474,5 +13474,399 @@
       "ar": "قلم دعائي"
     },
     "image": "/images/products/gs13.jpeg"
+  },
+
+  {
+    "code": "GFM-BC-001",
+    "description": "Premium business cards printing with various finishes including matte, glossy, and spot UV",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-business-cards",
+    "categoryName": "Business Cards",
+    "names": {
+      "pt": "Cartões de Visita",
+      "en": "Business Cards",
+      "ar": "كروت شخصية"
+    },
+    "image": "/images/products/gfm-business-cards.png"
+  },
+  {
+    "code": "GFM-FL-001",
+    "description": "High-quality flyer printing in A4, A5, and DL sizes with vibrant colors",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-flyers",
+    "categoryName": "Flyers",
+    "names": {
+      "pt": "Panfletos",
+      "en": "Flyers",
+      "ar": "فلايرز"
+    },
+    "image": "/images/products/gfm-flyers.png"
+  },
+  {
+    "code": "GFM-BR-001",
+    "description": "Professional brochure printing - bi-fold, tri-fold, and z-fold options available",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-brochures",
+    "categoryName": "Brochures",
+    "names": {
+      "pt": "Brochuras",
+      "en": "Brochures",
+      "ar": "بروشورات"
+    },
+    "image": "/images/products/gfm-brochures.png"
+  },
+  {
+    "code": "GFM-BK-001",
+    "description": "Custom book printing - hardcover and softcover, perfect binding and saddle stitch",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-books",
+    "categoryName": "Books",
+    "names": {
+      "pt": "Livros",
+      "en": "Books",
+      "ar": "كتب"
+    },
+    "image": "/images/products/gfm-books.png"
+  },
+  {
+    "code": "GFM-BB-001",
+    "description": "Custom printed boxes and branded paper bags for retail and corporate packaging",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-boxes-bags",
+    "categoryName": "Boxes & Bags",
+    "names": {
+      "pt": "Caixas e Sacos",
+      "en": "Boxes & Bags",
+      "ar": "علب وأكياس"
+    },
+    "image": "/images/products/gfm-boxes-bags.png"
+  },
+  {
+    "code": "GFM-IC-001",
+    "description": "Elegant invitation cards with custom designs, embossing, and foil stamping",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-invitation-cards",
+    "categoryName": "Invitation Cards",
+    "names": {
+      "pt": "Cartões de Convite",
+      "en": "Invitation Cards",
+      "ar": "كروت دعوة"
+    },
+    "image": "/images/products/gfm-invitation-cards.png"
+  },
+  {
+    "code": "GFM-CT-001",
+    "description": "Professional certificates with gold borders, seals, and premium paper finishes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-certificates",
+    "categoryName": "Certificates",
+    "names": {
+      "pt": "Certificados",
+      "en": "Certificates",
+      "ar": "شهادات"
+    },
+    "image": "/images/products/gfm-certificates.png"
+  },
+
+  {
+    "code": "GFM-OS-001",
+    "description": "Durable outdoor signage with weather-resistant materials and LED illumination options",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-outdoor-signage",
+    "categoryName": "Outdoor Signage",
+    "names": {
+      "pt": "Sinalização Exterior",
+      "en": "Outdoor Signage",
+      "ar": "لافتات خارجية"
+    },
+    "image": "/images/products/gfm-outdoor-signage.png"
+  },
+  {
+    "code": "GFM-BF-001",
+    "description": "Large-scale building facade branding with vinyl wraps and cladding systems",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-building-facades",
+    "categoryName": "Building Facades",
+    "names": {
+      "pt": "Fachadas de Edifícios",
+      "en": "Building Facades",
+      "ar": "واجهات مباني"
+    },
+    "image": "/images/products/gfm-building-facades.png"
+  },
+  {
+    "code": "GFM-SF-001",
+    "description": "Illuminated and non-illuminated shop front signs with channel letters and lightboxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-shop-fronts",
+    "categoryName": "Shop Front Signs",
+    "names": {
+      "pt": "Placas de Lojas",
+      "en": "Shop Front Signs",
+      "ar": "لافتات محلات"
+    },
+    "image": "/images/products/gfm-shop-fronts.png"
+  },
+  {
+    "code": "GFM-BL-001",
+    "description": "High-impact billboard advertising in various sizes for maximum brand visibility",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-billboards",
+    "categoryName": "Billboards",
+    "names": {
+      "pt": "Outdoors",
+      "en": "Billboards",
+      "ar": "لوحات إعلانية"
+    },
+    "image": "/images/products/gfm-billboards.png"
+  },
+  {
+    "code": "GFM-OB-001",
+    "description": "Large format outdoor vinyl banners with reinforced grommets and UV-resistant printing",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-outdoor-banners",
+    "categoryName": "Outdoor Banners",
+    "names": {
+      "pt": "Banners Exteriores",
+      "en": "Outdoor Banners",
+      "ar": "بانرات خارجية"
+    },
+    "image": "/images/products/gfm-outdoor-banners.png"
+  },
+  {
+    "code": "GFM-VB-001",
+    "description": "Full vehicle branding with vinyl wraps for cars, vans, trucks, and fleet graphics",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-vehicle-branding",
+    "categoryName": "Vehicle Branding",
+    "names": {
+      "pt": "Decoração de Veículos",
+      "en": "Vehicle Branding",
+      "ar": "تجليد سيارات"
+    },
+    "image": "/images/products/gfm-vehicle-branding.png"
+  },
+  {
+    "code": "GFM-WF-001",
+    "description": "Interior and exterior wayfinding sign systems for buildings, malls, and campuses",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-wayfinding",
+    "categoryName": "Wayfinding Signs",
+    "names": {
+      "pt": "Placas de Sinalização",
+      "en": "Wayfinding Signs",
+      "ar": "لوحات إرشادية"
+    },
+    "image": "/images/products/gfm-wayfinding.png"
+  },
+
+  {
+    "code": "GFM-OFS-001",
+    "description": "Modern office signs including reception signs, door signs, and wall-mounted directory boards",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-office-signs",
+    "categoryName": "Office Signs",
+    "names": {
+      "pt": "Placas de Escritório",
+      "en": "Office Signs",
+      "ar": "لافتات مكتبية"
+    },
+    "image": "/images/products/gfm-office-signs.png"
+  },
+  {
+    "code": "GFM-DS-001",
+    "description": "Directional and navigational signs for buildings, hospitals, and public spaces",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-directional-signs",
+    "categoryName": "Directional Signs",
+    "names": {
+      "pt": "Sinalização Direcional",
+      "en": "Directional Signs",
+      "ar": "لوحات توجيهية"
+    },
+    "image": "/images/products/gfm-directional-signs.png"
+  },
+  {
+    "code": "GFM-NP-001",
+    "description": "Engraved and printed name plates in brass, aluminum, acrylic, and stainless steel",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-name-plates",
+    "categoryName": "Name Plates",
+    "names": {
+      "pt": "Placas de Identificação",
+      "en": "Name Plates",
+      "ar": "لوحات أسماء"
+    },
+    "image": "/images/products/gfm-name-plates.png"
+  },
+  {
+    "code": "GFM-RS-001",
+    "description": "Custom rubber stamps with wooden and plastic handles for office and business use",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-rubber-stamps",
+    "categoryName": "Rubber Stamps",
+    "names": {
+      "pt": "Carimbos de Borracha",
+      "en": "Rubber Stamps",
+      "ar": "أختام مطاطية"
+    },
+    "image": "/images/products/gfm-rubber-stamps.png"
+  },
+  {
+    "code": "GFM-CS-001",
+    "description": "Self-inking company stamps with logos, dates, and custom text for corporate use",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-company-stamps",
+    "categoryName": "Company Stamps",
+    "names": {
+      "pt": "Carimbos de Empresa",
+      "en": "Company Stamps",
+      "ar": "أختام شركات"
+    },
+    "image": "/images/products/gfm-company-stamps.png"
+  },
+  {
+    "code": "GFM-CSL-001",
+    "description": "Premium embossing seals and wax seal stamps for corporate documents and certificates",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-custom-seals",
+    "categoryName": "Custom Seals",
+    "names": {
+      "pt": "Selos Personalizados",
+      "en": "Custom Seals",
+      "ar": "أختام مخصصة"
+    },
+    "image": "/images/products/gfm-custom-seals.png"
+  },
+
+  {
+    "code": "GFM-RB-001",
+    "description": "Retractable roll-up banner stands in standard and wide formats for events and exhibitions",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-rollup-banners",
+    "categoryName": "Roll-Up Banners",
+    "names": {
+      "pt": "Banners Roll-Up",
+      "en": "Roll-Up Banners",
+      "ar": "رول أب"
+    },
+    "image": "/images/products/gfm-rollup-banners.png"
+  },
+  {
+    "code": "GFM-PS-001",
+    "description": "Portable pop-up display stands with custom printed graphics for trade shows",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-popup-stands",
+    "categoryName": "Pop-Up Stands",
+    "names": {
+      "pt": "Stands Pop-Up",
+      "en": "Pop-Up Stands",
+      "ar": "بوب أب ستاند"
+    },
+    "image": "/images/products/gfm-popup-stands.png"
+  },
+  {
+    "code": "GFM-CNF-001",
+    "description": "Custom conference display stands and exhibition booths for professional events",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-conference-stands",
+    "categoryName": "Conference Stands",
+    "names": {
+      "pt": "Stands de Conferência",
+      "en": "Conference Stands",
+      "ar": "ستاندات مؤتمرات"
+    },
+    "image": "/images/products/gfm-conference-stands.png"
+  },
+  {
+    "code": "GFM-FF-001",
+    "description": "Teardrop and feather flag banners with custom printing for outdoor promotions",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-feather-flags",
+    "categoryName": "Feather Flags",
+    "names": {
+      "pt": "Bandeiras Pena",
+      "en": "Feather Flags",
+      "ar": "أعلام ريشة"
+    },
+    "image": "/images/products/gfm-feather-flags.png"
+  },
+  {
+    "code": "GFM-EF-001",
+    "description": "Custom printed event flags and promotional flags for conferences and ceremonies",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-event-flags",
+    "categoryName": "Event Flags",
+    "names": {
+      "pt": "Bandeiras de Eventos",
+      "en": "Event Flags",
+      "ar": "أعلام فعاليات"
+    },
+    "image": "/images/products/gfm-event-flags.png"
+  },
+  {
+    "code": "GFM-ID-001",
+    "description": "Printed ID cards and name badges with lanyards for corporate and event identification",
+    "includes": [],
+    "type": "product",
+    "catalogue": "gfm",
+    "category": "gfm-id-cards",
+    "categoryName": "ID Cards & Badges",
+    "names": {
+      "pt": "Crachás e Cartões",
+      "en": "ID Cards & Badges",
+      "ar": "بطاقات تعريف"
+    },
+    "image": "/images/products/gfm-id-cards.png"
   }
 ]

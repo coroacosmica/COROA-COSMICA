@@ -6,6 +6,7 @@ import { useSearchParams } from "next/navigation";
 import { usePathname, useRouter } from "@/i18n/navigation";
 import ProductCard from "./ProductCard";
 import type { Product, Category } from "@/lib/products";
+import { GFM_PARENT_CATEGORIES } from "@/lib/products";
 import { clsx } from "clsx";
 
 type SortKey = "newest" | "price-low" | "price-high" | "popular";
@@ -88,7 +89,15 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
   const filtered = useMemo(() => {
     const q = query.toLowerCase().trim();
     let list = allProducts;
-    if (category !== "all") list = list.filter((p) => p.category === category);
+    if (category !== "all") {
+      // If it's a parent category, expand to include all child categories
+      const childCategories = GFM_PARENT_CATEGORIES[category];
+      if (childCategories) {
+        list = list.filter((p) => childCategories.includes(p.category));
+      } else {
+        list = list.filter((p) => p.category === category);
+      }
+    }
     if (setsOnly) list = list.filter((p) => p.type === "set" || p.includes.length > 0);
     if (q) {
       list = list.filter((p) => {

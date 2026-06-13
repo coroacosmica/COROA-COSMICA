@@ -17,7 +17,7 @@ interface EditingProduct {
   image: string;
   images: string[];
   featured: boolean;
-  names: { pt: string; en: string; ar: string } | null;
+  names: { pt: string; en: string; ar: string; fr?: string; pt_br?: string } | null;
   includes: string[];
   tags: string[];
   catalogue: string;
@@ -83,7 +83,7 @@ export default function AdminDashboard({
       image: product.image || "",
       images: product.images || (product.image ? [product.image] : []),
       featured: product.featured || false,
-      names: product.names || { pt: "", en: "", ar: "" },
+      names: product.names || { pt: "", en: "", ar: "", fr: "", pt_br: "" },
       includes: product.includes || [],
       tags: product.tags || [],
       catalogue: product.catalogue || "",
@@ -107,7 +107,7 @@ export default function AdminDashboard({
       image: "",
       images: [],
       featured: false,
-      names: { pt: "", en: "", ar: "" },
+      names: { pt: "", en: "", ar: "", fr: "", pt_br: "" },
       includes: [],
       tags: [],
       catalogue: "",
@@ -838,7 +838,30 @@ export default function AdminDashboard({
                   type="text"
                   value={editing.names?.ar || ""}
                   onChange={(e) =>
-                    setEditing({ ...editing, names: { ...(editing.names || { pt: "", en: "", ar: "" }), ar: e.target.value } })
+                    setEditing({ ...editing, names: { ...(editing.names || { pt: "", en: "", ar: "", fr: "", pt_br: "" }), ar: e.target.value } })
+                  }
+                  className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
+                  dir="rtl"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-neutral-600">Name (Français)</label>
+                <input
+                  type="text"
+                  value={editing.names?.fr || ""}
+                  onChange={(e) =>
+                    setEditing({ ...editing, names: { ...(editing.names || { pt: "", en: "", ar: "", fr: "", pt_br: "" }), fr: e.target.value } })
+                  }
+                  className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
+                />
+              </div>
+              <div>
+                <label className="mb-1 block text-xs font-semibold text-neutral-600">Name (Português - Brasil)</label>
+                <input
+                  type="text"
+                  value={editing.names?.pt_br || ""}
+                  onChange={(e) =>
+                    setEditing({ ...editing, names: { ...(editing.names || { pt: "", en: "", ar: "", fr: "", pt_br: "" }), pt_br: e.target.value } })
                   }
                   className="w-full rounded border border-neutral-300 px-3 py-2 text-sm"
                 />
