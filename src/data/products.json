@@ -13475,7 +13475,6 @@
     },
     "image": "/images/products/gs13.jpeg"
   },
-
   {
     "code": "GFM-BC-001",
     "description": "Premium business cards printing with various finishes including matte, glossy, and spot UV",
@@ -13489,7 +13488,11 @@
       "en": "Business Cards",
       "ar": "كروت شخصية"
     },
-    "image": "/images/products/gfm-business-cards.png"
+    "image": "/images/products/gfm-business-cards.png",
+    "featured": true,
+    "tags": [
+      "featured"
+    ]
   },
   {
     "code": "GFM-FL-001",
@@ -13581,7 +13584,6 @@
     },
     "image": "/images/products/gfm-certificates.png"
   },
-
   {
     "code": "GFM-OS-001",
     "description": "Durable outdoor signage with weather-resistant materials and LED illumination options",
@@ -13595,7 +13597,11 @@
       "en": "Outdoor Signage",
       "ar": "لافتات خارجية"
     },
-    "image": "/images/products/gfm-outdoor-signage.png"
+    "image": "/images/products/gfm-outdoor-signage.png",
+    "featured": true,
+    "tags": [
+      "featured"
+    ]
   },
   {
     "code": "GFM-BF-001",
@@ -13625,7 +13631,11 @@
       "en": "Shop Front Signs",
       "ar": "لافتات محلات"
     },
-    "image": "/images/products/gfm-shop-fronts.png"
+    "image": "/images/products/gfm-shop-fronts.png",
+    "featured": true,
+    "tags": [
+      "featured"
+    ]
   },
   {
     "code": "GFM-BL-001",
@@ -13687,7 +13697,6 @@
     },
     "image": "/images/products/gfm-wayfinding.png"
   },
-
   {
     "code": "GFM-OFS-001",
     "description": "Modern office signs including reception signs, door signs, and wall-mounted directory boards",
@@ -13778,7 +13787,6 @@
     },
     "image": "/images/products/gfm-custom-seals.png"
   },
-
   {
     "code": "GFM-RB-001",
     "description": "Retractable roll-up banner stands in standard and wide formats for events and exhibitions",

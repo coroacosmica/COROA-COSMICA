@@ -77,6 +77,8 @@ export default function CartDrawer() {
     tc(key as "greeting", values as Record<string, string>)
   );
 
+  const hasGfmItems = items.some(item => item.code.startsWith("GFM-") || item.category?.startsWith("gfm-"));
+
   return (
     <>
       <button
@@ -189,19 +191,23 @@ export default function CartDrawer() {
                 >
                   {t("proceedToBranding")}
                 </button>
-                <button
-                  type="button"
-                  onClick={() => setStep("checkout")}
-                  className="rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 min-h-[44px] hover:bg-neutral-50 transition-colors"
-                >
-                  {t("buyWithoutBranding")}
-                </button>
+                {!hasGfmItems && (
+                  <button
+                    type="button"
+                    onClick={() => setStep("checkout")}
+                    className="rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 min-h-[44px] hover:bg-neutral-50 transition-colors"
+                  >
+                    {t("buyWithoutBranding")}
+                  </button>
+                )}
               </div>
             )}
 
             {step === "branding" && (
               <div className="space-y-4">
-                <h3 className="font-semibold text-neutral-900">{tc("addBrandingOptional")}</h3>
+                <h3 className="font-semibold text-neutral-900">
+                  {hasGfmItems ? "Custom Design Required for GFM Products" : tc("addBrandingOptional")}
+                </h3>
                 
                 <div>
                   <label className="mb-1 block text-xs text-neutral-600">{tc("uploadLogoLabel")}</label>
@@ -244,18 +250,26 @@ export default function CartDrawer() {
                 </label>
 
                 <div className="flex gap-2 pt-4">
+                  {!hasGfmItems && (
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setStep("checkout");
+                      }}
+                      className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
+                    >
+                      {tc("skipUseStandard")}
+                    </button>
+                  )}
                   <button
                     type="button"
                     onClick={() => {
+                      if (hasGfmItems && !brandingFile && !brandingData.notes && !logoBase64) {
+                        alert("Please upload a file or add design notes for your GFM products.");
+                        return;
+                      }
                       setStep("checkout");
                     }}
-                    className="rounded border border-neutral-300 px-4 py-2 text-sm text-neutral-600"
-                  >
-                    {tc("skipUseStandard")}
-                  </button>
-                  <button
-                    type="button"
-                    onClick={() => setStep("checkout")}
                     className="btn-primary flex-1 min-h-[44px]"
                   >
                     {tc("continueToCheckout")}
