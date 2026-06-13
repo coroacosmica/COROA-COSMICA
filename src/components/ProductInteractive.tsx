@@ -23,7 +23,7 @@ export default function ProductInteractive({
   const tc = useTranslations("catalogue");
   const locale = useLocale() as Locale;
   const displayName = getProductName(product, locale);
-  const { formatProductPrice } = useCurrency();
+  const { formatProductPrice, getRawPrice, formatLocalPrice } = useCurrency();
   const categories = useCategories();
   
   const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
@@ -53,6 +53,11 @@ export default function ProductInteractive({
             className="image-zoom object-contain p-4 md:p-8"
             sizes="(max-width: 1024px) 100vw, 800px"
           />
+          {product.discount_percentage && product.discount_percentage > 0 ? (
+            <span className="absolute top-4 start-4 rounded bg-red-600 px-3 py-1.5 text-sm font-bold tracking-wide text-white shadow-sm md:px-4 md:py-2 md:text-base">
+              -{product.discount_percentage}% OFF
+            </span>
+          ) : null}
         </div>
         
         {/* Thumbnails Gallery */}
@@ -83,9 +88,15 @@ export default function ProductInteractive({
         <p className="mt-2 text-sm text-neutral-500">
           {tc("code")}: {product.code}
         </p>
-        <p className="mt-4 text-2xl font-semibold text-olive-700">
-          {formatProductPrice(product)}
-        </p>
+        <div className="mt-4 flex flex-wrap items-baseline gap-3">
+          <span className="text-3xl font-bold text-olive-700">{formatProductPrice(product)}</span>
+          {product.discount_percentage && product.discount_percentage > 0 ? (
+            <div className="flex flex-col">
+              <span className="text-xl text-neutral-400 line-through decoration-1">{formatLocalPrice(getRawPrice(product))}</span>
+              <span className="text-sm font-semibold text-red-600">You save {product.discount_percentage}%</span>
+            </div>
+          ) : null}
+        </div>
         {product.description && product.description !== displayName && (
           <p className="mt-4 text-neutral-700">{product.description}</p>
         )}

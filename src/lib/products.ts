@@ -11,20 +11,24 @@ export interface ProductNames {
 }
 
 export interface Product {
+  id?: number;
   code: string;
   description: string;
-  includes: string[];
-  type: "product" | "set";
-  catalogue: string;
+  includes?: string[];
+  type?: "product" | "set";
+  catalogue?: string;
   category: string;
-  categoryName: string;
+  category_name?: string;
+  categoryName?: string;
   names?: ProductNames;
   image?: string | null;
   images?: string[];
   featured?: boolean;
   tags?: string[];
+  is_active?: boolean;
   price?: number;
   prices?: Record<string, number>;
+  discount_percentage?: number;
   variants?: { color: string; hex: string; image: string }[];
 }
 

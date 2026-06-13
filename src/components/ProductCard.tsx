@@ -26,7 +26,7 @@ export default function ProductCard({
 }) {
   const tcat = useTranslations("catalogue");
   const locale = useLocale() as Locale;
-  const { formatProductPrice } = useCurrency();
+  const { formatProductPrice, getRawPrice, formatLocalPrice } = useCurrency();
   const categories = useCategories();
   
   const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
@@ -59,6 +59,11 @@ export default function ProductCard({
             <p className="mt-1 text-xs uppercase tracking-wider text-olive-600">{categoryLabel}</p>
             <p className="mt-2 text-lg font-semibold text-olive-700">
               {formatProductPrice(product)}
+              {product.discount_percentage && product.discount_percentage > 0 ? (
+                <span className="ml-2 text-sm text-neutral-400 line-through">
+                  {formatLocalPrice(getRawPrice(product))}
+                </span>
+              ) : null}
             </p>
           </div>
           <div className="mt-4 flex flex-wrap gap-2">
@@ -85,16 +90,26 @@ export default function ProductCard({
               className="image-zoom object-cover object-center p-2"
               sizes="(max-width: 639px) 100vw, (max-width: 1023px) 50vw, 33vw"
             />
-            <span className="absolute bottom-2 start-2 rounded bg-white/95 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-olive-700">
+            <span className="absolute bottom-2 start-2 rounded bg-white/95 px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wide text-olive-700 shadow-sm">
               {categoryLabel}
             </span>
+            {product.discount_percentage && product.discount_percentage > 0 ? (
+              <span className="absolute top-2 end-2 rounded bg-red-600 px-2 py-1 text-xs font-bold text-white shadow-sm">
+                -{product.discount_percentage}% OFF
+              </span>
+            ) : null}
           </div>
         </Link>
         <div className="flex flex-1 flex-col p-3 md:p-4">
           <Link href={`/product/${slugifyCode(product.code)}${returnParam}`}>
             <h3 className="line-clamp-2 text-sm font-medium text-neutral-900">{displayName}</h3>
           </Link>
-          <p className="mt-1 text-lg font-semibold text-olive-700">{formatProductPrice(product)}</p>
+          <p className="mt-1 flex items-baseline gap-2">
+            <span className="text-lg font-semibold text-olive-700">{formatProductPrice(product)}</span>
+            {product.discount_percentage && product.discount_percentage > 0 ? (
+              <span className="text-xs text-neutral-400 line-through">{formatLocalPrice(getRawPrice(product))}</span>
+            ) : null}
+          </p>
           <div className={clsx("mt-3 flex flex-col gap-2")}>
             <AddToCartButton product={product} variant="compact" />
             <button

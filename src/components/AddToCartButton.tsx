@@ -2,8 +2,8 @@
 
 import { useTranslations, useLocale } from "next-intl";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import type { Product } from "@/lib/products";
-// removed unused imports
 import type { Locale } from "@/i18n/routing";
 import { clsx } from "clsx";
 
@@ -21,6 +21,7 @@ export default function AddToCartButton({
   const t = useTranslations("catalogue");
   const locale = useLocale() as Locale;
   const { addItem } = useCart();
+  const { calculateDiscountedPrice } = useCurrency();
 
   function handleClick(e: React.MouseEvent) {
     e.preventDefault();
@@ -29,7 +30,8 @@ export default function AddToCartButton({
       code: product.code,
       name: product.names?.[locale as keyof typeof product.names] || product.description,
       image: product.image || "/images/placeholder.jpg",
-      price: product.price ?? 0,
+      price: calculateDiscountedPrice(product),
+      category: product.category,
       color,
     });
   }

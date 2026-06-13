@@ -25,7 +25,7 @@ export default function BoxBuilder({
   // State: selected quantities per product code
   const [selections, setSelections] = useState<Record<string, number>>({});
   
-  const basePrice = product.price ?? 0;
+  const basePrice = currencyState.calculateDiscountedPrice(product);
   
   const additionalPrice = Object.entries(selections).reduce((sum, [code, qty]) => {
     const p = individualProducts.find(ip => ip.code === code);
@@ -127,7 +127,7 @@ export default function BoxBuilder({
                     {ipName}
                   </span>
                   <span className="text-xs font-semibold text-olive-700">
-                    +{currencyState.formatPrice(ip.price ?? 0)}
+                    +{currencyState.formatLocalPrice(currencyState.calculateDiscountedPrice(ip))}
                   </span>
                 </div>
               </div>
@@ -159,7 +159,7 @@ export default function BoxBuilder({
       <div className="mt-6 pt-6 border-t border-olive-200 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <p className="text-sm text-neutral-500">Total Price</p>
-          <p className="text-2xl font-bold text-olive-800">{currencyState.formatPrice(totalPrice)}</p>
+          <p className="text-2xl font-bold text-olive-800">{currencyState.formatLocalPrice(totalPrice)}</p>
         </div>
         <button 
           onClick={handleAddToCart}

@@ -20,7 +20,7 @@ interface QuickViewModalProps {
 export default function QuickViewModal({ product, isOpen, onClose }: QuickViewModalProps) {
   const t = useTranslations("catalogue");
   const locale = useLocale() as Locale;
-  const { formatProductPrice } = useCurrency();
+  const { formatProductPrice, getRawPrice, formatLocalPrice } = useCurrency();
   const categories = useCategories();
   
   const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
@@ -83,6 +83,11 @@ export default function QuickViewModal({ product, isOpen, onClose }: QuickViewMo
                 className="object-contain p-6"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
+              {product.discount_percentage && product.discount_percentage > 0 ? (
+                <span className="absolute top-4 end-4 rounded bg-red-600 px-3 py-1.5 text-sm font-bold text-white shadow-sm">
+                  -{product.discount_percentage}% OFF
+                </span>
+              ) : null}
             </div>
             {/* Thumbnails Gallery */}
             {galleryImages.length > 1 && (
@@ -109,9 +114,12 @@ export default function QuickViewModal({ product, isOpen, onClose }: QuickViewMo
             <h2 className="mt-2 text-2xl font-display md:text-3xl font-medium text-neutral-900">
               {displayName}
             </h2>
-            <p className="mt-4 text-2xl font-semibold text-olive-700">
-              {formatProductPrice(product)}
-            </p>
+            <div className="mt-4 flex items-baseline gap-3">
+              <span className="text-3xl font-bold text-olive-700">{formatProductPrice(product)}</span>
+              {product.discount_percentage && product.discount_percentage > 0 ? (
+                <span className="text-xl text-neutral-400 line-through">{formatLocalPrice(getRawPrice(product))}</span>
+              ) : null}
+            </div>
             
             <div className="mt-4 text-sm text-neutral-600 line-clamp-3">
               {product.description}

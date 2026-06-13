@@ -96,6 +96,7 @@ export default function AdminDashboard({
       is_active: product.is_active !== false,
       price: product.price ?? 0,
       prices: product.prices || { USD: product.price ?? 0, EUR: 0, EGP: 0, SAR: 0 },
+      discount_percentage: product.discount_percentage || 0,
     };
     setEditing(initialState);
     setOriginalEditing(initialState);
@@ -120,6 +121,7 @@ export default function AdminDashboard({
       is_active: true,
       price: 0,
       prices: { USD: 0, EUR: 0, EGP: 0, SAR: 0 },
+      discount_percentage: 0,
     };
     setEditing(initialState);
     setOriginalEditing(initialState);
@@ -145,6 +147,8 @@ export default function AdminDashboard({
       catalogue: editing.catalogue,
       price: editing.prices.USD || editing.price,
       prices: editing.prices,
+      is_active: editing.is_active,
+      discount_percentage: Number(editing.discount_percentage) || 0,
     };
 
     if (adding) {
@@ -637,7 +641,12 @@ export default function AdminDashboard({
                       </span>
                     </td>
                     <td className="px-4 py-3">{product.type}</td>
-                    <td className="px-4 py-3 font-semibold text-olive-700">${product.price ?? 0}</td>
+                    <td className="px-4 py-3">
+                      <div className="font-semibold text-olive-700">${product.price ?? 0}</div>
+                      {product.discount_percentage ? (
+                        <div className="text-xs text-red-600 font-bold">-{product.discount_percentage}% OFF</div>
+                      ) : null}
+                    </td>
                     <td className="px-4 py-3 text-center">
                       <button
                         onClick={() => toggleFeatured(product)}
@@ -742,6 +751,39 @@ export default function AdminDashboard({
                   ))}
                 </select>
               </div>
+
+              {/* Price section - Basic Fields */}
+              <div className="md:col-span-2 grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="mb-1 block text-sm font-medium text-neutral-700">{t("products.price")} (Default USD)</label>
+                    <input
+                      type="number"
+                      step="0.01"
+                      required
+                      value={editing.prices.USD || editing.price}
+                      onChange={(e) => {
+                        const val = parseFloat(e.target.value) || 0;
+                        setEditing({ ...editing, price: val, prices: { ...editing.prices, USD: val } });
+                      }}
+                      className="w-full rounded border border-neutral-300 px-4 py-2"
+                    />
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-sm font-medium text-neutral-700">Discount Percentage (%)</label>
+                    <input
+                      type="number"
+                      min="0"
+                      max="100"
+                      value={editing.discount_percentage || 0}
+                      onChange={(e) => {
+                        const val = parseInt(e.target.value) || 0;
+                        setEditing({ ...editing, discount_percentage: val });
+                      }}
+                      className="w-full rounded border border-neutral-300 px-4 py-2"
+                      placeholder="e.g. 10"
+                    />
+                  </div>
+                </div>
 
               {/* Multi-Currency Prices */}
               <div className="md:col-span-2">

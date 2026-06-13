@@ -12,7 +12,10 @@ interface CurrencyContextType {
   region: RegionCode;
   convertPrice: (amountInUSD: number) => number;
   formatPrice: (amountInUSD: number) => string;
-  formatProductPrice: (product: { price?: number; prices?: Record<string, number> }) => string;
+  formatProductPrice: (product: { price?: number; prices?: Record<string, number>; discount_percentage?: number }) => string;
+  calculateDiscountedPrice: (product: { price?: number; prices?: Record<string, number>; discount_percentage?: number }) => number;
+  getRawPrice: (product: { price?: number; prices?: Record<string, number> }) => number;
+  formatLocalPrice: (amount: number) => string;
   isLoading: boolean;
 }
 
@@ -23,6 +26,9 @@ const defaultContext: CurrencyContextType = {
   convertPrice: (a) => a,
   formatPrice: (a) => `$${a.toFixed(2)}`,
   formatProductPrice: (p) => `$${(p.price ?? 0).toFixed(2)}`,
+  calculateDiscountedPrice: (p) => p.price ?? 0,
+  getRawPrice: (p) => p.price ?? 0,
+  formatLocalPrice: (a) => `$${a.toFixed(2)}`,
   isLoading: true,
 };
 
@@ -122,30 +128,42 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     return state.symbol; // Default to the originally detected symbol for USD/EUR
   };
 
-  const formatPrice = (amountInUSD: number) => {
-    const converted = convertPrice(amountInUSD);
-    const sym = getDynamicSymbol(state.currency);
-    // Format based on currency
-    if (state.currency === "EGP" || state.currency === "SAR" || state.currency === "AED") {
-      return `${converted.toLocaleString("en-US")} ${sym}`;
+  // Get the raw price in the current currency BEFORE discount
+  const getRawPrice = (product: { price?: number; prices?: Record<string, number> }) => {
+    if (product.prices && typeof product.prices[state.currency] === "number" && product.prices[state.currency] > 0) {
+      return product.prices[state.currency];
     }
-    return `${sym}${converted.toLocaleString("en-US")}`;
+    return convertPrice(product.price ?? 0);
   };
 
-  const formatProductPrice = (product: { price?: number; prices?: Record<string, number> }) => {
-    const sym = getDynamicSymbol(state.currency);
-    if (product.prices && typeof product.prices[state.currency] === "number" && product.prices[state.currency] > 0) {
-      const explicitPrice = product.prices[state.currency];
-      if (state.currency === "EGP" || state.currency === "SAR" || state.currency === "AED") {
-        return `${explicitPrice.toLocaleString("en-US")} ${sym}`;
-      }
-      return `${sym}${explicitPrice.toLocaleString("en-US")}`;
+  // Get the raw price in the current currency AFTER discount
+  const calculateDiscountedPrice = (product: { price?: number; prices?: Record<string, number>; discount_percentage?: number }) => {
+    const raw = getRawPrice(product);
+    if (product.discount_percentage && product.discount_percentage > 0) {
+      return raw * (1 - product.discount_percentage / 100);
     }
-    return formatPrice(product.price ?? 0);
+    return raw;
+  };
+
+  // Format a local currency amount natively
+  const formatLocalPrice = (localAmount: number) => {
+    const sym = getDynamicSymbol(state.currency);
+    if (state.currency === "EGP" || state.currency === "SAR" || state.currency === "AED") {
+      return `${localAmount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })} ${sym}`;
+    }
+    return `${sym}${localAmount.toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
+  };
+
+  const formatPrice = (amountInUSD: number) => {
+    return formatLocalPrice(convertPrice(amountInUSD));
+  };
+
+  const formatProductPrice = (product: { price?: number; prices?: Record<string, number>; discount_percentage?: number }) => {
+    return formatLocalPrice(calculateDiscountedPrice(product));
   };
 
   return (
-    <CurrencyContext.Provider value={{ ...state, convertPrice, formatPrice, formatProductPrice }}>
+    <CurrencyContext.Provider value={{ ...state, convertPrice, formatPrice, formatProductPrice, calculateDiscountedPrice, getRawPrice, formatLocalPrice }}>
       {children}
     </CurrencyContext.Provider>
   );
