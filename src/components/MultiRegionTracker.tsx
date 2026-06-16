@@ -58,10 +58,11 @@ export default function MultiRegionTracker() {
     saudi: [],
   });
   const [loading, setLoading] = useState(true);
-  const [syncingCell, setSyncingCell] = useState<{ id: number; field: string } | null>(null);
   const [lastSynced, setLastSynced] = useState<Date | null>(null);
   const [errorMsg, setErrorMsg] = useState<string | null>(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [pendingChanges, setPendingChanges] = useState<Record<number, OrderData>>({});
+  const [isSaving, setIsSaving] = useState(false);
 
   const fetchOrders = async () => {
     setLoading(true);
@@ -109,11 +110,8 @@ export default function MultiRegionTracker() {
     setOrders(allOrders[activeRegion]);
   }, [activeRegion, allOrders]);
 
-  const handleCellChange = async (id: number, field: keyof OrderData, value: string) => {
+  const handleCellChange = (id: number, field: keyof OrderData, value: string) => {
     // Optimistic UI update
-    const previousOrders = [...orders];
-    const previousAllOrders = { ...allOrders };
-
     setOrders((prev) =>
       prev.map((o) => (o.id === id ? { ...o, [field]: value } : o))
     );
@@ -128,29 +126,71 @@ export default function MultiRegionTracker() {
       return newAll;
     });
 
-    setSyncingCell({ id, field });
+    // Track the change
+    const orderToUpdate = orders.find(o => o.id === id);
+    if (orderToUpdate) {
+      setPendingChanges(prev => ({
+        ...prev,
+        [id]: { ...orderToUpdate, [field]: value }
+      }));
+    }
+  };
 
+  const handleSaveChanges = async () => {
+    const idsToSave = Object.keys(pendingChanges).map(Number);
+    if (idsToSave.length === 0) return;
+
+    setIsSaving(true);
     try {
-      const { data: { session } } = await supabase.auth.getSession();
-      
-      const res = await fetch("/api/admin/tracking", {
-        method: "PATCH",
-        headers: { 
-          "Content-Type": "application/json",
-          "Authorization": `Bearer ${session?.access_token || ""}`
-        },
-        body: JSON.stringify({ id, field, value }),
-      });
-      const data = await res.json();
-      if (!data.success) throw new Error(data.error);
-    } catch (e) {
-      console.error("Failed to sync cell", e);
-      // Revert on error
-      setOrders(previousOrders);
-      setAllOrders(previousAllOrders);
-      alert("Failed to save changes. Please try again.");
+      // Direct frontend Supabase call to avoid any Next.js API caching/routing bugs
+      for (const id of idsToSave) {
+        const orderData = pendingChanges[id];
+        
+        // Fetch current tracking data directly
+        const { data: quote, error: fetchError } = await supabase
+          .from("quote_requests")
+          .select("tracking_data")
+          .eq("id", id)
+          .single();
+          
+        if (fetchError || !quote) {
+          console.error(`Failed to fetch quote ${id}`, fetchError);
+          continue;
+        }
+
+        // We only overwrite the fields we track in OrderData
+        const updatedTrackingData = {
+          ...quote.tracking_data,
+          expectedDate: orderData.expectedDate,
+          poNumber: orderData.poNumber,
+          stepConnect: orderData.stepConnect,
+          stepReview: orderData.stepReview,
+          stepConfirm: orderData.stepConfirm,
+          stepDesign: orderData.stepDesign,
+          stepMaterial: orderData.stepMaterial,
+          stepManufacture: orderData.stepManufacture,
+          stepHandover: orderData.stepHandover,
+          stepInvoice: orderData.stepInvoice
+        };
+
+        const { error: updateError } = await supabase
+          .from("quote_requests")
+          .update({ tracking_data: updatedTrackingData })
+          .eq("id", id);
+
+        if (updateError) {
+          console.error(`Failed to update quote ${id}`, updateError);
+        }
+      }
+
+      setPendingChanges({});
+      setLastSynced(new Date());
+      alert("All changes saved successfully! ✅");
+    } catch (e: any) {
+      console.error("Failed to save changes", e);
+      alert("Failed to save some changes. Please try again.");
     } finally {
-      setSyncingCell(null);
+      setIsSaving(false);
     }
   };
 
@@ -282,9 +322,21 @@ export default function MultiRegionTracker() {
           >
             📥 Export Excel
           </button>
+          
+          <button 
+            onClick={handleSaveChanges}
+            disabled={isSaving || Object.keys(pendingChanges).length === 0}
+            className={`rounded px-4 py-1.5 text-sm font-bold shadow-sm whitespace-nowrap transition-colors ${
+              Object.keys(pendingChanges).length > 0 
+                ? "bg-green-600 text-white hover:bg-green-700 ring-2 ring-green-300" 
+                : "bg-neutral-200 text-neutral-500 cursor-not-allowed"
+            }`}
+          >
+            {isSaving ? "⏳ Saving..." : `💾 Save Changes ${Object.keys(pendingChanges).length > 0 ? `(${Object.keys(pendingChanges).length})` : ""}`}
+          </button>
 
           <div className="text-xs text-neutral-500">
-            {loading ? "Syncing..." : lastSynced ? `Synced: ${lastSynced.toLocaleTimeString()}` : ""}
+            {loading ? "Loading..." : lastSynced ? `Synced: ${lastSynced.toLocaleTimeString()}` : ""}
           </div>
         </div>
       </div>
@@ -330,11 +382,10 @@ export default function MultiRegionTracker() {
                   <td className="px-3 py-3">
                     <div className="flex flex-col gap-2 border-l-2 border-neutral-100 pl-2">
                       {STEPS.map((step) => {
-                        const isSyncing = syncingCell?.id === order.id && syncingCell?.field === step.key;
                         const val = (order as any)[step.key] || "";
                         
                         return (
-                          <div key={step.key} className={`flex items-center justify-between gap-2 text-[11px] ${isSyncing ? "opacity-50" : ""}`}>
+                          <div key={step.key} className="flex items-center justify-between gap-2 text-[11px]">
                             <span className="font-medium text-neutral-600 w-16">{step.label}</span>
                             <div className="flex gap-1 bg-neutral-100 rounded-full p-0.5 shadow-inner">
                               <button 
@@ -450,11 +501,10 @@ export default function MultiRegionTracker() {
                 <h5 className="text-[10px] font-bold text-neutral-500 mb-2 uppercase tracking-wider">Tracking Progress</h5>
                 <div className="grid grid-cols-2 gap-x-2 gap-y-3">
                   {STEPS.map((step) => {
-                    const isSyncing = syncingCell?.id === order.id && syncingCell?.field === step.key;
                     const val = (order as any)[step.key] || "";
                     
                     return (
-                      <div key={step.key} className={`flex items-center justify-between gap-1 text-[10px] ${isSyncing ? "opacity-50" : ""}`}>
+                      <div key={step.key} className="flex items-center justify-between gap-1 text-[10px]">
                         <span className="font-medium text-neutral-600">{step.label}</span>
                         <div className="flex gap-1 bg-white rounded-full p-0.5 shadow-sm border border-neutral-200">
                           <button 
