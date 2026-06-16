@@ -113,9 +113,9 @@ export const GFM_PARENT_CATEGORIES: Record<string, string[]> = {
 
 function enrich(p: any): Product {
   const code = normalizeProductCode(p.code).toLowerCase();
-  
-  const normalized: Product = { 
-    ...p, 
+
+  const normalized: Product = {
+    ...p,
     code: normalizeProductCode(p.code),
     categoryName: p.category_name || p.categoryName || "",
     images: p.images || (p.image ? [p.image] : []),
@@ -124,11 +124,11 @@ function enrich(p: any): Product {
   if (p.type === "set" && !tags.includes("set")) tags.push("set");
   if ((code.includes("vip") || code.includes("premium") || p.category === "vip-sets") && !tags.includes("vip"))
     tags.push("vip", "featured");
-  if ((code.includes("cork") || p.category === "cork-eco") && !tags.includes("cork")) 
+  if ((code.includes("cork") || p.category === "cork-eco") && !tags.includes("cork"))
     tags.push("cork", "eco", "featured");
-  if (normalized.includes?.length > 0 && !tags.includes("bundle")) 
+  if (normalized.includes?.length > 0 && !tags.includes("bundle"))
     tags.push("bundle");
-  
+
   return { ...normalized, tags };
 }
 
@@ -149,7 +149,7 @@ export async function getAllProducts(): Promise<Product[]> {
   } catch (err) {
     console.error("Supabase products fetch error, falling back to local JSON", err);
   }
-  
+
   // Fallback to local JSON if Supabase fails or is empty
   console.log("[getAllProducts] Using local JSON fallback, count:", (rawProducts as any[]).length);
   return (rawProducts as any[]).map(enrich);
@@ -215,7 +215,7 @@ export async function getAllCategories(): Promise<Category[]> {
   } catch (err) {
     console.error("Supabase categories fetch error", err);
   }
-  
+
   // Return fallback based on hardcoded CATEGORY_ORDER if db is empty/error
   return CATEGORY_ORDER.map((slug, i) => ({
     id: i,
