@@ -417,6 +417,7 @@ export default function CartDrawer() {
                     <option value="FR">{tc("countryFrance")}</option>
                     <option value="IT">{tc("countryItaly")}</option>
                     <option value="ES">{tc("countrySpain")}</option>
+                    <option value="PT">{tc("countryPortugal")}</option>
                     <option value="GB">{tc("countryUK")}</option>
                     <option value="OTHER">{tc("countryOther")}</option>
                   </select>
