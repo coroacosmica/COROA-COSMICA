@@ -6,7 +6,7 @@ import { useTranslations, useLocale } from "next-intl";
 import type { Product } from "@/lib/products";
 import { getProductImage } from "@/lib/product-display";
 import { buildSampleRequestMessage, whatsappLink, mailtoLink } from "@/lib/checkout";
-import { useSettings } from "@/context/SettingsContext";
+import { WHATSAPP_NUMBERS } from "@/lib/brand";
 import type { Locale } from "@/i18n/routing";
 
 export default function ProductLogoViewer({
@@ -17,7 +17,6 @@ export default function ProductLogoViewer({
   productName: string;
 }) {
   const t = useTranslations("product");
-  const settings = useSettings();
   const tc = useTranslations("checkout");
   const locale = useLocale() as Locale;
   const [logoUrl, setLogoUrl] = useState<string | null>(null);
@@ -152,7 +151,7 @@ export default function ProductLogoViewer({
       {logoUrl && (
         <div className="mt-8 flex flex-wrap gap-3">
           <p className="w-full text-sm font-medium text-olive-800">{t("requestSample")}</p>
-          {settings.contact?.whatsapp_numbers?.map((w: any) => (
+          {WHATSAPP_NUMBERS.map((w) => (
             <a
               key={w.number}
               href={whatsappLink(w.number, sampleMessage)}

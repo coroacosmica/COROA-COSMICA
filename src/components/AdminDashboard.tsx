@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import MultiRegionTracker from "./MultiRegionTracker";
 import CategoriesManager from "./CategoriesManager";
-import SiteSettingsManager from "./SiteSettingsManager";
 import { useTranslations } from "next-intl";
 import type { Category } from "@/lib/products";
 
@@ -37,7 +36,7 @@ export default function AdminDashboard({
   initialProducts: any[];
 }) {
   const t = useTranslations("admin");
-  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker" | "categories" | "settings">("quotes");
+  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker" | "categories">("quotes");
   const [activeQuoteRegion, setActiveQuoteRegion] = useState<"all" | "egypt" | "europe" | "usa" | "saudi" | "other">("all");
   const [quoteTypeFilter, setQuoteTypeFilter] = useState<"all" | "standard" | "gfm">("all");
   const [quotes, setQuotes] = useState(initialQuotes);
@@ -420,14 +419,6 @@ export default function AdminDashboard({
         >
           📂 Categories ({categories.length})
         </button>
-        <button
-          onClick={() => setActiveTab("settings")}
-          className={`pb-2 text-lg font-medium ${
-            activeTab === "settings" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
-          }`}
-        >
-          ⚙️ Settings
-        </button>
       </div>
 
       {/* ═══════════ QUOTES TAB ═══════════ */}
@@ -728,9 +719,6 @@ export default function AdminDashboard({
 
       {/* ═══════════ TRACKER TAB ═══════════ */}
       {activeTab === "tracker" && <MultiRegionTracker />}
-
-      {/* ═══════════ SETTINGS TAB ═══════════ */}
-      {activeTab === "settings" && <SiteSettingsManager />}
 
       {/* ═══════════ EDIT / ADD MODAL ═══════════ */}
       {editing && (

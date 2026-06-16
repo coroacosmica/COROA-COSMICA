@@ -17,9 +17,7 @@ import MobileCartBar from "@/components/MobileCartBar";
 import { CartProvider } from "@/context/CartContext";
 import { CurrencyProvider } from "@/context/CurrencyContext";
 import { CategoryProvider } from "@/context/CategoryContext";
-import { SettingsProvider } from "@/context/SettingsContext";
 import { getAllCategories } from "@/lib/products";
-import { getSiteSettings } from "@/lib/settings";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -64,7 +62,6 @@ export default async function LocaleLayout({
   setRequestLocale(locale);
   const messages = await getMessages();
   const categories = await getAllCategories();
-  const settings = await getSiteSettings();
   const dir = isRtlLocale(locale) ? "rtl" : "ltr";
 
   return (
@@ -73,23 +70,21 @@ export default async function LocaleLayout({
         className={`${inter.variable} ${cairo.variable} min-h-screen bg-white font-sans antialiased`}
       >
         <NextIntlClientProvider messages={messages}>
-          <SettingsProvider settings={settings}>
-            <CategoryProvider categories={categories}>
-              <CurrencyProvider>
-                <CartProvider>
-                  <LocaleDetector />
-                  <Header />
-                  <main className="min-h-[50vh]">{children}</main>
-                  <Footer />
-                  <CartDrawer />
-                  <MobileCartBar />
-                  <WhatsAppButton />
-                  <ChatBot />
-                  <Analytics />
-                </CartProvider>
-              </CurrencyProvider>
-            </CategoryProvider>
-          </SettingsProvider>
+          <CategoryProvider categories={categories}>
+            <CurrencyProvider>
+              <CartProvider>
+                <LocaleDetector />
+                <Header />
+                <main className="min-h-[50vh]">{children}</main>
+                <Footer />
+                <CartDrawer />
+                <MobileCartBar />
+                <WhatsAppButton />
+                <ChatBot />
+                <Analytics />
+              </CartProvider>
+            </CurrencyProvider>
+          </CategoryProvider>
         </NextIntlClientProvider>
       </body>
     </html>

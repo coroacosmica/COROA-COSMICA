@@ -7,7 +7,7 @@ import { useCurrency } from "@/context/CurrencyContext";
 import { formatPrice } from "@/lib/currency";
 import type { Locale } from "@/i18n/routing";
 import { buildCartMessage, whatsappLink, mailtoLink } from "@/lib/checkout";
-import { useSettings } from "@/context/SettingsContext";
+import { WHATSAPP_NUMBERS } from "@/lib/brand";
 import { useState, useEffect } from "react";
 import { createClient } from "@/lib/supabase/client";
 
@@ -17,7 +17,6 @@ export default function CartDrawer() {
   const locale = useLocale() as Locale;
   const { items, isOpen, closeCart, openCart, removeItem, updateQuantity, total, count, clearCart } = useCart();
   const currencyState = useCurrency();
-  const settings = useSettings();
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState<"cart" | "branding" | "checkout" | "success">("cart");
@@ -571,7 +570,7 @@ export default function CartDrawer() {
                 </p>
                 <div className="flex flex-col gap-2">
                   <a
-                    href={whatsappLink(settings.contact?.whatsapp_numbers?.[0]?.number || "+201227644162", `Hello, I just submitted a GFM order. My name is ${formData.name}.`)}
+                    href={whatsappLink(WHATSAPP_NUMBERS.EGYPT, `Hello, I just submitted a GFM order. My name is ${formData.name}.`)}
                     target="_blank"
                     rel="noreferrer"
                     className="flex w-full items-center justify-center gap-2 rounded bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1DA851]"

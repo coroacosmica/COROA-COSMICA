@@ -15,7 +15,6 @@ import {
   getAllCategories,
 } from "@/lib/products";
 import { buildHeroSlides } from "@/lib/hero-slides";
-import { getSiteSettings } from "@/lib/settings";
 import type { Locale } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 
@@ -30,16 +29,13 @@ export default async function HomePage({
   setRequestLocale(locale);
   const t = await getTranslations("home");
 
-  const [featured, vip, cork, categories, settings] = await Promise.all([
+  const [featured, vip, cork, categories] = await Promise.all([
     getFeaturedProducts(12),
     getVipSets(),
     getCorkProducts(),
     getAllCategories(),
-    getSiteSettings(),
   ]);
-  const slides = settings.hero_slides?.length > 0 
-    ? settings.hero_slides 
-    : buildHeroSlides(featured, locale as Locale);
+  const slides = buildHeroSlides(featured, locale as Locale);
 
   return (
     <>
