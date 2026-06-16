@@ -20,6 +20,7 @@ export default function CartDrawer() {
   const [showWhatsAppPicker, setShowWhatsAppPicker] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [step, setStep] = useState<"cart" | "branding" | "checkout" | "success">("cart");
+  const [submittedHasGfm, setSubmittedHasGfm] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -59,6 +60,7 @@ export default function CartDrawer() {
       const timer = setTimeout(() => {
         setStep("cart");
         setIsSubmitting(false);
+        setSubmittedHasGfm(false);
       }, 300);
       return () => clearTimeout(timer);
     }
@@ -361,6 +363,7 @@ export default function CartDrawer() {
                     });
 
                     if (res.ok) {
+                      setSubmittedHasGfm(hasGfmItems);
                       setStep("success");
                       clearCart(); 
                     } else {
@@ -516,6 +519,34 @@ export default function CartDrawer() {
             <p className="mt-2 text-sm text-green-700">
               {tc("successMsg2", { method: formData.contactMethod === "whatsapp" ? tc("whatsapp") : tc("email") })}
             </p>
+
+            {submittedHasGfm && (
+              <div className="mt-6 rounded-lg bg-white p-4 shadow-sm border border-olive-100 text-left w-full">
+                <p className="text-sm font-semibold text-olive-900 mb-2">
+                  {tc("gfmSuccessImportant")}
+                </p>
+                <p className="text-xs text-neutral-600 mb-4">
+                  {tc("gfmSuccessMsg")}
+                </p>
+                <div className="flex flex-col gap-2">
+                  <a
+                    href={whatsappLink(WHATSAPP_NUMBERS.EGYPT, `Hello, I just submitted a GFM order. My name is ${formData.name}.`)}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex w-full items-center justify-center gap-2 rounded bg-[#25D366] px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-[#1DA851]"
+                  >
+                    💬 {tc("gfmContactWhatsApp")}
+                  </a>
+                  <a
+                    href={mailtoLink("GFM Order Follow-up", `Hello,\n\nI just submitted a GFM order.\nName: ${formData.name}\nPhone: ${formData.phone}\n\nPlease confirm.`)}
+                    className="flex w-full items-center justify-center gap-2 rounded border border-neutral-300 bg-white px-4 py-2 text-sm font-semibold text-neutral-700 transition-colors hover:bg-neutral-50"
+                  >
+                    📧 {tc("gfmContactEmail")}
+                  </a>
+                </div>
+              </div>
+            )}
+
             <button
               type="button"
               onClick={() => {

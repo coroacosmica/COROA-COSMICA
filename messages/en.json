@@ -193,7 +193,11 @@
     "requestSample": "I want a virtual sample before production",
     "sampleNoteInfo": "We'll send you a mockup within 24h before proceeding",
     "skipUseStandard": "Skip, use standard",
-    "continueToCheckout": "Continue to Checkout"
+    "continueToCheckout": "Continue to Checkout",
+    "gfmSuccessImportant": "Important for Custom Printing (GFM)",
+    "gfmSuccessMsg": "Your order includes custom printing. Please send us a direct message so we can discuss the design details.",
+    "gfmContactWhatsApp": "Send WhatsApp Message",
+    "gfmContactEmail": "Send Email"
   },
   "virtualSample": {
     "title": "Virtual Sample",

@@ -193,7 +193,11 @@
     "requestSample": "أريد عينة افتراضية قبل الإنتاج",
     "sampleNoteInfo": "سنرسل لك نموذجاً خلال ٢٤ ساعة قبل البدء",
     "skipUseStandard": "تخطي، استخدم المعياري",
-    "continueToCheckout": "إتمام الطلب"
+    "continueToCheckout": "إتمام الطلب",
+    "gfmSuccessImportant": "هام للطباعة المخصصة (GFM)",
+    "gfmSuccessMsg": "طلبك يحتوي على منتجات طباعة مخصصة. يرجى إرسال رسالة مباشرة لنا لمناقشة تفاصيل التصميم.",
+    "gfmContactWhatsApp": "إرسال رسالة واتساب",
+    "gfmContactEmail": "إرسال بريد إلكتروني"
   },
   "virtualSample": {
     "title": "عينة افتراضية",

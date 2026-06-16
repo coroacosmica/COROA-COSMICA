@@ -193,7 +193,11 @@
     "requestSample": "Quero uma amostra virtual antes da produção",
     "sampleNoteInfo": "Enviaremos uma maquete em 24h antes de prosseguir",
     "skipUseStandard": "Pular, usar padrão",
-    "continueToCheckout": "Continuar para Checkout"
+    "continueToCheckout": "Continuar para Checkout",
+    "gfmSuccessImportant": "Importante para Impressão Personalizada (GFM)",
+    "gfmSuccessMsg": "A sua encomenda inclui impressão personalizada. Por favor, envie-nos uma mensagem direta para discutirmos os detalhes do design.",
+    "gfmContactWhatsApp": "Enviar Mensagem no WhatsApp",
+    "gfmContactEmail": "Enviar E-mail"
   },
   "virtualSample": {
     "title": "Amostra Virtual",
