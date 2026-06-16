@@ -71,9 +71,10 @@ export default function MultiRegionTracker() {
       
       const { data: { session } } = await supabase.auth.getSession();
       
-      const res = await fetch(`/api/admin/tracking`, {
+      const res = await fetch(`/api/admin/tracking?t=${Date.now()}`, {
         headers: {
-          Authorization: `Bearer ${session?.access_token || ""}`
+          Authorization: `Bearer ${session?.access_token || ""}`,
+          "Cache-Control": "no-cache"
         }
       });
       const data = await res.json();
@@ -111,9 +112,22 @@ export default function MultiRegionTracker() {
   const handleCellChange = async (id: number, field: keyof OrderData, value: string) => {
     // Optimistic UI update
     const previousOrders = [...orders];
+    const previousAllOrders = { ...allOrders };
+
     setOrders((prev) =>
       prev.map((o) => (o.id === id ? { ...o, [field]: value } : o))
     );
+    
+    setAllOrders((prev) => {
+      const newAll = { ...prev };
+      if (newAll[activeRegion]) {
+        newAll[activeRegion] = newAll[activeRegion].map((o) => 
+          o.id === id ? { ...o, [field]: value } : o
+        );
+      }
+      return newAll;
+    });
+
     setSyncingCell({ id, field });
 
     try {
@@ -133,6 +147,7 @@ export default function MultiRegionTracker() {
       console.error("Failed to sync cell", e);
       // Revert on error
       setOrders(previousOrders);
+      setAllOrders(previousAllOrders);
       alert("Failed to save changes. Please try again.");
     } finally {
       setSyncingCell(null);
