@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from "next-intl";
+import { Analytics } from "@vercel/analytics/react";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
 import { LOGO_PATH, BRAND_SHORT } from "@/lib/brand";
@@ -80,6 +81,7 @@ export default async function LocaleLayout({
                 <MobileCartBar />
                 <WhatsAppButton />
                 <ChatBot />
+                <Analytics />
               </CartProvider>
             </CurrencyProvider>
           </CategoryProvider>
