@@ -1,7 +1,7 @@
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { Suspense } from "react";
 import ContactForm from "@/components/ContactForm";
-import { CONTACT_EMAIL, WHATSAPP_NUMBERS } from "@/lib/brand";
+import { getSiteSettings } from "@/lib/settings";
 
 export default async function ContactPage({
   params,
@@ -11,6 +11,7 @@ export default async function ContactPage({
   const { locale } = await params;
   setRequestLocale(locale);
   const t = await getTranslations("contact");
+  const settings = await getSiteSettings();
 
   return (
     <div className="mx-auto max-w-shop px-4 py-12 md:px-6">
@@ -26,11 +27,11 @@ export default async function ContactPage({
           <h2 className="text-xl font-semibold text-olive-900">{t("info.title")}</h2>
           <ul className="mt-4 space-y-3 text-sm text-neutral-700">
             <li>
-              <a href={`mailto:${CONTACT_EMAIL}`} className="text-olive-700 hover:text-accent-orange">
-                📧 {CONTACT_EMAIL}
+              <a href={`mailto:${settings.contact?.email}`} className="text-olive-700 hover:text-accent-orange">
+                📧 {settings.contact?.email}
               </a>
             </li>
-            {WHATSAPP_NUMBERS.map((w) => (
+            {settings.contact?.whatsapp_numbers?.map((w: any) => (
               <li key={w.number}>
                 📱 {w.label}:{" "}
                 <a
