@@ -24,7 +24,10 @@ export default function CartDrawer() {
     name: "",
     email: "",
     phone: "",
-    location: "",
+    country: "EG",
+    state: "",
+    city: "",
+    address: "",
     company: "",
     contactMethod: "whatsapp",
   });
@@ -345,7 +348,7 @@ export default function CartDrawer() {
                           email: formData.email,
                           phone: formData.phone,
                           company: formData.company,
-                          location: formData.location,
+                          location: `${formData.address}, ${formData.city}, ${formData.state}, ${formData.country}`,
                         },
                         contactMethod: formData.contactMethod,
                         branding: {
@@ -396,14 +399,54 @@ export default function CartDrawer() {
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   className="input-field w-full rounded border px-3 py-2 text-sm"
                 />
-                <input
-                  type="text"
-                  placeholder={tc("formLocation")}
-                  required
-                  value={formData.location}
-                  onChange={(e) => setFormData({ ...formData, location: e.target.value })}
-                  className="input-field w-full rounded border px-3 py-2 text-sm"
-                />
+                <div className="space-y-2">
+                  <select
+                    required
+                    value={formData.country}
+                    onChange={(e) => {
+                      setFormData({ ...formData, country: e.target.value });
+                      currencyState.overrideCurrencyByCountry(e.target.value);
+                    }}
+                    className="input-field w-full rounded border px-3 py-2 text-sm bg-white"
+                  >
+                    <option value="EG">{tc("countryEgypt")}</option>
+                    <option value="SA">{tc("countrySaudiArabia")}</option>
+                    <option value="AE">{tc("countryUAE")}</option>
+                    <option value="US">{tc("countryUSA")}</option>
+                    <option value="DE">{tc("countryGermany")}</option>
+                    <option value="FR">{tc("countryFrance")}</option>
+                    <option value="IT">{tc("countryItaly")}</option>
+                    <option value="ES">{tc("countrySpain")}</option>
+                    <option value="GB">{tc("countryUK")}</option>
+                    <option value="OTHER">{tc("countryOther")}</option>
+                  </select>
+                  <div className="flex gap-2">
+                    <input
+                      type="text"
+                      placeholder={tc("formState")}
+                      required
+                      value={formData.state}
+                      onChange={(e) => setFormData({ ...formData, state: e.target.value })}
+                      className="input-field w-1/2 rounded border px-3 py-2 text-sm"
+                    />
+                    <input
+                      type="text"
+                      placeholder={tc("formCity")}
+                      required
+                      value={formData.city}
+                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      className="input-field w-1/2 rounded border px-3 py-2 text-sm"
+                    />
+                  </div>
+                  <input
+                    type="text"
+                    placeholder={tc("formAddress")}
+                    required
+                    value={formData.address}
+                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    className="input-field w-full rounded border px-3 py-2 text-sm"
+                  />
+                </div>
                 <input
                   type="text"
                   placeholder={tc("formCompany")}

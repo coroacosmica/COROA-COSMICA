@@ -16,6 +16,7 @@ interface CurrencyContextType {
   calculateDiscountedPrice: (product: { price?: number; prices?: Record<string, number>; discount_percentage?: number }) => number;
   getRawPrice: (product: { price?: number; prices?: Record<string, number> }) => number;
   formatLocalPrice: (amount: number) => string;
+  overrideCurrencyByCountry: (countryCode: string) => void;
   isLoading: boolean;
 }
 
@@ -29,6 +30,7 @@ const defaultContext: CurrencyContextType = {
   calculateDiscountedPrice: (p) => p.price ?? 0,
   getRawPrice: (p) => p.price ?? 0,
   formatLocalPrice: (a) => `$${a.toFixed(2)}`,
+  overrideCurrencyByCountry: () => {},
   isLoading: true,
 };
 
@@ -114,6 +116,40 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     detectCurrency();
   }, []);
 
+  const overrideCurrencyByCountry = (countryCode: string) => {
+    let currency: CurrencyCode = "USD";
+    let symbol = "$";
+    let region: RegionCode = "usa";
+
+    if (countryCode === "EG") {
+      currency = "EGP";
+      symbol = "ج.م";
+      region = "egypt";
+    } else if (countryCode === "SA") {
+      currency = "SAR";
+      symbol = "ر.س";
+      region = "saudi";
+    } else if (countryCode === "AE") {
+      currency = "AED";
+      symbol = "د.إ";
+      region = "saudi";
+    } else if (GULF_COUNTRIES.includes(countryCode)) {
+      currency = "SAR";
+      symbol = "ر.س";
+      region = "saudi";
+    } else if (EU_COUNTRIES.includes(countryCode)) {
+      currency = "EUR";
+      symbol = "€";
+      region = "europe";
+    } else if (countryCode === "US" || countryCode === "CA") {
+      currency = "USD";
+      symbol = "$";
+      region = "usa";
+    }
+
+    setState(prev => ({ ...prev, currency, symbol, region }));
+  };
+
   const convertPrice = (amountInUSD: number) => {
     // Check if there are env overrides, else use static dictionary
     const rate = EXCHANGE_RATES[state.currency] || 1;
@@ -163,7 +199,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   };
 
   return (
-    <CurrencyContext.Provider value={{ ...state, convertPrice, formatPrice, formatProductPrice, calculateDiscountedPrice, getRawPrice, formatLocalPrice }}>
+    <CurrencyContext.Provider value={{ ...state, convertPrice, formatPrice, formatProductPrice, calculateDiscountedPrice, getRawPrice, formatLocalPrice, overrideCurrencyByCountry }}>
       {children}
     </CurrencyContext.Provider>
   );
