@@ -376,7 +376,16 @@ export default function MultiRegionTracker() {
                     <p className="font-semibold text-neutral-800 mb-1">{order.customerName}</p>
                     <p className="text-neutral-600">📱 {order.phone}</p>
                     <p className="text-blue-600">📧 {order.email}</p>
-                    <p className="text-neutral-600">📍 {order.locationAndCompany}</p>
+                    <div className="flex flex-col gap-0.5 mt-1">
+                      {order.locationAndCompany ? order.locationAndCompany.split('|').map((part: string, idx: number) => (
+                        <p key={idx} className="text-neutral-600">
+                          {part.includes('Location:') ? '📍 ' : part.includes('Company:') ? '🏢 ' : '🌍 '}
+                          {part.trim()}
+                        </p>
+                      )) : (
+                        <p className="text-neutral-600">📍 —</p>
+                      )}
+                    </div>
                     <p className="text-neutral-500 mt-1 italic">Contact via: <span className="capitalize">{order.contactMethod}</span></p>
                   </td>
 
@@ -469,7 +478,14 @@ export default function MultiRegionTracker() {
                 <div className="flex flex-col gap-1">
                   <p className="text-neutral-600">📱 {order.phone}</p>
                   <p className="text-neutral-600 truncate" title={order.email}>📧 {order.email}</p>
-                  <p className="text-neutral-600">📍 {order.locationAndCompany}</p>
+                  {order.locationAndCompany ? order.locationAndCompany.split('|').map((part: string, idx: number) => (
+                    <p key={idx} className="text-neutral-600">
+                      {part.includes('Location:') ? '📍 ' : part.includes('Company:') ? '🏢 ' : '🌍 '}
+                      {part.trim()}
+                    </p>
+                  )) : (
+                    <p className="text-neutral-600">📍 —</p>
+                  )}
                 </div>
                 <div className="flex flex-col gap-2">
                   <input

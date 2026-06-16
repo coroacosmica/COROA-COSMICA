@@ -490,8 +490,16 @@ export default function AdminDashboard({
                       {statusBadge(quote.status)}
                     </div>
                     <p className="mt-1 text-sm text-neutral-600">
-                      📧 {quote.customer_email || "—"} &nbsp;|&nbsp; 📱 {quote.customer_phone || "—"} &nbsp;|&nbsp; 📍 {quote.customer_company || "—"}
+                      📧 {quote.customer_email || "—"} &nbsp;|&nbsp; 📱 {quote.customer_phone || "—"}
                     </p>
+                    {quote.customer_company ? quote.customer_company.split('|').map((part: string, idx: number) => (
+                      <p key={idx} className="mt-1 text-sm text-neutral-600">
+                        {part.includes('Location:') ? '📍 ' : part.includes('Company:') ? '🏢 ' : '🌍 '}
+                        {part.trim()}
+                      </p>
+                    )) : (
+                      <p className="mt-1 text-sm text-neutral-600">📍 —</p>
+                    )}
                     <p className="mt-1 text-xs text-neutral-400">
                       🕐 {new Date(quote.created_at).toLocaleString()} &nbsp;|&nbsp; 🌐 {quote.locale}
                     </p>
