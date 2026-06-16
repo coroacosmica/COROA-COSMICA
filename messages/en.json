@@ -22,7 +22,32 @@
     "ctaTitle": "Ready to brand your next campaign?",
     "ctaSubtitle": "Get a free quote or virtual sample with your logo in 24 hours.",
     "ctaButton": "Get a Quote",
-    "viewAll": "View all"
+    "viewAll": "View all articles",
+    "readMore": "Read more"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "step1Title": "Browse",
+    "step1Desc": "Explore our catalogue",
+    "step2Title": "Contact",
+    "step2Desc": "Reach us on WhatsApp",
+    "step3Title": "Approve",
+    "step3Desc": "Review your sample",
+    "step4Title": "Receive",
+    "step4Desc": "Get your custom order"
+  },
+  "about": {
+    "title": "About Us",
+    "heroSubtitle": "Premium eco-friendly business gifts and custom promotional products.",
+    "storyTitle": "Our Story",
+    "storyText": "Coroa Cósmica was founded to bridge the gap between premium European craftsmanship and the Middle East market. With deep roots connecting Portugal and Egypt, we bring the world's finest cork products to businesses looking for sustainable, elegant, and unique corporate gifts.",
+    "whyCorkTitle": "Why Cork?",
+    "corkSustainable": "100% Sustainable & Eco-friendly",
+    "corkDurable": "Naturally durable and water-resistant",
+    "corkUnique": "Premium texture and unique aesthetic",
+    "whereWeOperateTitle": "Where We Operate",
+    "ctaTitle": "Ready to elevate your corporate gifts?",
+    "ctaButton": "Get in touch"
   },
   "nav": {
     "home": "Home",
@@ -93,7 +118,9 @@
     "requestQuote": "Request quote",
     "includes": "Set includes",
     "code": "Code",
-    "noResults": "No products found.",
+    "noResults": "No products match your criteria.",
+    "clearSearch": "Clear search",
+    "search": "Search products...",
     "itemsInSet": "items in set",
     "addToCart": "Add to cart",
     "quickView": "Quick view",

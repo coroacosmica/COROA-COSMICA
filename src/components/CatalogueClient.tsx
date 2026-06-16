@@ -144,8 +144,41 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
   }, [page, safePage]);
 
   return (
-    <div className="flex flex-col gap-8 lg:flex-row">
-      <aside className="lg:w-56 lg:shrink-0">
+    <div className="flex flex-col gap-6">
+      <div className="relative w-full">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => {
+            const v = e.target.value;
+            setQuery(v);
+            setPage(1);
+            syncUrl({ query: v, page: 1 });
+          }}
+          placeholder={t("search")}
+          className="input-field w-full pe-10 py-3 md:text-lg"
+        />
+        {query && (
+          <button
+            type="button"
+            onClick={() => {
+              setQuery("");
+              setPage(1);
+              syncUrl({ query: "", page: 1 });
+            }}
+            className="absolute end-3 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700 p-1"
+            title={t("clearSearch")}
+            aria-label={t("clearSearch")}
+          >
+            <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </button>
+        )}
+      </div>
+
+      <div className="flex flex-col gap-8 lg:flex-row">
+        <aside className="lg:w-56 lg:shrink-0">
         <h3 className="mb-4 text-xs font-semibold uppercase tracking-wider text-olive-800">
           {t("sidebar")}
         </h3>
@@ -188,19 +221,7 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
       </aside>
 
       <div className="min-w-0 flex-1">
-        <div className="flex flex-col gap-4 md:flex-row md:items-center">
-          <input
-            type="search"
-            value={query}
-            onChange={(e) => {
-              const v = e.target.value;
-              setQuery(v);
-              setPage(1);
-              syncUrl({ query: v, page: 1 });
-            }}
-            placeholder={t("search")}
-            className="input-field flex-1"
-          />
+        <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-end">
           <select
             value={sort}
             onChange={(e) => {
@@ -307,6 +328,7 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
             </button>
           </div>
         )}
+      </div>
       </div>
     </div>
   );

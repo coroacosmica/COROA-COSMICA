@@ -22,7 +22,32 @@
     "ctaTitle": "Pronto para personalizar a sua próxima campanha?",
     "ctaSubtitle": "Peça um orçamento gratuito ou amostra virtual com o seu logótipo em 24 horas.",
     "ctaButton": "Pedir Orçamento",
-    "viewAll": "Ver tudo"
+    "viewAll": "Ver todos os artigos",
+    "readMore": "Ler mais"
+  },
+  "howItWorks": {
+    "title": "Como Funciona",
+    "step1Title": "Navegar",
+    "step1Desc": "Explore o nosso catálogo",
+    "step2Title": "Contactar",
+    "step2Desc": "Fale connosco no WhatsApp",
+    "step3Title": "Aprovar",
+    "step3Desc": "Reveja a sua amostra",
+    "step4Title": "Receber",
+    "step4Desc": "Receba a sua encomenda"
+  },
+  "about": {
+    "title": "Sobre Nós",
+    "heroSubtitle": "Brindes corporativos premium, sustentáveis e personalizados.",
+    "storyTitle": "A Nossa História",
+    "storyText": "A Coroa Cósmica foi fundada para criar uma ponte entre o artesanato europeu premium e o mercado do Médio Oriente. Com raízes profundas que ligam Portugal e o Egito, trazemos os melhores produtos de cortiça do mundo para empresas que procuram presentes corporativos sustentáveis, elegantes e únicos.",
+    "whyCorkTitle": "Porquê Cortiça?",
+    "corkSustainable": "100% Sustentável e Ecológica",
+    "corkDurable": "Naturalmente durável e resistente à água",
+    "corkUnique": "Textura premium e estética única",
+    "whereWeOperateTitle": "Onde Operamos",
+    "ctaTitle": "Pronto para elevar os seus presentes corporativos?",
+    "ctaButton": "Entre em contacto"
   },
   "nav": {
     "home": "Início",
@@ -84,7 +109,7 @@
   },
   "catalogue": {
     "title": "Catálogo Coroa Cósmica",
-    "search": "Pesquisar por nome, código ou tipo de produto...",
+    "search": "Pesquisar produtos...",
     "filter": "Categoria",
     "all": "Tudo",
     "setsOnly": "Apenas conjuntos",
@@ -93,7 +118,8 @@
     "requestQuote": "Pedir orçamento",
     "includes": "O conjunto inclui",
     "code": "Código",
-    "noResults": "Nenhum produto encontrado.",
+    "noResults": "Nenhum produto corresponde aos seus critérios.",
+    "clearSearch": "Limpar pesquisa",
     "itemsInSet": "itens no conjunto",
     "addToCart": "Adicionar ao carrinho",
     "quickView": "Ver rápido",

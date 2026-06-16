@@ -149,3 +149,52 @@ export function HeroContent() {
     </section>
   );
 }
+
+export function HowItWorks() {
+  const t = useTranslations("howItWorks");
+
+  return (
+    <section className="bg-white py-12 md:py-16 border-b border-olive-100">
+      <div className="mx-auto max-w-shop px-4 md:px-6">
+        <h2 className="section-title text-center mb-10">{t("title")}</h2>
+        <div className="flex flex-col md:flex-row justify-between items-start gap-8 md:gap-4 relative">
+          
+          <div className="flex-1 flex flex-col items-center text-center w-full z-10 relative">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-olive-50 border border-olive-200 text-2xl text-olive-600 mb-4 shadow-sm">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+            </div>
+            <h3 className="font-semibold text-olive-900 mb-1">{t("step1Title")}</h3>
+            <p className="text-sm text-neutral-600 max-w-[200px]">{t("step1Desc")}</p>
+          </div>
+
+          <div className="hidden md:block absolute top-8 left-1/4 right-1/4 h-[1px] bg-olive-200 z-0"></div>
+
+          <div className="flex-1 flex flex-col items-center text-center w-full z-10 relative">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-olive-50 border border-olive-200 text-2xl text-olive-600 mb-4 shadow-sm">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path></svg>
+            </div>
+            <h3 className="font-semibold text-olive-900 mb-1">{t("step2Title")}</h3>
+            <p className="text-sm text-neutral-600 max-w-[200px]">{t("step2Desc")}</p>
+          </div>
+
+          <div className="flex-1 flex flex-col items-center text-center w-full z-10 relative">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-olive-50 border border-olive-200 text-2xl text-olive-600 mb-4 shadow-sm">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            </div>
+            <h3 className="font-semibold text-olive-900 mb-1">{t("step3Title")}</h3>
+            <p className="text-sm text-neutral-600 max-w-[200px]">{t("step3Desc")}</p>
+          </div>
+
+          <div className="flex-1 flex flex-col items-center text-center w-full z-10 relative">
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-olive-50 border border-olive-200 text-2xl text-olive-600 mb-4 shadow-sm">
+              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"></path></svg>
+            </div>
+            <h3 className="font-semibold text-olive-900 mb-1">{t("step4Title")}</h3>
+            <p className="text-sm text-neutral-600 max-w-[200px]">{t("step4Desc")}</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  );
+}

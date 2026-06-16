@@ -6,6 +6,7 @@ import {
   ProductStrip,
   TrustFeatures,
   ContactCta,
+  HowItWorks,
 } from "@/components/HomeSections";
 import {
   getFeaturedProducts,
@@ -39,6 +40,7 @@ export default async function HomePage({
   return (
     <>
       <HeroSlider slides={slides} />
+      <HowItWorks />
       <CategoryQuickLinks categories={categories} />
       <FeaturedProducts products={featured} />
       <ProductStrip
