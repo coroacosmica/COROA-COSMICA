@@ -38,6 +38,7 @@ export default function CartDrawer() {
     requestSample: false,
   });
   const [brandingFile, setBrandingFile] = useState<File | null>(null);
+  const [designFile, setDesignFile] = useState<File | null>(null);
   const [logoBase64, setLogoBase64] = useState<string | null>(null);
 
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,6 +55,17 @@ export default function CartDrawer() {
     }
   };
 
+  const handleDesignFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (file) {
+      if (file.size > 10 * 1024 * 1024) {
+        alert("File too large. Max 10MB.");
+        return;
+      }
+      setDesignFile(file);
+    }
+  };
+
   // Reset states when the drawer closes
   useEffect(() => {
     if (!isOpen) {
@@ -61,6 +73,7 @@ export default function CartDrawer() {
         setStep("cart");
         setIsSubmitting(false);
         setSubmittedHasGfm(false);
+        setDesignFile(null);
       }, 300);
       return () => clearTimeout(timer);
     }
@@ -214,15 +227,27 @@ export default function CartDrawer() {
                   {hasGfmItems ? "Custom Design Required for GFM Products" : tc("addBrandingOptional")}
                 </h3>
                 
-                <div>
-                  <label className="mb-1 block text-xs text-neutral-600">{tc("uploadLogoLabel")}</label>
-                  <input
-                    type="file"
-                    accept="image/*,.pdf,.eps,.ai"
-                    onChange={handleFileChange}
-                    className="w-full text-xs"
-                  />
-                  {brandingFile && <p className="mt-1 text-xs text-green-600">{tc("fileAttached")} {brandingFile.name}</p>}
+                <div className="grid grid-cols-2 gap-4">
+                  <div>
+                    <label className="mb-1 block text-xs text-neutral-600">{tc("uploadLogoLabel")}</label>
+                    <input
+                      type="file"
+                      accept="image/*,.pdf,.eps,.ai"
+                      onChange={handleFileChange}
+                      className="w-full text-xs"
+                    />
+                    {brandingFile && <p className="mt-1 text-xs text-green-600">{tc("fileAttached")} {brandingFile.name}</p>}
+                  </div>
+                  <div>
+                    <label className="mb-1 block text-xs text-neutral-600">{tc("uploadDesignLabel")}</label>
+                    <input
+                      type="file"
+                      accept="image/*,.pdf,.eps,.ai"
+                      onChange={handleDesignFileChange}
+                      className="w-full text-xs"
+                    />
+                    {designFile && <p className="mt-1 text-xs text-green-600">{tc("fileAttached")} {designFile.name}</p>}
+                  </div>
                 </div>
                 
                 <textarea
@@ -269,7 +294,7 @@ export default function CartDrawer() {
                   <button
                     type="button"
                     onClick={() => {
-                      if (hasGfmItems && !brandingFile && !brandingData.notes && !logoBase64) {
+                      if (hasGfmItems && !brandingFile && !designFile && !brandingData.notes && !logoBase64) {
                         alert("Please upload a file or add design notes for your GFM products.");
                         return;
                       }
@@ -290,6 +315,7 @@ export default function CartDrawer() {
                   setIsSubmitting(true);
                   try {
                     let fileUrl = "";
+                    let designUrl = "";
                     if (brandingFile) {
                       const supabase = createClient();
                       const fileExt = brandingFile.name.split('.').pop();
@@ -304,6 +330,19 @@ export default function CartDrawer() {
                       } else if (data) {
                         const { data: publicUrlData } = supabase.storage.from('branding').getPublicUrl(data.path);
                         fileUrl = publicUrlData.publicUrl;
+                      }
+                    }
+
+                    if (designFile) {
+                      const supabase = createClient();
+                      const fileExt = designFile.name.split('.').pop();
+                      const fileName = `design-${Date.now()}-${Math.random().toString(36).substring(7)}.${fileExt}`;
+                      const { data, error } = await supabase.storage
+                        .from('branding')
+                        .upload(fileName, designFile);
+                      if (data && !error) {
+                        const { data: publicUrlData } = supabase.storage.from('branding').getPublicUrl(data.path);
+                        designUrl = publicUrlData.publicUrl;
                       }
                     }
 
@@ -354,11 +393,12 @@ export default function CartDrawer() {
                         },
                         contactMethod: formData.contactMethod,
                         branding: {
-                          fileUrl: fileUrl || logoBase64,
-                          notes: brandingData.notes,
-                          color: brandingData.color,
-                          requestSample: brandingData.requestSample,
-                        }
+                            notes: brandingData.notes,
+                            color: brandingData.color,
+                            requestSample: brandingData.requestSample,
+                            fileUrl,
+                            designUrl,
+                          }
                       }),
                     });
 

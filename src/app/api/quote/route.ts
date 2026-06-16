@@ -21,6 +21,14 @@ export async function POST(request: NextRequest) {
         logoData: body.branding?.fileUrl || body.logoBase64 
       }];
     }
+    if (body.branding?.designUrl) {
+      itemsPayload = [...itemsPayload, { 
+        name: "Uploaded Design", 
+        code: "DESIGN", 
+        quantity: 1, 
+        logoData: body.branding?.designUrl 
+      }];
+    }
 
     let brandingMessage = "";
     if (body.branding) {
@@ -28,7 +36,8 @@ export async function POST(request: NextRequest) {
       if (body.branding.notes) brandingMessage += `\nNotes: ${body.branding.notes}`;
       if (body.branding.color) brandingMessage += `\nColor: ${body.branding.color}`;
       if (body.branding.requestSample) brandingMessage += `\nRequested Virtual Sample: Yes`;
-      if (body.branding.fileUrl) brandingMessage += `\nFile: ${body.branding.fileUrl}`;
+      if (body.branding.fileUrl) brandingMessage += `\nLogo File: ${body.branding.fileUrl}`;
+      if (body.branding.designUrl) brandingMessage += `\nDesign File: ${body.branding.designUrl}`;
     }
 
     const finalMessage = (body.message || "") + contactMethodStr + brandingMessage;
@@ -38,6 +47,7 @@ export async function POST(request: NextRequest) {
     if (body.currencyInfo?.region) {
       const unitPricesString = itemsPayload.map((item: any) => {
         if (item.code === "LOGO") return "1x Attached Logo";
+        if (item.code === "DESIGN") return "1x Attached Design";
         const unitPrice = item.price || 0;
         const subtotal = unitPrice * (item.quantity || 1);
         const curr = body.currencyInfo?.currency || "USD";
@@ -130,7 +140,8 @@ export async function POST(request: NextRequest) {
               ${body.branding.notes ? `<li><strong>Notes:</strong> ${body.branding.notes}</li>` : ''}
               ${body.branding.color ? `<li><strong>Color:</strong> ${body.branding.color}</li>` : ''}
               ${body.branding.requestSample ? `<li><strong>Requested Virtual Sample:</strong> Yes</li>` : ''}
-              ${body.branding.fileUrl ? `<li><strong>File attached:</strong> <a href="${body.branding.fileUrl}">View Logo</a></li>` : ''}
+              ${body.branding.fileUrl ? `<li><strong>Logo attached:</strong> <a href="${body.branding.fileUrl}">View Logo</a></li>` : ''}
+              ${body.branding.designUrl ? `<li><strong>Design attached:</strong> <a href="${body.branding.designUrl}">View Design</a></li>` : ''}
             </ul>
             ` : ''}
           `
