@@ -60,6 +60,17 @@ export default function AdminDashboard({
     refreshData();
   }, []);
 
+  const STEPS = [
+    { key: "stepConnect", label: "Connect" },
+    { key: "stepReview", label: "Review" },
+    { key: "stepConfirm", label: "Confirm" },
+    { key: "stepDesign", label: "Design" },
+    { key: "stepMaterial", label: "Material" },
+    { key: "stepManufacture", label: "Manufacture" },
+    { key: "stepHandover", label: "Handover" },
+    { key: "stepInvoice", label: "Invoice" },
+  ];
+
   // ─── Quote Actions ─────────────────────────────────────────
   const deleteQuote = async (id: number) => {
     if (!confirm("Are you sure you want to delete this request?")) return;
@@ -74,6 +85,29 @@ export default function AdminDashboard({
     const { error } = await supabase.from("quote_requests").update({ status }).eq("id", id);
     if (!error) {
       setQuotes(quotes.map((q) => (q.id === id ? { ...q, status } : q)));
+    }
+  };
+
+  const handleTrackingUpdate = async (quoteId: number, field: string, value: string) => {
+    const quote = quotes.find(q => q.id === quoteId);
+    if (!quote) return;
+    
+    // Optimistic UI update
+    const previousQuotes = [...quotes];
+    const newTrackingData = { ...(quote.tracking_data || {}), [field]: value };
+    setQuotes(quotes.map(q => q.id === quoteId ? { ...q, tracking_data: newTrackingData } : q));
+
+    try {
+      const { error } = await supabase
+        .from("quote_requests")
+        .update({ tracking_data: newTrackingData })
+        .eq("id", quoteId);
+        
+      if (error) throw error;
+    } catch (e: any) {
+      console.error("Failed to update tracking", e);
+      setQuotes(previousQuotes);
+      alert("Failed to save changes.");
     }
   };
 
@@ -588,6 +622,44 @@ export default function AdminDashboard({
                     </ul>
                   </div>
                 )}
+
+                {/* Tracking Progress Grid */}
+                <div className="mt-4 bg-neutral-50 rounded-lg p-4 border border-neutral-100">
+                  <h4 className="mb-3 text-xs font-semibold text-neutral-500 uppercase tracking-wider">Tracking Progress</h4>
+                  <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    {STEPS.map((step) => {
+                      const val = (quote.tracking_data || {})[step.key] || "";
+                      return (
+                        <div key={step.key} className="flex items-center justify-between gap-2 text-sm bg-white p-2 rounded border border-neutral-200">
+                          <span className="font-medium text-neutral-600">{step.label}</span>
+                          <div className="flex gap-1 bg-neutral-100 rounded-full p-0.5">
+                            <button 
+                              onClick={() => handleTrackingUpdate(quote.id, step.key, "Done")}
+                              className={`h-6 w-6 flex items-center justify-center rounded-full transition-colors ${val === "Done" ? "bg-green-500 text-white" : "text-neutral-400 hover:text-green-600 hover:bg-green-50"}`}
+                              title="Done"
+                            >
+                              ✔
+                            </button>
+                            <button 
+                              onClick={() => handleTrackingUpdate(quote.id, step.key, "Working")}
+                              className={`h-6 w-6 flex items-center justify-center rounded-full transition-colors ${val === "Working" ? "bg-yellow-500 text-white" : "text-neutral-400 hover:text-yellow-600 hover:bg-yellow-50"}`}
+                              title="Working"
+                            >
+                              ⏳
+                            </button>
+                            <button 
+                              onClick={() => handleTrackingUpdate(quote.id, step.key, "")}
+                              className={`h-6 w-6 flex items-center justify-center rounded-full transition-colors ${!val || val === "" ? "bg-white text-neutral-800 shadow-sm" : "text-neutral-400 hover:bg-white"}`}
+                              title="Pending"
+                            >
+                              -
+                            </button>
+                          </div>
+                        </div>
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
             ))
           )}
