@@ -92,15 +92,24 @@ export default function AdminDashboard({
     const quote = quotes.find(q => q.id === quoteId);
     if (!quote) return;
     
+    // Auto-update status based on tracking steps
+    let newStatus = quote.status;
+    if (field === "stepConnect" && value === "Done" && newStatus === "new") {
+      newStatus = "contacted";
+    }
+    if ((field === "stepHandover" || field === "stepInvoice") && value === "Done") {
+      newStatus = "completed";
+    }
+
     // Optimistic UI update
     const previousQuotes = [...quotes];
     const newTrackingData = { ...(quote.tracking_data || {}), [field]: value };
-    setQuotes(quotes.map(q => q.id === quoteId ? { ...q, tracking_data: newTrackingData } : q));
+    setQuotes(quotes.map(q => q.id === quoteId ? { ...q, tracking_data: newTrackingData, status: newStatus } : q));
 
     try {
       const { error } = await supabase
         .from("quote_requests")
-        .update({ tracking_data: newTrackingData })
+        .update({ tracking_data: newTrackingData, status: newStatus })
         .eq("id", quoteId);
         
       if (error) throw error;
@@ -790,7 +799,7 @@ export default function AdminDashboard({
       )}
 
       {/* ═══════════ TRACKER TAB ═══════════ */}
-      {activeTab === "tracker" && <MultiRegionTracker />}
+      {activeTab === "tracker" && <MultiRegionTracker onSave={refreshData} />}
 
       {/* ═══════════ EDIT / ADD MODAL ═══════════ */}
       {editing && (

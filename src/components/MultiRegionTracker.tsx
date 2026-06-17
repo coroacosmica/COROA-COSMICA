@@ -48,7 +48,7 @@ const STEPS = [
   { key: "stepInvoice", label: "Invoice" },
 ];
 
-export default function MultiRegionTracker() {
+export default function MultiRegionTracker({ onSave }: { onSave?: () => void }) {
   const [activeRegion, setActiveRegion] = useState<Region>("egypt");
   const [orders, setOrders] = useState<OrderData[]>([]);
   const [allOrders, setAllOrders] = useState<Record<Region, OrderData[]>>({
@@ -146,16 +146,25 @@ export default function MultiRegionTracker() {
       for (const id of idsToSave) {
         const orderData = pendingChanges[id];
         
-        // Fetch current tracking data directly
+        // Fetch current tracking data and status directly
         const { data: quote, error: fetchError } = await supabase
           .from("quote_requests")
-          .select("tracking_data")
+          .select("tracking_data, status")
           .eq("id", id)
           .single();
           
         if (fetchError || !quote) {
           console.error(`Failed to fetch quote ${id}`, fetchError);
           continue;
+        }
+
+        // Auto-update status based on tracking steps
+        let newStatus = quote.status;
+        if (orderData.stepConnect === "Done" && newStatus === "new") {
+          newStatus = "contacted";
+        }
+        if (orderData.stepHandover === "Done" || orderData.stepInvoice === "Done") {
+          newStatus = "completed";
         }
 
         // We only overwrite the fields we track in OrderData
@@ -175,7 +184,7 @@ export default function MultiRegionTracker() {
 
         const { error: updateError } = await supabase
           .from("quote_requests")
-          .update({ tracking_data: updatedTrackingData })
+          .update({ tracking_data: updatedTrackingData, status: newStatus })
           .eq("id", id);
 
         if (updateError) {
@@ -185,6 +194,7 @@ export default function MultiRegionTracker() {
 
       setPendingChanges({});
       setLastSynced(new Date());
+      if (onSave) onSave();
       alert("All changes saved successfully! ✅");
     } catch (e: any) {
       console.error("Failed to save changes", e);
