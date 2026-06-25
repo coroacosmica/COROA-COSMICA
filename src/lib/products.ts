@@ -29,7 +29,7 @@ export interface Product {
   price?: number;
   prices?: Record<string, number>;
   discount_percentage?: number;
-  variants?: { color: string; hex: string; image: string }[];
+  variants?: { color: string; hex?: string; image?: string; price?: number }[];
 }
 
 export interface Category {
@@ -138,13 +138,7 @@ export async function getAllProducts(): Promise<Product[]> {
     console.log("[getAllProducts] Supabase response:", { count: data?.length, error: error?.message });
     if (error) throw error;
     if (data && data.length > 0) {
-      // Merge Supabase products with local JSON (local JSON includes GFM products)
-      const supabaseCodes = new Set(data.map((p: any) => p.code?.toLowerCase()));
-      const localOnly = (rawProducts as any[]).filter(
-        (p) => !supabaseCodes.has(p.code?.toLowerCase())
-      );
-      console.log("[getAllProducts] Supabase:", data.length, "Local-only:", localOnly.length);
-      return [...data.map(enrich), ...localOnly.map(enrich)];
+      return data.map(enrich);
     }
   } catch (err) {
     console.error("Supabase products fetch error, falling back to local JSON", err);

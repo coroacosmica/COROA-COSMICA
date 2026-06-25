@@ -33,7 +33,7 @@ export default function ColorSelector({
       <div className="mt-2 flex flex-wrap gap-2">
         {variants.map((variant) => {
           const isSelected = selectedColor === variant.color;
-          const isAvailable = !!variant.image; // Assume unavailable if no image mapped
+          const isAvailable = true; // All excel variants are available
 
           return (
             <button
@@ -41,17 +41,17 @@ export default function ColorSelector({
               type="button"
               disabled={!isAvailable}
               onClick={() => onChange(variant)}
-              title={isAvailable ? variant.color : `${variant.color} (${t("availableOnRequest")})`}
+              title={variant.color}
               className={clsx(
-                "relative h-8 w-8 rounded-full border-2 transition-all",
+                "relative flex items-center justify-center min-w-[2rem] h-8 rounded-full border-2 transition-all px-3 text-sm font-medium",
                 isSelected
-                  ? "border-accent-orange ring-2 ring-accent-orange ring-offset-1"
-                  : "border-transparent hover:scale-110",
+                  ? "border-accent-orange bg-accent-orange/10 text-accent-orange ring-1 ring-accent-orange"
+                  : "border-neutral-200 bg-white text-neutral-700 hover:border-neutral-300",
                 !isAvailable && "opacity-50 cursor-not-allowed grayscale"
               )}
-              style={{ backgroundColor: variant.hex }}
+              style={variant.hex ? { backgroundColor: variant.hex } : undefined}
             >
-              <span className="sr-only">{variant.color}</span>
+              {variant.hex ? <span className="sr-only">{variant.color}</span> : <span>{variant.color}</span>}
             </button>
           );
         })}

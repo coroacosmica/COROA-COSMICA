@@ -89,10 +89,16 @@ export default function ProductInteractive({
           {tc("code")}: {product.code}
         </p>
         <div className="mt-4 flex flex-wrap items-baseline gap-3">
-          <span className="text-3xl font-bold text-olive-700">{formatProductPrice(product)}</span>
+          <span className="text-3xl font-bold text-olive-700">
+            {selectedVariant?.price ? formatLocalPrice(
+              product.discount_percentage ? selectedVariant.price * (1 - product.discount_percentage / 100) : selectedVariant.price
+            ) : formatProductPrice(product)}
+          </span>
           {product.discount_percentage && product.discount_percentage > 0 ? (
             <div className="flex flex-col">
-              <span className="text-xl text-neutral-400 line-through decoration-1">{formatLocalPrice(getRawPrice(product))}</span>
+              <span className="text-xl text-neutral-400 line-through decoration-1">
+                {formatLocalPrice(selectedVariant?.price || getRawPrice(product))}
+              </span>
               <span className="text-sm font-semibold text-red-600">You save {product.discount_percentage}%</span>
             </div>
           ) : null}
