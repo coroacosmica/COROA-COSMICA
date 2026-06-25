@@ -9578,5 +9578,2323 @@
         "price": 145
       }
     ]
+  },
+  {
+    "code": "Vip-Power-03",
+    "description": "",
+    "includes": [
+      "NB-17-19-A5",
+      "P208",
+      "S102"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-03.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Power-01",
+    "description": "",
+    "includes": [
+      "P210",
+      "Sp9",
+      "S102",
+      "CABEL-7-HOLDER-B"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-L-203",
+    "description": "",
+    "includes": [
+      "Buss Box-L 8 cm",
+      "Nb 24-2",
+      "Mg-900 Sil",
+      "Tools-313-Tyre",
+      "S55-Shinny",
+      "Sp9-Sil"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-l-203.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Premium-2",
+    "description": "",
+    "includes": [
+      "Vip Box-Circle 10cm",
+      "S5",
+      "Tool Set",
+      "Mg-902",
+      "P228",
+      "Ch2011",
+      "Nb-28-6",
+      "Set-Pen-2",
+      "Box-Set-2-Only",
+      "KC-105"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto premium corporativo (10 peças)",
+      "en": "Premium corporate gift set (10 items)",
+      "ar": "مجموعة هدايا فاخرة (10 قطع)"
+    },
+    "image": "/images/products/premium-2.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Premium-1",
+    "description": "",
+    "includes": [
+      "Vip Box-Circle 10cm",
+      "LC-120-Plus-Dual",
+      "LC-8-Dual",
+      "Kc-105-Silver-Black",
+      "Ch-2011-B-F1",
+      "Paper-Box",
+      "Set-Pen-2",
+      "Box-Set-2-Only",
+      "P225-L-10000-Wirless",
+      "Mg2-Potterey with Coaster",
+      "NB-28-2"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto premium corporativo (11 peças)",
+      "en": "Premium corporate gift set (11 items)",
+      "ar": "مجموعة هدايا فاخرة (11 قطع)"
+    },
+    "image": "/images/products/premium-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Power-02",
+    "description": "",
+    "includes": [
+      "P225",
+      "S97",
+      "Lc1-Sq",
+      "SetPen-2",
+      "Sp-m-23"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-02.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-med-201",
+    "description": "",
+    "includes": [
+      "Vip box med",
+      "P202-f2",
+      "Lc5-Dual",
+      "Sp-m-23P",
+      "Ch-Cd 03-MagSafe",
+      "El 36"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (6 peças)",
+      "en": "VIP corporate gift set (6 items)",
+      "ar": "مجموعة VIP هدايا شركات (6 قطع)"
+    },
+    "image": "/images/products/vip-med-201.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip",
+    "description": "",
+    "includes": [
+      "Vip Box 2 Layers",
+      "Kc 115",
+      "NB 17-12 (A6)",
+      "Lc 8-Dual",
+      "Ec-El-117",
+      "Sc-Metar",
+      "P-222",
+      "M4",
+      "Ch 2011-F2"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (9 peças)",
+      "en": "VIP corporate gift set (9 items)",
+      "ar": "مجموعة VIP هدايا شركات (9 قطع)"
+    },
+    "image": "/images/products/vip-power-03.jpeg",
+    "imageFallback": true,
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-power-04",
+    "description": "",
+    "includes": [
+      "Vip std acc",
+      "Nb17-12 a6",
+      "P225",
+      "Mg-6",
+      "S11",
+      "Sp9"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-04.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Bus-Power-01",
+    "description": "",
+    "includes": [
+      "P228",
+      "E2",
+      "Sm10",
+      "CABEL-7-HOLDER-B"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/bus-power-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-509",
+    "description": "",
+    "includes": [
+      "BUS-BOX-STD (2 cm)",
+      "NB17-12 (A5)",
+      "1001",
+      "S11",
+      "P225"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/set-509.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Box-VIP-Mg-10",
+    "description": "",
+    "includes": [
+      "Vip Rect Acryl",
+      "Mg 902",
+      "NB-17-10",
+      "1001 B Gun",
+      "LC 8 Dual"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/box-vip-mg-10.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-8-Plus",
+    "description": "F1 F2 Ready to pick up with low price",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/set-8-plus.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Small-Power",
+    "description": "",
+    "includes": [
+      "Vip-small",
+      "P210",
+      "Sm10"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-small-power.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "BS-L-Mg-100",
+    "description": "",
+    "includes": [
+      "Bus Box Large",
+      "NB-G-17-19",
+      "Mg 8",
+      "Sp-9-Sil",
+      "Lc1-Squ"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/bs-l-mg-100.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "BS-L-Mg-101",
+    "description": "",
+    "includes": [
+      "Bus Box Large",
+      "Mg 600",
+      "Nb24-4",
+      "5014",
+      "Lc1-Squ+"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/bs-l-mg-101.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Std-206",
+    "description": "",
+    "includes": [
+      "Vip Std",
+      "Nb-17-19-B5",
+      "Ec-El-117",
+      "SC-Digital",
+      "Ch-2026",
+      "Lc5-Dual"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (6 peças)",
+      "en": "VIP corporate gift set (6 items)",
+      "ar": "مجموعة VIP هدايا شركات (6 قطع)"
+    },
+    "image": "/images/products/vip-std-206.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Acr-207",
+    "description": "",
+    "includes": [
+      "Vip Box-Circ-Acryl-8",
+      "Nb-17-12-B5",
+      "Mg-904",
+      "2137-B",
+      "S-75-B"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/vip-acr-207.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Std-208",
+    "description": "",
+    "includes": [
+      "Buss-Box-Std-2",
+      "Nb-24-3",
+      "El-321",
+      "Ch-2022",
+      "S55-Shiny",
+      "Kc-250",
+      "Nb-17-19",
+      "P1009",
+      "M2"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-std-208.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Power-05",
+    "description": "- M2",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-05.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-small-02",
+    "description": "",
+    "includes": [
+      "P211",
+      "Sp-13 wheat straw"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (2 peças)",
+      "en": "VIP corporate gift set (2 items)",
+      "ar": "مجموعة VIP هدايا شركات (2 قطع)"
+    },
+    "image": "/images/products/vip-small-02.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Power-04",
+    "description": "",
+    "includes": [
+      "P211",
+      "sm-144",
+      "M2"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-power-04.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Power-03",
+    "description": "",
+    "includes": [
+      "Nb-17-2",
+      "5012",
+      "P1009",
+      "EC-Ch-2013"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-power-03.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Power-05",
+    "description": "",
+    "includes": [
+      "P1009",
+      "KC-105",
+      "5012"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-power-05.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Bag-Silv-01",
+    "description": "",
+    "includes": [
+      "NB-17-11",
+      "1001",
+      "Sc"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-bag-silv-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Bag-Power-01",
+    "description": "",
+    "includes": [
+      "P210",
+      "EC-El-117",
+      "LC8-Daul",
+      "M4"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-bag-power-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Std-209",
+    "description": "",
+    "includes": [
+      "Buss Box-Std-2",
+      "Nb-17-19 (B5)",
+      "M4-Fab",
+      "Sm728",
+      "Kc-260-Fab",
+      "Vip Box-LCK-SQ-B/4",
+      "P225-L-B-10000-Wir",
+      "LC-200-B",
+      "SP-9-Black",
+      "S102-Gun",
+      "13-858-1"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-std-209.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Lighted-set-1",
+    "description": "- S102-Gun",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-lighted-set-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Business-Blue-1",
+    "description": "",
+    "includes": [
+      "Lc120-Blue-DuAl",
+      "NB-28-1-BL-Gun-F1",
+      "1005-Blue-RU-Gun",
+      "MG-5-Suction-DrarkBlue",
+      "MG-16G-MAH-BL",
+      "Ec-Ch-20-Bl-Gun-F1"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/business-blue-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Business-Normal-Cork-1",
+    "description": "",
+    "includes": [
+      "Business Box-Stb-4CM",
+      "Set Pen-Cork-40",
+      "Nb-17-16-Normal - Cork (A5)",
+      "Ch-100-Normal Corck",
+      "M4 Normal Corck"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/business-normal-cork-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Bs-4-Large-MG",
+    "description": "",
+    "includes": [
+      "NB-17-2-A5",
+      "3044",
+      "M2-16Gb",
+      "Ch-2040",
+      "Mg-6-B"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/bs-4-large-mg.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "SS-6-Bag",
+    "description": "",
+    "includes": [
+      "LC-1",
+      "S11",
+      "P210 Wireless"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (3 peças)",
+      "en": "VIP corporate gift set (3 items)",
+      "ar": "مجموعة VIP هدايا شركات (3 قطع)"
+    },
+    "image": "/images/products/ss-6-bag.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-XL-7-Acc",
+    "description": "",
+    "includes": [
+      "NB-17-19 B5",
+      "KC-204",
+      "Ch-2013",
+      "M2",
+      "Mg6",
+      "CC5",
+      "El-750"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (7 peças)",
+      "en": "VIP corporate gift set (7 items)",
+      "ar": "مجموعة VIP هدايا شركات (7 قطع)"
+    },
+    "image": "/images/products/vip-xl-7-acc.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-511",
+    "description": "",
+    "includes": [
+      "Bus Std-8 cm",
+      "MG-6",
+      "M2-Mah",
+      "1001",
+      "Nb-G-17-2"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/set-511.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-M-Acc-3",
+    "description": "",
+    "includes": [
+      "BoxVip-M",
+      "NB17-12",
+      "Ch-1011",
+      "1005",
+      "R1"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (5 peças)",
+      "en": "VIP corporate gift set (5 items)",
+      "ar": "مجموعة VIP هدايا شركات (5 قطع)"
+    },
+    "image": "/images/products/vip-m-acc-3.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-ECO-Mug-1",
+    "description": "",
+    "includes": [
+      "Mg6",
+      "5252",
+      "Sm3",
+      "NB-G-17-106"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (4 peças)",
+      "en": "VIP corporate gift set (4 items)",
+      "ar": "مجموعة VIP هدايا شركات (4 قطع)"
+    },
+    "image": "/images/products/set-eco-mug-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-ECO-Mug-3",
+    "description": "",
+    "includes": [
+      "NB17-19-A6",
+      "MG5",
+      "Sm3",
+      "5012",
+      "Kc201",
+      "Ch2013"
+    ],
+    "type": "set",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes (6 peças)",
+      "en": "VIP corporate gift set (6 items)",
+      "ar": "مجموعة VIP هدايا شركات (6 قطع)"
+    },
+    "image": "/images/products/set-eco-mug-3.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Power-03-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-03.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Power-01-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-L-203-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-l-203.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Premium-2-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto premium corporativo",
+      "en": "Premium corporate gift set",
+      "ar": "مجموعة هدايا فاخرة"
+    },
+    "image": "/images/products/m2.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Premium-1-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto premium corporativo",
+      "en": "Premium corporate gift set",
+      "ar": "مجموعة هدايا فاخرة"
+    },
+    "image": "/images/products/m1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Power-02-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-02.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-med-201-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/201.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip 2",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-2.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-power-04-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-power-04.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip Acr-205",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-acr-205.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Bus-Power-01-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/bus-power-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-509-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/set-509.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Box-VIP-Mg-10-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/box-vip-mg-10.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-8-Plus-F1",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/f1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Small-Power-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/vip-small-power.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "BS-L-Mg-100-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/bs-l-mg-100.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "BS-L-Mg-101-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/101.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Std-206-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-std-206.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Acr-207-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/cr-2.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Std-208-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-std-208.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Power-04-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-power-04.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Power-03-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-power-03.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Power-05-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-power-05.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Bag-Silv-01-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-bag-silv-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Bag-Power-01-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP com power bank e acessórios",
+      "en": "VIP gift set with power bank & accessories",
+      "ar": "مجموعة VIP مع باور بانك وإكسسوارات"
+    },
+    "image": "/images/products/buss-bag-power-01.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Buss-Std-209-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/buss-std-209.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Business-Blue-1-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/business-blue-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Business-Normal-Cork-1-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto de negócios para empresas",
+      "en": "Business corporate gift set",
+      "ar": "مجموعة هدايا أعمال للشركات"
+    },
+    "image": "/images/products/business-normal-cork-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Bs-4-Large-MG-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/bs-4-large-mg.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP MEDIUM",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-medium.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "SS-6-Bag-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/s6.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-XL-7-Acc-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-xl-7-acc.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-511-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/set-511.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-M-Acc-3-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/c3.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-ECO-Mug-1-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/set-eco-mug-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Set-ECO-Mug-3-The",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-2",
+    "category": "vip-sets",
+    "categoryName": "VIP & Premium Sets",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/set-eco-mug-3.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Box",
+    "description": "Size 25.5 x 35.5 x 8 cm Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Box-Ruler",
+    "description": "Size 34.5 x 25 x 4 cm Business Boxes Business Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-ruler.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip -wood",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-wood.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip box-side-",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-side.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-Circle-8cm",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-circle-8cm.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip Box-Rect-Acry-8",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-rect-acry-8.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip Box-Rect-Acry-4",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-rect-acry-4.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip Box-circ-Acryl",
+    "description": "2 Layer",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-circ-acryl.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Bx-cr-Ac-No-Star",
+    "description": "2 Layer",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-bx-cr-ac-no-star.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip box-",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip box-slash",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-slash.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip Box",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-Side",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-side.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-Top-Acc",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-top-acc.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Box VIP-Plus",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/box-vip-plus.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-2-Layers",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-2-layers.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Box VIP",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/box-vip.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-Leather-Lock",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-leather-lock.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-STD-MUTT",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-std-mutt.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP Box-ACC",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-acc.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "VIP-Box Side",
+    "description": "Vip Boxes",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-4",
+    "category": "notebooks-usb",
+    "categoryName": "Notebooks & USB",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-side.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Eco-",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-12",
+    "category": "seasonal",
+    "categoryName": "Seasonal & Special",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-eco-corner.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Slash-cork",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-12",
+    "category": "seasonal",
+    "categoryName": "Seasonal & Special",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-slash-cork.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Box-Ck-BLk-XLarc-8cm",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-12",
+    "category": "seasonal",
+    "categoryName": "Seasonal & Special",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-box-ck-blk-xlarc-8cm.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip-Eco- Corner",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-12",
+    "category": "seasonal",
+    "categoryName": "Seasonal & Special",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-eco-corner.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip Cork-Medium-1",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-12",
+    "category": "seasonal",
+    "categoryName": "Seasonal & Special",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-cork-medium-1.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
+  },
+  {
+    "code": "Vip brown-",
+    "description": "",
+    "includes": [],
+    "type": "product",
+    "catalogue": "cat-12",
+    "category": "seasonal",
+    "categoryName": "Seasonal & Special",
+    "names": {
+      "pt": "Conjunto VIP de presentes",
+      "en": "VIP corporate gift set",
+      "ar": "مجموعة VIP هدايا شركات"
+    },
+    "image": "/images/products/vip-brown.jpeg",
+    "variants": [
+      {
+        "color": "Standard",
+        "price": 0
+      }
+    ]
   }
 ]
