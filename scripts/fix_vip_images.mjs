@@ -2,15 +2,22 @@ import fs from 'fs';
 
 async function main() {
   const localJsonPath = 'c:/Website/src/data/products.json';
-  const oldGitJsonPath = 'c:/Website/old_products_git.json';
+  const oldGitJsonPath = 'c:/Website/old_products_init.json';
   
   const currentProducts = JSON.parse(fs.readFileSync(localJsonPath, 'utf8'));
-  const oldGitProducts = JSON.parse(fs.readFileSync(oldGitJsonPath, 'utf8'));
+  
+  let txt = fs.readFileSync(oldGitJsonPath, 'utf16le');
+  if (!txt.includes('"code"')) {
+    txt = fs.readFileSync(oldGitJsonPath, 'utf8');
+    if (txt.charCodeAt(0) === 0xFEFF) txt = txt.slice(1);
+  }
+  const oldGitProducts = JSON.parse(txt);
 
-  // Create lookup dictionary for old products
   const oldDict = {};
   for (const p of oldGitProducts) {
-    oldDict[p.code.toUpperCase()] = p;
+    if (p.code) {
+      oldDict[p.code.toUpperCase()] = p;
+    }
   }
 
   const finalArray = [];
@@ -20,15 +27,14 @@ async function main() {
     const codeUpper = p.code.toUpperCase();
     handledCodes.add(codeUpper);
 
-    // Fix image path if it doesn't exist locally
     let imagePath = `/images/products/${p.code}.png`;
     const localPublicPath = `c:/Website/public${imagePath}`;
     
-    // Check if the exact generated .png exists
+    // Check if the generated image really exists
     if (!fs.existsSync(localPublicPath)) {
-      // It doesn't exist. Does the old one have an image?
       const oldMatch = oldDict[codeUpper];
       if (oldMatch && oldMatch.image) {
+        // use the exact old image name!
         p.image = oldMatch.image;
       }
     } else {
@@ -38,16 +44,13 @@ async function main() {
     finalArray.push(p);
   }
 
-  // Now append any missing VIP sets
   let vipCount = 0;
   for (const p of oldGitProducts) {
+    if (!p.code) continue;
     const codeUpper = p.code.toUpperCase();
     if (!handledCodes.has(codeUpper)) {
-      // Product was deleted! But if it's a VIP set, we should keep it because it was missing from Excel!
-      // In old JSON, VIP sets had category 'vip-sets' or description containing 'VIP'
       if (p.category === 'vip-sets' || p.code.toLowerCase().includes('vip')) {
         vipCount++;
-        // Ensure it has variants
         if (!p.variants) {
           p.variants = [{ color: "Standard", price: p.price || 0 }];
         }
@@ -59,7 +62,6 @@ async function main() {
   fs.writeFileSync(localJsonPath, JSON.stringify(finalArray, null, 2));
   console.log(`Updated products.json! Added ${vipCount} missing VIP sets. Total: ${finalArray.length}`);
 
-  // Generate SQL
   const sqlStatements = [
     "DELETE FROM products;",
     "ALTER TABLE products ADD COLUMN IF NOT EXISTS variants JSONB DEFAULT '[]'::jsonb;",
