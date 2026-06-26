@@ -80,6 +80,21 @@ async function main() {
     let color = typeof row[1] === 'string' ? row[1] : 'Standard';
     
     let code = row[0].toString().trim();
+    let assignCatSlug = currentCategorySlug;
+    let assignCatName = currentCategoryName;
+    const lowerCode = code.toLowerCase();
+    
+    if (lowerCode.includes('sets') || lowerCode.includes('set') || lowerCode.includes('boxes') || lowerCode.includes('box')) {
+      assignCatSlug = 'vip-sets';
+      assignCatName = 'VIP Sets';
+      excelCategories.add('vip-sets');
+      categoryNamesMap['vip-sets'] = 'VIP Sets';
+    } else if (lowerCode.includes('cork')) {
+      assignCatSlug = 'cork-eco';
+      assignCatName = 'Cork & Eco';
+      excelCategories.add('cork-eco');
+      categoryNamesMap['cork-eco'] = 'Cork & Eco';
+    }
     
     // Does it already exist in newProducts? (for variants)
     let existing = newProducts.find(p => p.code === code);
@@ -91,8 +106,8 @@ async function main() {
         code,
         description: `Product ${code}`,
         type: 'product',
-        category: currentCategorySlug,
-        categoryName: currentCategoryName,
+        category: assignCatSlug,
+        categoryName: assignCatName,
         price,
         variants: [{ color, price }]
       });
