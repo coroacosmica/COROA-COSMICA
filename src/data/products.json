@@ -6928,7 +6928,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "featured": true,
+    "tags": [
+      "featured"
+    ]
   },
   {
     "code": "GFM-BF-001",
@@ -6954,7 +6958,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "featured": true,
+    "tags": [
+      "featured"
+    ]
   },
   {
     "code": "GFM-BL-001",
@@ -7175,7 +7183,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "featured": true,
+    "tags": [
+      "featured"
+    ]
   },
   {
     "code": "UNIFORMS-001",

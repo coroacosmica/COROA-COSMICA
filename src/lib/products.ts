@@ -146,20 +146,34 @@ function enrich(p: any): Product {
 }
 
 export async function getAllProducts(): Promise<Product[]> {
+  const localProducts = (rawProducts as any[]).map(enrich);
+  let mergedProducts = [...localProducts];
+
   try {
     const { data, error } = await supabase.from("products").select("*");
-    console.log("[getAllProducts] Supabase response:", { count: data?.length, error: error?.message });
-    if (error) throw error;
-    if (data && data.length > 0) {
-      return data.map(enrich);
+    if (error) {
+      console.error("[getAllProducts] Supabase error:", error.message);
+    } else if (data && data.length > 0) {
+      const supabaseProducts = data.map(enrich);
+      const supabaseMap = new Map(supabaseProducts.map((p) => [p.code.toLowerCase(), p]));
+      
+      mergedProducts = localProducts.map((p) => {
+        const codeKey = p.code.toLowerCase();
+        return supabaseMap.has(codeKey) ? supabaseMap.get(codeKey)! : p;
+      });
+
+      const localMap = new Set(localProducts.map((p) => p.code.toLowerCase()));
+      for (const p of supabaseProducts) {
+        if (!localMap.has(p.code.toLowerCase())) {
+          mergedProducts.push(p);
+        }
+      }
     }
   } catch (err) {
     console.error("Supabase products fetch error, falling back to local JSON", err);
   }
 
-  // Fallback to local JSON if Supabase fails or is empty
-  console.log("[getAllProducts] Using local JSON fallback, count:", (rawProducts as any[]).length);
-  return (rawProducts as any[]).map(enrich);
+  return mergedProducts;
 }
 
 
