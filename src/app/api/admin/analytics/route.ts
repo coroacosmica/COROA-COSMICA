@@ -9,12 +9,6 @@ export async function GET(request: NextRequest) {
 
   const supabase = await createClient();
 
-  // Authentication check
-  const { data: { session } } = await supabase.auth.getSession();
-  if (!session) {
-    return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  }
-
   try {
     let startDate = new Date();
     if (period === "today") startDate.setHours(0, 0, 0, 0);
