@@ -12,7 +12,11 @@
         "price": 235
       }
     ],
-    "image": "/images/products/F 4.png"
+    "image": "/images/products/F 4.png",
+    "prices": {
+      "EGP": 258.5,
+      "EUR": 7.05
+    }
   },
   {
     "code": "F 6",
@@ -27,7 +31,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 6.png"
+    "image": "/images/products/F 6.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 7",
@@ -42,7 +50,11 @@
         "price": 235
       }
     ],
-    "image": "/images/products/F 7.png"
+    "image": "/images/products/F 7.png",
+    "prices": {
+      "EGP": 258.5,
+      "EUR": 7.05
+    }
   },
   {
     "code": "F 8",
@@ -57,7 +69,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 8.png"
+    "image": "/images/products/F 8.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 9",
@@ -72,7 +88,11 @@
         "price": 239
       }
     ],
-    "image": "/images/products/F 9.png"
+    "image": "/images/products/F 9.png",
+    "prices": {
+      "EGP": 262.9,
+      "EUR": 7.17
+    }
   },
   {
     "code": "F 10",
@@ -87,7 +107,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/F 10.png"
+    "image": "/images/products/F 10.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "F 11",
@@ -102,7 +126,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/F 11.png"
+    "image": "/images/products/F 11.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "F 14",
@@ -117,7 +145,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/F 14.png"
+    "image": "/images/products/F 14.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "F 21",
@@ -132,7 +164,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 21.png"
+    "image": "/images/products/F 21.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 22",
@@ -147,7 +183,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 22.png"
+    "image": "/images/products/F 22.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 23",
@@ -162,7 +202,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 23.png"
+    "image": "/images/products/F 23.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 25",
@@ -177,7 +221,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 25.png"
+    "image": "/images/products/F 25.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 26",
@@ -192,7 +240,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 26.png"
+    "image": "/images/products/F 26.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 28",
@@ -207,7 +259,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 28.png"
+    "image": "/images/products/F 28.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 29",
@@ -222,7 +278,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/F 29.png"
+    "image": "/images/products/F 29.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "F 30",
@@ -237,7 +297,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/F 30.png"
+    "image": "/images/products/F 30.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "F 31",
@@ -252,7 +316,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/F 31.png"
+    "image": "/images/products/F 31.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "F 33",
@@ -267,7 +335,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/F 33.png"
+    "image": "/images/products/F 33.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "F 36",
@@ -282,7 +354,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 36.png"
+    "image": "/images/products/F 36.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "F 44",
@@ -297,7 +373,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/F 44.png"
+    "image": "/images/products/F 44.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Flash Card Metal",
@@ -312,7 +392,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Flash Card Metal.png"
+    "image": "/images/products/Flash Card Metal.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Power Bank 8",
@@ -327,7 +411,11 @@
         "price": 745
       }
     ],
-    "image": "/images/products/Power Bank 8.png"
+    "image": "/images/products/Power Bank 8.png",
+    "prices": {
+      "EGP": 819.5,
+      "EUR": 22.35
+    }
   },
   {
     "code": "Power Bank 9",
@@ -342,7 +430,11 @@
         "price": 690
       }
     ],
-    "image": "/images/products/Power Bank 9.png"
+    "image": "/images/products/Power Bank 9.png",
+    "prices": {
+      "EGP": 759,
+      "EUR": 20.7
+    }
   },
   {
     "code": "Power Bank 12",
@@ -357,7 +449,11 @@
         "price": 1150
       }
     ],
-    "image": "/images/products/Power Bank 12.png"
+    "image": "/images/products/Power Bank 12.png",
+    "prices": {
+      "EGP": 1265,
+      "EUR": 34.5
+    }
   },
   {
     "code": "Power Bank 13",
@@ -372,7 +468,11 @@
         "price": 585
       }
     ],
-    "image": "/images/products/Power Bank 13.png"
+    "image": "/images/products/Power Bank 13.png",
+    "prices": {
+      "EGP": 643.5,
+      "EUR": 17.55
+    }
   },
   {
     "code": "Power Bank 14",
@@ -387,7 +487,11 @@
         "price": 845
       }
     ],
-    "image": "/images/products/Power Bank 14.png"
+    "image": "/images/products/Power Bank 14.png",
+    "prices": {
+      "EGP": 929.5,
+      "EUR": 25.35
+    }
   },
   {
     "code": "Power Bank 18",
@@ -402,7 +506,11 @@
         "price": 595
       }
     ],
-    "image": "/images/products/Power Bank 18.png"
+    "image": "/images/products/Power Bank 18.png",
+    "prices": {
+      "EGP": 654.5,
+      "EUR": 17.85
+    }
   },
   {
     "code": "Power Bank 20",
@@ -417,7 +525,11 @@
         "price": 495
       }
     ],
-    "image": "/images/products/Power Bank 20.png"
+    "image": "/images/products/Power Bank 20.png",
+    "prices": {
+      "EGP": 544.5,
+      "EUR": 14.85
+    }
   },
   {
     "code": "Power Bank 22",
@@ -432,7 +544,11 @@
         "price": 725
       }
     ],
-    "image": "/images/products/Power Bank 22.png"
+    "image": "/images/products/Power Bank 22.png",
+    "prices": {
+      "EGP": 797.5,
+      "EUR": 21.75
+    }
   },
   {
     "code": "Power Bank 26",
@@ -447,7 +563,11 @@
         "price": 1050
       }
     ],
-    "image": "/images/products/Power Bank 26.png"
+    "image": "/images/products/Power Bank 26.png",
+    "prices": {
+      "EGP": 1155,
+      "EUR": 31.5
+    }
   },
   {
     "code": "Power Bank 30",
@@ -462,7 +582,11 @@
         "price": 680
       }
     ],
-    "image": "/images/products/Power Bank 30.png"
+    "image": "/images/products/Power Bank 30.png",
+    "prices": {
+      "EGP": 748,
+      "EUR": 20.4
+    }
   },
   {
     "code": "Power Bank 34",
@@ -477,7 +601,11 @@
         "price": 875
       }
     ],
-    "image": "/images/products/Power Bank 34.png"
+    "image": "/images/products/Power Bank 34.png",
+    "prices": {
+      "EGP": 962.5,
+      "EUR": 26.25
+    }
   },
   {
     "code": "Power Bank 35",
@@ -492,7 +620,11 @@
         "price": 395
       }
     ],
-    "image": "/images/products/Power Bank 35.png"
+    "image": "/images/products/Power Bank 35.png",
+    "prices": {
+      "EGP": 434.5,
+      "EUR": 11.85
+    }
   },
   {
     "code": "Power Bank 37",
@@ -507,7 +639,11 @@
         "price": 675
       }
     ],
-    "image": "/images/products/Power Bank 37.png"
+    "image": "/images/products/Power Bank 37.png",
+    "prices": {
+      "EGP": 742.5,
+      "EUR": 20.25
+    }
   },
   {
     "code": "Power Bank 44",
@@ -522,7 +658,11 @@
         "price": 1450
       }
     ],
-    "image": "/images/products/Power Bank 44.png"
+    "image": "/images/products/Power Bank 44.png",
+    "prices": {
+      "EGP": 1595,
+      "EUR": 43.5
+    }
   },
   {
     "code": "Power Bank 49",
@@ -537,7 +677,11 @@
         "price": 1150
       }
     ],
-    "image": "/images/products/Power Bank 49.png"
+    "image": "/images/products/Power Bank 49.png",
+    "prices": {
+      "EGP": 1265,
+      "EUR": 34.5
+    }
   },
   {
     "code": "Lamp USB 4",
@@ -552,7 +696,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Lamp USB 4.png"
+    "image": "/images/products/Lamp USB 4.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Lamp USB 5",
@@ -567,7 +715,11 @@
         "price": 1150
       }
     ],
-    "image": "/images/products/Lamp USB 5.png"
+    "image": "/images/products/Lamp USB 5.png",
+    "prices": {
+      "EGP": 1265,
+      "EUR": 34.5
+    }
   },
   {
     "code": "Lamp USB 8",
@@ -582,7 +734,11 @@
         "price": 1250
       }
     ],
-    "image": "/images/products/Lamp USB 8.png"
+    "image": "/images/products/Lamp USB 8.png",
+    "prices": {
+      "EGP": 1375,
+      "EUR": 37.5
+    }
   },
   {
     "code": "Lamp USB 9",
@@ -597,7 +753,11 @@
         "price": 485
       }
     ],
-    "image": "/images/products/Lamp USB 9.png"
+    "image": "/images/products/Lamp USB 9.png",
+    "prices": {
+      "EGP": 533.5,
+      "EUR": 14.55
+    }
   },
   {
     "code": "Mobile Holder 2",
@@ -612,7 +772,11 @@
         "price": 55
       }
     ],
-    "image": "/images/products/Mobile Holder 2.png"
+    "image": "/images/products/Mobile Holder 2.png",
+    "prices": {
+      "EGP": 60.5,
+      "EUR": 1.65
+    }
   },
   {
     "code": "Mobile Holder 3",
@@ -627,7 +791,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/Mobile Holder 3.png"
+    "image": "/images/products/Mobile Holder 3.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "Cable 2",
@@ -642,7 +810,11 @@
         "price": 150
       }
     ],
-    "image": "/images/products/Cable 2.png"
+    "image": "/images/products/Cable 2.png",
+    "prices": {
+      "EGP": 165,
+      "EUR": 4.5
+    }
   },
   {
     "code": "Cable 3",
@@ -657,7 +829,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Cable 3.png"
+    "image": "/images/products/Cable 3.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Cable 5",
@@ -672,7 +848,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Cable 5.png"
+    "image": "/images/products/Cable 5.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Cable 6",
@@ -687,7 +867,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/Cable 6.png"
+    "image": "/images/products/Cable 6.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Cable 7",
@@ -702,7 +886,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/Cable 7.png"
+    "image": "/images/products/Cable 7.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "Cable 9",
@@ -717,7 +905,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/Cable 9.png"
+    "image": "/images/products/Cable 9.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "Cable 13",
@@ -732,7 +924,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Cable 13.png"
+    "image": "/images/products/Cable 13.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Cable 14",
@@ -747,7 +943,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Cable 14.png"
+    "image": "/images/products/Cable 14.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Cable 15",
@@ -762,7 +962,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Cable 15.png"
+    "image": "/images/products/Cable 15.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Cable 17",
@@ -777,7 +981,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/Cable 17.png"
+    "image": "/images/products/Cable 17.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "Cable 22",
@@ -792,7 +1000,11 @@
         "price": 59
       }
     ],
-    "image": "/images/products/Cable 22.png"
+    "image": "/images/products/Cable 22.png",
+    "prices": {
+      "EGP": 64.9,
+      "EUR": 1.77
+    }
   },
   {
     "code": "Cable 23",
@@ -807,7 +1019,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Cable 23.png"
+    "image": "/images/products/Cable 23.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Cable 24",
@@ -822,7 +1038,11 @@
         "price": 59
       }
     ],
-    "image": "/images/products/Cable 24.png"
+    "image": "/images/products/Cable 24.png",
+    "prices": {
+      "EGP": 64.9,
+      "EUR": 1.77
+    }
   },
   {
     "code": "Cable 25",
@@ -837,7 +1057,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Cable 25.png"
+    "image": "/images/products/Cable 25.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Connector 7",
@@ -852,7 +1076,11 @@
         "price": 795
       }
     ],
-    "image": "/images/products/Connector 7.png"
+    "image": "/images/products/Connector 7.png",
+    "prices": {
+      "EGP": 874.5,
+      "EUR": 23.85
+    }
   },
   {
     "code": "Connector 8",
@@ -867,7 +1095,11 @@
         "price": 550
       }
     ],
-    "image": "/images/products/Connector 8.png"
+    "image": "/images/products/Connector 8.png",
+    "prices": {
+      "EGP": 605,
+      "EUR": 16.5
+    }
   },
   {
     "code": "Car Charger 1",
@@ -882,7 +1114,11 @@
         "price": 90
       }
     ],
-    "image": "/images/products/Car Charger 1.png"
+    "image": "/images/products/Car Charger 1.png",
+    "prices": {
+      "EGP": 99,
+      "EUR": 2.7
+    }
   },
   {
     "code": "Car Charger 2",
@@ -897,7 +1133,11 @@
         "price": 90
       }
     ],
-    "image": "/images/products/Car Charger 2.png"
+    "image": "/images/products/Car Charger 2.png",
+    "prices": {
+      "EGP": 99,
+      "EUR": 2.7
+    }
   },
   {
     "code": "Car Charger 3",
@@ -912,7 +1152,11 @@
         "price": 150
       }
     ],
-    "image": "/images/products/Car Charger 3.png"
+    "image": "/images/products/Car Charger 3.png",
+    "prices": {
+      "EGP": 165,
+      "EUR": 4.5
+    }
   },
   {
     "code": "Car Charger 4",
@@ -927,7 +1171,11 @@
         "price": 560
       }
     ],
-    "image": "/images/products/Car Charger 4.png"
+    "image": "/images/products/Car Charger 4.png",
+    "prices": {
+      "EGP": 616,
+      "EUR": 16.8
+    }
   },
   {
     "code": "Car Charger 5",
@@ -942,7 +1190,11 @@
         "price": 340
       }
     ],
-    "image": "/images/products/Car Charger 5.png"
+    "image": "/images/products/Car Charger 5.png",
+    "prices": {
+      "EGP": 374,
+      "EUR": 10.2
+    }
   },
   {
     "code": "Speaker 1",
@@ -957,7 +1209,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/Speaker 1.png"
+    "image": "/images/products/Speaker 1.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Speaker 2",
@@ -972,7 +1228,11 @@
         "price": 1650
       }
     ],
-    "image": "/images/products/Speaker 2.png"
+    "image": "/images/products/Speaker 2.png",
+    "prices": {
+      "EGP": 1815,
+      "EUR": 49.5
+    }
   },
   {
     "code": "Speaker 3",
@@ -987,7 +1247,11 @@
         "price": 845
       }
     ],
-    "image": "/images/products/Speaker 3.png"
+    "image": "/images/products/Speaker 3.png",
+    "prices": {
+      "EGP": 929.5,
+      "EUR": 25.35
+    }
   },
   {
     "code": "Speaker 6",
@@ -1002,7 +1266,11 @@
         "price": 450
       }
     ],
-    "image": "/images/products/Speaker 6.png"
+    "image": "/images/products/Speaker 6.png",
+    "prices": {
+      "EGP": 495,
+      "EUR": 13.5
+    }
   },
   {
     "code": "Speaker 7",
@@ -1017,7 +1285,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/Speaker 7.png"
+    "image": "/images/products/Speaker 7.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Speaker 9",
@@ -1032,7 +1304,11 @@
         "price": 285
       }
     ],
-    "image": "/images/products/Speaker 9.png"
+    "image": "/images/products/Speaker 9.png",
+    "prices": {
+      "EGP": 313.5,
+      "EUR": 8.55
+    }
   },
   {
     "code": "Speaker 10",
@@ -1047,7 +1323,11 @@
         "price": 425
       }
     ],
-    "image": "/images/products/Speaker 10.png"
+    "image": "/images/products/Speaker 10.png",
+    "prices": {
+      "EGP": 467.5,
+      "EUR": 12.75
+    }
   },
   {
     "code": "Speaker 11",
@@ -1062,7 +1342,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Speaker 11.png"
+    "image": "/images/products/Speaker 11.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Speaker 12",
@@ -1077,7 +1361,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Speaker 12.png"
+    "image": "/images/products/Speaker 12.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Speaker 13",
@@ -1092,7 +1380,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Speaker 13.png"
+    "image": "/images/products/Speaker 13.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Speaker 22",
@@ -1107,7 +1399,11 @@
         "price": 595
       }
     ],
-    "image": "/images/products/Speaker 22.png"
+    "image": "/images/products/Speaker 22.png",
+    "prices": {
+      "EGP": 654.5,
+      "EUR": 17.85
+    }
   },
   {
     "code": "Speaker 30",
@@ -1122,7 +1418,11 @@
         "price": 450
       }
     ],
-    "image": "/images/products/Speaker 30.png"
+    "image": "/images/products/Speaker 30.png",
+    "prices": {
+      "EGP": 495,
+      "EUR": 13.5
+    }
   },
   {
     "code": "Headphone 1",
@@ -1137,7 +1437,11 @@
         "price": 375
       }
     ],
-    "image": "/images/products/Headphone 1.png"
+    "image": "/images/products/Headphone 1.png",
+    "prices": {
+      "EGP": 412.5,
+      "EUR": 11.25
+    }
   },
   {
     "code": "Headphone 2",
@@ -1152,7 +1456,11 @@
         "price": 415
       }
     ],
-    "image": "/images/products/Headphone 2.png"
+    "image": "/images/products/Headphone 2.png",
+    "prices": {
+      "EGP": 456.5,
+      "EUR": 12.45
+    }
   },
   {
     "code": "Airpods 1",
@@ -1167,7 +1475,11 @@
         "price": 560
       }
     ],
-    "image": "/images/products/Airpods 1.png"
+    "image": "/images/products/Airpods 1.png",
+    "prices": {
+      "EGP": 616,
+      "EUR": 16.8
+    }
   },
   {
     "code": "Airpods 2",
@@ -1182,7 +1494,11 @@
         "price": 820
       }
     ],
-    "image": "/images/products/Airpods 2.png"
+    "image": "/images/products/Airpods 2.png",
+    "prices": {
+      "EGP": 902,
+      "EUR": 24.6
+    }
   },
   {
     "code": "Smart Watch 1",
@@ -1197,7 +1513,11 @@
         "price": 590
       }
     ],
-    "image": "/images/products/Smart Watch 1.png"
+    "image": "/images/products/Smart Watch 1.png",
+    "prices": {
+      "EGP": 649,
+      "EUR": 17.7
+    }
   },
   {
     "code": "Mouse 1",
@@ -1212,7 +1532,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Mouse 1.png"
+    "image": "/images/products/Mouse 1.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Mouse 8",
@@ -1227,7 +1551,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Mouse 8.png"
+    "image": "/images/products/Mouse 8.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Mouse 9",
@@ -1242,7 +1570,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/Mouse 9.png"
+    "image": "/images/products/Mouse 9.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "Mouse 10",
@@ -1257,7 +1589,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Mouse 10.png"
+    "image": "/images/products/Mouse 10.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Mouse 11",
@@ -1272,7 +1608,11 @@
         "price": 190
       }
     ],
-    "image": "/images/products/Mouse 11.png"
+    "image": "/images/products/Mouse 11.png",
+    "prices": {
+      "EGP": 209,
+      "EUR": 5.7
+    }
   },
   {
     "code": "Mouse 12",
@@ -1287,7 +1627,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/Mouse 12.png"
+    "image": "/images/products/Mouse 12.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "Mouse Pad 1",
@@ -1302,7 +1646,11 @@
         "price": 250
       }
     ],
-    "image": "/images/products/Mouse Pad 1.png"
+    "image": "/images/products/Mouse Pad 1.png",
+    "prices": {
+      "EGP": 275,
+      "EUR": 7.5
+    }
   },
   {
     "code": "Mouse Pad 3",
@@ -1317,7 +1665,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Mouse Pad 3.png"
+    "image": "/images/products/Mouse Pad 3.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "NB 2",
@@ -1332,7 +1684,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/NB 2.png"
+    "image": "/images/products/NB 2.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "NB 4",
@@ -1347,7 +1703,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/NB 4.png"
+    "image": "/images/products/NB 4.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "NB 6",
@@ -1362,7 +1722,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/NB 6.png"
+    "image": "/images/products/NB 6.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "NB 7",
@@ -1377,7 +1741,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/NB 7.png"
+    "image": "/images/products/NB 7.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "NB 8",
@@ -1392,7 +1760,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/NB 8.png"
+    "image": "/images/products/NB 8.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "NB 9",
@@ -1407,7 +1779,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/NB 9.png"
+    "image": "/images/products/NB 9.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "NB 10",
@@ -1422,7 +1798,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/NB 10.png"
+    "image": "/images/products/NB 10.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "NB 11",
@@ -1437,7 +1817,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/NB 11.png"
+    "image": "/images/products/NB 11.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "NB 12",
@@ -1452,7 +1836,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/NB 12.png"
+    "image": "/images/products/NB 12.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "NB 13",
@@ -1467,7 +1855,11 @@
         "price": 155
       }
     ],
-    "image": "/images/products/NB 13.png"
+    "image": "/images/products/NB 13.png",
+    "prices": {
+      "EGP": 170.5,
+      "EUR": 4.65
+    }
   },
   {
     "code": "NB 14",
@@ -1482,7 +1874,11 @@
         "price": 245
       }
     ],
-    "image": "/images/products/NB 14.png"
+    "image": "/images/products/NB 14.png",
+    "prices": {
+      "EGP": 269.5,
+      "EUR": 7.35
+    }
   },
   {
     "code": "NB 15",
@@ -1497,7 +1893,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/NB 15.png"
+    "image": "/images/products/NB 15.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "NB 16",
@@ -1512,7 +1912,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/NB 16.png"
+    "image": "/images/products/NB 16.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "NB 24",
@@ -1527,7 +1931,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/NB 24.png"
+    "image": "/images/products/NB 24.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "NB 25",
@@ -1542,7 +1950,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/NB 25.png"
+    "image": "/images/products/NB 25.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "NB 26",
@@ -1557,7 +1969,11 @@
         "price": 160
       }
     ],
-    "image": "/images/products/NB 26.png"
+    "image": "/images/products/NB 26.png",
+    "prices": {
+      "EGP": 176,
+      "EUR": 4.8
+    }
   },
   {
     "code": "NB 30",
@@ -1572,7 +1988,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/NB 30.png"
+    "image": "/images/products/NB 30.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "NB 44",
@@ -1587,7 +2007,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/NB 44.png"
+    "image": "/images/products/NB 44.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "NB 47",
@@ -1602,7 +2026,11 @@
         "price": 115
       }
     ],
-    "image": "/images/products/NB 47.png"
+    "image": "/images/products/NB 47.png",
+    "prices": {
+      "EGP": 126.5,
+      "EUR": 3.45
+    }
   },
   {
     "code": "NB 48",
@@ -1617,7 +2045,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/NB 48.png"
+    "image": "/images/products/NB 48.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "NB 50",
@@ -1632,7 +2064,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/NB 50.png"
+    "image": "/images/products/NB 50.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "NB Set 1",
@@ -1647,7 +2083,11 @@
         "price": 620
       }
     ],
-    "image": "/images/products/NB Set 1.png"
+    "image": "/images/products/NB Set 1.png",
+    "prices": {
+      "EGP": 682,
+      "EUR": 18.6
+    }
   },
   {
     "code": "NB Set 2",
@@ -1662,7 +2102,11 @@
         "price": 620
       }
     ],
-    "image": "/images/products/NB Set 2.png"
+    "image": "/images/products/NB Set 2.png",
+    "prices": {
+      "EGP": 682,
+      "EUR": 18.6
+    }
   },
   {
     "code": "NB Set 4",
@@ -1677,7 +2121,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/NB Set 4.png"
+    "image": "/images/products/NB Set 4.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "NB Set 5",
@@ -1692,7 +2140,11 @@
         "price": 245
       }
     ],
-    "image": "/images/products/NB Set 5.png"
+    "image": "/images/products/NB Set 5.png",
+    "prices": {
+      "EGP": 269.5,
+      "EUR": 7.35
+    }
   },
   {
     "code": "NB Set 6",
@@ -1707,7 +2159,11 @@
         "price": 245
       }
     ],
-    "image": "/images/products/NB Set 6.png"
+    "image": "/images/products/NB Set 6.png",
+    "prices": {
+      "EGP": 269.5,
+      "EUR": 7.35
+    }
   },
   {
     "code": "NB Set 7",
@@ -1722,7 +2178,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/NB Set 7.png"
+    "image": "/images/products/NB Set 7.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "NB Set 10",
@@ -1737,7 +2197,11 @@
         "price": 465
       }
     ],
-    "image": "/images/products/NB Set 10.png"
+    "image": "/images/products/NB Set 10.png",
+    "prices": {
+      "EGP": 511.5,
+      "EUR": 13.95
+    }
   },
   {
     "code": "NB Set 11",
@@ -1752,7 +2216,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/NB Set 11.png"
+    "image": "/images/products/NB Set 11.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "NB Set 12",
@@ -1767,7 +2235,11 @@
         "price": 390
       }
     ],
-    "image": "/images/products/NB Set 12.png"
+    "image": "/images/products/NB Set 12.png",
+    "prices": {
+      "EGP": 429,
+      "EUR": 11.7
+    }
   },
   {
     "code": "NB Set 13",
@@ -1782,7 +2254,11 @@
         "price": 325
       }
     ],
-    "image": "/images/products/NB Set 13.png"
+    "image": "/images/products/NB Set 13.png",
+    "prices": {
+      "EGP": 357.5,
+      "EUR": 9.75
+    }
   },
   {
     "code": "NB Set 14",
@@ -1797,7 +2273,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/NB Set 14.png"
+    "image": "/images/products/NB Set 14.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "NB Set 16",
@@ -1812,7 +2292,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/NB Set 16.png"
+    "image": "/images/products/NB Set 16.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "NB Set 17",
@@ -1827,7 +2311,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/NB Set 17.png"
+    "image": "/images/products/NB Set 17.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "NB Set 18",
@@ -1842,7 +2330,11 @@
         "price": 350
       }
     ],
-    "image": "/images/products/NB Set 18.png"
+    "image": "/images/products/NB Set 18.png",
+    "prices": {
+      "EGP": 385,
+      "EUR": 10.5
+    }
   },
   {
     "code": "NB Set 19",
@@ -1857,7 +2349,11 @@
         "price": 350
       }
     ],
-    "image": "/images/products/NB Set 19.png"
+    "image": "/images/products/NB Set 19.png",
+    "prices": {
+      "EGP": 385,
+      "EUR": 10.5
+    }
   },
   {
     "code": "NB Set 20",
@@ -1872,7 +2368,11 @@
         "price": 395
       }
     ],
-    "image": "/images/products/NB Set 20.png"
+    "image": "/images/products/NB Set 20.png",
+    "prices": {
+      "EGP": 434.5,
+      "EUR": 11.85
+    }
   },
   {
     "code": "NB Set 21",
@@ -1887,7 +2387,11 @@
         "price": 475
       }
     ],
-    "image": "/images/products/NB Set 21.png"
+    "image": "/images/products/NB Set 21.png",
+    "prices": {
+      "EGP": 522.5,
+      "EUR": 14.25
+    }
   },
   {
     "code": "NB Set 25",
@@ -1902,7 +2406,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/NB Set 25.png"
+    "image": "/images/products/NB Set 25.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "NB Set 26",
@@ -1917,7 +2425,11 @@
         "price": 675
       }
     ],
-    "image": "/images/products/NB Set 26.png"
+    "image": "/images/products/NB Set 26.png",
+    "prices": {
+      "EGP": 742.5,
+      "EUR": 20.25
+    }
   },
   {
     "code": "NB Set 27",
@@ -1932,7 +2444,11 @@
         "price": 790
       }
     ],
-    "image": "/images/products/NB Set 27.png"
+    "image": "/images/products/NB Set 27.png",
+    "prices": {
+      "EGP": 869,
+      "EUR": 23.7
+    }
   },
   {
     "code": "FL 6",
@@ -1947,7 +2463,11 @@
         "price": 875
       }
     ],
-    "image": "/images/products/FL 6.png"
+    "image": "/images/products/FL 6.png",
+    "prices": {
+      "EGP": 962.5,
+      "EUR": 26.25
+    }
   },
   {
     "code": "FL 7",
@@ -1962,7 +2482,11 @@
         "price": 975
       }
     ],
-    "image": "/images/products/FL 7.png"
+    "image": "/images/products/FL 7.png",
+    "prices": {
+      "EGP": 1072.5,
+      "EUR": 29.25
+    }
   },
   {
     "code": "FL 8",
@@ -1977,7 +2501,11 @@
         "price": 1250
       }
     ],
-    "image": "/images/products/FL 8.png"
+    "image": "/images/products/FL 8.png",
+    "prices": {
+      "EGP": 1375,
+      "EUR": 37.5
+    }
   },
   {
     "code": "FL 9",
@@ -1992,7 +2520,11 @@
         "price": 1250
       }
     ],
-    "image": "/images/products/FL 9.png"
+    "image": "/images/products/FL 9.png",
+    "prices": {
+      "EGP": 1375,
+      "EUR": 37.5
+    }
   },
   {
     "code": "FL 10",
@@ -2007,7 +2539,11 @@
         "price": 975
       }
     ],
-    "image": "/images/products/FL 10.png"
+    "image": "/images/products/FL 10.png",
+    "prices": {
+      "EGP": 1072.5,
+      "EUR": 29.25
+    }
   },
   {
     "code": "FL 11",
@@ -2022,7 +2558,11 @@
         "price": 1190
       }
     ],
-    "image": "/images/products/FL 11.png"
+    "image": "/images/products/FL 11.png",
+    "prices": {
+      "EGP": 1309,
+      "EUR": 35.7
+    }
   },
   {
     "code": "FL 18",
@@ -2037,7 +2577,11 @@
         "price": 40
       }
     ],
-    "image": "/images/products/FL 18.png"
+    "image": "/images/products/FL 18.png",
+    "prices": {
+      "EGP": 44,
+      "EUR": 1.2
+    }
   },
   {
     "code": "FL 20",
@@ -2052,7 +2596,11 @@
         "price": 1150
       }
     ],
-    "image": "/images/products/FL 20.png"
+    "image": "/images/products/FL 20.png",
+    "prices": {
+      "EGP": 1265,
+      "EUR": 34.5
+    }
   },
   {
     "code": "FL 21",
@@ -2067,7 +2615,11 @@
         "price": 950
       }
     ],
-    "image": "/images/products/FL 21.png"
+    "image": "/images/products/FL 21.png",
+    "prices": {
+      "EGP": 1045,
+      "EUR": 28.5
+    }
   },
   {
     "code": "FL 22",
@@ -2082,7 +2634,11 @@
         "price": 950
       }
     ],
-    "image": "/images/products/FL 22.png"
+    "image": "/images/products/FL 22.png",
+    "prices": {
+      "EGP": 1045,
+      "EUR": 28.5
+    }
   },
   {
     "code": "FL 45",
@@ -2097,7 +2653,11 @@
         "price": 1100
       }
     ],
-    "image": "/images/products/FL 45.png"
+    "image": "/images/products/FL 45.png",
+    "prices": {
+      "EGP": 1210,
+      "EUR": 33
+    }
   },
   {
     "code": "MP 2",
@@ -2112,7 +2672,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/MP 2.png"
+    "image": "/images/products/MP 2.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "MP 4",
@@ -2127,7 +2691,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/MP 4.png"
+    "image": "/images/products/MP 4.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "MP 7",
@@ -2142,7 +2710,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/MP 7.png"
+    "image": "/images/products/MP 7.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "MP 10",
@@ -2157,7 +2729,11 @@
         "price": 58
       }
     ],
-    "image": "/images/products/MP 10.png"
+    "image": "/images/products/MP 10.png",
+    "prices": {
+      "EGP": 63.8,
+      "EUR": 1.74
+    }
   },
   {
     "code": "MP 11",
@@ -2172,7 +2748,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/MP 11.png"
+    "image": "/images/products/MP 11.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "MP 13",
@@ -2187,7 +2767,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/MP 13.png"
+    "image": "/images/products/MP 13.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "MP 14",
@@ -2202,7 +2786,11 @@
         "price": 79
       }
     ],
-    "image": "/images/products/MP 14.png"
+    "image": "/images/products/MP 14.png",
+    "prices": {
+      "EGP": 86.9,
+      "EUR": 2.37
+    }
   },
   {
     "code": "MP 15",
@@ -2217,7 +2805,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/MP 15.png"
+    "image": "/images/products/MP 15.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "MP 16",
@@ -2232,7 +2824,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/MP 16.png"
+    "image": "/images/products/MP 16.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "MP 17",
@@ -2247,7 +2843,11 @@
         "price": 79
       }
     ],
-    "image": "/images/products/MP 17.png"
+    "image": "/images/products/MP 17.png",
+    "prices": {
+      "EGP": 86.9,
+      "EUR": 2.37
+    }
   },
   {
     "code": "MP 18",
@@ -2262,7 +2862,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/MP 18.png"
+    "image": "/images/products/MP 18.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "MP 20",
@@ -2277,7 +2881,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/MP 20.png"
+    "image": "/images/products/MP 20.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "MP 21",
@@ -2292,7 +2900,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/MP 21.png"
+    "image": "/images/products/MP 21.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "CH 1",
@@ -2307,7 +2919,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/CH 1.png"
+    "image": "/images/products/CH 1.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "CH 2",
@@ -2322,7 +2938,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/CH 2.png"
+    "image": "/images/products/CH 2.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "CH 4",
@@ -2337,7 +2957,11 @@
         "price": 25
       }
     ],
-    "image": "/images/products/CH 4.png"
+    "image": "/images/products/CH 4.png",
+    "prices": {
+      "EGP": 27.5,
+      "EUR": 0.75
+    }
   },
   {
     "code": "CH 5",
@@ -2352,7 +2976,11 @@
         "price": 25
       }
     ],
-    "image": "/images/products/CH 5.png"
+    "image": "/images/products/CH 5.png",
+    "prices": {
+      "EGP": 27.5,
+      "EUR": 0.75
+    }
   },
   {
     "code": "CH 8",
@@ -2367,7 +2995,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/CH 8.png"
+    "image": "/images/products/CH 8.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "CH 9",
@@ -2382,7 +3014,11 @@
         "price": 39
       }
     ],
-    "image": "/images/products/CH 9.png"
+    "image": "/images/products/CH 9.png",
+    "prices": {
+      "EGP": 42.9,
+      "EUR": 1.17
+    }
   },
   {
     "code": "CH 13",
@@ -2397,7 +3033,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/CH 13.png"
+    "image": "/images/products/CH 13.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "CH 14",
@@ -2412,7 +3052,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/CH 14.png"
+    "image": "/images/products/CH 14.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "CH 15",
@@ -2427,7 +3071,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/CH 15.png"
+    "image": "/images/products/CH 15.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "CH 16",
@@ -2442,7 +3090,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/CH 16.png"
+    "image": "/images/products/CH 16.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "CH 17",
@@ -2457,7 +3109,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/CH 17.png"
+    "image": "/images/products/CH 17.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "CH 19",
@@ -2472,7 +3128,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/CH 19.png"
+    "image": "/images/products/CH 19.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "CH 21",
@@ -2487,7 +3147,11 @@
         "price": 35
       }
     ],
-    "image": "/images/products/CH 21.png"
+    "image": "/images/products/CH 21.png",
+    "prices": {
+      "EGP": 38.5,
+      "EUR": 1.05
+    }
   },
   {
     "code": "CH 50",
@@ -2502,7 +3166,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/CH 50.png"
+    "image": "/images/products/CH 50.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "Wallet 3",
@@ -2517,7 +3185,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/Wallet 3.png"
+    "image": "/images/products/Wallet 3.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "Wallet 5",
@@ -2532,7 +3204,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Wallet 5.png"
+    "image": "/images/products/Wallet 5.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Wallet 10",
@@ -2547,7 +3223,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/Wallet 10.png"
+    "image": "/images/products/Wallet 10.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "KH 1",
@@ -2562,7 +3242,11 @@
         "price": 59
       }
     ],
-    "image": "/images/products/KH 1.png"
+    "image": "/images/products/KH 1.png",
+    "prices": {
+      "EGP": 64.9,
+      "EUR": 1.77
+    }
   },
   {
     "code": "KH 2",
@@ -2577,7 +3261,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/KH 2.png"
+    "image": "/images/products/KH 2.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "KH 3",
@@ -2592,7 +3280,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/KH 3.png"
+    "image": "/images/products/KH 3.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "KH 5",
@@ -2607,7 +3299,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/KH 5.png"
+    "image": "/images/products/KH 5.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "KH 7",
@@ -2622,7 +3318,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/KH 7.png"
+    "image": "/images/products/KH 7.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "KH 10",
@@ -2637,7 +3337,11 @@
         "price": 55
       }
     ],
-    "image": "/images/products/KH 10.png"
+    "image": "/images/products/KH 10.png",
+    "prices": {
+      "EGP": 60.5,
+      "EUR": 1.65
+    }
   },
   {
     "code": "KH 11",
@@ -2652,7 +3356,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/KH 11.png"
+    "image": "/images/products/KH 11.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "KH 14",
@@ -2667,7 +3375,11 @@
         "price": 6
       }
     ],
-    "image": "/images/products/KH 14.png"
+    "image": "/images/products/KH 14.png",
+    "prices": {
+      "EGP": 6.6,
+      "EUR": 0.18
+    }
   },
   {
     "code": "KH 18",
@@ -2682,7 +3394,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/KH 18.png"
+    "image": "/images/products/KH 18.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "KH 19",
@@ -2697,7 +3413,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/KH 19.png"
+    "image": "/images/products/KH 19.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "KH 20",
@@ -2712,7 +3432,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/KH 20.png"
+    "image": "/images/products/KH 20.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "KH 22",
@@ -2727,7 +3451,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/KH 22.png"
+    "image": "/images/products/KH 22.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "KH 23",
@@ -2742,7 +3470,11 @@
         "price": 72
       }
     ],
-    "image": "/images/products/KH 23.png"
+    "image": "/images/products/KH 23.png",
+    "prices": {
+      "EGP": 79.2,
+      "EUR": 2.16
+    }
   },
   {
     "code": "EP 1",
@@ -2757,7 +3489,11 @@
         "price": 59
       }
     ],
-    "image": "/images/products/EP 1.png"
+    "image": "/images/products/EP 1.png",
+    "prices": {
+      "EGP": 64.9,
+      "EUR": 1.77
+    }
   },
   {
     "code": "EP 2",
@@ -2772,7 +3508,11 @@
         "price": 39
       }
     ],
-    "image": "/images/products/EP 2.png"
+    "image": "/images/products/EP 2.png",
+    "prices": {
+      "EGP": 42.9,
+      "EUR": 1.17
+    }
   },
   {
     "code": "EP 3",
@@ -2787,7 +3527,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/EP 3.png"
+    "image": "/images/products/EP 3.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "EP 5",
@@ -2802,7 +3546,11 @@
         "price": 39
       }
     ],
-    "image": "/images/products/EP 5.png"
+    "image": "/images/products/EP 5.png",
+    "prices": {
+      "EGP": 42.9,
+      "EUR": 1.17
+    }
   },
   {
     "code": "EP 7",
@@ -2817,7 +3565,11 @@
         "price": 39
       }
     ],
-    "image": "/images/products/EP 7.png"
+    "image": "/images/products/EP 7.png",
+    "prices": {
+      "EGP": 42.9,
+      "EUR": 1.17
+    }
   },
   {
     "code": "EP 10",
@@ -2832,7 +3584,11 @@
         "price": 32
       }
     ],
-    "image": "/images/products/EP 10.png"
+    "image": "/images/products/EP 10.png",
+    "prices": {
+      "EGP": 35.2,
+      "EUR": 0.96
+    }
   },
   {
     "code": "EP 11",
@@ -2847,7 +3603,11 @@
         "price": 35
       }
     ],
-    "image": "/images/products/EP 11.png"
+    "image": "/images/products/EP 11.png",
+    "prices": {
+      "EGP": 38.5,
+      "EUR": 1.05
+    }
   },
   {
     "code": "EP 12",
@@ -2862,7 +3622,11 @@
         "price": 55
       }
     ],
-    "image": "/images/products/EP 12.png"
+    "image": "/images/products/EP 12.png",
+    "prices": {
+      "EGP": 60.5,
+      "EUR": 1.65
+    }
   },
   {
     "code": "EP 13",
@@ -2877,7 +3641,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/EP 13.png"
+    "image": "/images/products/EP 13.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "EP 14",
@@ -2892,7 +3660,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/EP 14.png"
+    "image": "/images/products/EP 14.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "EP 14 Slim",
@@ -2907,7 +3679,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/EP 14 Slim.png"
+    "image": "/images/products/EP 14 Slim.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "EP 16",
@@ -2922,7 +3698,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/EP 16.png"
+    "image": "/images/products/EP 16.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "EP 17",
@@ -2937,7 +3717,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/EP 17.png"
+    "image": "/images/products/EP 17.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "EP 19",
@@ -2952,7 +3736,11 @@
         "price": 15
       }
     ],
-    "image": "/images/products/EP 19.png"
+    "image": "/images/products/EP 19.png",
+    "prices": {
+      "EGP": 16.5,
+      "EUR": 0.45
+    }
   },
   {
     "code": "EP 20",
@@ -2967,7 +3755,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/EP 20.png"
+    "image": "/images/products/EP 20.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "EP 24",
@@ -2982,7 +3774,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/EP 24.png"
+    "image": "/images/products/EP 24.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "EP 27",
@@ -2997,7 +3793,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 27.png"
+    "image": "/images/products/EP 27.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "EP 28",
@@ -3012,7 +3812,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 28.png"
+    "image": "/images/products/EP 28.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "EP 29",
@@ -3027,7 +3831,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 29.png"
+    "image": "/images/products/EP 29.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "EP 30",
@@ -3042,7 +3850,11 @@
         "price": 26
       }
     ],
-    "image": "/images/products/EP 30.png"
+    "image": "/images/products/EP 30.png",
+    "prices": {
+      "EGP": 28.6,
+      "EUR": 0.78
+    }
   },
   {
     "code": "EP 32",
@@ -3057,7 +3869,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 32.png"
+    "image": "/images/products/EP 32.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "EP 34",
@@ -3072,7 +3888,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/EP 34.png"
+    "image": "/images/products/EP 34.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "EP 40",
@@ -3087,7 +3907,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 40.png"
+    "image": "/images/products/EP 40.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "EP 47",
@@ -3102,7 +3926,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/EP 47.png"
+    "image": "/images/products/EP 47.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "EP 51",
@@ -3117,7 +3945,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/EP 51.png"
+    "image": "/images/products/EP 51.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "EP 52",
@@ -3132,7 +3964,11 @@
         "price": 49
       }
     ],
-    "image": "/images/products/EP 52.png"
+    "image": "/images/products/EP 52.png",
+    "prices": {
+      "EGP": 53.9,
+      "EUR": 1.47
+    }
   },
   {
     "code": "EP 54",
@@ -3147,7 +3983,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 54.png"
+    "image": "/images/products/EP 54.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "EP 55",
@@ -3162,7 +4002,11 @@
         "price": 27.5
       }
     ],
-    "image": "/images/products/EP 55.png"
+    "image": "/images/products/EP 55.png",
+    "prices": {
+      "EGP": 30.25,
+      "EUR": 0.83
+    }
   },
   {
     "code": "EP 56",
@@ -3177,7 +4021,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/EP 56.png"
+    "image": "/images/products/EP 56.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "PS 2",
@@ -3192,7 +4040,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/PS 2.png"
+    "image": "/images/products/PS 2.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "PS 3",
@@ -3207,7 +4059,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/PS 3.png"
+    "image": "/images/products/PS 3.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "PS 9",
@@ -3222,7 +4078,11 @@
         "price": 89
       }
     ],
-    "image": "/images/products/PS 9.png"
+    "image": "/images/products/PS 9.png",
+    "prices": {
+      "EGP": 97.9,
+      "EUR": 2.67
+    }
   },
   {
     "code": "PS 11",
@@ -3237,7 +4097,11 @@
         "price": 115
       }
     ],
-    "image": "/images/products/PS 11.png"
+    "image": "/images/products/PS 11.png",
+    "prices": {
+      "EGP": 126.5,
+      "EUR": 3.45
+    }
   },
   {
     "code": "PS 12",
@@ -3252,7 +4116,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/PS 12.png"
+    "image": "/images/products/PS 12.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "PS 15",
@@ -3267,7 +4135,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/PS 15.png"
+    "image": "/images/products/PS 15.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "PS 17",
@@ -3282,7 +4154,11 @@
         "price": 89
       }
     ],
-    "image": "/images/products/PS 17.png"
+    "image": "/images/products/PS 17.png",
+    "prices": {
+      "EGP": 97.9,
+      "EUR": 2.67
+    }
   },
   {
     "code": "P.Box 1",
@@ -3297,7 +4173,11 @@
         "price": 35
       }
     ],
-    "image": "/images/products/P.Box 1.png"
+    "image": "/images/products/P.Box 1.png",
+    "prices": {
+      "EGP": 38.5,
+      "EUR": 1.05
+    }
   },
   {
     "code": "P.Box 2",
@@ -3312,7 +4192,11 @@
         "price": 27
       }
     ],
-    "image": "/images/products/P.Box 2.png"
+    "image": "/images/products/P.Box 2.png",
+    "prices": {
+      "EGP": 29.7,
+      "EUR": 0.81
+    }
   },
   {
     "code": "P.Box 3",
@@ -3327,7 +4211,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/P.Box 3.png"
+    "image": "/images/products/P.Box 3.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "P.Box 4",
@@ -3342,7 +4230,11 @@
         "price": 10
       }
     ],
-    "image": "/images/products/P.Box 4.png"
+    "image": "/images/products/P.Box 4.png",
+    "prices": {
+      "EGP": 11,
+      "EUR": 0.3
+    }
   },
   {
     "code": "P.Box 7",
@@ -3357,7 +4249,11 @@
         "price": 12
       }
     ],
-    "image": "/images/products/P.Box 7.png"
+    "image": "/images/products/P.Box 7.png",
+    "prices": {
+      "EGP": 13.2,
+      "EUR": 0.36
+    }
   },
   {
     "code": "P.Box 13",
@@ -3372,7 +4268,11 @@
         "price": 12
       }
     ],
-    "image": "/images/products/P.Box 13.png"
+    "image": "/images/products/P.Box 13.png",
+    "prices": {
+      "EGP": 13.2,
+      "EUR": 0.36
+    }
   },
   {
     "code": "P.Box 23",
@@ -3387,7 +4287,11 @@
         "price": 12
       }
     ],
-    "image": "/images/products/P.Box 23.png"
+    "image": "/images/products/P.Box 23.png",
+    "prices": {
+      "EGP": 13.2,
+      "EUR": 0.36
+    }
   },
   {
     "code": "P.Box 40",
@@ -3402,7 +4306,11 @@
         "price": 12
       }
     ],
-    "image": "/images/products/P.Box 40.png"
+    "image": "/images/products/P.Box 40.png",
+    "prices": {
+      "EGP": 13.2,
+      "EUR": 0.36
+    }
   },
   {
     "code": "P.Box 42",
@@ -3417,7 +4325,11 @@
         "price": 12
       }
     ],
-    "image": "/images/products/P.Box 42.png"
+    "image": "/images/products/P.Box 42.png",
+    "prices": {
+      "EGP": 13.2,
+      "EUR": 0.36
+    }
   },
   {
     "code": "Cross Pen",
@@ -3432,7 +4344,11 @@
         "price": 4950
       }
     ],
-    "image": "/images/products/Cross Pen.png"
+    "image": "/images/products/Cross Pen.png",
+    "prices": {
+      "EGP": 5445,
+      "EUR": 148.5
+    }
   },
   {
     "code": "PP 1",
@@ -3447,7 +4363,11 @@
         "price": 39
       }
     ],
-    "image": "/images/products/PP 1.png"
+    "image": "/images/products/PP 1.png",
+    "prices": {
+      "EGP": 42.9,
+      "EUR": 1.17
+    }
   },
   {
     "code": "PP 2",
@@ -3462,7 +4382,11 @@
         "price": 12
       }
     ],
-    "image": "/images/products/PP 2.png"
+    "image": "/images/products/PP 2.png",
+    "prices": {
+      "EGP": 13.2,
+      "EUR": 0.36
+    }
   },
   {
     "code": "PP 4",
@@ -3477,7 +4401,11 @@
         "price": 7.5
       }
     ],
-    "image": "/images/products/PP 4.png"
+    "image": "/images/products/PP 4.png",
+    "prices": {
+      "EGP": 8.25,
+      "EUR": 0.22
+    }
   },
   {
     "code": "PP 6",
@@ -3492,7 +4420,11 @@
         "price": 8.9
       }
     ],
-    "image": "/images/products/PP 6.png"
+    "image": "/images/products/PP 6.png",
+    "prices": {
+      "EGP": 9.79,
+      "EUR": 0.27
+    }
   },
   {
     "code": "PP 9",
@@ -3507,7 +4439,11 @@
         "price": 6.5
       }
     ],
-    "image": "/images/products/PP 9.png"
+    "image": "/images/products/PP 9.png",
+    "prices": {
+      "EGP": 7.15,
+      "EUR": 0.2
+    }
   },
   {
     "code": "PP 10",
@@ -3522,7 +4458,11 @@
         "price": 7.9
       }
     ],
-    "image": "/images/products/PP 10.png"
+    "image": "/images/products/PP 10.png",
+    "prices": {
+      "EGP": 8.69,
+      "EUR": 0.24
+    }
   },
   {
     "code": "PP 13",
@@ -3537,7 +4477,11 @@
         "price": 9.5
       }
     ],
-    "image": "/images/products/PP 13.png"
+    "image": "/images/products/PP 13.png",
+    "prices": {
+      "EGP": 10.45,
+      "EUR": 0.29
+    }
   },
   {
     "code": "PP 15",
@@ -3552,7 +4496,11 @@
         "price": 8.7
       }
     ],
-    "image": "/images/products/PP 15.png"
+    "image": "/images/products/PP 15.png",
+    "prices": {
+      "EGP": 9.57,
+      "EUR": 0.26
+    }
   },
   {
     "code": "PP 16",
@@ -3567,7 +4515,11 @@
         "price": 9.5
       }
     ],
-    "image": "/images/products/PP 16.png"
+    "image": "/images/products/PP 16.png",
+    "prices": {
+      "EGP": 10.45,
+      "EUR": 0.29
+    }
   },
   {
     "code": "PP 17",
@@ -3582,7 +4534,11 @@
         "price": 9.9
       }
     ],
-    "image": "/images/products/PP 17.png"
+    "image": "/images/products/PP 17.png",
+    "prices": {
+      "EGP": 10.89,
+      "EUR": 0.3
+    }
   },
   {
     "code": "PP 18",
@@ -3597,7 +4553,11 @@
         "price": 8.5
       }
     ],
-    "image": "/images/products/PP 18.png"
+    "image": "/images/products/PP 18.png",
+    "prices": {
+      "EGP": 9.35,
+      "EUR": 0.26
+    }
   },
   {
     "code": "PP 19",
@@ -3612,7 +4572,11 @@
         "price": 6.9
       }
     ],
-    "image": "/images/products/PP 19.png"
+    "image": "/images/products/PP 19.png",
+    "prices": {
+      "EGP": 7.59,
+      "EUR": 0.21
+    }
   },
   {
     "code": "PP 20",
@@ -3627,7 +4591,11 @@
         "price": 9.5
       }
     ],
-    "image": "/images/products/PP 20.png"
+    "image": "/images/products/PP 20.png",
+    "prices": {
+      "EGP": 10.45,
+      "EUR": 0.29
+    }
   },
   {
     "code": "PP 21",
@@ -3642,7 +4610,11 @@
         "price": 10.5
       }
     ],
-    "image": "/images/products/PP 21.png"
+    "image": "/images/products/PP 21.png",
+    "prices": {
+      "EGP": 11.55,
+      "EUR": 0.32
+    }
   },
   {
     "code": "PP 22",
@@ -3657,7 +4629,11 @@
         "price": 6.5
       }
     ],
-    "image": "/images/products/PP 22.png"
+    "image": "/images/products/PP 22.png",
+    "prices": {
+      "EGP": 7.15,
+      "EUR": 0.2
+    }
   },
   {
     "code": "PP 26",
@@ -3672,7 +4648,11 @@
         "price": 13.5
       }
     ],
-    "image": "/images/products/PP 26.png"
+    "image": "/images/products/PP 26.png",
+    "prices": {
+      "EGP": 14.85,
+      "EUR": 0.41
+    }
   },
   {
     "code": "PP 28",
@@ -3687,7 +4667,11 @@
         "price": 18
       }
     ],
-    "image": "/images/products/PP 28.png"
+    "image": "/images/products/PP 28.png",
+    "prices": {
+      "EGP": 19.8,
+      "EUR": 0.54
+    }
   },
   {
     "code": "PP 29",
@@ -3702,7 +4686,11 @@
         "price": 7.9
       }
     ],
-    "image": "/images/products/PP 29.png"
+    "image": "/images/products/PP 29.png",
+    "prices": {
+      "EGP": 8.69,
+      "EUR": 0.24
+    }
   },
   {
     "code": "PP 30",
@@ -3717,7 +4705,11 @@
         "price": 9.5
       }
     ],
-    "image": "/images/products/PP 30.png"
+    "image": "/images/products/PP 30.png",
+    "prices": {
+      "EGP": 10.45,
+      "EUR": 0.29
+    }
   },
   {
     "code": "PP 31",
@@ -3732,7 +4724,11 @@
         "price": 25
       }
     ],
-    "image": "/images/products/PP 31.png"
+    "image": "/images/products/PP 31.png",
+    "prices": {
+      "EGP": 27.5,
+      "EUR": 0.75
+    }
   },
   {
     "code": "PP 33",
@@ -3747,7 +4743,11 @@
         "price": 33
       }
     ],
-    "image": "/images/products/PP 33.png"
+    "image": "/images/products/PP 33.png",
+    "prices": {
+      "EGP": 36.3,
+      "EUR": 0.99
+    }
   },
   {
     "code": "PP 46",
@@ -3762,7 +4762,11 @@
         "price": 6.9
       }
     ],
-    "image": "/images/products/PP 46.png"
+    "image": "/images/products/PP 46.png",
+    "prices": {
+      "EGP": 7.59,
+      "EUR": 0.21
+    }
   },
   {
     "code": "PP 48",
@@ -3777,7 +4781,11 @@
         "price": 9.5
       }
     ],
-    "image": "/images/products/PP 48.png"
+    "image": "/images/products/PP 48.png",
+    "prices": {
+      "EGP": 10.45,
+      "EUR": 0.29
+    }
   },
   {
     "code": "PP 53",
@@ -3792,7 +4800,11 @@
         "price": 8.9
       }
     ],
-    "image": "/images/products/PP 53.png"
+    "image": "/images/products/PP 53.png",
+    "prices": {
+      "EGP": 9.79,
+      "EUR": 0.27
+    }
   },
   {
     "code": "PP Set 1",
@@ -3807,7 +4819,11 @@
         "price": 1.7
       }
     ],
-    "image": "/images/products/PP Set 1.png"
+    "image": "/images/products/PP Set 1.png",
+    "prices": {
+      "EGP": 1.87,
+      "EUR": 0.05
+    }
   },
   {
     "code": "CK 1",
@@ -3822,7 +4838,11 @@
         "price": 149
       }
     ],
-    "image": "/images/products/CK 1.png"
+    "image": "/images/products/CK 1.png",
+    "prices": {
+      "EGP": 163.9,
+      "EUR": 4.47
+    }
   },
   {
     "code": "CK 2",
@@ -3837,7 +4857,11 @@
         "price": 149
       }
     ],
-    "image": "/images/products/CK 2.png"
+    "image": "/images/products/CK 2.png",
+    "prices": {
+      "EGP": 163.9,
+      "EUR": 4.47
+    }
   },
   {
     "code": "CK 3",
@@ -3852,7 +4876,11 @@
         "price": 149
       }
     ],
-    "image": "/images/products/CK 3.png"
+    "image": "/images/products/CK 3.png",
+    "prices": {
+      "EGP": 163.9,
+      "EUR": 4.47
+    }
   },
   {
     "code": "CK 4",
@@ -3867,7 +4895,11 @@
         "price": 149
       }
     ],
-    "image": "/images/products/CK 4.png"
+    "image": "/images/products/CK 4.png",
+    "prices": {
+      "EGP": 163.9,
+      "EUR": 4.47
+    }
   },
   {
     "code": "CK 9",
@@ -3882,7 +4914,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/CK 9.png"
+    "image": "/images/products/CK 9.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "CK 10",
@@ -3897,7 +4933,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/CK 10.png"
+    "image": "/images/products/CK 10.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "CK 11",
@@ -3912,7 +4952,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/CK 11.png"
+    "image": "/images/products/CK 11.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "CK 13",
@@ -3927,7 +4971,11 @@
         "price": 155
       }
     ],
-    "image": "/images/products/CK 13.png"
+    "image": "/images/products/CK 13.png",
+    "prices": {
+      "EGP": 170.5,
+      "EUR": 4.65
+    }
   },
   {
     "code": "CK 14",
@@ -3942,7 +4990,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/CK 14.png"
+    "image": "/images/products/CK 14.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "CK 15",
@@ -3957,7 +5009,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/CK 15.png"
+    "image": "/images/products/CK 15.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "CK 16",
@@ -3972,7 +5028,11 @@
         "price": 149
       }
     ],
-    "image": "/images/products/CK 16.png"
+    "image": "/images/products/CK 16.png",
+    "prices": {
+      "EGP": 163.9,
+      "EUR": 4.47
+    }
   },
   {
     "code": "CK 19",
@@ -3987,7 +5047,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/CK 19.png"
+    "image": "/images/products/CK 19.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "CK 20",
@@ -4002,7 +5066,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/CK 20.png"
+    "image": "/images/products/CK 20.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "CK 21",
@@ -4017,7 +5085,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/CK 21.png"
+    "image": "/images/products/CK 21.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "CK 22",
@@ -4032,7 +5104,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/CK 22.png"
+    "image": "/images/products/CK 22.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "CK 23",
@@ -4047,7 +5123,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/CK 23.png"
+    "image": "/images/products/CK 23.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "DC 2",
@@ -4062,7 +5142,11 @@
         "price": 495
       }
     ],
-    "image": "/images/products/DC 2.png"
+    "image": "/images/products/DC 2.png",
+    "prices": {
+      "EGP": 544.5,
+      "EUR": 14.85
+    }
   },
   {
     "code": "DC 3",
@@ -4077,7 +5161,11 @@
         "price": 495
       }
     ],
-    "image": "/images/products/DC 3.png"
+    "image": "/images/products/DC 3.png",
+    "prices": {
+      "EGP": 544.5,
+      "EUR": 14.85
+    }
   },
   {
     "code": "DC 4",
@@ -4092,7 +5180,11 @@
         "price": 320
       }
     ],
-    "image": "/images/products/DC 4.png"
+    "image": "/images/products/DC 4.png",
+    "prices": {
+      "EGP": 352,
+      "EUR": 9.6
+    }
   },
   {
     "code": "DC 5",
@@ -4107,7 +5199,11 @@
         "price": 345
       }
     ],
-    "image": "/images/products/DC 5.png"
+    "image": "/images/products/DC 5.png",
+    "prices": {
+      "EGP": 379.5,
+      "EUR": 10.35
+    }
   },
   {
     "code": "DC 8",
@@ -4122,7 +5218,11 @@
         "price": 1250
       }
     ],
-    "image": "/images/products/DC 8.png"
+    "image": "/images/products/DC 8.png",
+    "prices": {
+      "EGP": 1375,
+      "EUR": 37.5
+    }
   },
   {
     "code": "DC 9",
@@ -4137,7 +5237,11 @@
         "price": 1350
       }
     ],
-    "image": "/images/products/DC 9.png"
+    "image": "/images/products/DC 9.png",
+    "prices": {
+      "EGP": 1485,
+      "EUR": 40.5
+    }
   },
   {
     "code": "TK 1",
@@ -4152,7 +5256,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/TK 1.png"
+    "image": "/images/products/TK 1.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "TK 5",
@@ -4167,7 +5275,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/TK 5.png"
+    "image": "/images/products/TK 5.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "TK 6",
@@ -4182,7 +5294,11 @@
         "price": 325
       }
     ],
-    "image": "/images/products/TK 6.png"
+    "image": "/images/products/TK 6.png",
+    "prices": {
+      "EGP": 357.5,
+      "EUR": 9.75
+    }
   },
   {
     "code": "TK 9",
@@ -4197,7 +5313,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/TK 9.png"
+    "image": "/images/products/TK 9.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "TK 10",
@@ -4212,7 +5332,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/TK 10.png"
+    "image": "/images/products/TK 10.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "TK 11",
@@ -4227,7 +5351,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/TK 11.png"
+    "image": "/images/products/TK 11.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "TK 13",
@@ -4242,7 +5370,11 @@
         "price": 285
       }
     ],
-    "image": "/images/products/TK 13.png"
+    "image": "/images/products/TK 13.png",
+    "prices": {
+      "EGP": 313.5,
+      "EUR": 8.55
+    }
   },
   {
     "code": "TK 16",
@@ -4257,7 +5389,11 @@
         "price": 325
       }
     ],
-    "image": "/images/products/TK 16.png"
+    "image": "/images/products/TK 16.png",
+    "prices": {
+      "EGP": 357.5,
+      "EUR": 9.75
+    }
   },
   {
     "code": "TK 17",
@@ -4272,7 +5408,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/TK 17.png"
+    "image": "/images/products/TK 17.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Mug 2",
@@ -4287,7 +5427,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Mug 2.png"
+    "image": "/images/products/Mug 2.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Mug 4",
@@ -4302,7 +5446,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 4.png"
+    "image": "/images/products/Mug 4.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 6",
@@ -4317,7 +5465,11 @@
         "price": 285
       }
     ],
-    "image": "/images/products/Mug 6.png"
+    "image": "/images/products/Mug 6.png",
+    "prices": {
+      "EGP": 313.5,
+      "EUR": 8.55
+    }
   },
   {
     "code": "Mug 7",
@@ -4332,7 +5484,11 @@
         "price": 245
       }
     ],
-    "image": "/images/products/Mug 7.png"
+    "image": "/images/products/Mug 7.png",
+    "prices": {
+      "EGP": 269.5,
+      "EUR": 7.35
+    }
   },
   {
     "code": "Mug 8",
@@ -4347,7 +5503,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/Mug 8.png"
+    "image": "/images/products/Mug 8.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "Mug 9",
@@ -4362,7 +5522,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Mug 9.png"
+    "image": "/images/products/Mug 9.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Mug 9 Handle",
@@ -4377,7 +5541,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/Mug 9 Handle.png"
+    "image": "/images/products/Mug 9 Handle.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "Mug 11",
@@ -4392,7 +5560,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Mug 11.png"
+    "image": "/images/products/Mug 11.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Mug 12",
@@ -4407,7 +5579,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Mug 12.png"
+    "image": "/images/products/Mug 12.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Mug 13",
@@ -4422,7 +5598,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Mug 13.png"
+    "image": "/images/products/Mug 13.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Mug 15",
@@ -4437,7 +5617,11 @@
         "price": 25
       }
     ],
-    "image": "/images/products/Mug 15.png"
+    "image": "/images/products/Mug 15.png",
+    "prices": {
+      "EGP": 27.5,
+      "EUR": 0.75
+    }
   },
   {
     "code": "Mug 16",
@@ -4452,7 +5636,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/Mug 16.png"
+    "image": "/images/products/Mug 16.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "Mug 17",
@@ -4467,7 +5655,11 @@
         "price": 75
       }
     ],
-    "image": "/images/products/Mug 17.png"
+    "image": "/images/products/Mug 17.png",
+    "prices": {
+      "EGP": 82.5,
+      "EUR": 2.25
+    }
   },
   {
     "code": "Mug 20",
@@ -4482,7 +5674,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/Mug 20.png"
+    "image": "/images/products/Mug 20.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "Mug 22",
@@ -4497,7 +5693,11 @@
         "price": 159
       }
     ],
-    "image": "/images/products/Mug 22.png"
+    "image": "/images/products/Mug 22.png",
+    "prices": {
+      "EGP": 174.9,
+      "EUR": 4.77
+    }
   },
   {
     "code": "Mug 23",
@@ -4512,7 +5712,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/Mug 23.png"
+    "image": "/images/products/Mug 23.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "Mug 24",
@@ -4527,7 +5731,11 @@
         "price": 139
       }
     ],
-    "image": "/images/products/Mug 24.png"
+    "image": "/images/products/Mug 24.png",
+    "prices": {
+      "EGP": 152.9,
+      "EUR": 4.17
+    }
   },
   {
     "code": "Mug 25",
@@ -4542,7 +5750,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Mug 25.png"
+    "image": "/images/products/Mug 25.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Mug 28 Set",
@@ -4557,7 +5769,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 28 Set.png"
+    "image": "/images/products/Mug 28 Set.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 29",
@@ -4572,7 +5788,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/Mug 29.png"
+    "image": "/images/products/Mug 29.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "Mug 30",
@@ -4587,7 +5807,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Mug 30.png"
+    "image": "/images/products/Mug 30.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Mug 31",
@@ -4602,7 +5826,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Mug 31.png"
+    "image": "/images/products/Mug 31.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Mug 32",
@@ -4617,7 +5845,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Mug 32.png"
+    "image": "/images/products/Mug 32.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Mug 34",
@@ -4632,7 +5864,11 @@
         "price": 325
       }
     ],
-    "image": "/images/products/Mug 34.png"
+    "image": "/images/products/Mug 34.png",
+    "prices": {
+      "EGP": 357.5,
+      "EUR": 9.75
+    }
   },
   {
     "code": "Mug 35",
@@ -4647,7 +5883,11 @@
         "price": 375
       }
     ],
-    "image": "/images/products/Mug 35.png"
+    "image": "/images/products/Mug 35.png",
+    "prices": {
+      "EGP": 412.5,
+      "EUR": 11.25
+    }
   },
   {
     "code": "Mug 36",
@@ -4662,7 +5902,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/Mug 36.png"
+    "image": "/images/products/Mug 36.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Mug 37",
@@ -4677,7 +5921,11 @@
         "price": 155
       }
     ],
-    "image": "/images/products/Mug 37.png"
+    "image": "/images/products/Mug 37.png",
+    "prices": {
+      "EGP": 170.5,
+      "EUR": 4.65
+    }
   },
   {
     "code": "Mug 38",
@@ -4692,7 +5940,11 @@
         "price": 140
       }
     ],
-    "image": "/images/products/Mug 38.png"
+    "image": "/images/products/Mug 38.png",
+    "prices": {
+      "EGP": 154,
+      "EUR": 4.2
+    }
   },
   {
     "code": "Mug 39 Digital",
@@ -4707,7 +5959,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Mug 39 Digital.png"
+    "image": "/images/products/Mug 39 Digital.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Mug 40",
@@ -4722,7 +5978,11 @@
         "price": 179
       }
     ],
-    "image": "/images/products/Mug 40.png"
+    "image": "/images/products/Mug 40.png",
+    "prices": {
+      "EGP": 196.9,
+      "EUR": 5.37
+    }
   },
   {
     "code": "Mug 41",
@@ -4737,7 +5997,11 @@
         "price": 325
       }
     ],
-    "image": "/images/products/Mug 41.png"
+    "image": "/images/products/Mug 41.png",
+    "prices": {
+      "EGP": 357.5,
+      "EUR": 9.75
+    }
   },
   {
     "code": "Mug 44",
@@ -4752,7 +6016,11 @@
         "price": 235
       }
     ],
-    "image": "/images/products/Mug 44.png"
+    "image": "/images/products/Mug 44.png",
+    "prices": {
+      "EGP": 258.5,
+      "EUR": 7.05
+    }
   },
   {
     "code": "Mug 45",
@@ -4767,7 +6035,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/Mug 45.png"
+    "image": "/images/products/Mug 45.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "Mug 46",
@@ -4782,7 +6054,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Mug 46.png"
+    "image": "/images/products/Mug 46.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Mug 48",
@@ -4797,7 +6073,11 @@
         "price": 130
       }
     ],
-    "image": "/images/products/Mug 48.png"
+    "image": "/images/products/Mug 48.png",
+    "prices": {
+      "EGP": 143,
+      "EUR": 3.9
+    }
   },
   {
     "code": "Mug 50",
@@ -4812,7 +6092,11 @@
         "price": 215
       }
     ],
-    "image": "/images/products/Mug 50.png"
+    "image": "/images/products/Mug 50.png",
+    "prices": {
+      "EGP": 236.5,
+      "EUR": 6.45
+    }
   },
   {
     "code": "Mug 51",
@@ -4827,7 +6111,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 51.png"
+    "image": "/images/products/Mug 51.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 52",
@@ -4842,7 +6130,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/Mug 52.png"
+    "image": "/images/products/Mug 52.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "Mug 53",
@@ -4857,7 +6149,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Mug 53.png"
+    "image": "/images/products/Mug 53.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Mug 54 Set",
@@ -4872,7 +6168,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 54 Set.png"
+    "image": "/images/products/Mug 54 Set.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 56",
@@ -4887,7 +6187,11 @@
         "price": 255
       }
     ],
-    "image": "/images/products/Mug 56.png"
+    "image": "/images/products/Mug 56.png",
+    "prices": {
+      "EGP": 280.5,
+      "EUR": 7.65
+    }
   },
   {
     "code": "Mug 58",
@@ -4902,7 +6206,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 58.png"
+    "image": "/images/products/Mug 58.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 59",
@@ -4917,7 +6225,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Mug 59.png"
+    "image": "/images/products/Mug 59.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Mug 62",
@@ -4932,7 +6244,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 62.png"
+    "image": "/images/products/Mug 62.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 64",
@@ -4947,7 +6263,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/Mug 64.png"
+    "image": "/images/products/Mug 64.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Mug 66",
@@ -4962,7 +6282,11 @@
         "price": 235
       }
     ],
-    "image": "/images/products/Mug 66.png"
+    "image": "/images/products/Mug 66.png",
+    "prices": {
+      "EGP": 258.5,
+      "EUR": 7.05
+    }
   },
   {
     "code": "Mug 69",
@@ -4977,7 +6301,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 69.png"
+    "image": "/images/products/Mug 69.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 70",
@@ -4992,7 +6320,11 @@
         "price": 290
       }
     ],
-    "image": "/images/products/Mug 70.png"
+    "image": "/images/products/Mug 70.png",
+    "prices": {
+      "EGP": 319,
+      "EUR": 8.7
+    }
   },
   {
     "code": "Mug 71",
@@ -5007,7 +6339,11 @@
         "price": 475
       }
     ],
-    "image": "/images/products/Mug 71.png"
+    "image": "/images/products/Mug 71.png",
+    "prices": {
+      "EGP": 522.5,
+      "EUR": 14.25
+    }
   },
   {
     "code": "Mug 72",
@@ -5022,7 +6358,11 @@
         "price": 115
       }
     ],
-    "image": "/images/products/Mug 72.png"
+    "image": "/images/products/Mug 72.png",
+    "prices": {
+      "EGP": 126.5,
+      "EUR": 3.45
+    }
   },
   {
     "code": "Mug 73",
@@ -5037,7 +6377,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Mug 73.png"
+    "image": "/images/products/Mug 73.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Mug 74",
@@ -5052,7 +6396,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Mug 74.png"
+    "image": "/images/products/Mug 74.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Mug 75",
@@ -5067,7 +6415,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Mug 75.png"
+    "image": "/images/products/Mug 75.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Mug 76",
@@ -5082,7 +6434,11 @@
         "price": 155
       }
     ],
-    "image": "/images/products/Mug 76.png"
+    "image": "/images/products/Mug 76.png",
+    "prices": {
+      "EGP": 170.5,
+      "EUR": 4.65
+    }
   },
   {
     "code": "Mug 77",
@@ -5097,7 +6453,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Mug 77.png"
+    "image": "/images/products/Mug 77.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Mug 78",
@@ -5112,7 +6472,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Mug 78.png"
+    "image": "/images/products/Mug 78.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Mug 79",
@@ -5127,7 +6491,11 @@
         "price": 179
       }
     ],
-    "image": "/images/products/Mug 79.png"
+    "image": "/images/products/Mug 79.png",
+    "prices": {
+      "EGP": 196.9,
+      "EUR": 5.37
+    }
   },
   {
     "code": "Mug 80",
@@ -5142,7 +6510,11 @@
         "price": 115
       }
     ],
-    "image": "/images/products/Mug 80.png"
+    "image": "/images/products/Mug 80.png",
+    "prices": {
+      "EGP": 126.5,
+      "EUR": 3.45
+    }
   },
   {
     "code": "Mug 81",
@@ -5157,7 +6529,11 @@
         "price": 115
       }
     ],
-    "image": "/images/products/Mug 81.png"
+    "image": "/images/products/Mug 81.png",
+    "prices": {
+      "EGP": 126.5,
+      "EUR": 3.45
+    }
   },
   {
     "code": "Mug 82",
@@ -5172,7 +6548,11 @@
         "price": 98
       }
     ],
-    "image": "/images/products/Mug 82.png"
+    "image": "/images/products/Mug 82.png",
+    "prices": {
+      "EGP": 107.8,
+      "EUR": 2.94
+    }
   },
   {
     "code": "Mug 83",
@@ -5187,7 +6567,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Mug 83.png"
+    "image": "/images/products/Mug 83.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Mug 84",
@@ -5202,7 +6586,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Mug 84.png"
+    "image": "/images/products/Mug 84.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Porcelin 3",
@@ -5217,7 +6605,11 @@
         "price": 39
       }
     ],
-    "image": "/images/products/Porcelin 3.png"
+    "image": "/images/products/Porcelin 3.png",
+    "prices": {
+      "EGP": 42.9,
+      "EUR": 1.17
+    }
   },
   {
     "code": "Porcelin 6",
@@ -5232,7 +6624,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/Porcelin 6.png"
+    "image": "/images/products/Porcelin 6.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "Porcelin 7",
@@ -5247,7 +6643,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/Porcelin 7.png"
+    "image": "/images/products/Porcelin 7.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "Porcelin 8",
@@ -5262,7 +6662,11 @@
         "price": 69
       }
     ],
-    "image": "/images/products/Porcelin 8.png"
+    "image": "/images/products/Porcelin 8.png",
+    "prices": {
+      "EGP": 75.9,
+      "EUR": 2.07
+    }
   },
   {
     "code": "Porcelin Cork 1",
@@ -5277,7 +6681,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Porcelin Cork 1.png"
+    "image": "/images/products/Porcelin Cork 1.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Coaster Leather",
@@ -5292,7 +6700,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Coaster Leather.png"
+    "image": "/images/products/Coaster Leather.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Ceramic Coaster 1",
@@ -5307,7 +6719,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Ceramic Coaster 1.png"
+    "image": "/images/products/Ceramic Coaster 1.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Ceramic Coaster 2",
@@ -5322,7 +6738,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Ceramic Coaster 2.png"
+    "image": "/images/products/Ceramic Coaster 2.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Coaster Metal Gun",
@@ -5337,7 +6757,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Coaster Metal Gun.png"
+    "image": "/images/products/Coaster Metal Gun.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "NB 44 Cork",
@@ -5352,7 +6776,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/NB 44 Cork.png"
+    "image": "/images/products/NB 44 Cork.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "NB 30 Cork",
@@ -5367,7 +6795,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/NB 30 Cork.png"
+    "image": "/images/products/NB 30 Cork.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "NB 23 Cork",
@@ -5382,7 +6814,11 @@
         "price": 110
       }
     ],
-    "image": "/images/products/NB 23 Cork.png"
+    "image": "/images/products/NB 23 Cork.png",
+    "prices": {
+      "EGP": 121,
+      "EUR": 3.3
+    }
   },
   {
     "code": "Coaster Cork",
@@ -5397,7 +6833,11 @@
         "price": 120
       }
     ],
-    "image": "/images/products/Coaster Cork.png"
+    "image": "/images/products/Coaster Cork.png",
+    "prices": {
+      "EGP": 132,
+      "EUR": 3.6
+    }
   },
   {
     "code": "CH 23 Cork",
@@ -5412,7 +6852,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/CH 23 Cork.png"
+    "image": "/images/products/CH 23 Cork.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "CH 31 Cork",
@@ -5427,7 +6871,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/CH 31 Cork.png"
+    "image": "/images/products/CH 31 Cork.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "CH 7 Cork",
@@ -5442,7 +6890,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/CH 7 Cork.png"
+    "image": "/images/products/CH 7 Cork.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "Bag 1",
@@ -5457,7 +6909,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/Bag 1.png"
+    "image": "/images/products/Bag 1.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "Bag 2",
@@ -5472,7 +6928,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Bag 2.png"
+    "image": "/images/products/Bag 2.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Bag 3",
@@ -5487,7 +6947,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Bag 3.png"
+    "image": "/images/products/Bag 3.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Bag 4",
@@ -5502,7 +6966,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Bag 4.png"
+    "image": "/images/products/Bag 4.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Bag 5",
@@ -5517,7 +6985,11 @@
         "price": 290
       }
     ],
-    "image": "/images/products/Bag 5.png"
+    "image": "/images/products/Bag 5.png",
+    "prices": {
+      "EGP": 319,
+      "EUR": 8.7
+    }
   },
   {
     "code": "Bag 6",
@@ -5532,7 +7004,11 @@
         "price": 670
       }
     ],
-    "image": "/images/products/Bag 6.png"
+    "image": "/images/products/Bag 6.png",
+    "prices": {
+      "EGP": 737,
+      "EUR": 20.1
+    }
   },
   {
     "code": "Bag 7",
@@ -5547,7 +7023,11 @@
         "price": 345
       }
     ],
-    "image": "/images/products/Bag 7.png"
+    "image": "/images/products/Bag 7.png",
+    "prices": {
+      "EGP": 379.5,
+      "EUR": 10.35
+    }
   },
   {
     "code": "Bag 8",
@@ -5562,7 +7042,11 @@
         "price": 440
       }
     ],
-    "image": "/images/products/Bag 8.png"
+    "image": "/images/products/Bag 8.png",
+    "prices": {
+      "EGP": 484,
+      "EUR": 13.2
+    }
   },
   {
     "code": "Bag 9",
@@ -5577,7 +7061,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Bag 9.png"
+    "image": "/images/products/Bag 9.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Bag 10",
@@ -5592,7 +7080,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Bag 10.png"
+    "image": "/images/products/Bag 10.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Bag 11",
@@ -5607,7 +7099,11 @@
         "price": 545
       }
     ],
-    "image": "/images/products/Bag 11.png"
+    "image": "/images/products/Bag 11.png",
+    "prices": {
+      "EGP": 599.5,
+      "EUR": 16.35
+    }
   },
   {
     "code": "Bag 13",
@@ -5622,7 +7118,11 @@
         "price": 140
       }
     ],
-    "image": "/images/products/Bag 13.png"
+    "image": "/images/products/Bag 13.png",
+    "prices": {
+      "EGP": 154,
+      "EUR": 4.2
+    }
   },
   {
     "code": "Bag 14",
@@ -5637,7 +7137,11 @@
         "price": 695
       }
     ],
-    "image": "/images/products/Bag 14.png"
+    "image": "/images/products/Bag 14.png",
+    "prices": {
+      "EGP": 764.5,
+      "EUR": 20.85
+    }
   },
   {
     "code": "Bag 15",
@@ -5652,7 +7156,11 @@
         "price": 590
       }
     ],
-    "image": "/images/products/Bag 15.png"
+    "image": "/images/products/Bag 15.png",
+    "prices": {
+      "EGP": 649,
+      "EUR": 17.7
+    }
   },
   {
     "code": "Bag 16",
@@ -5667,7 +7175,11 @@
         "price": 175
       }
     ],
-    "image": "/images/products/Bag 16.png"
+    "image": "/images/products/Bag 16.png",
+    "prices": {
+      "EGP": 192.5,
+      "EUR": 5.25
+    }
   },
   {
     "code": "Bag 18",
@@ -5682,7 +7194,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/Bag 18.png"
+    "image": "/images/products/Bag 18.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "Bag 20",
@@ -5697,7 +7213,11 @@
         "price": 625
       }
     ],
-    "image": "/images/products/Bag 20.png"
+    "image": "/images/products/Bag 20.png",
+    "prices": {
+      "EGP": 687.5,
+      "EUR": 18.75
+    }
   },
   {
     "code": "Bag 22",
@@ -5712,7 +7232,11 @@
         "price": 155
       }
     ],
-    "image": "/images/products/Bag 22.png"
+    "image": "/images/products/Bag 22.png",
+    "prices": {
+      "EGP": 170.5,
+      "EUR": 4.65
+    }
   },
   {
     "code": "Bag 23",
@@ -5727,7 +7251,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/Bag 23.png"
+    "image": "/images/products/Bag 23.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "Bag 25",
@@ -5742,7 +7270,11 @@
         "price": 375
       }
     ],
-    "image": "/images/products/Bag 25.png"
+    "image": "/images/products/Bag 25.png",
+    "prices": {
+      "EGP": 412.5,
+      "EUR": 11.25
+    }
   },
   {
     "code": "Bag 26",
@@ -5757,7 +7289,11 @@
         "price": 320
       }
     ],
-    "image": "/images/products/Bag 26.png"
+    "image": "/images/products/Bag 26.png",
+    "prices": {
+      "EGP": 352,
+      "EUR": 9.6
+    }
   },
   {
     "code": "Bag 28",
@@ -5772,7 +7308,11 @@
         "price": 525
       }
     ],
-    "image": "/images/products/Bag 28.png"
+    "image": "/images/products/Bag 28.png",
+    "prices": {
+      "EGP": 577.5,
+      "EUR": 15.75
+    }
   },
   {
     "code": "Bag 30",
@@ -5787,7 +7327,11 @@
         "price": 650
       }
     ],
-    "image": "/images/products/Bag 30.png"
+    "image": "/images/products/Bag 30.png",
+    "prices": {
+      "EGP": 715,
+      "EUR": 19.5
+    }
   },
   {
     "code": "Bag 31",
@@ -5802,7 +7346,11 @@
         "price": 950
       }
     ],
-    "image": "/images/products/Bag 31.png"
+    "image": "/images/products/Bag 31.png",
+    "prices": {
+      "EGP": 1045,
+      "EUR": 28.5
+    }
   },
   {
     "code": "Bag 32",
@@ -5817,7 +7365,11 @@
         "price": 1100
       }
     ],
-    "image": "/images/products/Bag 32.png"
+    "image": "/images/products/Bag 32.png",
+    "prices": {
+      "EGP": 1210,
+      "EUR": 33
+    }
   },
   {
     "code": "Bag 33",
@@ -5832,7 +7384,11 @@
         "price": 385
       }
     ],
-    "image": "/images/products/Bag 33.png"
+    "image": "/images/products/Bag 33.png",
+    "prices": {
+      "EGP": 423.5,
+      "EUR": 11.55
+    }
   },
   {
     "code": "Bag 35",
@@ -5847,7 +7403,11 @@
         "price": 165
       }
     ],
-    "image": "/images/products/Bag 35.png"
+    "image": "/images/products/Bag 35.png",
+    "prices": {
+      "EGP": 181.5,
+      "EUR": 4.95
+    }
   },
   {
     "code": "Bag 38",
@@ -5862,7 +7422,11 @@
         "price": 250
       }
     ],
-    "image": "/images/products/Bag 38.png"
+    "image": "/images/products/Bag 38.png",
+    "prices": {
+      "EGP": 275,
+      "EUR": 7.5
+    }
   },
   {
     "code": "Bag 39",
@@ -5877,7 +7441,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/Bag 39.png"
+    "image": "/images/products/Bag 39.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "Bag 40",
@@ -5892,7 +7460,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/Bag 40.png"
+    "image": "/images/products/Bag 40.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "Bag 42",
@@ -5907,7 +7479,11 @@
         "price": 250
       }
     ],
-    "image": "/images/products/Bag 42.png"
+    "image": "/images/products/Bag 42.png",
+    "prices": {
+      "EGP": 275,
+      "EUR": 7.5
+    }
   },
   {
     "code": "Bag 46",
@@ -5922,7 +7498,11 @@
         "price": 345
       }
     ],
-    "image": "/images/products/Bag 46.png"
+    "image": "/images/products/Bag 46.png",
+    "prices": {
+      "EGP": 379.5,
+      "EUR": 10.35
+    }
   },
   {
     "code": "Bag 47",
@@ -5937,7 +7517,11 @@
         "price": 345
       }
     ],
-    "image": "/images/products/Bag 47.png"
+    "image": "/images/products/Bag 47.png",
+    "prices": {
+      "EGP": 379.5,
+      "EUR": 10.35
+    }
   },
   {
     "code": "Bag 48",
@@ -5952,7 +7536,11 @@
         "price": 280.5
       }
     ],
-    "image": "/images/products/Bag 48.png"
+    "image": "/images/products/Bag 48.png",
+    "prices": {
+      "EGP": 308.55,
+      "EUR": 8.42
+    }
   },
   {
     "code": "Bag 49",
@@ -5967,7 +7555,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Bag 49.png"
+    "image": "/images/products/Bag 49.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Drawstring Bag",
@@ -5982,7 +7574,11 @@
         "price": 35
       }
     ],
-    "image": "/images/products/Drawstring Bag.png"
+    "image": "/images/products/Drawstring Bag.png",
+    "prices": {
+      "EGP": 38.5,
+      "EUR": 1.05
+    }
   },
   {
     "code": "Mid Bag 1",
@@ -5997,7 +7593,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Mid Bag 1.png"
+    "image": "/images/products/Mid Bag 1.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Mid Bag 3",
@@ -6012,7 +7612,11 @@
         "price": 198
       }
     ],
-    "image": "/images/products/Mid Bag 3.png"
+    "image": "/images/products/Mid Bag 3.png",
+    "prices": {
+      "EGP": 217.8,
+      "EUR": 5.94
+    }
   },
   {
     "code": "Gift Bag Large",
@@ -6027,7 +7631,11 @@
         "price": 65
       }
     ],
-    "image": "/images/products/Gift Bag Large.png"
+    "image": "/images/products/Gift Bag Large.png",
+    "prices": {
+      "EGP": 71.5,
+      "EUR": 1.95
+    }
   },
   {
     "code": "Gift Bag Small",
@@ -6042,7 +7650,11 @@
         "price": 55
       }
     ],
-    "image": "/images/products/Gift Bag Small.png"
+    "image": "/images/products/Gift Bag Small.png",
+    "prices": {
+      "EGP": 60.5,
+      "EUR": 1.65
+    }
   },
   {
     "code": "Felt Bag 5",
@@ -6057,7 +7669,11 @@
         "price": 140
       }
     ],
-    "image": "/images/products/Felt Bag 5.png"
+    "image": "/images/products/Felt Bag 5.png",
+    "prices": {
+      "EGP": 154,
+      "EUR": 4.2
+    }
   },
   {
     "code": "Felt Bag 6",
@@ -6072,7 +7688,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Felt Bag 6.png"
+    "image": "/images/products/Felt Bag 6.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Felt Bag 7",
@@ -6087,7 +7707,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Felt Bag 7.png"
+    "image": "/images/products/Felt Bag 7.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Cotton Bag",
@@ -6102,7 +7726,11 @@
         "price": 45
       }
     ],
-    "image": "/images/products/Cotton Bag.png"
+    "image": "/images/products/Cotton Bag.png",
+    "prices": {
+      "EGP": 49.5,
+      "EUR": 1.35
+    }
   },
   {
     "code": "Cooler Bag 1",
@@ -6117,7 +7745,11 @@
         "price": 250
       }
     ],
-    "image": "/images/products/Cooler Bag 1.png"
+    "image": "/images/products/Cooler Bag 1.png",
+    "prices": {
+      "EGP": 275,
+      "EUR": 7.5
+    }
   },
   {
     "code": "Cooler Bag 4",
@@ -6132,7 +7764,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Cooler Bag 4.png"
+    "image": "/images/products/Cooler Bag 4.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Lap Sleeve 1",
@@ -6147,7 +7783,11 @@
         "price": 420
       }
     ],
-    "image": "/images/products/Lap Sleeve 1.png"
+    "image": "/images/products/Lap Sleeve 1.png",
+    "prices": {
+      "EGP": 462,
+      "EUR": 12.6
+    }
   },
   {
     "code": "Lap Sleeve 2",
@@ -6162,7 +7802,11 @@
         "price": 520
       }
     ],
-    "image": "/images/products/Lap Sleeve 2.png"
+    "image": "/images/products/Lap Sleeve 2.png",
+    "prices": {
+      "EGP": 572,
+      "EUR": 15.6
+    }
   },
   {
     "code": "Lap Sleeve 3",
@@ -6177,7 +7821,11 @@
         "price": 520
       }
     ],
-    "image": "/images/products/Lap Sleeve 3.png"
+    "image": "/images/products/Lap Sleeve 3.png",
+    "prices": {
+      "EGP": 572,
+      "EUR": 15.6
+    }
   },
   {
     "code": "Coffee Machine 2",
@@ -6192,7 +7840,11 @@
         "price": 4600
       }
     ],
-    "image": "/images/products/Coffee Machine 2.png"
+    "image": "/images/products/Coffee Machine 2.png",
+    "prices": {
+      "EGP": 5060,
+      "EUR": 138
+    }
   },
   {
     "code": "Coffee Machine 3",
@@ -6207,7 +7859,11 @@
         "price": 3800
       }
     ],
-    "image": "/images/products/Coffee Machine 3.png"
+    "image": "/images/products/Coffee Machine 3.png",
+    "prices": {
+      "EGP": 4180,
+      "EUR": 114
+    }
   },
   {
     "code": "G 11",
@@ -6222,7 +7878,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/G 11.png"
+    "image": "/images/products/G 11.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "G 12",
@@ -6237,7 +7897,11 @@
         "price": 5.5
       }
     ],
-    "image": "/images/products/G 12.png"
+    "image": "/images/products/G 12.png",
+    "prices": {
+      "EGP": 6.05,
+      "EUR": 0.17
+    }
   },
   {
     "code": "G 17",
@@ -6252,7 +7916,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/G 17.png"
+    "image": "/images/products/G 17.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "G 39",
@@ -6267,7 +7935,11 @@
         "price": 275
       }
     ],
-    "image": "/images/products/G 39.png"
+    "image": "/images/products/G 39.png",
+    "prices": {
+      "EGP": 302.5,
+      "EUR": 8.25
+    }
   },
   {
     "code": "G 42",
@@ -6282,7 +7954,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/G 42.png"
+    "image": "/images/products/G 42.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "Car Extra Pocket",
@@ -6297,7 +7973,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/Car Extra Pocket.png"
+    "image": "/images/products/Car Extra Pocket.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "Box Ramadan",
@@ -6312,7 +7992,11 @@
         "price": 1500
       }
     ],
-    "image": "/images/products/Box Ramadan.png"
+    "image": "/images/products/Box Ramadan.png",
+    "prices": {
+      "EGP": 1650,
+      "EUR": 45
+    }
   },
   {
     "code": "Sun Shade 2",
@@ -6327,7 +8011,11 @@
         "price": 75.9
       }
     ],
-    "image": "/images/products/Sun Shade 2.png"
+    "image": "/images/products/Sun Shade 2.png",
+    "prices": {
+      "EGP": 83.49,
+      "EUR": 2.28
+    }
   },
   {
     "code": "Sun Shade 3",
@@ -6342,7 +8030,11 @@
         "price": 180
       }
     ],
-    "image": "/images/products/Sun Shade 3.png"
+    "image": "/images/products/Sun Shade 3.png",
+    "prices": {
+      "EGP": 198,
+      "EUR": 5.4
+    }
   },
   {
     "code": "Sun Shade 4",
@@ -6357,7 +8049,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/Sun Shade 4.png"
+    "image": "/images/products/Sun Shade 4.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "Sun Shade 5",
@@ -6372,7 +8068,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/Sun Shade 5.png"
+    "image": "/images/products/Sun Shade 5.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "CAP 2",
@@ -6387,7 +8087,11 @@
         "price": 18
       }
     ],
-    "image": "/images/products/CAP 2.png"
+    "image": "/images/products/CAP 2.png",
+    "prices": {
+      "EGP": 19.8,
+      "EUR": 0.54
+    }
   },
   {
     "code": "Cap 3",
@@ -6402,7 +8106,11 @@
         "price": 48
       }
     ],
-    "image": "/images/products/Cap 3.png"
+    "image": "/images/products/Cap 3.png",
+    "prices": {
+      "EGP": 52.8,
+      "EUR": 1.44
+    }
   },
   {
     "code": "G 1",
@@ -6417,7 +8125,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/G 1.png"
+    "image": "/images/products/G 1.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "G 6",
@@ -6432,7 +8144,11 @@
         "price": 185
       }
     ],
-    "image": "/images/products/G 6.png"
+    "image": "/images/products/G 6.png",
+    "prices": {
+      "EGP": 203.5,
+      "EUR": 5.55
+    }
   },
   {
     "code": "G 22",
@@ -6447,7 +8163,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/G 22.png"
+    "image": "/images/products/G 22.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "G 23",
@@ -6462,7 +8182,11 @@
         "price": 110
       }
     ],
-    "image": "/images/products/G 23.png"
+    "image": "/images/products/G 23.png",
+    "prices": {
+      "EGP": 121,
+      "EUR": 3.3
+    }
   },
   {
     "code": "G 24",
@@ -6477,7 +8201,11 @@
         "price": 110
       }
     ],
-    "image": "/images/products/G 24.png"
+    "image": "/images/products/G 24.png",
+    "prices": {
+      "EGP": 121,
+      "EUR": 3.3
+    }
   },
   {
     "code": "G 25",
@@ -6492,7 +8220,11 @@
         "price": 85
       }
     ],
-    "image": "/images/products/G 25.png"
+    "image": "/images/products/G 25.png",
+    "prices": {
+      "EGP": 93.5,
+      "EUR": 2.55
+    }
   },
   {
     "code": "G 27",
@@ -6507,7 +8239,11 @@
         "price": 95
       }
     ],
-    "image": "/images/products/G 27.png"
+    "image": "/images/products/G 27.png",
+    "prices": {
+      "EGP": 104.5,
+      "EUR": 2.85
+    }
   },
   {
     "code": "G 30",
@@ -6522,7 +8258,11 @@
         "price": 350
       }
     ],
-    "image": "/images/products/G 30.png"
+    "image": "/images/products/G 30.png",
+    "prices": {
+      "EGP": 385,
+      "EUR": 10.5
+    }
   },
   {
     "code": "G 33",
@@ -6537,7 +8277,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/G 33.png"
+    "image": "/images/products/G 33.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "G 34",
@@ -6552,7 +8296,11 @@
         "price": 135
       }
     ],
-    "image": "/images/products/G 34.png"
+    "image": "/images/products/G 34.png",
+    "prices": {
+      "EGP": 148.5,
+      "EUR": 4.05
+    }
   },
   {
     "code": "G 44",
@@ -6567,7 +8315,11 @@
         "price": 120
       }
     ],
-    "image": "/images/products/G 44.png"
+    "image": "/images/products/G 44.png",
+    "prices": {
+      "EGP": 132,
+      "EUR": 3.6
+    }
   },
   {
     "code": "G 45",
@@ -6582,7 +8334,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/G 45.png"
+    "image": "/images/products/G 45.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "G 46",
@@ -6597,7 +8353,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/G 46.png"
+    "image": "/images/products/G 46.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "G 47",
@@ -6612,7 +8372,11 @@
         "price": 29
       }
     ],
-    "image": "/images/products/G 47.png"
+    "image": "/images/products/G 47.png",
+    "prices": {
+      "EGP": 31.9,
+      "EUR": 0.87
+    }
   },
   {
     "code": "G 48",
@@ -6627,7 +8391,11 @@
         "price": 295
       }
     ],
-    "image": "/images/products/G 48.png"
+    "image": "/images/products/G 48.png",
+    "prices": {
+      "EGP": 324.5,
+      "EUR": 8.85
+    }
   },
   {
     "code": "G 49",
@@ -6642,7 +8410,11 @@
         "price": 190
       }
     ],
-    "image": "/images/products/G 49.png"
+    "image": "/images/products/G 49.png",
+    "prices": {
+      "EGP": 209,
+      "EUR": 5.7
+    }
   },
   {
     "code": "Chair 1",
@@ -6657,7 +8429,11 @@
         "price": 265
       }
     ],
-    "image": "/images/products/Chair 1.png"
+    "image": "/images/products/Chair 1.png",
+    "prices": {
+      "EGP": 291.5,
+      "EUR": 7.95
+    }
   },
   {
     "code": "Chair 2",
@@ -6672,7 +8448,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Chair 2.png"
+    "image": "/images/products/Chair 2.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "Chair 3",
@@ -6687,7 +8467,11 @@
         "price": 540
       }
     ],
-    "image": "/images/products/Chair 3.png"
+    "image": "/images/products/Chair 3.png",
+    "prices": {
+      "EGP": 594,
+      "EUR": 16.2
+    }
   },
   {
     "code": "Chair 4",
@@ -6702,7 +8486,11 @@
         "price": 920
       }
     ],
-    "image": "/images/products/Chair 4.png"
+    "image": "/images/products/Chair 4.png",
+    "prices": {
+      "EGP": 1012,
+      "EUR": 27.6
+    }
   },
   {
     "code": "Travel Kit 1",
@@ -6717,7 +8505,11 @@
         "price": 425
       }
     ],
-    "image": "/images/products/Travel Kit 1.png"
+    "image": "/images/products/Travel Kit 1.png",
+    "prices": {
+      "EGP": 467.5,
+      "EUR": 12.75
+    }
   },
   {
     "code": "Neck Pillow",
@@ -6732,7 +8524,11 @@
         "price": 125
       }
     ],
-    "image": "/images/products/Neck Pillow.png"
+    "image": "/images/products/Neck Pillow.png",
+    "prices": {
+      "EGP": 137.5,
+      "EUR": 3.75
+    }
   },
   {
     "code": "T-Shirt",
@@ -6747,7 +8543,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/T-Shirt.png"
+    "image": "/images/products/T-Shirt.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "T-Shirt Polo",
@@ -6762,7 +8562,11 @@
         "price": 225
       }
     ],
-    "image": "/images/products/T-Shirt Polo.png"
+    "image": "/images/products/T-Shirt Polo.png",
+    "prices": {
+      "EGP": 247.5,
+      "EUR": 6.75
+    }
   },
   {
     "code": "Spinner 6",
@@ -6777,7 +8581,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Spinner 6.png"
+    "image": "/images/products/Spinner 6.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Spinner 7",
@@ -6792,7 +8600,11 @@
         "price": 105
       }
     ],
-    "image": "/images/products/Spinner 7.png"
+    "image": "/images/products/Spinner 7.png",
+    "prices": {
+      "EGP": 115.5,
+      "EUR": 3.15
+    }
   },
   {
     "code": "Beach Towel",
@@ -6807,7 +8619,11 @@
         "price": 195
       }
     ],
-    "image": "/images/products/Beach Towel.png"
+    "image": "/images/products/Beach Towel.png",
+    "prices": {
+      "EGP": 214.5,
+      "EUR": 5.85
+    }
   },
   {
     "code": "Frisbee",
@@ -6822,7 +8638,11 @@
         "price": 19
       }
     ],
-    "image": "/images/products/Frisbee.png"
+    "image": "/images/products/Frisbee.png",
+    "prices": {
+      "EGP": 20.9,
+      "EUR": 0.57
+    }
   },
   {
     "code": "Kite",
@@ -6837,7 +8657,11 @@
         "price": 145
       }
     ],
-    "image": "/images/products/Kite.png"
+    "image": "/images/products/Kite.png",
+    "prices": {
+      "EGP": 159.5,
+      "EUR": 4.35
+    }
   },
   {
     "code": "GFM-FL-001",
@@ -6850,7 +8674,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-BR-001",
@@ -6863,7 +8691,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-BK-001",
@@ -6876,7 +8708,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-BB-001",
@@ -6889,7 +8725,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-IC-001",
@@ -6902,7 +8742,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-CT-001",
@@ -6915,7 +8759,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-OS-001",
@@ -6932,7 +8780,11 @@
     "featured": true,
     "tags": [
       "featured"
-    ]
+    ],
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-BF-001",
@@ -6945,7 +8797,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-SF-001",
@@ -6962,7 +8818,11 @@
     "featured": true,
     "tags": [
       "featured"
-    ]
+    ],
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-BL-001",
@@ -6975,7 +8835,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-OB-001",
@@ -6988,7 +8852,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-VB-001",
@@ -7001,7 +8869,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-WF-001",
@@ -7014,7 +8886,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-OFS-001",
@@ -7027,7 +8903,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-DS-001",
@@ -7040,7 +8920,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-NP-001",
@@ -7053,7 +8937,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-RS-001",
@@ -7066,7 +8954,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-CS-001",
@@ -7079,7 +8971,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-CSL-001",
@@ -7092,7 +8988,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-RB-001",
@@ -7105,7 +9005,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-PS-001",
@@ -7118,7 +9022,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-FF-001",
@@ -7131,7 +9039,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-EF-001",
@@ -7144,7 +9056,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-ID-001",
@@ -7157,7 +9073,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-CNF-001",
@@ -7170,7 +9090,11 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "GFM-BC-001",
@@ -7187,7 +9111,11 @@
     "featured": true,
     "tags": [
       "featured"
-    ]
+    ],
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   },
   {
     "code": "UNIFORMS-001",
@@ -7200,6 +9128,10 @@
     },
     "price": 0,
     "variants": [],
-    "image": null
+    "image": null,
+    "prices": {
+      "EGP": 0,
+      "EUR": 0
+    }
   }
 ]

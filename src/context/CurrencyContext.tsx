@@ -50,9 +50,9 @@ const GULF_COUNTRIES = ["QA", "KW", "BH", "OM"];
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   const locale = useLocale();
   const [state, setState] = useState<{ currency: CurrencyCode; symbol: string; region: RegionCode; isLoading: boolean }>({
-    currency: "USD",
-    symbol: "$",
-    region: "usa",
+    currency: "EUR",
+    symbol: "€",
+    region: "europe",
     isLoading: true,
   });
 
@@ -73,34 +73,18 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
         const data = await res.json();
         const country = data.country_code;
 
-        let currency: CurrencyCode = "USD";
-        let symbol = "$";
-        let region: RegionCode = "usa";
+        let currency: CurrencyCode = "EUR";
+        let symbol = "€";
+        let region: RegionCode = "europe";
 
         if (country === "EG") {
           currency = "EGP";
           symbol = "ج.م";
           region = "egypt";
-        } else if (country === "SA") {
-          currency = "SAR";
-          symbol = "ر.س";
-          region = "saudi";
-        } else if (country === "AE") {
-          currency = "AED";
-          symbol = "د.إ";
-          region = "saudi";
-        } else if (GULF_COUNTRIES.includes(country)) {
-          currency = "SAR";
-          symbol = "ر.س";
-          region = "saudi";
         } else if (EU_COUNTRIES.includes(country)) {
           currency = "EUR";
           symbol = "€";
           region = "europe";
-        } else if (country === "US" || country === "CA") {
-          currency = "USD";
-          symbol = "$";
-          region = "usa";
         }
 
         const newData = { currency, symbol, region };
@@ -108,7 +92,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
         setState({ ...newData, isLoading: false });
 
       } catch (e) {
-        console.error("Failed to detect currency, falling back to USD", e);
+        console.error("Failed to detect currency, falling back to EUR", e);
         setState(prev => ({ ...prev, isLoading: false }));
       }
     };
@@ -117,34 +101,18 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   const overrideCurrencyByCountry = (countryCode: string) => {
-    let currency: CurrencyCode = "USD";
-    let symbol = "$";
-    let region: RegionCode = "usa";
+    let currency: CurrencyCode = "EUR";
+    let symbol = "€";
+    let region: RegionCode = "europe";
 
     if (countryCode === "EG") {
       currency = "EGP";
       symbol = "ج.م";
       region = "egypt";
-    } else if (countryCode === "SA") {
-      currency = "SAR";
-      symbol = "ر.س";
-      region = "saudi";
-    } else if (countryCode === "AE") {
-      currency = "AED";
-      symbol = "د.إ";
-      region = "saudi";
-    } else if (GULF_COUNTRIES.includes(countryCode)) {
-      currency = "SAR";
-      symbol = "ر.س";
-      region = "saudi";
     } else if (EU_COUNTRIES.includes(countryCode)) {
       currency = "EUR";
       symbol = "€";
       region = "europe";
-    } else if (countryCode === "US" || countryCode === "CA") {
-      currency = "USD";
-      symbol = "$";
-      region = "usa";
     }
 
     setState(prev => ({ ...prev, currency, symbol, region }));
