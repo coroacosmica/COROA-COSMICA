@@ -205,7 +205,7 @@ export default function CartDrawer() {
             <div className="mb-4 flex justify-between text-lg font-semibold">
               <span>{t("total")}</span>
               <span className="text-olive-700">
-                {hasGfmItems && total === 0 ? tc("priceDependsOnQuality") : currencyState.formatLocalPrice(total)}
+                {hasGfmItems && dynamicTotal === 0 ? tc("priceDependsOnQuality") : currencyState.formatLocalPrice(dynamicTotal)}
               </span>
             </div>
 
@@ -391,7 +391,7 @@ export default function CartDrawer() {
                         currencyInfo: {
                           currency: currencyState.currency,
                           region: currencyState.region,
-                          totalAmount: currencyState.convertPrice(total),
+                          totalAmount: dynamicTotal,
                         },
                         customer: {
                           name: formData.name,
