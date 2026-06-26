@@ -30,7 +30,7 @@ const defaultContext: CurrencyContextType = {
   calculateDiscountedPrice: (p) => p.price ?? 0,
   getRawPrice: (p) => p.price ?? 0,
   formatLocalPrice: (a) => `$${a.toFixed(2)}`,
-  overrideCurrencyByCountry: () => {},
+  overrideCurrencyByCountry: () => { },
   isLoading: true,
 };
 
@@ -44,7 +44,7 @@ const EXCHANGE_RATES: Record<CurrencyCode, number> = {
   AED: 3.67,
 };
 
-const EU_COUNTRIES = ["AT","BE","BG","HR","CY","CZ","DK","EE","FI","FR","DE","GR","HU","IE","IT","LV","LT","LU","MT","NL","PL","PT","RO","SK","SI","ES","SE","GB","CH","NO"];
+const EU_COUNTRIES = ["AT", "BE", "BG", "HR", "CY", "CZ", "DK", "EE", "FI", "FR", "DE", "GR", "HU", "IE", "IT", "LV", "LT", "LU", "MT", "NL", "PL", "PT", "RO", "SK", "SI", "ES", "SE", "GB", "CH", "NO"];
 const GULF_COUNTRIES = ["QA", "KW", "BH", "OM"];
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {

@@ -60,9 +60,9 @@
     "quote": "Pedir Orçamento"
   },
   "hero": {
-    "badge": "Coroa Cósmica · Mundial",
-    "title": "Presentes corporativos que impressionam",
-    "subtitle": "Conjuntos VIP, produtos em cortiça autêntica e brindes ecológicos personalizados — com mockup digital em 24 horas.",
+    "badge": "Brindes Corporativos Premium e Ecológicos",
+    "title": "Eleve a Sua Marca com Brindes Corporativos Premium",
+    "subtitle": "Conjuntos VIP e produtos de cortiça autênticos criados para impressionar. Solicite a sua maquete virtual gratuita em 24 horas.",
     "ctaCatalogue": "Explorar Catálogo",
     "ctaSample": "Amostra Virtual Grátis",
     "stats": {
@@ -299,7 +299,9 @@
     "tabs": {
       "quoteRequests": "Pedidos de Orçamento",
       "products": "Produtos",
-      "orderTracking": "Acompanhamento de Encomendas"
+      "orderTracking": "Acompanhamento de Encomendas",
+      "categories": "Categorias",
+      "analytics": "Análises"
     },
     "regions": {
       "allRegions": "Todas as Regiões",

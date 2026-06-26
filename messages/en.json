@@ -60,9 +60,9 @@
     "quote": "Request Quote"
   },
   "hero": {
-    "badge": "Coroa Cósmica · Worldwide",
-    "title": "Corporate gifts that impress",
-    "subtitle": "VIP sets, authentic cork products and eco-friendly branded gifts — with digital mockup in 24 hours.",
+    "badge": "Eco-Friendly Premium Corporate Gifts",
+    "title": "Elevate Your Brand with Premium Corporate Gifts",
+    "subtitle": "VIP sets and authentic cork products crafted to impress. Request your free virtual mockup within 24 hours.",
     "ctaCatalogue": "Browse Catalogue",
     "ctaSample": "Free Virtual Sample",
     "stats": {
@@ -299,7 +299,9 @@
     "tabs": {
       "quoteRequests": "Quote Requests",
       "products": "Products",
-      "orderTracking": "Order Tracking"
+      "orderTracking": "Order Tracking",
+      "categories": "Categories",
+      "analytics": "Analytics"
     },
     "regions": {
       "allRegions": "All Regions",
