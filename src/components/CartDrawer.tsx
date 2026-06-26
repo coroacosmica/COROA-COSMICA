@@ -547,10 +547,10 @@ export default function CartDrawer() {
                   </button>
                   <button
                     type="submit"
-                    disabled={isSubmitting}
+                    disabled={isSubmitting || ["USD", "SAR", "AED"].includes(currencyState.currency)}
                     className="btn-primary flex-1 min-h-[44px]"
                   >
-                    {isSubmitting ? tc("submitting") : tc("submitOrder")}
+                    {isSubmitting ? tc("submitting") : ["USD", "SAR", "AED"].includes(currencyState.currency) ? (locale === "ar" ? "قريباً" : "Coming Soon") : tc("submitOrder")}
                   </button>
                 </div>
               </form>

@@ -49,31 +49,25 @@ export default function LanguageSwitcher() {
         >
           {routing.locales.map((loc) => {
             const m = LOCALE_META[loc];
-            const isComingSoon = ["USD", "SAR", "AED"].includes(m.currency);
             return (
               <li key={loc}>
                 <button
                   type="button"
                   role="option"
                   aria-selected={locale === loc}
-                  disabled={isComingSoon}
                   onClick={() => {
-                    if (isComingSoon) return;
                     localStorage.setItem(LOCALE_STORAGE_KEY, "1");
                     router.replace(pathname, { locale: loc });
                     setOpen(false);
                   }}
                   className={clsx(
-                    "flex w-full min-h-[44px] items-center gap-3 px-4 py-2.5 text-start text-sm transition",
-                    !isComingSoon && "hover:bg-olive-50",
-                    locale === loc && "bg-olive-100 font-semibold text-olive-800",
-                    isComingSoon && "opacity-50 cursor-not-allowed bg-neutral-50"
+                    "flex w-full min-h-[44px] items-center gap-3 px-4 py-2.5 text-start text-sm transition hover:bg-olive-50",
+                    locale === loc && "bg-olive-100 font-semibold text-olive-800"
                   )}
                 >
                   <span className="text-lg">{m.flag}</span>
                   <div className="flex flex-col">
                     <span className="text-neutral-800">{m.nativeName}</span>
-                    {isComingSoon && <span className="text-[10px] font-bold text-red-500 uppercase leading-none mt-1">{t("comingSoon") || "Coming Soon"}</span>}
                   </div>
                 </button>
               </li>
