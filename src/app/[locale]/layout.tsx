@@ -18,6 +18,7 @@ import { CartProvider } from "@/context/CartContext";
 import { CurrencyProvider } from "@/context/CurrencyContext";
 import { CategoryProvider } from "@/context/CategoryContext";
 import { getAllCategories } from "@/lib/products";
+import AnalyticsTracker from "@/components/AnalyticsTracker";
 import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
@@ -82,6 +83,7 @@ export default async function LocaleLayout({
                 <WhatsAppButton />
                 <ChatBot />
                 <Analytics />
+                <AnalyticsTracker />
               </CartProvider>
             </CurrencyProvider>
           </CategoryProvider>

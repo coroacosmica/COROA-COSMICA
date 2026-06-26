@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { supabase } from "@/lib/supabase";
 import MultiRegionTracker from "./MultiRegionTracker";
 import CategoriesManager from "./CategoriesManager";
+import AdminAnalytics from "./AdminAnalytics";
 import { useTranslations } from "next-intl";
 import type { Category } from "@/lib/products";
 
@@ -36,7 +37,7 @@ export default function AdminDashboard({
   initialProducts: any[];
 }) {
   const t = useTranslations("admin");
-  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker" | "categories">("quotes");
+  const [activeTab, setActiveTab] = useState<"quotes" | "products" | "tracker" | "categories" | "analytics">("analytics");
   const [activeQuoteRegion, setActiveQuoteRegion] = useState<"all" | "egypt" | "europe" | "usa" | "saudi" | "other">("all");
   const [quoteTypeFilter, setQuoteTypeFilter] = useState<"all" | "standard" | "gfm">("all");
   const [quotes, setQuotes] = useState(initialQuotes);
@@ -460,7 +461,15 @@ export default function AdminDashboard({
             activeTab === "categories" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
           }`}
         >
-          📂 Categories ({categories.length})
+          📁 {t("tabs.categories") || "Categories"}
+        </button>
+        <button
+          onClick={() => setActiveTab("analytics")}
+          className={`pb-2 text-lg font-medium ${
+            activeTab === "analytics" ? "border-b-2 border-olive-600 text-olive-900" : "text-neutral-500"
+          }`}
+        >
+          📈 Analytics
         </button>
       </div>
 
@@ -800,6 +809,9 @@ export default function AdminDashboard({
 
       {/* ═══════════ TRACKER TAB ═══════════ */}
       {activeTab === "tracker" && <MultiRegionTracker onSave={refreshData} />}
+
+      {/* ═══════════ ANALYTICS TAB ═══════════ */}
+      {activeTab === "analytics" && <AdminAnalytics />}
 
       {/* ═══════════ EDIT / ADD MODAL ═══════════ */}
       {editing && (
