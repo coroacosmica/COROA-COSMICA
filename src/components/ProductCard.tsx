@@ -58,8 +58,8 @@ export default function ProductCard({
             </Link>
             <p className="mt-1 text-xs uppercase tracking-wider text-olive-600">{categoryLabel}</p>
             <p className="mt-2 text-lg font-semibold text-olive-700">
-              {formatProductPrice(product)}
-              {product.discount_percentage && product.discount_percentage > 0 ? (
+              {getRawPrice(product) > 0 ? formatProductPrice(product) : <span className="text-sm font-normal text-neutral-500 uppercase">{tcat("availableOnRequest")}</span>}
+              {product.discount_percentage && product.discount_percentage > 0 && getRawPrice(product) > 0 ? (
                 <span className="ml-2 text-sm text-neutral-400 line-through">
                   {formatLocalPrice(getRawPrice(product))}
                 </span>
@@ -105,8 +105,10 @@ export default function ProductCard({
             <h3 className="line-clamp-2 text-sm font-medium text-neutral-900">{displayName}</h3>
           </Link>
           <p className="mt-1 flex items-baseline gap-2">
-            <span className="text-lg font-semibold text-olive-700">{formatProductPrice(product)}</span>
-            {product.discount_percentage && product.discount_percentage > 0 ? (
+            <span className="text-lg font-semibold text-olive-700">
+              {getRawPrice(product) > 0 ? formatProductPrice(product) : <span className="text-xs font-normal text-neutral-500 uppercase">{tcat("availableOnRequest")}</span>}
+            </span>
+            {product.discount_percentage && product.discount_percentage > 0 && getRawPrice(product) > 0 ? (
               <span className="text-xs text-neutral-400 line-through">{formatLocalPrice(getRawPrice(product))}</span>
             ) : null}
           </p>

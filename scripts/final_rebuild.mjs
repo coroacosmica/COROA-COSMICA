@@ -148,18 +148,20 @@ async function main() {
     }
   }
 
-  // 4. Load GFM Products from the original git state
-  const oldGitJsonPath = 'c:/Website/old_products_git.json';
+  // 4. Load GFM Products from db_products_detailed.json
+  const oldGitJsonPath = 'c:/Website/db_products_detailed.json';
   let gfmProducts = [];
   if (fs.existsSync(oldGitJsonPath)) {
     const oldProducts = JSON.parse(fs.readFileSync(oldGitJsonPath, 'utf8'));
     gfmProducts = oldProducts.filter(p => p.category && p.category.toLowerCase().includes('gfm'));
     
-    // For GFM products, we MUST restore their images from the git commit to public/images/products/
-    // Actually, their images might already be gone since we wiped publicDir!
-    // But wait, GFM products were in the repo BEFORE we did anything!
-    // I can checkout public/images/products from the original commit to restore GFM images!
-    // We will do that in bash afterwards.
+    // Ensure price is 0 for GFM products
+    gfmProducts = gfmProducts.map(p => ({
+      ...p,
+      price: 0,
+      variants: [],
+      image: null // User said "mn8er swr" (without pictures)
+    }));
   }
 
   // Combine NEW products + GFM products
