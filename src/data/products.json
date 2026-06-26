@@ -9,7 +9,11 @@
     "variants": [
       {
         "color": "16GB White Light Shiny Logo",
-        "price": 235
+        "price": 235,
+        "prices": {
+          "EGP": 258.5,
+          "EUR": 7.05
+        }
       }
     ],
     "image": "/images/products/F 4.png",
@@ -28,7 +32,11 @@
     "variants": [
       {
         "color": "D.Grey Shinny Gun Shiny Logo 16GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 6.png",
@@ -47,7 +55,11 @@
     "variants": [
       {
         "color": "16GB White Light Shiny Logo",
-        "price": 235
+        "price": 235,
+        "prices": {
+          "EGP": 258.5,
+          "EUR": 7.05
+        }
       }
     ],
     "image": "/images/products/F 7.png",
@@ -66,7 +78,11 @@
     "variants": [
       {
         "color": "Silver Shiny Logo 32GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 8.png",
@@ -85,7 +101,11 @@
     "variants": [
       {
         "color": "Blue Gun Shinny 16GB",
-        "price": 239
+        "price": 239,
+        "prices": {
+          "EGP": 262.9,
+          "EUR": 7.17
+        }
       }
     ],
     "image": "/images/products/F 9.png",
@@ -104,7 +124,11 @@
     "variants": [
       {
         "color": "Black 16GB",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/F 10.png",
@@ -123,7 +147,11 @@
     "variants": [
       {
         "color": "Gun Mutt 16GB",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/F 11.png",
@@ -142,7 +170,11 @@
     "variants": [
       {
         "color": "Black Mutt 16GB",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/F 14.png",
@@ -161,7 +193,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 16GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 21.png",
@@ -180,7 +216,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 16GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 22.png",
@@ -199,7 +239,11 @@
     "variants": [
       {
         "color": "Black Mutt Logo 16GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 23.png",
@@ -218,7 +262,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 32GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 25.png",
@@ -237,7 +285,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 32GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 26.png",
@@ -256,7 +308,11 @@
     "variants": [
       {
         "color": "Black Mutt 32GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 28.png",
@@ -275,7 +331,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 32GB",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/F 29.png",
@@ -294,7 +354,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 32GB",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/F 30.png",
@@ -313,7 +377,11 @@
     "variants": [
       {
         "color": "Gun Shinny 16GB",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/F 31.png",
@@ -332,7 +400,11 @@
     "variants": [
       {
         "color": "Black Mutt 16GB",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/F 33.png",
@@ -351,7 +423,11 @@
     "variants": [
       {
         "color": "Black Shiny Logo 16GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 36.png",
@@ -370,7 +446,11 @@
     "variants": [
       {
         "color": "Black Mutt Shiny Logo 16GB",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/F 44.png",
@@ -389,7 +469,11 @@
     "variants": [
       {
         "color": "Gold 16G",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Flash Card Metal.png",
@@ -408,7 +492,11 @@
     "variants": [
       {
         "color": "Black 9000mAh / Lightning Logo",
-        "price": 745
+        "price": 745,
+        "prices": {
+          "EGP": 819.5,
+          "EUR": 22.35
+        }
       }
     ],
     "image": "/images/products/Power Bank 8.png",
@@ -427,7 +515,11 @@
     "variants": [
       {
         "color": "Black 3000mAh / Mirror Logo / Wireless",
-        "price": 690
+        "price": 690,
+        "prices": {
+          "EGP": 759,
+          "EUR": 20.7
+        }
       }
     ],
     "image": "/images/products/Power Bank 9.png",
@@ -446,7 +538,11 @@
     "variants": [
       {
         "color": "Black 10000mAh / Lightning / Wireless / Stand",
-        "price": 1150
+        "price": 1150,
+        "prices": {
+          "EGP": 1265,
+          "EUR": 34.5
+        }
       }
     ],
     "image": "/images/products/Power Bank 12.png",
@@ -465,7 +561,11 @@
     "variants": [
       {
         "color": "Black 10000mAh",
-        "price": 585
+        "price": 585,
+        "prices": {
+          "EGP": 643.5,
+          "EUR": 17.55
+        }
       }
     ],
     "image": "/images/products/Power Bank 13.png",
@@ -484,7 +584,11 @@
     "variants": [
       {
         "color": "Black 10000mAh",
-        "price": 845
+        "price": 845,
+        "prices": {
+          "EGP": 929.5,
+          "EUR": 25.35
+        }
       }
     ],
     "image": "/images/products/Power Bank 14.png",
@@ -503,7 +607,11 @@
     "variants": [
       {
         "color": "Black 10000mAh / Lightning Logo",
-        "price": 595
+        "price": 595,
+        "prices": {
+          "EGP": 654.5,
+          "EUR": 17.85
+        }
       }
     ],
     "image": "/images/products/Power Bank 18.png",
@@ -522,7 +630,11 @@
     "variants": [
       {
         "color": "Black 10000mAh / Light LED",
-        "price": 495
+        "price": 495,
+        "prices": {
+          "EGP": 544.5,
+          "EUR": 14.85
+        }
       }
     ],
     "image": "/images/products/Power Bank 20.png",
@@ -541,7 +653,11 @@
     "variants": [
       {
         "color": "Black 10000mAh / Wireless Lighting Logo",
-        "price": 725
+        "price": 725,
+        "prices": {
+          "EGP": 797.5,
+          "EUR": 21.75
+        }
       }
     ],
     "image": "/images/products/Power Bank 22.png",
@@ -560,7 +676,11 @@
     "variants": [
       {
         "color": "Black 10000mAh / Wireless Charging Phone-Watch-Airpod",
-        "price": 1050
+        "price": 1050,
+        "prices": {
+          "EGP": 1155,
+          "EUR": 31.5
+        }
       }
     ],
     "image": "/images/products/Power Bank 26.png",
@@ -579,7 +699,11 @@
     "variants": [
       {
         "color": "White 5000mAh / Wireless Charger / Massager",
-        "price": 680
+        "price": 680,
+        "prices": {
+          "EGP": 748,
+          "EUR": 20.4
+        }
       }
     ],
     "image": "/images/products/Power Bank 30.png",
@@ -598,7 +722,11 @@
     "variants": [
       {
         "color": "Black 10000mAh / Wireless Charger / Lightning Logo / Mega Safe",
-        "price": 875
+        "price": 875,
+        "prices": {
+          "EGP": 962.5,
+          "EUR": 26.25
+        }
       }
     ],
     "image": "/images/products/Power Bank 34.png",
@@ -617,7 +745,11 @@
     "variants": [
       {
         "color": "White 10000mAh / Mobile Stand",
-        "price": 395
+        "price": 395,
+        "prices": {
+          "EGP": 434.5,
+          "EUR": 11.85
+        }
       }
     ],
     "image": "/images/products/Power Bank 35.png",
@@ -636,7 +768,11 @@
     "variants": [
       {
         "color": "Black 20000mAh / Torch / Built-in Cable",
-        "price": 675
+        "price": 675,
+        "prices": {
+          "EGP": 742.5,
+          "EUR": 20.25
+        }
       }
     ],
     "image": "/images/products/Power Bank 37.png",
@@ -655,7 +791,11 @@
     "variants": [
       {
         "color": "Black Wireless Stand / Lightning Lamp",
-        "price": 1450
+        "price": 1450,
+        "prices": {
+          "EGP": 1595,
+          "EUR": 43.5
+        }
       }
     ],
     "image": "/images/products/Power Bank 44.png",
@@ -674,7 +814,11 @@
     "variants": [
       {
         "color": "Black 10000mAh",
-        "price": 1150
+        "price": 1150,
+        "prices": {
+          "EGP": 1265,
+          "EUR": 34.5
+        }
       }
     ],
     "image": "/images/products/Power Bank 49.png",
@@ -693,7 +837,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Lamp USB 4.png",
@@ -712,7 +860,11 @@
     "variants": [
       {
         "color": "Black - Multi Function / Wireless Charger / Digital Clock",
-        "price": 1150
+        "price": 1150,
+        "prices": {
+          "EGP": 1265,
+          "EUR": 34.5
+        }
       }
     ],
     "image": "/images/products/Lamp USB 5.png",
@@ -731,7 +883,11 @@
     "variants": [
       {
         "color": "Black - Lamp / Clock / BT Speaker / Wireless",
-        "price": 1250
+        "price": 1250,
+        "prices": {
+          "EGP": 1375,
+          "EUR": 37.5
+        }
       }
     ],
     "image": "/images/products/Lamp USB 8.png",
@@ -750,7 +906,11 @@
     "variants": [
       {
         "color": "Black - Lamp / Pen Holder / Wireless",
-        "price": 485
+        "price": 485,
+        "prices": {
+          "EGP": 533.5,
+          "EUR": 14.55
+        }
       }
     ],
     "image": "/images/products/Lamp USB 9.png",
@@ -769,7 +929,11 @@
     "variants": [
       {
         "color": "Grey * Blue",
-        "price": 55
+        "price": 55,
+        "prices": {
+          "EGP": 60.5,
+          "EUR": 1.65
+        }
       }
     ],
     "image": "/images/products/Mobile Holder 2.png",
@@ -788,7 +952,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/Mobile Holder 3.png",
@@ -807,7 +975,11 @@
     "variants": [
       {
         "color": "Eco Material",
-        "price": 150
+        "price": 150,
+        "prices": {
+          "EGP": 165,
+          "EUR": 4.5
+        }
       }
     ],
     "image": "/images/products/Cable 2.png",
@@ -826,7 +998,11 @@
     "variants": [
       {
         "color": "4-in-1 Android / iPhone / Type-C / Apple Watch - Black",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Cable 3.png",
@@ -845,7 +1021,11 @@
     "variants": [
       {
         "color": "Grey Gun",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Cable 5.png",
@@ -864,7 +1044,11 @@
     "variants": [
       {
         "color": "Wireless 15W / Lightning Logo / Fast Charging - Black",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/Cable 6.png",
@@ -883,7 +1067,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/Cable 7.png",
@@ -902,7 +1090,11 @@
     "variants": [
       {
         "color": "2*1",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/Cable 9.png",
@@ -921,7 +1113,11 @@
     "variants": [
       {
         "color": "New Black",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Cable 13.png",
@@ -940,7 +1136,11 @@
     "variants": [
       {
         "color": "Black Long Mutt",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Cable 14.png",
@@ -959,7 +1159,11 @@
     "variants": [
       {
         "color": "3-in-1 / Lightning Logo - Black",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Cable 15.png",
@@ -978,7 +1182,11 @@
     "variants": [
       {
         "color": "Black Silver",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/Cable 17.png",
@@ -997,7 +1205,11 @@
     "variants": [
       {
         "color": "Black 4-in-1",
-        "price": 59
+        "price": 59,
+        "prices": {
+          "EGP": 64.9,
+          "EUR": 1.77
+        }
       }
     ],
     "image": "/images/products/Cable 22.png",
@@ -1016,7 +1228,11 @@
     "variants": [
       {
         "color": "Black 4-in-1 / Cigarette Lighter / Torch",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Cable 23.png",
@@ -1035,7 +1251,11 @@
     "variants": [
       {
         "color": "Black 4-in-1",
-        "price": 59
+        "price": 59,
+        "prices": {
+          "EGP": 64.9,
+          "EUR": 1.77
+        }
       }
     ],
     "image": "/images/products/Cable 24.png",
@@ -1054,7 +1274,11 @@
     "variants": [
       {
         "color": "Black Gun Key Chain",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Cable 25.png",
@@ -1073,7 +1297,11 @@
     "variants": [
       {
         "color": "With Cable 3 and Pouch - Black",
-        "price": 795
+        "price": 795,
+        "prices": {
+          "EGP": 874.5,
+          "EUR": 23.85
+        }
       }
     ],
     "image": "/images/products/Connector 7.png",
@@ -1092,7 +1320,11 @@
     "variants": [
       {
         "color": "With Pouch - White",
-        "price": 550
+        "price": 550,
+        "prices": {
+          "EGP": 605,
+          "EUR": 16.5
+        }
       }
     ],
     "image": "/images/products/Connector 8.png",
@@ -1111,7 +1343,11 @@
     "variants": [
       {
         "color": "",
-        "price": 90
+        "price": 90,
+        "prices": {
+          "EGP": 99,
+          "EUR": 2.7
+        }
       }
     ],
     "image": "/images/products/Car Charger 1.png",
@@ -1130,7 +1366,11 @@
     "variants": [
       {
         "color": "",
-        "price": 90
+        "price": 90,
+        "prices": {
+          "EGP": 99,
+          "EUR": 2.7
+        }
       }
     ],
     "image": "/images/products/Car Charger 2.png",
@@ -1149,7 +1389,11 @@
     "variants": [
       {
         "color": "",
-        "price": 150
+        "price": 150,
+        "prices": {
+          "EGP": 165,
+          "EUR": 4.5
+        }
       }
     ],
     "image": "/images/products/Car Charger 3.png",
@@ -1168,7 +1412,11 @@
     "variants": [
       {
         "color": "Wireless Charging iPhone / Watch / Airpod / Lightning Logo",
-        "price": 560
+        "price": 560,
+        "prices": {
+          "EGP": 616,
+          "EUR": 16.8
+        }
       }
     ],
     "image": "/images/products/Car Charger 4.png",
@@ -1187,7 +1435,11 @@
     "variants": [
       {
         "color": "Built-in Cables",
-        "price": 340
+        "price": 340,
+        "prices": {
+          "EGP": 374,
+          "EUR": 10.2
+        }
       }
     ],
     "image": "/images/products/Car Charger 5.png",
@@ -1206,7 +1458,11 @@
     "variants": [
       {
         "color": "",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/Speaker 1.png",
@@ -1225,7 +1481,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 1650
+        "price": 1650,
+        "prices": {
+          "EGP": 1815,
+          "EUR": 49.5
+        }
       }
     ],
     "image": "/images/products/Speaker 2.png",
@@ -1244,7 +1504,11 @@
     "variants": [
       {
         "color": "Black / Lightning Logo",
-        "price": 845
+        "price": 845,
+        "prices": {
+          "EGP": 929.5,
+          "EUR": 25.35
+        }
       }
     ],
     "image": "/images/products/Speaker 3.png",
@@ -1263,7 +1527,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 450
+        "price": 450,
+        "prices": {
+          "EGP": 495,
+          "EUR": 13.5
+        }
       }
     ],
     "image": "/images/products/Speaker 6.png",
@@ -1282,7 +1550,11 @@
     "variants": [
       {
         "color": "Orange",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/Speaker 7.png",
@@ -1301,7 +1573,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 285
+        "price": 285,
+        "prices": {
+          "EGP": 313.5,
+          "EUR": 8.55
+        }
       }
     ],
     "image": "/images/products/Speaker 9.png",
@@ -1320,7 +1596,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 425
+        "price": 425,
+        "prices": {
+          "EGP": 467.5,
+          "EUR": 12.75
+        }
       }
     ],
     "image": "/images/products/Speaker 10.png",
@@ -1339,7 +1619,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Speaker 11.png",
@@ -1358,7 +1642,11 @@
     "variants": [
       {
         "color": "Grey New",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Speaker 12.png",
@@ -1377,7 +1665,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Speaker 13.png",
@@ -1396,7 +1688,11 @@
     "variants": [
       {
         "color": "Silver",
-        "price": 595
+        "price": 595,
+        "prices": {
+          "EGP": 654.5,
+          "EUR": 17.85
+        }
       }
     ],
     "image": "/images/products/Speaker 22.png",
@@ -1415,7 +1711,11 @@
     "variants": [
       {
         "color": "Black Set",
-        "price": 450
+        "price": 450,
+        "prices": {
+          "EGP": 495,
+          "EUR": 13.5
+        }
       }
     ],
     "image": "/images/products/Speaker 30.png",
@@ -1434,7 +1734,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 375
+        "price": 375,
+        "prices": {
+          "EGP": 412.5,
+          "EUR": 11.25
+        }
       }
     ],
     "image": "/images/products/Headphone 1.png",
@@ -1453,7 +1757,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 415
+        "price": 415,
+        "prices": {
+          "EGP": 456.5,
+          "EUR": 12.45
+        }
       }
     ],
     "image": "/images/products/Headphone 2.png",
@@ -1472,7 +1780,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 560
+        "price": 560,
+        "prices": {
+          "EGP": 616,
+          "EUR": 16.8
+        }
       }
     ],
     "image": "/images/products/Airpods 1.png",
@@ -1491,7 +1803,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 820
+        "price": 820,
+        "prices": {
+          "EGP": 902,
+          "EUR": 24.6
+        }
       }
     ],
     "image": "/images/products/Airpods 2.png",
@@ -1510,7 +1826,11 @@
     "variants": [
       {
         "color": "",
-        "price": 590
+        "price": 590,
+        "prices": {
+          "EGP": 649,
+          "EUR": 17.7
+        }
       }
     ],
     "image": "/images/products/Smart Watch 1.png",
@@ -1529,7 +1849,11 @@
     "variants": [
       {
         "color": "Dark Blue",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Mouse 1.png",
@@ -1548,7 +1872,11 @@
     "variants": [
       {
         "color": "Black Gun",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Mouse 8.png",
@@ -1567,7 +1895,11 @@
     "variants": [
       {
         "color": "Black Bluetooth",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/Mouse 9.png",
@@ -1586,7 +1918,11 @@
     "variants": [
       {
         "color": "Gun Bluetooth",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Mouse 10.png",
@@ -1605,7 +1941,11 @@
     "variants": [
       {
         "color": "Black - Lightning / Built-in Battery / BT",
-        "price": 190
+        "price": 190,
+        "prices": {
+          "EGP": 209,
+          "EUR": 5.7
+        }
       }
     ],
     "image": "/images/products/Mouse 11.png",
@@ -1624,7 +1964,11 @@
     "variants": [
       {
         "color": "Black - Lighting Logo",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/Mouse 12.png",
@@ -1643,7 +1987,11 @@
     "variants": [
       {
         "color": "Black Wireless",
-        "price": 250
+        "price": 250,
+        "prices": {
+          "EGP": 275,
+          "EUR": 7.5
+        }
       }
     ],
     "image": "/images/products/Mouse Pad 1.png",
@@ -1662,7 +2010,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Mouse Pad 3.png",
@@ -1681,7 +2033,11 @@
     "variants": [
       {
         "color": "Black / Mobile Stand",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/NB 2.png",
@@ -1700,7 +2056,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/NB 4.png",
@@ -1719,7 +2079,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/NB 6.png",
@@ -1738,7 +2102,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/NB 7.png",
@@ -1757,7 +2125,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/NB 8.png",
@@ -1776,7 +2148,11 @@
     "variants": [
       {
         "color": "Brown Large",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/NB 9.png",
@@ -1795,7 +2171,11 @@
     "variants": [
       {
         "color": "Black Metal M",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/NB 10.png",
@@ -1814,7 +2194,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/NB 11.png",
@@ -1833,7 +2217,11 @@
     "variants": [
       {
         "color": "Black Grey",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/NB 12.png",
@@ -1852,7 +2240,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 155
+        "price": 155,
+        "prices": {
+          "EGP": 170.5,
+          "EUR": 4.65
+        }
       }
     ],
     "image": "/images/products/NB 13.png",
@@ -1871,7 +2263,11 @@
     "variants": [
       {
         "color": "Black Silver",
-        "price": 245
+        "price": 245,
+        "prices": {
+          "EGP": 269.5,
+          "EUR": 7.35
+        }
       }
     ],
     "image": "/images/products/NB 14.png",
@@ -1890,7 +2286,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/NB 15.png",
@@ -1909,7 +2309,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/NB 16.png",
@@ -1928,7 +2332,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/NB 24.png",
@@ -1947,7 +2355,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/NB 25.png",
@@ -1966,7 +2378,11 @@
     "variants": [
       {
         "color": "Black Medium",
-        "price": 160
+        "price": 160,
+        "prices": {
+          "EGP": 176,
+          "EUR": 4.8
+        }
       }
     ],
     "image": "/images/products/NB 26.png",
@@ -1985,7 +2401,11 @@
     "variants": [
       {
         "color": "D.Grey Medium",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/NB 30.png",
@@ -2004,7 +2424,11 @@
     "variants": [
       {
         "color": "Black 100 Sheets 80g",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/NB 44.png",
@@ -2023,7 +2447,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 115
+        "price": 115,
+        "prices": {
+          "EGP": 126.5,
+          "EUR": 3.45
+        }
       }
     ],
     "image": "/images/products/NB 47.png",
@@ -2042,7 +2470,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/NB 48.png",
@@ -2061,7 +2493,11 @@
     "variants": [
       {
         "color": "Blue M New",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/NB 50.png",
@@ -2080,7 +2516,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 620
+        "price": 620,
+        "prices": {
+          "EGP": 682,
+          "EUR": 18.6
+        }
       }
     ],
     "image": "/images/products/NB Set 1.png",
@@ -2099,7 +2539,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 620
+        "price": 620,
+        "prices": {
+          "EGP": 682,
+          "EUR": 18.6
+        }
       }
     ],
     "image": "/images/products/NB Set 2.png",
@@ -2118,7 +2562,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/NB Set 4.png",
@@ -2137,7 +2585,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 245
+        "price": 245,
+        "prices": {
+          "EGP": 269.5,
+          "EUR": 7.35
+        }
       }
     ],
     "image": "/images/products/NB Set 5.png",
@@ -2156,7 +2608,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 245
+        "price": 245,
+        "prices": {
+          "EGP": 269.5,
+          "EUR": 7.35
+        }
       }
     ],
     "image": "/images/products/NB Set 6.png",
@@ -2175,7 +2631,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/NB Set 7.png",
@@ -2194,7 +2654,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 465
+        "price": 465,
+        "prices": {
+          "EGP": 511.5,
+          "EUR": 13.95
+        }
       }
     ],
     "image": "/images/products/NB Set 10.png",
@@ -2213,7 +2677,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/NB Set 11.png",
@@ -2232,7 +2700,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 390
+        "price": 390,
+        "prices": {
+          "EGP": 429,
+          "EUR": 11.7
+        }
       }
     ],
     "image": "/images/products/NB Set 12.png",
@@ -2251,7 +2723,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 325
+        "price": 325,
+        "prices": {
+          "EGP": 357.5,
+          "EUR": 9.75
+        }
       }
     ],
     "image": "/images/products/NB Set 13.png",
@@ -2270,7 +2746,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/NB Set 14.png",
@@ -2289,7 +2769,11 @@
     "variants": [
       {
         "color": "Green",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/NB Set 16.png",
@@ -2308,7 +2792,11 @@
     "variants": [
       {
         "color": "Green",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/NB Set 17.png",
@@ -2327,7 +2815,11 @@
     "variants": [
       {
         "color": "Black with Rope Bag",
-        "price": 350
+        "price": 350,
+        "prices": {
+          "EGP": 385,
+          "EUR": 10.5
+        }
       }
     ],
     "image": "/images/products/NB Set 18.png",
@@ -2346,7 +2838,11 @@
     "variants": [
       {
         "color": "Black with Rope Bag",
-        "price": 350
+        "price": 350,
+        "prices": {
+          "EGP": 385,
+          "EUR": 10.5
+        }
       }
     ],
     "image": "/images/products/NB Set 19.png",
@@ -2365,7 +2861,11 @@
     "variants": [
       {
         "color": "Black with Rope Bag",
-        "price": 395
+        "price": 395,
+        "prices": {
+          "EGP": 434.5,
+          "EUR": 11.85
+        }
       }
     ],
     "image": "/images/products/NB Set 20.png",
@@ -2384,7 +2884,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 475
+        "price": 475,
+        "prices": {
+          "EGP": 522.5,
+          "EUR": 14.25
+        }
       }
     ],
     "image": "/images/products/NB Set 21.png",
@@ -2403,7 +2907,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/NB Set 25.png",
@@ -2422,7 +2930,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 675
+        "price": 675,
+        "prices": {
+          "EGP": 742.5,
+          "EUR": 20.25
+        }
       }
     ],
     "image": "/images/products/NB Set 26.png",
@@ -2441,7 +2953,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 790
+        "price": 790,
+        "prices": {
+          "EGP": 869,
+          "EUR": 23.7
+        }
       }
     ],
     "image": "/images/products/NB Set 27.png",
@@ -2460,7 +2976,11 @@
     "variants": [
       {
         "color": "Black 5000mAh / Inner Wallet / Card Holder / Wireless 10W",
-        "price": 875
+        "price": 875,
+        "prices": {
+          "EGP": 962.5,
+          "EUR": 26.25
+        }
       }
     ],
     "image": "/images/products/FL 6.png",
@@ -2479,7 +2999,11 @@
     "variants": [
       {
         "color": "Grey / Wireless Charger",
-        "price": 975
+        "price": 975,
+        "prices": {
+          "EGP": 1072.5,
+          "EUR": 29.25
+        }
       }
     ],
     "image": "/images/products/FL 7.png",
@@ -2498,7 +3022,11 @@
     "variants": [
       {
         "color": "Black 8000mAh / Wireless 10W / Lightning Logo / Mega Safe",
-        "price": 1250
+        "price": 1250,
+        "prices": {
+          "EGP": 1375,
+          "EUR": 37.5
+        }
       }
     ],
     "image": "/images/products/FL 8.png",
@@ -2517,7 +3045,11 @@
     "variants": [
       {
         "color": "Black 8000mAh / Mega Safe / 3-in-1 Wireless / Watch-Airpod-Phone",
-        "price": 1250
+        "price": 1250,
+        "prices": {
+          "EGP": 1375,
+          "EUR": 37.5
+        }
       }
     ],
     "image": "/images/products/FL 9.png",
@@ -2536,7 +3068,11 @@
     "variants": [
       {
         "color": "Black 8000mAh / Mega Safe / 3-in-1 Wireless / Watch-Airpod-Phone",
-        "price": 975
+        "price": 975,
+        "prices": {
+          "EGP": 1072.5,
+          "EUR": 29.25
+        }
       }
     ],
     "image": "/images/products/FL 10.png",
@@ -2555,7 +3091,11 @@
     "variants": [
       {
         "color": "Black 8000mAh / Wireless 10W / Lightning Logo / Mega Safe / 16GB Flash",
-        "price": 1190
+        "price": 1190,
+        "prices": {
+          "EGP": 1309,
+          "EUR": 35.7
+        }
       }
     ],
     "image": "/images/products/FL 11.png",
@@ -2574,7 +3114,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 40
+        "price": 40,
+        "prices": {
+          "EGP": 44,
+          "EUR": 1.2
+        }
       }
     ],
     "image": "/images/products/FL 18.png",
@@ -2593,7 +3137,11 @@
     "variants": [
       {
         "color": "Black 5000mAh Wireless",
-        "price": 1150
+        "price": 1150,
+        "prices": {
+          "EGP": 1265,
+          "EUR": 34.5
+        }
       }
     ],
     "image": "/images/products/FL 20.png",
@@ -2612,7 +3160,11 @@
     "variants": [
       {
         "color": "Black 4000mAh Wireless",
-        "price": 950
+        "price": 950,
+        "prices": {
+          "EGP": 1045,
+          "EUR": 28.5
+        }
       }
     ],
     "image": "/images/products/FL 21.png",
@@ -2631,7 +3183,11 @@
     "variants": [
       {
         "color": "Black 5000mAh Wireless",
-        "price": 950
+        "price": 950,
+        "prices": {
+          "EGP": 1045,
+          "EUR": 28.5
+        }
       }
     ],
     "image": "/images/products/FL 22.png",
@@ -2650,7 +3206,11 @@
     "variants": [
       {
         "color": "Black 5000mAh / 16GB Flash",
-        "price": 1100
+        "price": 1100,
+        "prices": {
+          "EGP": 1210,
+          "EUR": 33
+        }
       }
     ],
     "image": "/images/products/FL 45.png",
@@ -2669,7 +3229,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/MP 2.png",
@@ -2688,7 +3252,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/MP 4.png",
@@ -2707,7 +3275,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/MP 7.png",
@@ -2726,7 +3298,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 58
+        "price": 58,
+        "prices": {
+          "EGP": 63.8,
+          "EUR": 1.74
+        }
       }
     ],
     "image": "/images/products/MP 10.png",
@@ -2745,7 +3321,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/MP 11.png",
@@ -2764,7 +3344,11 @@
     "variants": [
       {
         "color": "Grey",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/MP 13.png",
@@ -2783,7 +3367,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 79
+        "price": 79,
+        "prices": {
+          "EGP": 86.9,
+          "EUR": 2.37
+        }
       }
     ],
     "image": "/images/products/MP 14.png",
@@ -2802,7 +3390,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/MP 15.png",
@@ -2821,7 +3413,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/MP 16.png",
@@ -2840,7 +3436,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 79
+        "price": 79,
+        "prices": {
+          "EGP": 86.9,
+          "EUR": 2.37
+        }
       }
     ],
     "image": "/images/products/MP 17.png",
@@ -2859,7 +3459,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/MP 18.png",
@@ -2878,7 +3482,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/MP 20.png",
@@ -2897,7 +3505,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/MP 21.png",
@@ -2916,7 +3528,11 @@
     "variants": [
       {
         "color": "Gun",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/CH 1.png",
@@ -2935,7 +3551,11 @@
     "variants": [
       {
         "color": "Gun Black",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/CH 2.png",
@@ -2954,7 +3574,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 25
+        "price": 25,
+        "prices": {
+          "EGP": 27.5,
+          "EUR": 0.75
+        }
       }
     ],
     "image": "/images/products/CH 4.png",
@@ -2973,7 +3597,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 25
+        "price": 25,
+        "prices": {
+          "EGP": 27.5,
+          "EUR": 0.75
+        }
       }
     ],
     "image": "/images/products/CH 5.png",
@@ -2992,7 +3620,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/CH 8.png",
@@ -3011,7 +3643,11 @@
     "variants": [
       {
         "color": "Brown New",
-        "price": 39
+        "price": 39,
+        "prices": {
+          "EGP": 42.9,
+          "EUR": 1.17
+        }
       }
     ],
     "image": "/images/products/CH 9.png",
@@ -3030,7 +3666,11 @@
     "variants": [
       {
         "color": "Dark Blue",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/CH 13.png",
@@ -3049,7 +3689,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/CH 14.png",
@@ -3068,7 +3712,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/CH 15.png",
@@ -3087,7 +3735,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/CH 16.png",
@@ -3106,7 +3758,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/CH 17.png",
@@ -3125,7 +3781,11 @@
     "variants": [
       {
         "color": "Black with Mega Safe Magnet",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/CH 19.png",
@@ -3144,7 +3804,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 35
+        "price": 35,
+        "prices": {
+          "EGP": 38.5,
+          "EUR": 1.05
+        }
       }
     ],
     "image": "/images/products/CH 21.png",
@@ -3163,7 +3827,11 @@
     "variants": [
       {
         "color": "Black Mega Safe",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/CH 50.png",
@@ -3182,7 +3850,11 @@
     "variants": [
       {
         "color": "Grey",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/Wallet 3.png",
@@ -3201,7 +3873,11 @@
     "variants": [
       {
         "color": "Grey",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Wallet 5.png",
@@ -3220,7 +3896,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/Wallet 10.png",
@@ -3239,7 +3919,11 @@
     "variants": [
       {
         "color": "Blue Gun Mutt",
-        "price": 59
+        "price": 59,
+        "prices": {
+          "EGP": 64.9,
+          "EUR": 1.77
+        }
       }
     ],
     "image": "/images/products/KH 1.png",
@@ -3258,7 +3942,11 @@
     "variants": [
       {
         "color": "Cork",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/KH 2.png",
@@ -3277,7 +3965,11 @@
     "variants": [
       {
         "color": "D.Grey Gun",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/KH 3.png",
@@ -3296,7 +3988,11 @@
     "variants": [
       {
         "color": "Blue Silver",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/KH 5.png",
@@ -3315,7 +4011,11 @@
     "variants": [
       {
         "color": "Black Silver",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/KH 7.png",
@@ -3334,7 +4034,11 @@
     "variants": [
       {
         "color": "Black Silver",
-        "price": 55
+        "price": 55,
+        "prices": {
+          "EGP": 60.5,
+          "EUR": 1.65
+        }
       }
     ],
     "image": "/images/products/KH 10.png",
@@ -3353,7 +4057,11 @@
     "variants": [
       {
         "color": "Cork",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/KH 11.png",
@@ -3372,7 +4080,11 @@
     "variants": [
       {
         "color": "Gun",
-        "price": 6
+        "price": 6,
+        "prices": {
+          "EGP": 6.6,
+          "EUR": 0.18
+        }
       }
     ],
     "image": "/images/products/KH 14.png",
@@ -3391,7 +4103,11 @@
     "variants": [
       {
         "color": "Shiny Gun+Black",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/KH 18.png",
@@ -3410,7 +4126,11 @@
     "variants": [
       {
         "color": "Shiny Gun+Black",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/KH 19.png",
@@ -3429,7 +4149,11 @@
     "variants": [
       {
         "color": "Matt Black+Black",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/KH 20.png",
@@ -3448,7 +4172,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/KH 22.png",
@@ -3467,7 +4195,11 @@
     "variants": [
       {
         "color": "Black Black Mutt",
-        "price": 72
+        "price": 72,
+        "prices": {
+          "EGP": 79.2,
+          "EUR": 2.16
+        }
       }
     ],
     "image": "/images/products/KH 23.png",
@@ -3486,7 +4218,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 59
+        "price": 59,
+        "prices": {
+          "EGP": 64.9,
+          "EUR": 1.77
+        }
       }
     ],
     "image": "/images/products/EP 1.png",
@@ -3505,7 +4241,11 @@
     "variants": [
       {
         "color": "Black Gun Mutt",
-        "price": 39
+        "price": 39,
+        "prices": {
+          "EGP": 42.9,
+          "EUR": 1.17
+        }
       }
     ],
     "image": "/images/products/EP 2.png",
@@ -3524,7 +4264,11 @@
     "variants": [
       {
         "color": "Black Rose Gold",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/EP 3.png",
@@ -3543,7 +4287,11 @@
     "variants": [
       {
         "color": "Dark Blue",
-        "price": 39
+        "price": 39,
+        "prices": {
+          "EGP": 42.9,
+          "EUR": 1.17
+        }
       }
     ],
     "image": "/images/products/EP 5.png",
@@ -3562,7 +4310,11 @@
     "variants": [
       {
         "color": "Brown",
-        "price": 39
+        "price": 39,
+        "prices": {
+          "EGP": 42.9,
+          "EUR": 1.17
+        }
       }
     ],
     "image": "/images/products/EP 7.png",
@@ -3581,7 +4333,11 @@
     "variants": [
       {
         "color": "Black Gun Mutt",
-        "price": 32
+        "price": 32,
+        "prices": {
+          "EGP": 35.2,
+          "EUR": 0.96
+        }
       }
     ],
     "image": "/images/products/EP 10.png",
@@ -3600,7 +4356,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 35
+        "price": 35,
+        "prices": {
+          "EGP": 38.5,
+          "EUR": 1.05
+        }
       }
     ],
     "image": "/images/products/EP 11.png",
@@ -3619,7 +4379,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 55
+        "price": 55,
+        "prices": {
+          "EGP": 60.5,
+          "EUR": 1.65
+        }
       }
     ],
     "image": "/images/products/EP 12.png",
@@ -3638,7 +4402,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/EP 13.png",
@@ -3657,7 +4425,11 @@
     "variants": [
       {
         "color": "Light Grey Hard",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/EP 14.png",
@@ -3676,7 +4448,11 @@
     "variants": [
       {
         "color": "Black Gun Mutt",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/EP 14 Slim.png",
@@ -3695,7 +4471,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/EP 16.png",
@@ -3714,7 +4494,11 @@
     "variants": [
       {
         "color": "D.Blue Mutt Gun",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/EP 17.png",
@@ -3733,7 +4517,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 15
+        "price": 15,
+        "prices": {
+          "EGP": 16.5,
+          "EUR": 0.45
+        }
       }
     ],
     "image": "/images/products/EP 19.png",
@@ -3752,7 +4540,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/EP 20.png",
@@ -3771,7 +4563,11 @@
     "variants": [
       {
         "color": "Black Mutt",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/EP 24.png",
@@ -3790,7 +4586,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 27.png",
@@ -3809,7 +4609,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 28.png",
@@ -3828,7 +4632,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 29.png",
@@ -3847,7 +4655,11 @@
     "variants": [
       {
         "color": "Silver",
-        "price": 26
+        "price": 26,
+        "prices": {
+          "EGP": 28.6,
+          "EUR": 0.78
+        }
       }
     ],
     "image": "/images/products/EP 30.png",
@@ -3866,7 +4678,11 @@
     "variants": [
       {
         "color": "Black Black",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 32.png",
@@ -3885,7 +4701,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/EP 34.png",
@@ -3904,7 +4724,11 @@
     "variants": [
       {
         "color": "Black*Silver",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 40.png",
@@ -3923,7 +4747,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/EP 47.png",
@@ -3942,7 +4770,11 @@
     "variants": [
       {
         "color": "New Black",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/EP 51.png",
@@ -3961,7 +4793,11 @@
     "variants": [
       {
         "color": "Black Shinny Gun",
-        "price": 49
+        "price": 49,
+        "prices": {
+          "EGP": 53.9,
+          "EUR": 1.47
+        }
       }
     ],
     "image": "/images/products/EP 52.png",
@@ -3980,7 +4816,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 54.png",
@@ -3999,7 +4839,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 27.5
+        "price": 27.5,
+        "prices": {
+          "EGP": 30.25,
+          "EUR": 0.83
+        }
       }
     ],
     "image": "/images/products/EP 55.png",
@@ -4018,7 +4862,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/EP 56.png",
@@ -4037,7 +4885,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/PS 2.png",
@@ -4056,7 +4908,11 @@
     "variants": [
       {
         "color": "Cork Silver Shinny with Box",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/PS 3.png",
@@ -4075,7 +4931,11 @@
     "variants": [
       {
         "color": "Black with Box",
-        "price": 89
+        "price": 89,
+        "prices": {
+          "EGP": 97.9,
+          "EUR": 2.67
+        }
       }
     ],
     "image": "/images/products/PS 9.png",
@@ -4094,7 +4954,11 @@
     "variants": [
       {
         "color": "Black with Box",
-        "price": 115
+        "price": 115,
+        "prices": {
+          "EGP": 126.5,
+          "EUR": 3.45
+        }
       }
     ],
     "image": "/images/products/PS 11.png",
@@ -4113,7 +4977,11 @@
     "variants": [
       {
         "color": "Black Gun with Box",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/PS 12.png",
@@ -4132,7 +5000,11 @@
     "variants": [
       {
         "color": "Blue Rose Gold",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/PS 15.png",
@@ -4151,7 +5023,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 89
+        "price": 89,
+        "prices": {
+          "EGP": 97.9,
+          "EUR": 2.67
+        }
       }
     ],
     "image": "/images/products/PS 17.png",
@@ -4170,7 +5046,11 @@
     "variants": [
       {
         "color": "Paper",
-        "price": 35
+        "price": 35,
+        "prices": {
+          "EGP": 38.5,
+          "EUR": 1.05
+        }
       }
     ],
     "image": "/images/products/P.Box 1.png",
@@ -4189,7 +5069,11 @@
     "variants": [
       {
         "color": "Black Mutt",
-        "price": 27
+        "price": 27,
+        "prices": {
+          "EGP": 29.7,
+          "EUR": 0.81
+        }
       }
     ],
     "image": "/images/products/P.Box 2.png",
@@ -4208,7 +5092,11 @@
     "variants": [
       {
         "color": "",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/P.Box 3.png",
@@ -4227,7 +5115,11 @@
     "variants": [
       {
         "color": "",
-        "price": 10
+        "price": 10,
+        "prices": {
+          "EGP": 11,
+          "EUR": 0.3
+        }
       }
     ],
     "image": "/images/products/P.Box 4.png",
@@ -4246,7 +5138,11 @@
     "variants": [
       {
         "color": "",
-        "price": 12
+        "price": 12,
+        "prices": {
+          "EGP": 13.2,
+          "EUR": 0.36
+        }
       }
     ],
     "image": "/images/products/P.Box 7.png",
@@ -4265,7 +5161,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 12
+        "price": 12,
+        "prices": {
+          "EGP": 13.2,
+          "EUR": 0.36
+        }
       }
     ],
     "image": "/images/products/P.Box 13.png",
@@ -4284,7 +5184,11 @@
     "variants": [
       {
         "color": "",
-        "price": 12
+        "price": 12,
+        "prices": {
+          "EGP": 13.2,
+          "EUR": 0.36
+        }
       }
     ],
     "image": "/images/products/P.Box 23.png",
@@ -4303,7 +5207,11 @@
     "variants": [
       {
         "color": "New",
-        "price": 12
+        "price": 12,
+        "prices": {
+          "EGP": 13.2,
+          "EUR": 0.36
+        }
       }
     ],
     "image": "/images/products/P.Box 40.png",
@@ -4322,7 +5230,11 @@
     "variants": [
       {
         "color": "",
-        "price": 12
+        "price": 12,
+        "prices": {
+          "EGP": 13.2,
+          "EUR": 0.36
+        }
       }
     ],
     "image": "/images/products/P.Box 42.png",
@@ -4341,7 +5253,11 @@
     "variants": [
       {
         "color": "AT0122-1 Silver",
-        "price": 4950
+        "price": 4950,
+        "prices": {
+          "EGP": 5445,
+          "EUR": 148.5
+        }
       }
     ],
     "image": "/images/products/Cross Pen.png",
@@ -4360,7 +5276,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 39
+        "price": 39,
+        "prices": {
+          "EGP": 42.9,
+          "EUR": 1.17
+        }
       }
     ],
     "image": "/images/products/PP 1.png",
@@ -4379,7 +5299,11 @@
     "variants": [
       {
         "color": "Gun",
-        "price": 12
+        "price": 12,
+        "prices": {
+          "EGP": 13.2,
+          "EUR": 0.36
+        }
       }
     ],
     "image": "/images/products/PP 2.png",
@@ -4398,7 +5322,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 7.5
+        "price": 7.5,
+        "prices": {
+          "EGP": 8.25,
+          "EUR": 0.22
+        }
       }
     ],
     "image": "/images/products/PP 4.png",
@@ -4417,7 +5345,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 8.9
+        "price": 8.9,
+        "prices": {
+          "EGP": 9.79,
+          "EUR": 0.27
+        }
       }
     ],
     "image": "/images/products/PP 6.png",
@@ -4436,7 +5368,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 6.5
+        "price": 6.5,
+        "prices": {
+          "EGP": 7.15,
+          "EUR": 0.2
+        }
       }
     ],
     "image": "/images/products/PP 9.png",
@@ -4455,7 +5391,11 @@
     "variants": [
       {
         "color": "Grey",
-        "price": 7.9
+        "price": 7.9,
+        "prices": {
+          "EGP": 8.69,
+          "EUR": 0.24
+        }
       }
     ],
     "image": "/images/products/PP 10.png",
@@ -4474,7 +5414,11 @@
     "variants": [
       {
         "color": "D.Blue",
-        "price": 9.5
+        "price": 9.5,
+        "prices": {
+          "EGP": 10.45,
+          "EUR": 0.29
+        }
       }
     ],
     "image": "/images/products/PP 13.png",
@@ -4493,7 +5437,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 8.7
+        "price": 8.7,
+        "prices": {
+          "EGP": 9.57,
+          "EUR": 0.26
+        }
       }
     ],
     "image": "/images/products/PP 15.png",
@@ -4512,7 +5460,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 9.5
+        "price": 9.5,
+        "prices": {
+          "EGP": 10.45,
+          "EUR": 0.29
+        }
       }
     ],
     "image": "/images/products/PP 16.png",
@@ -4531,7 +5483,11 @@
     "variants": [
       {
         "color": "Gun",
-        "price": 9.9
+        "price": 9.9,
+        "prices": {
+          "EGP": 10.89,
+          "EUR": 0.3
+        }
       }
     ],
     "image": "/images/products/PP 17.png",
@@ -4550,7 +5506,11 @@
     "variants": [
       {
         "color": "Light Blue",
-        "price": 8.5
+        "price": 8.5,
+        "prices": {
+          "EGP": 9.35,
+          "EUR": 0.26
+        }
       }
     ],
     "image": "/images/products/PP 18.png",
@@ -4569,7 +5529,11 @@
     "variants": [
       {
         "color": "Orange",
-        "price": 6.9
+        "price": 6.9,
+        "prices": {
+          "EGP": 7.59,
+          "EUR": 0.21
+        }
       }
     ],
     "image": "/images/products/PP 19.png",
@@ -4588,7 +5552,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 9.5
+        "price": 9.5,
+        "prices": {
+          "EGP": 10.45,
+          "EUR": 0.29
+        }
       }
     ],
     "image": "/images/products/PP 20.png",
@@ -4607,7 +5575,11 @@
     "variants": [
       {
         "color": "Cork Black",
-        "price": 10.5
+        "price": 10.5,
+        "prices": {
+          "EGP": 11.55,
+          "EUR": 0.32
+        }
       }
     ],
     "image": "/images/products/PP 21.png",
@@ -4626,7 +5598,11 @@
     "variants": [
       {
         "color": "Yellow",
-        "price": 6.5
+        "price": 6.5,
+        "prices": {
+          "EGP": 7.15,
+          "EUR": 0.2
+        }
       }
     ],
     "image": "/images/products/PP 22.png",
@@ -4645,7 +5621,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 13.5
+        "price": 13.5,
+        "prices": {
+          "EGP": 14.85,
+          "EUR": 0.41
+        }
       }
     ],
     "image": "/images/products/PP 26.png",
@@ -4664,7 +5644,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 18
+        "price": 18,
+        "prices": {
+          "EGP": 19.8,
+          "EUR": 0.54
+        }
       }
     ],
     "image": "/images/products/PP 28.png",
@@ -4683,7 +5667,11 @@
     "variants": [
       {
         "color": "Silver",
-        "price": 7.9
+        "price": 7.9,
+        "prices": {
+          "EGP": 8.69,
+          "EUR": 0.24
+        }
       }
     ],
     "image": "/images/products/PP 29.png",
@@ -4702,7 +5690,11 @@
     "variants": [
       {
         "color": "L.Blue",
-        "price": 9.5
+        "price": 9.5,
+        "prices": {
+          "EGP": 10.45,
+          "EUR": 0.29
+        }
       }
     ],
     "image": "/images/products/PP 30.png",
@@ -4721,7 +5713,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 25
+        "price": 25,
+        "prices": {
+          "EGP": 27.5,
+          "EUR": 0.75
+        }
       }
     ],
     "image": "/images/products/PP 31.png",
@@ -4740,7 +5736,11 @@
     "variants": [
       {
         "color": "Rubber Black",
-        "price": 33
+        "price": 33,
+        "prices": {
+          "EGP": 36.3,
+          "EUR": 0.99
+        }
       }
     ],
     "image": "/images/products/PP 33.png",
@@ -4759,7 +5759,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 6.9
+        "price": 6.9,
+        "prices": {
+          "EGP": 7.59,
+          "EUR": 0.21
+        }
       }
     ],
     "image": "/images/products/PP 46.png",
@@ -4778,7 +5782,11 @@
     "variants": [
       {
         "color": "L.Blue",
-        "price": 9.5
+        "price": 9.5,
+        "prices": {
+          "EGP": 10.45,
+          "EUR": 0.29
+        }
       }
     ],
     "image": "/images/products/PP 48.png",
@@ -4797,7 +5805,11 @@
     "variants": [
       {
         "color": "Silver",
-        "price": 8.9
+        "price": 8.9,
+        "prices": {
+          "EGP": 9.79,
+          "EUR": 0.27
+        }
       }
     ],
     "image": "/images/products/PP 53.png",
@@ -4816,7 +5828,11 @@
     "variants": [
       {
         "color": "Light Green",
-        "price": 1.7
+        "price": 1.7,
+        "prices": {
+          "EGP": 1.87,
+          "EUR": 0.05
+        }
       }
     ],
     "image": "/images/products/PP Set 1.png",
@@ -4835,7 +5851,11 @@
     "variants": [
       {
         "color": "",
-        "price": 149
+        "price": 149,
+        "prices": {
+          "EGP": 163.9,
+          "EUR": 4.47
+        }
       }
     ],
     "image": "/images/products/CK 1.png",
@@ -4854,7 +5874,11 @@
     "variants": [
       {
         "color": "",
-        "price": 149
+        "price": 149,
+        "prices": {
+          "EGP": 163.9,
+          "EUR": 4.47
+        }
       }
     ],
     "image": "/images/products/CK 2.png",
@@ -4873,7 +5897,11 @@
     "variants": [
       {
         "color": "",
-        "price": 149
+        "price": 149,
+        "prices": {
+          "EGP": 163.9,
+          "EUR": 4.47
+        }
       }
     ],
     "image": "/images/products/CK 3.png",
@@ -4892,7 +5920,11 @@
     "variants": [
       {
         "color": "",
-        "price": 149
+        "price": 149,
+        "prices": {
+          "EGP": 163.9,
+          "EUR": 4.47
+        }
       }
     ],
     "image": "/images/products/CK 4.png",
@@ -4911,7 +5943,11 @@
     "variants": [
       {
         "color": "White",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/CK 9.png",
@@ -4930,7 +5966,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/CK 10.png",
@@ -4949,7 +5989,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/CK 11.png",
@@ -4968,7 +6012,11 @@
     "variants": [
       {
         "color": "",
-        "price": 155
+        "price": 155,
+        "prices": {
+          "EGP": 170.5,
+          "EUR": 4.65
+        }
       }
     ],
     "image": "/images/products/CK 13.png",
@@ -4987,7 +6035,11 @@
     "variants": [
       {
         "color": "",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/CK 14.png",
@@ -5006,7 +6058,11 @@
     "variants": [
       {
         "color": "",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/CK 15.png",
@@ -5025,7 +6081,11 @@
     "variants": [
       {
         "color": "",
-        "price": 149
+        "price": 149,
+        "prices": {
+          "EGP": 163.9,
+          "EUR": 4.47
+        }
       }
     ],
     "image": "/images/products/CK 16.png",
@@ -5044,7 +6104,11 @@
     "variants": [
       {
         "color": "",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/CK 19.png",
@@ -5063,7 +6127,11 @@
     "variants": [
       {
         "color": "",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/CK 20.png",
@@ -5082,7 +6150,11 @@
     "variants": [
       {
         "color": "",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/CK 21.png",
@@ -5101,7 +6173,11 @@
     "variants": [
       {
         "color": "",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/CK 22.png",
@@ -5120,7 +6196,11 @@
     "variants": [
       {
         "color": "",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/CK 23.png",
@@ -5139,7 +6219,11 @@
     "variants": [
       {
         "color": "Black * Shinny Gun",
-        "price": 495
+        "price": 495,
+        "prices": {
+          "EGP": 544.5,
+          "EUR": 14.85
+        }
       }
     ],
     "image": "/images/products/DC 2.png",
@@ -5158,7 +6242,11 @@
     "variants": [
       {
         "color": "Black * Shinny Gun",
-        "price": 495
+        "price": 495,
+        "prices": {
+          "EGP": 544.5,
+          "EUR": 14.85
+        }
       }
     ],
     "image": "/images/products/DC 3.png",
@@ -5177,7 +6265,11 @@
     "variants": [
       {
         "color": "With White LED",
-        "price": 320
+        "price": 320,
+        "prices": {
+          "EGP": 352,
+          "EUR": 9.6
+        }
       }
     ],
     "image": "/images/products/DC 4.png",
@@ -5196,7 +6288,11 @@
     "variants": [
       {
         "color": "With White LED",
-        "price": 345
+        "price": 345,
+        "prices": {
+          "EGP": 379.5,
+          "EUR": 10.35
+        }
       }
     ],
     "image": "/images/products/DC 5.png",
@@ -5215,7 +6311,11 @@
     "variants": [
       {
         "color": "With Wireless Charger",
-        "price": 1250
+        "price": 1250,
+        "prices": {
+          "EGP": 1375,
+          "EUR": 37.5
+        }
       }
     ],
     "image": "/images/products/DC 8.png",
@@ -5234,7 +6334,11 @@
     "variants": [
       {
         "color": "Black - Digital / Wireless / Phone Stand",
-        "price": 1350
+        "price": 1350,
+        "prices": {
+          "EGP": 1485,
+          "EUR": 40.5
+        }
       }
     ],
     "image": "/images/products/DC 9.png",
@@ -5253,7 +6357,11 @@
     "variants": [
       {
         "color": "",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/TK 1.png",
@@ -5272,7 +6380,11 @@
     "variants": [
       {
         "color": "",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/TK 5.png",
@@ -5291,7 +6403,11 @@
     "variants": [
       {
         "color": "",
-        "price": 325
+        "price": 325,
+        "prices": {
+          "EGP": 357.5,
+          "EUR": 9.75
+        }
       }
     ],
     "image": "/images/products/TK 6.png",
@@ -5310,7 +6426,11 @@
     "variants": [
       {
         "color": "",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/TK 9.png",
@@ -5329,7 +6449,11 @@
     "variants": [
       {
         "color": "",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/TK 10.png",
@@ -5348,7 +6472,11 @@
     "variants": [
       {
         "color": "",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/TK 11.png",
@@ -5367,7 +6495,11 @@
     "variants": [
       {
         "color": "",
-        "price": 285
+        "price": 285,
+        "prices": {
+          "EGP": 313.5,
+          "EUR": 8.55
+        }
       }
     ],
     "image": "/images/products/TK 13.png",
@@ -5386,7 +6518,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 325
+        "price": 325,
+        "prices": {
+          "EGP": 357.5,
+          "EUR": 9.75
+        }
       }
     ],
     "image": "/images/products/TK 16.png",
@@ -5405,7 +6541,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/TK 17.png",
@@ -5424,7 +6564,11 @@
     "variants": [
       {
         "color": "Cappuccino White",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Mug 2.png",
@@ -5443,7 +6587,11 @@
     "variants": [
       {
         "color": "Black 500ml",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 4.png",
@@ -5462,7 +6610,11 @@
     "variants": [
       {
         "color": "Black Digital Mutt 380ml",
-        "price": 285
+        "price": 285,
+        "prices": {
+          "EGP": 313.5,
+          "EUR": 8.55
+        }
       }
     ],
     "image": "/images/products/Mug 6.png",
@@ -5481,7 +6633,11 @@
     "variants": [
       {
         "color": "Black 580ml",
-        "price": 245
+        "price": 245,
+        "prices": {
+          "EGP": 269.5,
+          "EUR": 7.35
+        }
       }
     ],
     "image": "/images/products/Mug 7.png",
@@ -5500,7 +6656,11 @@
     "variants": [
       {
         "color": "Black Mutt 260ml",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/Mug 8.png",
@@ -5519,7 +6679,11 @@
     "variants": [
       {
         "color": "Black 500ml",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Mug 9.png",
@@ -5538,7 +6702,11 @@
     "variants": [
       {
         "color": "Black 500ml",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/Mug 9 Handle.png",
@@ -5557,7 +6725,11 @@
     "variants": [
       {
         "color": "White 150ml",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Mug 11.png",
@@ -5576,7 +6748,11 @@
     "variants": [
       {
         "color": "Black 400ml",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Mug 12.png",
@@ -5595,7 +6771,11 @@
     "variants": [
       {
         "color": "Mutt White",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Mug 13.png",
@@ -5614,7 +6794,11 @@
     "variants": [
       {
         "color": "Green",
-        "price": 25
+        "price": 25,
+        "prices": {
+          "EGP": 27.5,
+          "EUR": 0.75
+        }
       }
     ],
     "image": "/images/products/Mug 15.png",
@@ -5633,7 +6817,11 @@
     "variants": [
       {
         "color": "Blue Beige 800ml",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/Mug 16.png",
@@ -5652,7 +6840,11 @@
     "variants": [
       {
         "color": "Silver",
-        "price": 75
+        "price": 75,
+        "prices": {
+          "EGP": 82.5,
+          "EUR": 2.25
+        }
       }
     ],
     "image": "/images/products/Mug 17.png",
@@ -5671,7 +6863,11 @@
     "variants": [
       {
         "color": "Cream",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/Mug 20.png",
@@ -5690,7 +6886,11 @@
     "variants": [
       {
         "color": "Black 350ml",
-        "price": 159
+        "price": 159,
+        "prices": {
+          "EGP": 174.9,
+          "EUR": 4.77
+        }
       }
     ],
     "image": "/images/products/Mug 22.png",
@@ -5709,7 +6909,11 @@
     "variants": [
       {
         "color": "Black 700ml",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/Mug 23.png",
@@ -5728,7 +6932,11 @@
     "variants": [
       {
         "color": "Black Mutt 150ml",
-        "price": 139
+        "price": 139,
+        "prices": {
+          "EGP": 152.9,
+          "EUR": 4.17
+        }
       }
     ],
     "image": "/images/products/Mug 24.png",
@@ -5747,7 +6955,11 @@
     "variants": [
       {
         "color": "Black 320ml",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Mug 25.png",
@@ -5766,7 +6978,11 @@
     "variants": [
       {
         "color": "Blue 3-in-1",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 28 Set.png",
@@ -5785,7 +7001,11 @@
     "variants": [
       {
         "color": "White Mutt S 350ml",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/Mug 29.png",
@@ -5804,7 +7024,11 @@
     "variants": [
       {
         "color": "Blue 600ml",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Mug 30.png",
@@ -5823,7 +7047,11 @@
     "variants": [
       {
         "color": "Mutt Black 500ml",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Mug 31.png",
@@ -5842,7 +7070,11 @@
     "variants": [
       {
         "color": "Black 400ml",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Mug 32.png",
@@ -5861,7 +7093,11 @@
     "variants": [
       {
         "color": "Black 1200ml",
-        "price": 325
+        "price": 325,
+        "prices": {
+          "EGP": 357.5,
+          "EUR": 9.75
+        }
       }
     ],
     "image": "/images/products/Mug 34.png",
@@ -5880,7 +7116,11 @@
     "variants": [
       {
         "color": "Black 1200ml",
-        "price": 375
+        "price": 375,
+        "prices": {
+          "EGP": 412.5,
+          "EUR": 11.25
+        }
       }
     ],
     "image": "/images/products/Mug 35.png",
@@ -5899,7 +7139,11 @@
     "variants": [
       {
         "color": "Black 570ml",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/Mug 36.png",
@@ -5918,7 +7162,11 @@
     "variants": [
       {
         "color": "Black 450ml",
-        "price": 155
+        "price": 155,
+        "prices": {
+          "EGP": 170.5,
+          "EUR": 4.65
+        }
       }
     ],
     "image": "/images/products/Mug 37.png",
@@ -5937,7 +7185,11 @@
     "variants": [
       {
         "color": "Black*Black 800ml",
-        "price": 140
+        "price": 140,
+        "prices": {
+          "EGP": 154,
+          "EUR": 4.2
+        }
       }
     ],
     "image": "/images/products/Mug 38.png",
@@ -5956,7 +7208,11 @@
     "variants": [
       {
         "color": "Black 400ml",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Mug 39 Digital.png",
@@ -5975,7 +7231,11 @@
     "variants": [
       {
         "color": "Black Mutt 450ml",
-        "price": 179
+        "price": 179,
+        "prices": {
+          "EGP": 196.9,
+          "EUR": 5.37
+        }
       }
     ],
     "image": "/images/products/Mug 40.png",
@@ -5994,7 +7254,11 @@
     "variants": [
       {
         "color": "Black 720ml",
-        "price": 325
+        "price": 325,
+        "prices": {
+          "EGP": 357.5,
+          "EUR": 9.75
+        }
       }
     ],
     "image": "/images/products/Mug 41.png",
@@ -6013,7 +7277,11 @@
     "variants": [
       {
         "color": "Black Silver 480ml",
-        "price": 235
+        "price": 235,
+        "prices": {
+          "EGP": 258.5,
+          "EUR": 7.05
+        }
       }
     ],
     "image": "/images/products/Mug 44.png",
@@ -6032,7 +7300,11 @@
     "variants": [
       {
         "color": "Black 600ml",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/Mug 45.png",
@@ -6051,7 +7323,11 @@
     "variants": [
       {
         "color": "Black 270ml",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Mug 46.png",
@@ -6070,7 +7346,11 @@
     "variants": [
       {
         "color": "Black M 750ml",
-        "price": 130
+        "price": 130,
+        "prices": {
+          "EGP": 143,
+          "EUR": 3.9
+        }
       }
     ],
     "image": "/images/products/Mug 48.png",
@@ -6089,7 +7369,11 @@
     "variants": [
       {
         "color": "Black 380ml",
-        "price": 215
+        "price": 215,
+        "prices": {
+          "EGP": 236.5,
+          "EUR": 6.45
+        }
       }
     ],
     "image": "/images/products/Mug 50.png",
@@ -6108,7 +7392,11 @@
     "variants": [
       {
         "color": "Black 600ml",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 51.png",
@@ -6127,7 +7415,11 @@
     "variants": [
       {
         "color": "White S Digital",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/Mug 52.png",
@@ -6146,7 +7438,11 @@
     "variants": [
       {
         "color": "Black 650ml",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Mug 53.png",
@@ -6165,7 +7461,11 @@
     "variants": [
       {
         "color": "Black 3-in-1",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 54 Set.png",
@@ -6184,7 +7484,11 @@
     "variants": [
       {
         "color": "Black 450ml",
-        "price": 255
+        "price": 255,
+        "prices": {
+          "EGP": 280.5,
+          "EUR": 7.65
+        }
       }
     ],
     "image": "/images/products/Mug 56.png",
@@ -6203,7 +7507,11 @@
     "variants": [
       {
         "color": "Black with Cover 500ml",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 58.png",
@@ -6222,7 +7530,11 @@
     "variants": [
       {
         "color": "Black 280ml",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Mug 59.png",
@@ -6241,7 +7553,11 @@
     "variants": [
       {
         "color": "Black 500ml",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 62.png",
@@ -6260,7 +7576,11 @@
     "variants": [
       {
         "color": "Black Silver with Suction",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/Mug 64.png",
@@ -6279,7 +7599,11 @@
     "variants": [
       {
         "color": "Black 350ml",
-        "price": 235
+        "price": 235,
+        "prices": {
+          "EGP": 258.5,
+          "EUR": 7.05
+        }
       }
     ],
     "image": "/images/products/Mug 66.png",
@@ -6298,7 +7622,11 @@
     "variants": [
       {
         "color": "Black 260ml",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 69.png",
@@ -6317,7 +7645,11 @@
     "variants": [
       {
         "color": "Black Gun Sets 350ml",
-        "price": 290
+        "price": 290,
+        "prices": {
+          "EGP": 319,
+          "EUR": 8.7
+        }
       }
     ],
     "image": "/images/products/Mug 70.png",
@@ -6336,7 +7668,11 @@
     "variants": [
       {
         "color": "Black 2-in-1 800ml",
-        "price": 475
+        "price": 475,
+        "prices": {
+          "EGP": 522.5,
+          "EUR": 14.25
+        }
       }
     ],
     "image": "/images/products/Mug 71.png",
@@ -6355,7 +7691,11 @@
     "variants": [
       {
         "color": "Black Grey 800ml",
-        "price": 115
+        "price": 115,
+        "prices": {
+          "EGP": 126.5,
+          "EUR": 3.45
+        }
       }
     ],
     "image": "/images/products/Mug 72.png",
@@ -6374,7 +7714,11 @@
     "variants": [
       {
         "color": "Pink 800ml",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Mug 73.png",
@@ -6393,7 +7737,11 @@
     "variants": [
       {
         "color": "Pink 800ml",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Mug 74.png",
@@ -6412,7 +7760,11 @@
     "variants": [
       {
         "color": "Pink 570ml",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Mug 75.png",
@@ -6431,7 +7783,11 @@
     "variants": [
       {
         "color": "Black 850ml",
-        "price": 155
+        "price": 155,
+        "prices": {
+          "EGP": 170.5,
+          "EUR": 4.65
+        }
       }
     ],
     "image": "/images/products/Mug 76.png",
@@ -6450,7 +7806,11 @@
     "variants": [
       {
         "color": "Frost Black 1000ml",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Mug 77.png",
@@ -6469,7 +7829,11 @@
     "variants": [
       {
         "color": "Frost Blue 600ml",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Mug 78.png",
@@ -6488,7 +7852,11 @@
     "variants": [
       {
         "color": "Frost Black 1000ml",
-        "price": 179
+        "price": 179,
+        "prices": {
+          "EGP": 196.9,
+          "EUR": 5.37
+        }
       }
     ],
     "image": "/images/products/Mug 79.png",
@@ -6507,7 +7875,11 @@
     "variants": [
       {
         "color": "Black Blue 750ml",
-        "price": 115
+        "price": 115,
+        "prices": {
+          "EGP": 126.5,
+          "EUR": 3.45
+        }
       }
     ],
     "image": "/images/products/Mug 80.png",
@@ -6526,7 +7898,11 @@
     "variants": [
       {
         "color": "Frost White 750ml",
-        "price": 115
+        "price": 115,
+        "prices": {
+          "EGP": 126.5,
+          "EUR": 3.45
+        }
       }
     ],
     "image": "/images/products/Mug 81.png",
@@ -6545,7 +7921,11 @@
     "variants": [
       {
         "color": "Frost White",
-        "price": 98
+        "price": 98,
+        "prices": {
+          "EGP": 107.8,
+          "EUR": 2.94
+        }
       }
     ],
     "image": "/images/products/Mug 82.png",
@@ -6564,7 +7944,11 @@
     "variants": [
       {
         "color": "Black Grey 800ml",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Mug 83.png",
@@ -6583,7 +7967,11 @@
     "variants": [
       {
         "color": "Black 480ml",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Mug 84.png",
@@ -6602,7 +7990,11 @@
     "variants": [
       {
         "color": "7*7",
-        "price": 39
+        "price": 39,
+        "prices": {
+          "EGP": 42.9,
+          "EUR": 1.17
+        }
       }
     ],
     "image": "/images/products/Porcelin 3.png",
@@ -6621,7 +8013,11 @@
     "variants": [
       {
         "color": "White Gold Handle",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/Porcelin 6.png",
@@ -6640,7 +8036,11 @@
     "variants": [
       {
         "color": "White Silver Handle",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/Porcelin 7.png",
@@ -6659,7 +8059,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 69
+        "price": 69,
+        "prices": {
+          "EGP": 75.9,
+          "EUR": 2.07
+        }
       }
     ],
     "image": "/images/products/Porcelin 8.png",
@@ -6678,7 +8082,11 @@
     "variants": [
       {
         "color": "",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Porcelin Cork 1.png",
@@ -6697,7 +8105,11 @@
     "variants": [
       {
         "color": "Square 4 pcs",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Coaster Leather.png",
@@ -6716,7 +8128,11 @@
     "variants": [
       {
         "color": "Square 4 pcs",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Ceramic Coaster 1.png",
@@ -6735,7 +8151,11 @@
     "variants": [
       {
         "color": "Round 4 pcs",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Ceramic Coaster 2.png",
@@ -6754,7 +8174,11 @@
     "variants": [
       {
         "color": "",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Coaster Metal Gun.png",
@@ -6773,7 +8197,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/NB 44 Cork.png",
@@ -6792,7 +8220,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/NB 30 Cork.png",
@@ -6811,7 +8243,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 110
+        "price": 110,
+        "prices": {
+          "EGP": 121,
+          "EUR": 3.3
+        }
       }
     ],
     "image": "/images/products/NB 23 Cork.png",
@@ -6830,7 +8266,11 @@
     "variants": [
       {
         "color": "Round",
-        "price": 120
+        "price": 120,
+        "prices": {
+          "EGP": 132,
+          "EUR": 3.6
+        }
       }
     ],
     "image": "/images/products/Coaster Cork.png",
@@ -6849,7 +8289,11 @@
     "variants": [
       {
         "color": "",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/CH 23 Cork.png",
@@ -6868,7 +8312,11 @@
     "variants": [
       {
         "color": "",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/CH 31 Cork.png",
@@ -6887,7 +8335,11 @@
     "variants": [
       {
         "color": "",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/CH 7 Cork.png",
@@ -6906,7 +8358,11 @@
     "variants": [
       {
         "color": "Hand",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/Bag 1.png",
@@ -6925,7 +8381,11 @@
     "variants": [
       {
         "color": "Cross",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Bag 2.png",
@@ -6944,7 +8404,11 @@
     "variants": [
       {
         "color": "Hand Black",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Bag 3.png",
@@ -6963,7 +8427,11 @@
     "variants": [
       {
         "color": "Cross Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Bag 4.png",
@@ -6982,7 +8450,11 @@
     "variants": [
       {
         "color": "Cross Black",
-        "price": 290
+        "price": 290,
+        "prices": {
+          "EGP": 319,
+          "EUR": 8.7
+        }
       }
     ],
     "image": "/images/products/Bag 5.png",
@@ -7001,7 +8473,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 670
+        "price": 670,
+        "prices": {
+          "EGP": 737,
+          "EUR": 20.1
+        }
       }
     ],
     "image": "/images/products/Bag 6.png",
@@ -7020,7 +8496,11 @@
     "variants": [
       {
         "color": "New Black",
-        "price": 345
+        "price": 345,
+        "prices": {
+          "EGP": 379.5,
+          "EUR": 10.35
+        }
       }
     ],
     "image": "/images/products/Bag 7.png",
@@ -7039,7 +8519,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 440
+        "price": 440,
+        "prices": {
+          "EGP": 484,
+          "EUR": 13.2
+        }
       }
     ],
     "image": "/images/products/Bag 8.png",
@@ -7058,7 +8542,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Bag 9.png",
@@ -7077,7 +8565,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Bag 10.png",
@@ -7096,7 +8588,11 @@
     "variants": [
       {
         "color": "Large",
-        "price": 545
+        "price": 545,
+        "prices": {
+          "EGP": 599.5,
+          "EUR": 16.35
+        }
       }
     ],
     "image": "/images/products/Bag 11.png",
@@ -7115,7 +8611,11 @@
     "variants": [
       {
         "color": "Beige",
-        "price": 140
+        "price": 140,
+        "prices": {
+          "EGP": 154,
+          "EUR": 4.2
+        }
       }
     ],
     "image": "/images/products/Bag 13.png",
@@ -7134,7 +8634,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 695
+        "price": 695,
+        "prices": {
+          "EGP": 764.5,
+          "EUR": 20.85
+        }
       }
     ],
     "image": "/images/products/Bag 14.png",
@@ -7153,7 +8657,11 @@
     "variants": [
       {
         "color": "Large",
-        "price": 590
+        "price": 590,
+        "prices": {
+          "EGP": 649,
+          "EUR": 17.7
+        }
       }
     ],
     "image": "/images/products/Bag 15.png",
@@ -7172,7 +8680,11 @@
     "variants": [
       {
         "color": "D.Grey",
-        "price": 175
+        "price": 175,
+        "prices": {
+          "EGP": 192.5,
+          "EUR": 5.25
+        }
       }
     ],
     "image": "/images/products/Bag 16.png",
@@ -7191,7 +8703,11 @@
     "variants": [
       {
         "color": "New Black",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/Bag 18.png",
@@ -7210,7 +8726,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 625
+        "price": 625,
+        "prices": {
+          "EGP": 687.5,
+          "EUR": 18.75
+        }
       }
     ],
     "image": "/images/products/Bag 20.png",
@@ -7229,7 +8749,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 155
+        "price": 155,
+        "prices": {
+          "EGP": 170.5,
+          "EUR": 4.65
+        }
       }
     ],
     "image": "/images/products/Bag 22.png",
@@ -7248,7 +8772,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/Bag 23.png",
@@ -7267,7 +8795,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 375
+        "price": 375,
+        "prices": {
+          "EGP": 412.5,
+          "EUR": 11.25
+        }
       }
     ],
     "image": "/images/products/Bag 25.png",
@@ -7286,7 +8818,11 @@
     "variants": [
       {
         "color": "",
-        "price": 320
+        "price": 320,
+        "prices": {
+          "EGP": 352,
+          "EUR": 9.6
+        }
       }
     ],
     "image": "/images/products/Bag 26.png",
@@ -7305,7 +8841,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 525
+        "price": 525,
+        "prices": {
+          "EGP": 577.5,
+          "EUR": 15.75
+        }
       }
     ],
     "image": "/images/products/Bag 28.png",
@@ -7324,7 +8864,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 650
+        "price": 650,
+        "prices": {
+          "EGP": 715,
+          "EUR": 19.5
+        }
       }
     ],
     "image": "/images/products/Bag 30.png",
@@ -7343,7 +8887,11 @@
     "variants": [
       {
         "color": "New",
-        "price": 950
+        "price": 950,
+        "prices": {
+          "EGP": 1045,
+          "EUR": 28.5
+        }
       }
     ],
     "image": "/images/products/Bag 31.png",
@@ -7362,7 +8910,11 @@
     "variants": [
       {
         "color": "Black Trolly Foldable",
-        "price": 1100
+        "price": 1100,
+        "prices": {
+          "EGP": 1210,
+          "EUR": 33
+        }
       }
     ],
     "image": "/images/products/Bag 32.png",
@@ -7381,7 +8933,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 385
+        "price": 385,
+        "prices": {
+          "EGP": 423.5,
+          "EUR": 11.55
+        }
       }
     ],
     "image": "/images/products/Bag 33.png",
@@ -7400,7 +8956,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 165
+        "price": 165,
+        "prices": {
+          "EGP": 181.5,
+          "EUR": 4.95
+        }
       }
     ],
     "image": "/images/products/Bag 35.png",
@@ -7419,7 +8979,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 250
+        "price": 250,
+        "prices": {
+          "EGP": 275,
+          "EUR": 7.5
+        }
       }
     ],
     "image": "/images/products/Bag 38.png",
@@ -7438,7 +9002,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/Bag 39.png",
@@ -7457,7 +9025,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/Bag 40.png",
@@ -7476,7 +9048,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 250
+        "price": 250,
+        "prices": {
+          "EGP": 275,
+          "EUR": 7.5
+        }
       }
     ],
     "image": "/images/products/Bag 42.png",
@@ -7495,7 +9071,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 345
+        "price": 345,
+        "prices": {
+          "EGP": 379.5,
+          "EUR": 10.35
+        }
       }
     ],
     "image": "/images/products/Bag 46.png",
@@ -7514,7 +9094,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 345
+        "price": 345,
+        "prices": {
+          "EGP": 379.5,
+          "EUR": 10.35
+        }
       }
     ],
     "image": "/images/products/Bag 47.png",
@@ -7533,7 +9117,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 280.5
+        "price": 280.5,
+        "prices": {
+          "EGP": 308.55,
+          "EUR": 8.42
+        }
       }
     ],
     "image": "/images/products/Bag 48.png",
@@ -7552,7 +9140,11 @@
     "variants": [
       {
         "color": "Small Black",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Bag 49.png",
@@ -7571,7 +9163,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 35
+        "price": 35,
+        "prices": {
+          "EGP": 38.5,
+          "EUR": 1.05
+        }
       }
     ],
     "image": "/images/products/Drawstring Bag.png",
@@ -7590,7 +9186,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Mid Bag 1.png",
@@ -7609,7 +9209,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 198
+        "price": 198,
+        "prices": {
+          "EGP": 217.8,
+          "EUR": 5.94
+        }
       }
     ],
     "image": "/images/products/Mid Bag 3.png",
@@ -7628,7 +9232,11 @@
     "variants": [
       {
         "color": "40*30*10",
-        "price": 65
+        "price": 65,
+        "prices": {
+          "EGP": 71.5,
+          "EUR": 1.95
+        }
       }
     ],
     "image": "/images/products/Gift Bag Large.png",
@@ -7647,7 +9255,11 @@
     "variants": [
       {
         "color": "30*26*10",
-        "price": 55
+        "price": 55,
+        "prices": {
+          "EGP": 60.5,
+          "EUR": 1.65
+        }
       }
     ],
     "image": "/images/products/Gift Bag Small.png",
@@ -7666,7 +9278,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 140
+        "price": 140,
+        "prices": {
+          "EGP": 154,
+          "EUR": 4.2
+        }
       }
     ],
     "image": "/images/products/Felt Bag 5.png",
@@ -7685,7 +9301,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Felt Bag 6.png",
@@ -7704,7 +9324,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Felt Bag 7.png",
@@ -7723,7 +9347,11 @@
     "variants": [
       {
         "color": "",
-        "price": 45
+        "price": 45,
+        "prices": {
+          "EGP": 49.5,
+          "EUR": 1.35
+        }
       }
     ],
     "image": "/images/products/Cotton Bag.png",
@@ -7742,7 +9370,11 @@
     "variants": [
       {
         "color": "Black*Grey",
-        "price": 250
+        "price": 250,
+        "prices": {
+          "EGP": 275,
+          "EUR": 7.5
+        }
       }
     ],
     "image": "/images/products/Cooler Bag 1.png",
@@ -7761,7 +9393,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Cooler Bag 4.png",
@@ -7780,7 +9416,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 420
+        "price": 420,
+        "prices": {
+          "EGP": 462,
+          "EUR": 12.6
+        }
       }
     ],
     "image": "/images/products/Lap Sleeve 1.png",
@@ -7799,7 +9439,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 520
+        "price": 520,
+        "prices": {
+          "EGP": 572,
+          "EUR": 15.6
+        }
       }
     ],
     "image": "/images/products/Lap Sleeve 2.png",
@@ -7818,7 +9462,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 520
+        "price": 520,
+        "prices": {
+          "EGP": 572,
+          "EUR": 15.6
+        }
       }
     ],
     "image": "/images/products/Lap Sleeve 3.png",
@@ -7837,7 +9485,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 4600
+        "price": 4600,
+        "prices": {
+          "EGP": 5060,
+          "EUR": 138
+        }
       }
     ],
     "image": "/images/products/Coffee Machine 2.png",
@@ -7856,7 +9508,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 3800
+        "price": 3800,
+        "prices": {
+          "EGP": 4180,
+          "EUR": 114
+        }
       }
     ],
     "image": "/images/products/Coffee Machine 3.png",
@@ -7875,7 +9531,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/G 11.png",
@@ -7894,7 +9554,11 @@
     "variants": [
       {
         "color": "Blue Big",
-        "price": 5.5
+        "price": 5.5,
+        "prices": {
+          "EGP": 6.05,
+          "EUR": 0.17
+        }
       }
     ],
     "image": "/images/products/G 12.png",
@@ -7913,7 +9577,11 @@
     "variants": [
       {
         "color": "Red",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/G 17.png",
@@ -7932,7 +9600,11 @@
     "variants": [
       {
         "color": "Black with Umbrella",
-        "price": 275
+        "price": 275,
+        "prices": {
+          "EGP": 302.5,
+          "EUR": 8.25
+        }
       }
     ],
     "image": "/images/products/G 39.png",
@@ -7951,7 +9623,11 @@
     "variants": [
       {
         "color": "Large",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/G 42.png",
@@ -7970,7 +9646,11 @@
     "variants": [
       {
         "color": "",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/Car Extra Pocket.png",
@@ -7989,7 +9669,11 @@
     "variants": [
       {
         "color": "",
-        "price": 1500
+        "price": 1500,
+        "prices": {
+          "EGP": 1650,
+          "EUR": 45
+        }
       }
     ],
     "image": "/images/products/Box Ramadan.png",
@@ -8008,7 +9692,11 @@
     "variants": [
       {
         "color": "Silver*Black",
-        "price": 75.9
+        "price": 75.9,
+        "prices": {
+          "EGP": 83.49,
+          "EUR": 2.28
+        }
       }
     ],
     "image": "/images/products/Sun Shade 2.png",
@@ -8027,7 +9715,11 @@
     "variants": [
       {
         "color": "Black*Silver Gold Hand",
-        "price": 180
+        "price": 180,
+        "prices": {
+          "EGP": 198,
+          "EUR": 5.4
+        }
       }
     ],
     "image": "/images/products/Sun Shade 3.png",
@@ -8046,7 +9738,11 @@
     "variants": [
       {
         "color": "Silver Silver",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/Sun Shade 4.png",
@@ -8065,7 +9761,11 @@
     "variants": [
       {
         "color": "Silver*Blue",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/Sun Shade 5.png",
@@ -8084,7 +9784,11 @@
     "variants": [
       {
         "color": "L.Blue",
-        "price": 18
+        "price": 18,
+        "prices": {
+          "EGP": 19.8,
+          "EUR": 0.54
+        }
       }
     ],
     "image": "/images/products/CAP 2.png",
@@ -8103,7 +9807,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 48
+        "price": 48,
+        "prices": {
+          "EGP": 52.8,
+          "EUR": 1.44
+        }
       }
     ],
     "image": "/images/products/Cap 3.png",
@@ -8122,7 +9830,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/G 1.png",
@@ -8141,7 +9853,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 185
+        "price": 185,
+        "prices": {
+          "EGP": 203.5,
+          "EUR": 5.55
+        }
       }
     ],
     "image": "/images/products/G 6.png",
@@ -8160,7 +9876,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/G 22.png",
@@ -8179,7 +9899,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 110
+        "price": 110,
+        "prices": {
+          "EGP": 121,
+          "EUR": 3.3
+        }
       }
     ],
     "image": "/images/products/G 23.png",
@@ -8198,7 +9922,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 110
+        "price": 110,
+        "prices": {
+          "EGP": 121,
+          "EUR": 3.3
+        }
       }
     ],
     "image": "/images/products/G 24.png",
@@ -8217,7 +9945,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 85
+        "price": 85,
+        "prices": {
+          "EGP": 93.5,
+          "EUR": 2.55
+        }
       }
     ],
     "image": "/images/products/G 25.png",
@@ -8236,7 +9968,11 @@
     "variants": [
       {
         "color": "4 Cup Holder",
-        "price": 95
+        "price": 95,
+        "prices": {
+          "EGP": 104.5,
+          "EUR": 2.85
+        }
       }
     ],
     "image": "/images/products/G 27.png",
@@ -8255,7 +9991,11 @@
     "variants": [
       {
         "color": "",
-        "price": 350
+        "price": 350,
+        "prices": {
+          "EGP": 385,
+          "EUR": 10.5
+        }
       }
     ],
     "image": "/images/products/G 30.png",
@@ -8274,7 +10014,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/G 33.png",
@@ -8293,7 +10037,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 135
+        "price": 135,
+        "prices": {
+          "EGP": 148.5,
+          "EUR": 4.05
+        }
       }
     ],
     "image": "/images/products/G 34.png",
@@ -8312,7 +10060,11 @@
     "variants": [
       {
         "color": "Coffee",
-        "price": 120
+        "price": 120,
+        "prices": {
+          "EGP": 132,
+          "EUR": 3.6
+        }
       }
     ],
     "image": "/images/products/G 44.png",
@@ -8331,7 +10083,11 @@
     "variants": [
       {
         "color": "Pink",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/G 45.png",
@@ -8350,7 +10106,11 @@
     "variants": [
       {
         "color": "Green Red",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/G 46.png",
@@ -8369,7 +10129,11 @@
     "variants": [
       {
         "color": "Yellow",
-        "price": 29
+        "price": 29,
+        "prices": {
+          "EGP": 31.9,
+          "EUR": 0.87
+        }
       }
     ],
     "image": "/images/products/G 47.png",
@@ -8388,7 +10152,11 @@
     "variants": [
       {
         "color": "Silver",
-        "price": 295
+        "price": 295,
+        "prices": {
+          "EGP": 324.5,
+          "EUR": 8.85
+        }
       }
     ],
     "image": "/images/products/G 48.png",
@@ -8407,7 +10175,11 @@
     "variants": [
       {
         "color": "Pink",
-        "price": 190
+        "price": 190,
+        "prices": {
+          "EGP": 209,
+          "EUR": 5.7
+        }
       }
     ],
     "image": "/images/products/G 49.png",
@@ -8426,7 +10198,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 265
+        "price": 265,
+        "prices": {
+          "EGP": 291.5,
+          "EUR": 7.95
+        }
       }
     ],
     "image": "/images/products/Chair 1.png",
@@ -8445,7 +10221,11 @@
     "variants": [
       {
         "color": "Blue",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Chair 2.png",
@@ -8464,7 +10244,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 540
+        "price": 540,
+        "prices": {
+          "EGP": 594,
+          "EUR": 16.2
+        }
       }
     ],
     "image": "/images/products/Chair 3.png",
@@ -8483,7 +10267,11 @@
     "variants": [
       {
         "color": "Black Set",
-        "price": 920
+        "price": 920,
+        "prices": {
+          "EGP": 1012,
+          "EUR": 27.6
+        }
       }
     ],
     "image": "/images/products/Chair 4.png",
@@ -8502,7 +10290,11 @@
     "variants": [
       {
         "color": "6-in-1 Black Grey",
-        "price": 425
+        "price": 425,
+        "prices": {
+          "EGP": 467.5,
+          "EUR": 12.75
+        }
       }
     ],
     "image": "/images/products/Travel Kit 1.png",
@@ -8521,7 +10313,11 @@
     "variants": [
       {
         "color": "Black",
-        "price": 125
+        "price": 125,
+        "prices": {
+          "EGP": 137.5,
+          "EUR": 3.75
+        }
       }
     ],
     "image": "/images/products/Neck Pillow.png",
@@ -8540,7 +10336,11 @@
     "variants": [
       {
         "color": "",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/T-Shirt.png",
@@ -8559,7 +10359,11 @@
     "variants": [
       {
         "color": "Medium Blue",
-        "price": 225
+        "price": 225,
+        "prices": {
+          "EGP": 247.5,
+          "EUR": 6.75
+        }
       }
     ],
     "image": "/images/products/T-Shirt Polo.png",
@@ -8578,7 +10382,11 @@
     "variants": [
       {
         "color": "",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Spinner 6.png",
@@ -8597,7 +10405,11 @@
     "variants": [
       {
         "color": "",
-        "price": 105
+        "price": 105,
+        "prices": {
+          "EGP": 115.5,
+          "EUR": 3.15
+        }
       }
     ],
     "image": "/images/products/Spinner 7.png",
@@ -8616,7 +10428,11 @@
     "variants": [
       {
         "color": "Sublimation Print",
-        "price": 195
+        "price": 195,
+        "prices": {
+          "EGP": 214.5,
+          "EUR": 5.85
+        }
       }
     ],
     "image": "/images/products/Beach Towel.png",
@@ -8635,7 +10451,11 @@
     "variants": [
       {
         "color": "Plastic",
-        "price": 19
+        "price": 19,
+        "prices": {
+          "EGP": 20.9,
+          "EUR": 0.57
+        }
       }
     ],
     "image": "/images/products/Frisbee.png",
@@ -8654,7 +10474,11 @@
     "variants": [
       {
         "color": "",
-        "price": 145
+        "price": 145,
+        "prices": {
+          "EGP": 159.5,
+          "EUR": 4.35
+        }
       }
     ],
     "image": "/images/products/Kite.png",
