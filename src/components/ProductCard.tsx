@@ -38,6 +38,24 @@ export default function ProductCard({
 
   const [isQuickViewOpen, setIsQuickViewOpen] = useState(false);
 
+  const isServiceBar = product.category.startsWith("gfm") || product.category === "uniforms";
+
+  if (isServiceBar) {
+    return (
+      <article className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 border border-olive-200 bg-white shadow-sm rounded-md mb-4 gap-4">
+        <div>
+          <h3 className="font-bold text-lg text-olive-800">{displayName}</h3>
+          <p className="text-sm text-neutral-600 mt-1">{tcat("priceDependsOnQuality")}</p>
+        </div>
+        <div className="w-full sm:w-auto">
+          <Link href={`/contact`} className="btn-primary min-h-[44px] px-6 text-sm w-full sm:w-auto flex items-center justify-center">
+            {tcat("contactUs") || tcat("requestQuote")}
+          </Link>
+        </div>
+      </article>
+    );
+  }
+
   if (listView) {
     return (
       <article className="product-card flex flex-col gap-4 p-4 sm:flex-row">

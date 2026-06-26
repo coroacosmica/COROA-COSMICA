@@ -7176,5 +7176,18 @@
     "price": 0,
     "variants": [],
     "image": null
+  },
+  {
+    "code": "UNIFORMS-001",
+    "category": "uniforms",
+    "description": "Custom Uniforms",
+    "names": {
+      "en": "Custom Uniforms",
+      "ar": "يونيفورم وملابس",
+      "pt": "Uniformes Personalizados"
+    },
+    "price": 0,
+    "variants": [],
+    "image": null
   }
 ]

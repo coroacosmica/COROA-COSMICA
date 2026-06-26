@@ -9048,5 +9048,15 @@
       "en": "Business corporate gift set",
       "pt": "Conjunto de negócios para empresas"
     }
+  },
+  {
+    "code": "UNIFORMS-001",
+    "category": "uniforms",
+    "description": "Custom Uniforms",
+    "names": {
+      "en": "Custom Uniforms",
+      "ar": "يونيفورم وملابس",
+      "pt": "Uniformes Personalizados"
+    }
   }
 ]

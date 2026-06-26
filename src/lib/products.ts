@@ -99,6 +99,8 @@ const CATEGORY_ORDER = [
   "gfm-rubber-stamps",
   "gfm-company-stamps",
   "gfm-custom-seals",
+  // Uniforms
+  "uniforms",
 ];
 
 // Parent category → child categories mapping for GFM sections

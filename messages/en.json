@@ -105,11 +105,12 @@
     "notebooks-usb": "USB Notebooks",
     "pens-writing-alt": "Writing",
     "seasonal": "Seasonal",
-    "general": "General"
+    "general": "General",
+    "uniforms": "Uniforms & Apparel"
   },
   "catalogue": {
     "title": "Coroa Cósmica Catalogue",
-    "search": "Search by name, code or product type...",
+    "search": "Search products...",
     "filter": "Category",
     "all": "All",
     "setsOnly": "Sets only",
@@ -120,7 +121,6 @@
     "code": "Code",
     "noResults": "No products match your criteria.",
     "clearSearch": "Clear search",
-    "search": "Search products...",
     "itemsInSet": "items in set",
     "addToCart": "Add to cart",
     "quickView": "Quick view",
@@ -132,7 +132,8 @@
     "gridView": "Grid",
     "listView": "List",
     "priceRange": "Price",
-    "sidebar": "Filters"
+    "sidebar": "Filters",
+    "priceDependsOnQuality": "Price depends on quality and quantity"
   },
   "product": {
     "back": "Back to catalogue",

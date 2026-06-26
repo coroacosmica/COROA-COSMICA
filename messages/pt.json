@@ -105,7 +105,8 @@
     "notebooks-usb": "Cadernos USB",
     "pens-writing-alt": "Escrita",
     "seasonal": "Sazonal",
-    "general": "Geral"
+    "general": "Geral",
+    "uniforms": "Uniforms & Apparel"
   },
   "catalogue": {
     "title": "Catálogo Coroa Cósmica",
@@ -131,7 +132,8 @@
     "gridView": "Grelha",
     "listView": "Lista",
     "priceRange": "Preço",
-    "sidebar": "Filtros"
+    "sidebar": "Filtros",
+    "priceDependsOnQuality": "Price depends on quality and quantity"
   },
   "product": {
     "back": "Voltar ao catálogo",

@@ -153,7 +153,7 @@ async function main() {
   let gfmProducts = [];
   if (fs.existsSync(oldGitJsonPath)) {
     const oldProducts = JSON.parse(fs.readFileSync(oldGitJsonPath, 'utf8'));
-    gfmProducts = oldProducts.filter(p => p.category && p.category.toLowerCase().includes('gfm'));
+    gfmProducts = oldProducts.filter(p => p.category && (p.category.toLowerCase().includes('gfm') || p.category === 'uniforms'));
     
     // Ensure price is 0 for GFM products
     gfmProducts = gfmProducts.map(p => ({
@@ -256,7 +256,9 @@ async function main() {
   "gfm-name-plates",
   "gfm-rubber-stamps",
   "gfm-company-stamps",
-  "gfm-custom-seals",`;
+  "gfm-custom-seals",
+  // Uniforms
+  "uniforms",`;
 
   const newCategoryOrderArray = `const CATEGORY_ORDER = [\n  ${Array.from(excelCategories).map(c => `"${c}"`).join(',\n  ')},${gfmBlock}\n];`;
   

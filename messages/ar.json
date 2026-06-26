@@ -80,7 +80,8 @@
     "notebooks-usb": "دفاتر بذاكرة USB",
     "pens-writing-alt": "أدوات كتابة",
     "seasonal": "موسمي",
-    "general": "عام"
+    "general": "عام",
+    "uniforms": "يونيفورم وملابس"
   },
   "catalogue": {
     "title": "كتالوج كوروا كوزميكا",
@@ -106,7 +107,8 @@
     "gridView": "شبكة",
     "listView": "قائمة",
     "priceRange": "السعر",
-    "sidebar": "الفلاتر"
+    "sidebar": "الفلاتر",
+    "priceDependsOnQuality": "السعر يتحدد حسب الجودة والكمية"
   },
   "product": {
     "back": "العودة للكتالوج",
