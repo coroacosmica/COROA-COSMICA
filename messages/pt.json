@@ -133,7 +133,8 @@
     "listView": "Lista",
     "priceRange": "Preço",
     "sidebar": "Filtros",
-    "priceDependsOnQuality": "Price depends on quality and quantity"
+    "priceDependsOnQuality": "O preço será enviado com a confirmação do pedido",
+    "customizeAndAdd": "Personalizar e Adicionar ao Carrinho"
   },
   "product": {
     "back": "Voltar ao catálogo",

@@ -14,6 +14,7 @@ import { useState } from "react";
 import QuickViewModal from "./QuickViewModal";
 import { useCurrency } from "@/context/CurrencyContext";
 import { useCategories } from "@/context/CategoryContext";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductCard({
   product,
@@ -28,6 +29,7 @@ export default function ProductCard({
   const locale = useLocale() as Locale;
   const { formatProductPrice, getRawPrice, formatLocalPrice } = useCurrency();
   const categories = useCategories();
+  const { addItem, openCart } = useCart();
   
   const categoryLabel = categories.find(c => c.slug === product.category)?.[`name_${locale}` as keyof typeof categories[0]] || product.category;
   
@@ -40,6 +42,18 @@ export default function ProductCard({
 
   const isServiceBar = product.category.startsWith("gfm") || product.category === "uniforms";
 
+  function handleServiceAdd(e: React.MouseEvent) {
+    e.preventDefault();
+    addItem({
+      code: product.code,
+      name: displayName,
+      image: product.image || "/images/placeholder.jpg",
+      price: product.price ?? 0,
+      category: product.category,
+    });
+    openCart();
+  }
+
   if (isServiceBar) {
     return (
       <article className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-5 border border-olive-200 bg-white shadow-sm rounded-md mb-4 gap-4">
@@ -47,10 +61,17 @@ export default function ProductCard({
           <h3 className="font-bold text-lg text-olive-800">{displayName}</h3>
           <p className="text-sm text-neutral-600 mt-1">{tcat("priceDependsOnQuality")}</p>
         </div>
-        <div className="w-full sm:w-auto">
-          <Link href={`/contact`} className="btn-primary min-h-[44px] px-6 text-sm w-full sm:w-auto flex items-center justify-center">
-            {tcat("contactUs") || tcat("requestQuote")}
-          </Link>
+        <div className="w-full sm:w-auto flex gap-2">
+          <button 
+            type="button"
+            onClick={handleServiceAdd}
+            className="btn-primary min-h-[44px] px-6 text-sm w-full sm:w-auto flex items-center justify-center gap-2"
+          >
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+            </svg>
+            {tcat("customizeAndAdd")}
+          </button>
         </div>
       </article>
     );

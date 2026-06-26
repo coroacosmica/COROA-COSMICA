@@ -108,7 +108,8 @@
     "listView": "قائمة",
     "priceRange": "السعر",
     "sidebar": "الفلاتر",
-    "priceDependsOnQuality": "السعر يتحدد حسب الجودة والكمية"
+    "priceDependsOnQuality": "سيتم إرسال السعر مع تأكيد الطلب",
+    "customizeAndAdd": "إضافة اللوجو وإضافة للسلة"
   },
   "product": {
     "back": "العودة للكتالوج",

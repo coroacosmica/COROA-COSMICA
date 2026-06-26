@@ -158,7 +158,9 @@ export default function CartDrawer() {
                     <p className="truncate text-sm font-medium text-neutral-900">{item.name}</p>
                     <p className="text-xs text-neutral-500">{item.code}</p>
                     <p className="mt-1 text-sm font-semibold text-olive-700">
-                      {currencyState.formatPrice(item.quantity * (item.price ?? 0))}
+                      {(item.price ?? 0) === 0 || item.code.startsWith("GFM-") || item.category?.startsWith("gfm-") || item.category === "uniforms"
+                        ? tc("priceDependsOnQuality")
+                        : currencyState.formatPrice(item.quantity * (item.price ?? 0))}
                     </p>
                     <div className="mt-2 flex items-center gap-2">
                       <button
@@ -197,7 +199,9 @@ export default function CartDrawer() {
           <div className="border-t border-olive-200 bg-neutral-50 p-4">
             <div className="mb-4 flex justify-between text-lg font-semibold">
               <span>{t("total")}</span>
-              <span className="text-olive-700">{currencyState.formatPrice(total)}</span>
+              <span className="text-olive-700">
+                {hasGfmItems && total === 0 ? tc("priceDependsOnQuality") : currencyState.formatPrice(total)}
+              </span>
             </div>
 
             {step === "cart" && (

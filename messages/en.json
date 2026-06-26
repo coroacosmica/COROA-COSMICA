@@ -133,7 +133,8 @@
     "listView": "List",
     "priceRange": "Price",
     "sidebar": "Filters",
-    "priceDependsOnQuality": "Price depends on quality and quantity"
+    "priceDependsOnQuality": "Price will be sent with order confirmation",
+    "customizeAndAdd": "Customize & Add to Cart"
   },
   "product": {
     "back": "Back to catalogue",
