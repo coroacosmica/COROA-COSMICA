@@ -81,6 +81,18 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
           currency = "EGP";
           symbol = "ج.م";
           region = "egypt";
+        } else if (country === "SA") {
+          currency = "SAR";
+          symbol = "ر.س";
+          region = "saudi-arabia";
+        } else if (country === "AE") {
+          currency = "AED";
+          symbol = "د.إ";
+          region = "uae";
+        } else if (country === "US") {
+          currency = "USD";
+          symbol = "$";
+          region = "usa";
         } else if (EU_COUNTRIES.includes(country)) {
           currency = "EUR";
           symbol = "€";
@@ -109,6 +121,18 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
       currency = "EGP";
       symbol = "ج.م";
       region = "egypt";
+    } else if (countryCode === "SA") {
+      currency = "SAR";
+      symbol = "ر.س";
+      region = "saudi-arabia";
+    } else if (countryCode === "AE") {
+      currency = "AED";
+      symbol = "د.إ";
+      region = "uae";
+    } else if (countryCode === "US") {
+      currency = "USD";
+      symbol = "$";
+      region = "usa";
     } else if (EU_COUNTRIES.includes(countryCode)) {
       currency = "EUR";
       symbol = "€";
