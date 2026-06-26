@@ -9,16 +9,15 @@ function linePrice(locale: Locale, qty: number): string {
 
 export function buildCartMessage(
   items: CartItem[],
-  locale: Locale,
+  formatLocalPrice: (val: number) => string,
   t: (key: string, values?: Record<string, string | number>) => string
 ): string {
   const lines = items.map(
     (item) =>
-      `- ${item.name} x${item.quantity} — ${linePrice(locale, item.quantity)}`
+      `- ${item.name} x${item.quantity} — ${formatLocalPrice(item.quantity * (item.price ?? 0))}`
   );
-  const total = formatPrice(
-    BASE_PRICE * items.reduce((s, i) => s + i.quantity, 0),
-    locale
+  const total = formatLocalPrice(
+    items.reduce((s, i) => s + ((i.price ?? 0) * i.quantity), 0)
   );
   return `${t("greeting")}
 

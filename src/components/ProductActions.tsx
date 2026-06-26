@@ -4,6 +4,7 @@ import { useTranslations, useLocale } from "next-intl";
 import type { Product } from "@/lib/products";
 import { getProductName, getProductImage } from "@/lib/product-display";
 import { useCart } from "@/context/CartContext";
+import { useCurrency } from "@/context/CurrencyContext";
 import type { Locale } from "@/i18n/routing";
 import AddToCartButton from "./AddToCartButton";
 
@@ -12,12 +13,14 @@ export default function ProductActions({ product, color }: { product: Product; c
   const locale = useLocale() as Locale;
   const { addItem, openCart } = useCart();
 
+  const { calculateDiscountedPrice } = useCurrency();
+
   function buyNow() {
     addItem({
       code: product.code,
       name: getProductName(product, locale),
       image: getProductImage(product),
-      price: product.price ?? 0,
+      price: calculateDiscountedPrice(product),
       color,
     });
     openCart();

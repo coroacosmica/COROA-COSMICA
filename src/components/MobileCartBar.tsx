@@ -24,7 +24,7 @@ export default function MobileCartBar() {
         onClick={openCart}
         className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded bg-olive-600 px-4 text-sm font-semibold text-white"
       >
-        {t("title")} ({count}) — {currencyState.formatPrice(total)}
+        {t("title")} ({count}) — {currencyState.formatLocalPrice(total)}
       </button>
     </div>
   );

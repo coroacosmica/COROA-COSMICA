@@ -91,7 +91,7 @@ export default function CartDrawer() {
 
   if (!isOpen) return null;
 
-  const message = buildCartMessage(items, locale, (key, values) =>
+  const message = buildCartMessage(items, currencyState.formatLocalPrice, (key, values) =>
     tc(key as "greeting", values as Record<string, string>)
   );
 
@@ -160,7 +160,7 @@ export default function CartDrawer() {
                     <p className="mt-1 text-sm font-semibold text-olive-700">
                       {(item.price ?? 0) === 0 || item.code.startsWith("GFM-") || item.category?.startsWith("gfm-") || item.category === "uniforms"
                         ? tc("priceDependsOnQuality")
-                        : currencyState.formatPrice(item.quantity * (item.price ?? 0))}
+                        : currencyState.formatLocalPrice(item.quantity * (item.price ?? 0))}
                     </p>
                     <div className="mt-2 flex items-center gap-2">
                       <button
@@ -200,7 +200,7 @@ export default function CartDrawer() {
             <div className="mb-4 flex justify-between text-lg font-semibold">
               <span>{t("total")}</span>
               <span className="text-olive-700">
-                {hasGfmItems && total === 0 ? tc("priceDependsOnQuality") : currencyState.formatPrice(total)}
+                {hasGfmItems && total === 0 ? tc("priceDependsOnQuality") : currencyState.formatLocalPrice(total)}
               </span>
             </div>
 
