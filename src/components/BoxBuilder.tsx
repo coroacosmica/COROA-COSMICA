@@ -71,11 +71,33 @@ export default function BoxBuilder({
     const bundleDesc = bundleItems.map(i => `${i.name} ×${i.quantity}`).join(", ");
     const finalName = bundleDesc ? `${getProductName(product, locale)} — ${bundleDesc}` : getProductName(product, locale);
 
+    // Compute dynamic prices for the bundle
+    const basePriceUSD = product.price ?? 0;
+    const additionalPriceUSD = Object.entries(selections).reduce((sum, [code, qty]) => {
+      const p = individualProducts.find(ip => ip.code === code);
+      return sum + ((p?.price ?? 0) * qty);
+    }, 0);
+    const totalBasePriceUSD = basePriceUSD + additionalPriceUSD;
+
+    const computedPrices: Record<string, number> = {};
+    const currencies = ["EGP", "EUR", "SAR", "AED"];
+    for (const curr of currencies) {
+      const pBase = product.prices?.[curr] ?? (basePriceUSD * (curr === "EGP" ? 48.5 : curr === "EUR" ? 0.92 : curr === "SAR" ? 3.75 : 3.67));
+      const pAdditional = Object.entries(selections).reduce((sum, [code, qty]) => {
+        const p = individualProducts.find(ip => ip.code === code);
+        const pCurr = p?.prices?.[curr] ?? ((p?.price ?? 0) * (curr === "EGP" ? 48.5 : curr === "EUR" ? 0.92 : curr === "SAR" ? 3.75 : 3.67));
+        return sum + (pCurr * qty);
+      }, 0);
+      computedPrices[curr] = pBase + pAdditional;
+    }
+
     addItem({
       code: `CUSTOM_BOX_${product.code}_${Date.now()}`,
       name: finalName,
       image: product.image || "/images/placeholder.jpg",
-      price: totalPrice,
+      basePrice: totalBasePriceUSD,
+      prices: computedPrices,
+      price: totalPrice, // legacy
       bundleItems
     });
     openCart();

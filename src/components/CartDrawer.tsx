@@ -91,7 +91,12 @@ export default function CartDrawer() {
 
   if (!isOpen) return null;
 
-  const message = buildCartMessage(items, currencyState.formatLocalPrice, (key, values) =>
+  const dynamicTotal = items.reduce((s, i) => {
+    const p = i.basePrice !== undefined ? currencyState.getRawPrice({ price: i.basePrice, prices: i.prices }) : (i.price ?? 0);
+    return s + (p * i.quantity);
+  }, 0);
+
+  const message = buildCartMessage(items, currencyState, (key, values) =>
     tc(key as "greeting", values as Record<string, string>)
   );
 
@@ -158,9 +163,9 @@ export default function CartDrawer() {
                     <p className="truncate text-sm font-medium text-neutral-900">{item.name}</p>
                     <p className="text-xs text-neutral-500">{item.code}</p>
                     <p className="mt-1 text-sm font-semibold text-olive-700">
-                      {(item.price ?? 0) === 0 || item.code.startsWith("GFM-") || item.category?.startsWith("gfm-") || item.category === "uniforms"
+                      {(item.price ?? item.basePrice ?? 0) === 0 || item.code.startsWith("GFM-") || item.category?.startsWith("gfm-") || item.category === "uniforms"
                         ? tc("priceDependsOnQuality")
-                        : currencyState.formatLocalPrice(item.quantity * (item.price ?? 0))}
+                        : currencyState.formatLocalPrice(item.quantity * (item.basePrice !== undefined ? currencyState.getRawPrice({ price: item.basePrice, prices: item.prices }) : (item.price ?? 0)))}
                     </p>
                     <div className="mt-2 flex items-center gap-2">
                       <button

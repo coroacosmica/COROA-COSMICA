@@ -30,7 +30,9 @@ export default function AddToCartButton({
       code: product.code,
       name: product.names?.[locale as keyof typeof product.names] || product.description,
       image: product.image || "/images/placeholder.jpg",
-      price: calculateDiscountedPrice(product),
+      basePrice: product.price ?? 0,
+      prices: product.prices,
+      price: calculateDiscountedPrice(product), // keep for legacy support
       category: product.category,
       color,
     });

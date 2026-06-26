@@ -20,7 +20,9 @@ export default function ProductActions({ product, color }: { product: Product; c
       code: product.code,
       name: getProductName(product, locale),
       image: getProductImage(product),
-      price: calculateDiscountedPrice(product),
+      basePrice: product.price ?? 0,
+      prices: product.prices,
+      price: calculateDiscountedPrice(product), // keep for legacy support
       color,
     });
     openCart();

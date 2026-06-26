@@ -3,8 +3,11 @@ export interface CartItem {
   name: string;
   image: string;
   quantity: number;
-  price: number;
+  basePrice: number;
+  prices?: Record<string, number>;
+  price?: number; // legacy
   color?: string;
+  category?: string;
   bundleItems?: { code: string; name: string; quantity: number }[];
   customDesign?: {
     pngDataUrl: string;

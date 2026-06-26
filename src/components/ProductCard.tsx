@@ -48,7 +48,9 @@ export default function ProductCard({
       code: product.code,
       name: displayName,
       image: product.image || "/images/placeholder.jpg",
-      price: product.price ?? 0,
+      basePrice: product.price ?? 0,
+      prices: product.prices,
+      price: product.price ?? 0, // legacy
       category: product.category,
     });
     openCart();

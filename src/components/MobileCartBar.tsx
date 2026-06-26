@@ -12,8 +12,13 @@ export default function MobileCartBar() {
   const t = useTranslations("cart");
   const locale = useLocale() as Locale;
   const pathname = usePathname();
-  const { count, total, openCart } = useCart();
+  const { count, items, openCart } = useCart();
   const currencyState = useCurrency();
+
+  const dynamicTotal = items.reduce((s, i) => {
+    const p = i.basePrice !== undefined ? currencyState.getRawPrice({ price: i.basePrice, prices: i.prices }) : (i.price ?? 0);
+    return s + (p * i.quantity);
+  }, 0);
 
   if (pathname.startsWith("/admin") || count === 0) return null;
 
@@ -24,7 +29,7 @@ export default function MobileCartBar() {
         onClick={openCart}
         className="flex min-h-[44px] flex-1 items-center justify-center gap-2 rounded bg-olive-600 px-4 text-sm font-semibold text-white"
       >
-        {t("title")} ({count}) — {currencyState.formatLocalPrice(total)}
+        {t("title")} ({count}) — {currencyState.formatLocalPrice(dynamicTotal)}
       </button>
     </div>
   );
