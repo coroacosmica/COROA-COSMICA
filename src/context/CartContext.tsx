@@ -33,7 +33,11 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
   const [hydrated, setHydrated] = useState(false);
   useEffect(() => {
-    setItems(readCartFromStorage());
+    const storedItems = readCartFromStorage();
+    // Purge any legacy items that do not have basePrice and prices defined
+    // to prevent calculation errors across currency switches.
+    const validItems = storedItems.filter((i) => i.basePrice !== undefined && i.prices !== undefined);
+    setItems(validItems);
     setHydrated(true);
   }, []);
 
