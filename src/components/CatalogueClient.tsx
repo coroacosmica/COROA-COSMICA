@@ -8,6 +8,7 @@ import ProductCard from "./ProductCard";
 import type { Product, Category } from "@/lib/products";
 import { GFM_PARENT_CATEGORIES } from "@/lib/products";
 import { clsx } from "clsx";
+import { useCurrency } from "@/context/CurrencyContext";
 
 type SortKey = "newest" | "price-low" | "price-high" | "popular";
 
@@ -33,6 +34,7 @@ function buildCatalogueQuery(opts: {
 export default function CatalogueClient({ allProducts, categories }: { allProducts: Product[], categories: Category[] }) {
   const t = useTranslations("catalogue");
   const searchParams = useSearchParams();
+  const { calculateDiscountedPrice } = useCurrency();
   const pathname = usePathname();
   const router = useRouter();
   
@@ -112,7 +114,7 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
     }
     const sorted = [...list];
     if (sort === "price-low" || sort === "price-high") {
-      sorted.sort((a, b) => a.code.localeCompare(b.code));
+      sorted.sort((a, b) => calculateDiscountedPrice(a) - calculateDiscountedPrice(b));
       if (sort === "price-high") sorted.reverse();
     } else if (sort === "newest") {
       sorted.reverse();
@@ -124,7 +126,7 @@ export default function CatalogueClient({ allProducts, categories }: { allProduc
       });
     }
     return sorted;
-  }, [allProducts, query, category, setsOnly, sort]);
+  }, [allProducts, query, category, setsOnly, sort, calculateDiscountedPrice]);
 
   const totalPages = Math.max(1, Math.ceil(filtered.length / pageSize));
   const safePage = Math.min(page, totalPages);
