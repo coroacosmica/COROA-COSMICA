@@ -159,7 +159,14 @@ export async function getAllProducts(): Promise<Product[]> {
       
       mergedProducts = localProducts.map((p) => {
         const codeKey = p.code.toLowerCase();
-        return supabaseMap.has(codeKey) ? supabaseMap.get(codeKey)! : p;
+        if (!supabaseMap.has(codeKey)) return p;
+        const sp = supabaseMap.get(codeKey)!;
+        return {
+          ...sp,
+          price: p.price,
+          prices: p.prices,
+          variants: p.variants || sp.variants,
+        };
       });
 
       const localMap = new Set(localProducts.map((p) => p.code.toLowerCase()));

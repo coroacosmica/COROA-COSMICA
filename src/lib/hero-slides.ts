@@ -27,15 +27,43 @@ const FALLBACK_SLIDES: HeroSlide[] = [
 ];
 
 export function buildHeroSlides(products: Product[], locale: Locale): HeroSlide[] {
+  const isArabic = locale === "ar" || locale.startsWith("ar");
+  const isPortuguese = locale === "pt" || locale.startsWith("pt");
+
+  // Promotional poster banners
+  const enPosterSlide: HeroSlide = {
+    title: "Big Sale - Corporate Gifts & Promotional Products",
+    subtitle: "Order More. Save More.",
+    image: "/images/banners/poster-en.jpg",
+    href: "/catalogue",
+    isBanner: true,
+  };
+
+  const arPosterSlide: HeroSlide = {
+    title: "عروض كبرى - هدايا الشركات والمنتجات الدعائية",
+    subtitle: "كلما طلبت أكثر توفر أكثر",
+    image: "/images/banners/poster-ar.jpg",
+    href: "/catalogue",
+    isBanner: true,
+  };
+
+  // Locale-prioritized order: relevant language first
+  const posterSlides = isArabic
+    ? [arPosterSlide, enPosterSlide]
+    : isPortuguese
+    ? [arPosterSlide, enPosterSlide]
+    : [enPosterSlide, arPosterSlide];
+
   const withImage = products.filter((p) => p.image && !p.image.endsWith(".svg"));
   const source = withImage.length >= 2 ? withImage : products;
 
-  const slides = source.slice(0, 4).map((p) => ({
+  const productSlides: HeroSlide[] = source.slice(0, 3).map((p) => ({
     title: getProductName(p, locale).toUpperCase().slice(0, 40),
     subtitle: BRAND_SHORT,
     image: getProductImage(p),
     href: `/product/${slugifyCode(p.code)}`,
+    isBanner: false,
   }));
 
-  return slides.length >= 2 ? slides : FALLBACK_SLIDES;
+  return [...posterSlides, ...productSlides];
 }

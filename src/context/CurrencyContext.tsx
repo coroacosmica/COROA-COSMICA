@@ -175,7 +175,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
 
   // Format a local currency amount natively
   const formatLocalPrice = (localAmount: number) => {
-    if (state.currency === "USD" || state.currency === "SAR" || state.currency === "AED") {
+    if (state.currency === "SAR" || state.currency === "AED") {
       return locale === "ar" ? "قريباً" : "Coming Soon";
     }
     const sym = getDynamicSymbol(state.currency);
